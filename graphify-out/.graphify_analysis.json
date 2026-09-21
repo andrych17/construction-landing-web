@@ -1,0 +1,268 @@
+{
+  "communities": {
+    "0": [
+      "autoprefixer",
+      "babel_plugin_react_compiler",
+      "eslint",
+      "eslint_config_next",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_babel_plugin_react_compiler",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_postcss",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "postcss",
+      "tailwindcss",
+      "tailwindcss_postcss",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript"
+    ],
+    "1": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target"
+    ],
+    "2": [
+      "framer_motion",
+      "package_dependencies",
+      "package_dependencies_framer_motion",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_icons",
+      "package_json_next",
+      "react",
+      "react_dom",
+      "react_icons"
+    ],
+    "3": [
+      "ref_mts",
+      "ref_next_dev_types_ts",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_node_modules",
+      "ref_ts",
+      "ref_tsx",
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "4": [
+      "src_app_page",
+      "src_app_page_home",
+      "src_components_about",
+      "src_components_about_about",
+      "src_components_contact",
+      "src_components_contact_contact",
+      "src_components_services",
+      "src_components_services_services",
+      "src_components_testimonials",
+      "src_components_testimonials_testimonials"
+    ],
+    "5": [
+      "package",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version"
+    ],
+    "6": [
+      "src_app_layout",
+      "src_app_layout_jetbrainsmono",
+      "src_app_layout_metadata",
+      "src_app_layout_plusjakartasans",
+      "src_app_layout_rootlayout"
+    ],
+    "7": [
+      "postcss_config",
+      "postcss_config_config",
+      "postcss_load_config"
+    ],
+    "8": [
+      "src_components_achievements",
+      "src_components_achievements_achievements",
+      "src_components_achievements_commitments"
+    ],
+    "9": [
+      "src_components_buildinganimation",
+      "src_components_buildinganimation_buildinganimation",
+      "src_components_buildinganimation_precisionpillars"
+    ],
+    "10": [
+      "src_components_faq",
+      "src_components_faq_faq",
+      "src_components_faq_faqs"
+    ],
+    "11": [
+      "src_components_projects",
+      "src_components_projects_projects",
+      "src_components_projects_realprojects"
+    ],
+    "12": [
+      "eslint_config",
+      "eslint_config_eslintconfig"
+    ],
+    "13": [
+      "next_config_js_next_config",
+      "next_config_js_next_config_nextconfig"
+    ],
+    "14": [
+      "next_config_ts_next_config",
+      "next_config_ts_next_config_nextconfig"
+    ],
+    "15": [
+      "src_components_cta",
+      "src_components_cta_cta"
+    ],
+    "16": [
+      "src_components_footer",
+      "src_components_footer_footer"
+    ],
+    "17": [
+      "src_components_hero",
+      "src_components_hero_hero"
+    ],
+    "18": [
+      "src_components_navbar",
+      "src_components_navbar_navbar"
+    ],
+    "19": [
+      "next_next"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08695652173913043,
+    "1": 0.10526315789473684,
+    "2": 0.18181818181818182,
+    "3": 0.2,
+    "4": 0.28888888888888886,
+    "5": 0.2222222222222222,
+    "6": 0.4,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 7
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "tsconfig_compileroptions_lib",
+      "label": "lib",
+      "degree": 4
+    },
+    {
+      "id": "src_components_faq_faq",
+      "label": "FAQ()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_projects_projects",
+      "label": "Projects()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_cta_cta",
+      "label": "CTA()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_footer_footer",
+      "label": "Footer()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_hero_hero",
+      "label": "Hero()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_navbar_navbar",
+      "label": "Navbar()",
+      "degree": 2
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `devDependencies` connect `devDependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.099) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `dependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.054) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `compilerOptions` connect `compilerOptions` to `include`?",
+      "why": "High betweenness centrality (0.049) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `autoprefixer`, `babel-plugin-react-compiler`, `eslint` to the rest of the system?",
+      "why": "58 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `devDependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `compilerOptions` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

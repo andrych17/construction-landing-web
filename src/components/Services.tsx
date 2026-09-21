@@ -1,109 +1,167 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FaHardHat, FaHome, FaBuilding, FaTools } from 'react-icons/fa';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 const services = [
   {
-    icon: FaBuilding,
-    title: 'Konstruksi Bangunan',
-    description: 'Pembangunan gedung komersial dan residensial dengan standar kualitas tinggi',
+    number: '01',
+    category: 'Komersial & Ritel',
+    title: 'Konstruksi Gedung & Commercial Fit-Out',
+    headline: 'Pembangunan ruang usaha, showroom representatif, dan fasilitas komersial berstandar korporat.',
+    description:
+      'Melayani pekerjaan struktur baja, beton bertulang SNI, partisi arsitektural, hingga instalasi tata cahaya showroom komersial (seperti proyek resmi Jotun Showroom Surabaya). Dikelola dengan kurva-S ketat dan laporan progres transparan.',
+    deliverables: [
+      'Struktur Baja & Beton Mutu SNI',
+      'Plafon Akustik & Tata Cahaya Komersial',
+      'Kepatuhan Standar Fasad Korporat',
+      'Manajemen K3 & Izin Operasional',
+    ],
+    projectRef: 'Contoh: Jotun Showroom Surabaya',
+    href: 'https://wa.me/628113313347?text=Halo%20WW%20Construction,%20saya%20ingin%20konsultasi%20proyek%20Komersial%20/%20Showroom.',
   },
   {
-    icon: FaHome,
-    title: 'Renovasi',
-    description: 'Layanan renovasi dan remodeling untuk hunian dan kantor Anda',
+    number: '02',
+    category: 'Residensial Mewah',
+    title: 'Rancang Bangun Rumah Mewah (Modern & Classic)',
+    headline: 'Konstruksi hunian tinggal privat eksklusif dengan presisi ukuran milimeter dan material Grade-A.',
+    description:
+      'Mewujudkan rumah impian bergaya modern tropis kontemporer maupun profil klasik elegan di kawasan Surabaya Timur, Surabaya Barat, dan Sidoarjo. Menyelaraskan estetika arsitek, sirkulasi udara alami, dan ketahanan terhadap cuaca maritim.',
+    deliverables: [
+      'Pondasi & Struktur Tahan Gempa',
+      'Plesteran Siku 90° & Finishing Rata',
+      'Material Granit / Marmer & Kayu Pilihan',
+      'Supervisi Rutin Pengawas Sipil Berpengalaman',
+    ],
+    projectRef: 'Contoh: Hunian Privat Modern & Klasik Surabaya',
+    href: 'https://wa.me/628113313347?text=Halo%20WW%20Construction,%20saya%20ingin%20konsultasi%20rancang%20bangun%20Rumah%20Tinggal.',
   },
   {
-    icon: FaHardHat,
-    title: 'Desain & Konsultasi',
-    description: 'Konsultasi arsitektur dan desain untuk mewujudkan visi Anda',
+    number: '03',
+    category: 'Struktur & Rekayasa',
+    title: 'Renovasi Menyeluruh & Re-Engineering Struktur',
+    headline: 'Penguatan struktur eksisting, penambahan lantai, dan transformasi fungsi ruang tanpa risiko komplikasi.',
+    description:
+      'Solusi rekayasa sipil untuk bangunan yang membutuhkan peningkatan beban, perbaikan pondasi pada tanah gerak khas Surabaya, penambahan lantai dak beton, dan audit struktural menyeluruh guna memastikan zero budget drift.',
+    deliverables: [
+      'Audit Daya Dukung Tanah & Struktur Lama',
+      'Perkuatan Balok, Kolom & Dak Beton',
+      'Waterproofing Membrane Anti-Bocor',
+      'Zero Kerusakan Bangunan Tetangga',
+    ],
+    projectRef: 'Contoh: Pembesian & Pengecoran Semolowaru',
+    href: 'https://wa.me/628113313347?text=Halo%20WW%20Construction,%20saya%20ingin%20konsultasi%20Renovasi%20/%20Perkuatan%20Struktur.',
   },
   {
-    icon: FaTools,
-    title: 'Pemeliharaan',
-    description: 'Perawatan dan pemeliharaan bangunan secara berkala',
+    number: '04',
+    category: 'Fasad & MEP',
+    title: 'Rekayasa Fasad Tropis & Utilitas Interior Terintegrasi',
+    headline: 'Fasad arsitektural tahan iklim panas pesisir Surabaya dan integrasi MEP sejak awal pengecoran.',
+    description:
+      'Pemasangan kisi ventilasi penangkal tempias hujan, insulasi peredam panas atap UV, serta sinkronisasi instalasi pipa (plumbing) dan kelistrikan (MEP) tanpa proses bongkar bobok ulang yang merusak estetika dinding.',
+    deliverables: [
+      'Kisi Fasad & Penahan Radiasi Matahari',
+      'Instalasi Kelistrikan & Plumbing Tertanam Rapi',
+      'Cat Eksterior Tahan Sinar UV & Jamur',
+      'Garansi Pemeliharaan & Masa Retensi SPK',
+    ],
+    projectRef: 'Contoh: Fasad Tropis & Atap Berinsulasi',
+    href: 'https://wa.me/628113313347?text=Halo%20WW%20Construction,%20saya%20ingin%20konsultasi%20Fasad%20Tropis%20/%20Interior%20MEP.',
   },
 ];
 
 export default function Services() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section ref={ref} className="py-20 bg-slate-50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Layanan Kami
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Solusi konstruksi lengkap untuk semua kebutuhan Anda
+    <section id="services" ref={ref} className="py-24 sm:py-32 bg-white border-t border-slate-200 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header: Editorial & Architectural */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 sm:mb-20 pb-8 border-b border-slate-200">
+          <div>
+            <div className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-3 font-semibold">
+              WONDERFUL WORKS CONSTRUCTION · SPESIALISASI BIDANG KERJA
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 uppercase">
+              Layanan Utama
+            </h2>
+          </div>
+          <p className="text-slate-600 max-w-md text-sm sm:text-base leading-relaxed">
+            Pendekatan rekayasa sipil disiplin untuk sektor komersial maupun residensial privat di Surabaya, Sidoarjo, dan sekitarnya.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Editorial Stacked Rows Layout (Zero Clipart Icons, 100% Architectural Typography) */}
+        <div className="divide-y divide-slate-200 border-b border-slate-200">
           {services.map((service, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50, rotateX: -15 }}
-              animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-              transition={{ 
-                duration: 0.8, 
-                delay: index * 0.15,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ 
-                y: -15, 
-                rotateY: 5,
-                boxShadow: "0 25px 50px -12px rgba(234, 179, 8, 0.25)",
-                transition: { duration: 0.3 }
-              }}
-              className="relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl overflow-hidden group cursor-pointer"
-              style={{ transformStyle: "preserve-3d" }}
+              key={service.number}
+              initial={{ opacity: 0, y: 15 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              className="py-10 sm:py-12 group hover:bg-slate-50/70 transition-colors px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-xs"
             >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-600/5"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.5, 0.3]
-                }}
-                transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
-              />
-              <motion.div
-                whileHover={{ 
-                  rotate: [0, -10, 10, -10, 0],
-                  scale: 1.2
-                }}
-                transition={{ duration: 0.5 }}
-                className="relative inline-block mb-6 p-4 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl shadow-lg"
-              >
-                <service.icon className="text-4xl text-white" />
-              </motion.div>
-              <h3 className="relative text-xl font-bold text-slate-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="relative text-slate-600">{service.description}</p>
-              <motion.div
-                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500"
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3 }}
-              />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                {/* Column 1: Index Number & Discipline */}
+                <div className="lg:col-span-3">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="text-3xl sm:text-4xl font-black font-mono text-slate-950 group-hover:text-brand transition-colors">
+                      {service.number}
+                    </span>
+                    <span className="text-xs font-mono text-slate-400">/ 04</span>
+                  </div>
+                  <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-wider text-brand bg-brand-light border border-brand-border px-2.5 py-0.5 rounded-2xs">
+                    {service.category}
+                  </span>
+                  <div className="mt-4 text-xs font-mono text-slate-400">
+                    {service.projectRef}
+                  </div>
+                </div>
+
+                {/* Column 2: Title & Engineering Narrative */}
+                <div className="lg:col-span-5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-2 leading-snug group-hover:text-brand transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm font-semibold text-slate-800 mb-3">
+                    {service.headline}
+                  </p>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Column 3: Scope Deliverables & Action Link */}
+                <div className="lg:col-span-4 flex flex-col justify-between h-full pt-1 lg:pt-0">
+                  <div>
+                    <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-3">
+                      Lingkup Spesifikasi:
+                    </div>
+                    <ul className="space-y-2">
+                      {service.deliverables.map((item) => (
+                        <li key={item} className="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
+                          <span className="w-1.5 h-1.5 bg-brand rounded-full flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-slate-200/60">
+                    <a
+                      href={service.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-900 group-hover:text-brand transition-colors"
+                    >
+                      <span>Konsultasikan Spesifikasi Ini</span>
+                      <LuArrowUpRight className="w-4 h-4 text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

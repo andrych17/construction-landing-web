@@ -1,31 +1,24 @@
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import BuildingAnimation from '@/components/BuildingAnimation';
-import Services from '@/components/Services';
-import Projects from '@/components/Projects';
-import About from '@/components/About';
-import Achievements from '@/components/Achievements';
-import Testimonials from '@/components/Testimonials';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+'use client';
+
+import { useLayoutMode } from '@/context/LayoutContext';
+import CorporateLayout from '@/components/layouts/CorporateLayout';
+import MonographLayout from '@/components/layouts/MonographLayout';
+import BlueprintLayout from '@/components/layouts/BlueprintLayout';
+import EditorialLayout from '@/components/layouts/EditorialLayout';
+import LuxuryLayout from '@/components/layouts/LuxuryLayout';
+import LayoutSwitcher from '@/components/LayoutSwitcher';
 
 export default function Home() {
+  const { currentLayout } = useLayoutMode();
+
   return (
     <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <BuildingAnimation />
-      <Services />
-      <Projects />
-      <About />
-      <Achievements />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <Contact />
-      <Footer />
+      {currentLayout === 'corporate' && <CorporateLayout />}
+      {currentLayout === 'monograph' && <MonographLayout />}
+      {currentLayout === 'blueprint' && <BlueprintLayout />}
+      {currentLayout === 'editorial' && <EditorialLayout />}
+      {currentLayout === 'luxury' && <LuxuryLayout />}
+      <LayoutSwitcher />
     </main>
   );
 }

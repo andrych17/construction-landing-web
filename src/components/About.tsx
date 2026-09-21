@@ -1,104 +1,150 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
+import Image from 'next/image';
+import { LuMapPin, LuBuilding, LuPhone, LuArrowUpRight } from 'react-icons/lu';
 
-const stats = [
-  { number: '15+', label: 'Tahun Pengalaman' },
-  { number: '200+', label: 'Proyek Selesai' },
-  { number: '50+', label: 'Tim Profesional' },
-  { number: '100%', label: 'Kepuasan Klien' },
-];
-
-const values = [
-  'Kualitas terjamin dengan standar internasional',
-  'Tim profesional bersertifikat',
-  'Penggunaan material berkualitas premium',
-  'Tepat waktu dalam setiap pengerjaan',
-  'Harga kompetitif dan transparan',
-  'Garansi dan after-sales service',
+const companyCredentials = [
+  {
+    title: 'Kontrak Kerja SPK Sah',
+    desc: 'Dilindungi Surat Perjanjian Kerja (SPK) tertulis yang mengikat hak & kewajiban secara profesional.',
+  },
+  {
+    title: 'Wilayah Layanan Utama',
+    desc: 'Surabaya (Timur, Barat, Pusat), Sidoarjo, Gresik, serta kawasan industri Jawa Timur.',
+  },
+  {
+    title: 'Standar Mutu & Material',
+    desc: 'Penggunaan beton & baja SNI, material grade-A terverifikasi, dan analisa harga satuan transparan.',
+  },
+  {
+    title: 'Masa Retensi & Garansi',
+    desc: 'Jaminan pemeliharaan paska-serah terima kunci (BAST) bebas kebocoran dan kendala fungsi utilitas.',
+  },
 ];
 
 export default function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section ref={ref} className="py-20 bg-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
-        <img 
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" 
-          alt="Construction" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
+    <section id="about" ref={ref} className="py-24 sm:py-32 bg-white border-t border-slate-200 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Company Identity Monograph */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Tentang <span className="text-yellow-500">WW Construction</span>
-            </h2>
-            <p className="text-lg text-slate-600 mb-6">
-              WW Construction adalah perusahaan kontraktor terkemuka yang telah berpengalaman 
-              lebih dari 15 tahun dalam industri konstruksi. Kami berkomitmen untuk memberikan 
-              layanan terbaik dengan hasil yang melampaui ekspektasi klien.
-            </p>
-            <p className="text-lg text-slate-600 mb-8">
-              Dengan tim profesional yang berpengalaman dan dedikasi tinggi, kami siap 
-              mewujudkan proyek konstruksi impian Anda menjadi kenyataan.
-            </p>
+            <div className="bg-slate-50 border border-slate-300 rounded-sm p-8 sm:p-10 shadow-xs">
+              {/* Logo in About card */}
+              <div className="w-16 h-16 bg-slate-950 border border-slate-800 rounded-sm p-2 flex items-center justify-center mb-6 shadow-sm">
+                <Image
+                  src="/images/ww/logo.jpg"
+                  alt="WW Construction Monogram"
+                  width={64}
+                  height={64}
+                  className="object-contain w-full h-full"
+                />
+              </div>
 
-            <div className="space-y-3 mb-8">
-              {values.map((value, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3"
-                >
-                  <FaCheckCircle className="text-yellow-500 text-xl mt-1 flex-shrink-0" />
-                  <span className="text-slate-700">{value}</span>
-                </motion.div>
-              ))}
+              <div className="inline-block text-[10px] font-mono uppercase tracking-widest text-brand bg-brand-light px-2.5 py-1 border border-brand-border font-bold mb-3">
+                Corporate Profile
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-1">
+                Wonderful Works Construction
+              </h3>
+              <p className="text-xs font-mono text-slate-500 mb-6">
+                General Contractor Surabaya &middot; @ww.cons
+              </p>
+
+              <div className="space-y-3.5 pt-6 border-t border-slate-200 text-xs sm:text-sm text-slate-700 font-mono">
+                <div className="flex items-start gap-3">
+                  <LuMapPin className="w-4 h-4 text-brand flex-shrink-0 mt-0.5" />
+                  <span>
+                    Jl. Serenity No. 29, Semolowaru, Surabaya 60119
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <LuBuilding className="w-4 h-4 text-brand flex-shrink-0 mt-0.5" />
+                  <span>
+                    General Contractor, Komersial & Residensial
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <LuPhone className="w-4 h-4 text-brand flex-shrink-0 mt-0.5" />
+                  <span>
+                    WhatsApp: +62 811-3313-347
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-200">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1 font-semibold">
+                  Motto Perusahaan
+                </div>
+                <blockquote className="text-xs sm:text-sm font-semibold text-slate-900 italic">
+                  &ldquo;Quality is our priority &mdash; Bringing your vision to life with expert craftsmanship.&rdquo;
+                </blockquote>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right side - Stats */}
+          {/* Right Column: Mission & Engineering Standards */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-6"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-7"
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-xl text-center shadow-xl"
+            <div className="text-xs font-mono tracking-widest text-slate-500 uppercase mb-3 font-semibold">
+              FILOSOFI & KOMITMEN LAPANGAN
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 uppercase mb-6 leading-tight">
+              Membangun Lebih Dari Sekadar Struktur Fisik.
+            </h2>
+
+            <p className="text-base text-slate-700 leading-relaxed mb-6">
+              Wonderful Works Construction hadir untuk mengubah paradigma dunia kontraktor yang kerap diwarnai ketidakpastian biaya dan pengerjaan yang lambat. Kami menempatkan transparansi teknis dan pengawasan harian sebagai pondasi utama setiap kerja sama.
+            </p>
+
+            <p className="text-sm text-slate-600 leading-relaxed mb-8">
+              Mulai dari penyusunan gambar teknis detail, analisa tanah Surabaya, uji kekuatan beton berkala, hingga ketepatan sudut nat keramik, seluruh proses dikerjakan oleh tenaga spesialis dan disupervisi langsung oleh tim sipil berdedikasi.
+            </p>
+
+            {/* Corporate Credentials Datum Grid (Editorial, Zero Icon Boxes) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-200">
+              {companyCredentials.map((item) => (
+                <div key={item.title} className="border-l-2 border-slate-300 pl-4">
+                  <h4 className="text-sm font-bold text-slate-950 mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-6 border-t border-slate-200 flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500">
+                Punya pertanyaan mengenai profil atau legalitas kami?
+              </span>
+              <a
+                href="https://wa.me/628113313347"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-slate-900 hover:text-brand transition-colors"
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.1 + 0.3, type: 'spring' }}
-                  className="text-4xl md:text-5xl font-bold text-yellow-500 mb-2"
-                >
-                  {stat.number}
-                </motion.div>
-                <div className="text-gray-300 font-semibold">{stat.label}</div>
-              </motion.div>
-            ))}
+                <span>Hubungi Manajemen</span>
+                <LuArrowUpRight className="w-3.5 h-3.5 text-brand" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

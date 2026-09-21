@@ -1,0 +1,476 @@
+{
+  "eslint.config.mjs": {
+    "mtime": 1789971573.6740785,
+    "seen": 1789972429.7393956,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "next.config.js": {
+    "mtime": 1789971573.6740785,
+    "seen": 1789972429.7394037,
+    "ast_hash": "74c74da6d2bf1423b135688f71df0b0e",
+    "semantic_hash": "74c74da6d2bf1423b135688f71df0b0e"
+  },
+  "next.config.ts": {
+    "mtime": 1789971573.6740785,
+    "seen": 1789972429.739407,
+    "ast_hash": "073c476be067d6d4649b355483ee2690",
+    "semantic_hash": "073c476be067d6d4649b355483ee2690"
+  },
+  "package.json": {
+    "mtime": 1789973163.5698864,
+    "seen": 1789973302.5915523,
+    "ast_hash": "a188d891f368d28cf1a4d801f13a01ee",
+    "semantic_hash": ""
+  },
+  "postcss.config.mjs": {
+    "mtime": 1789971573.6751804,
+    "seen": 1789972429.7394109,
+    "ast_hash": "27808b58abfd6d09739e715b81724384",
+    "semantic_hash": "27808b58abfd6d09739e715b81724384"
+  },
+  "public/images/ww/metadata.json": {
+    "mtime": 1789972122.5467553,
+    "seen": 1789972429.7394123,
+    "ast_hash": "a5ad34b35a3c01f88722f759eb47d707",
+    "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1789976019.9183986,
+    "seen": 1789976121.9991534,
+    "ast_hash": "a644a29d79e83eeef717dc4042d4887c",
+    "semantic_hash": ""
+  },
+  "src/app/page.tsx": {
+    "mtime": 1789974385.1974962,
+    "seen": 1789974435.1769485,
+    "ast_hash": "491453037e69fd089e0bc00f99eac3ab",
+    "semantic_hash": ""
+  },
+  "src/components/About.tsx": {
+    "mtime": 1789975943.3366995,
+    "seen": 1789976121.999158,
+    "ast_hash": "822b6c434934a962495c7ccf099bd1fa",
+    "semantic_hash": ""
+  },
+  "src/components/Achievements.tsx": {
+    "mtime": 1789974055.525657,
+    "seen": 1789974156.7279088,
+    "ast_hash": "cf437164587007a4d2d619320407a34b",
+    "semantic_hash": ""
+  },
+  "src/components/BuildingAnimation.tsx": {
+    "mtime": 1789975947.3367357,
+    "seen": 1789976121.9991596,
+    "ast_hash": "118e44a239fd0d9f70c4df80aac70f63",
+    "semantic_hash": ""
+  },
+  "src/components/CTA.tsx": {
+    "mtime": 1789975951.8177762,
+    "seen": 1789976121.9991605,
+    "ast_hash": "467f4653a72084b1a6584b2e14d922f3",
+    "semantic_hash": ""
+  },
+  "src/components/Contact.tsx": {
+    "mtime": 1789975955.5508099,
+    "seen": 1789976121.9991612,
+    "ast_hash": "44c9386727d701cf93c194827b6fee63",
+    "semantic_hash": ""
+  },
+  "src/components/FAQ.tsx": {
+    "mtime": 1789975962.7798755,
+    "seen": 1789976121.9991622,
+    "ast_hash": "6b16079b6f53c23c2e33eadfe6ac3a20",
+    "semantic_hash": ""
+  },
+  "src/components/Footer.tsx": {
+    "mtime": 1789975973.16997,
+    "seen": 1789976121.9991632,
+    "ast_hash": "5bcba8d65cafabddb2094043436c1a1f",
+    "semantic_hash": ""
+  },
+  "src/components/Hero.tsx": {
+    "mtime": 1789976103.0071745,
+    "seen": 1789976121.9991639,
+    "ast_hash": "ea8c5b8aed460bd640e6f6cec4b72b33",
+    "semantic_hash": ""
+  },
+  "src/components/Navbar.tsx": {
+    "mtime": 1789976217.4522676,
+    "seen": 1789976513.2197077,
+    "ast_hash": "db5aaf27f496fa35b703ba88894fa278",
+    "semantic_hash": ""
+  },
+  "src/components/Projects.tsx": {
+    "mtime": 1789975926.3225465,
+    "seen": 1789976121.9991672,
+    "ast_hash": "4b66fd8cd5860cc35510718796d5a91a",
+    "semantic_hash": ""
+  },
+  "src/components/Services.tsx": {
+    "mtime": 1789975930.7625864,
+    "seen": 1789976121.9991689,
+    "ast_hash": "84a5201a08dde9d82c23d980ceaa86a1",
+    "semantic_hash": ""
+  },
+  "src/components/Testimonials.tsx": {
+    "mtime": 1789975936.2276354,
+    "seen": 1789976121.9991696,
+    "ast_hash": "bcf38a519baa0faeb0bff036768f7c47",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1789971573.6770275,
+    "seen": 1789972429.7394335,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1789971573.6740785,
+    "seen": 1789972706.9907405,
+    "ast_hash": "7e76cc1d0ff3575a72095cba45ae78ab",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789971573.6740785,
+    "seen": 1789972706.9907427,
+    "ast_hash": "325db0fc8d6c0e42bb74ef55d4b009a3",
+    "semantic_hash": ""
+  },
+  "public/file.svg": {
+    "mtime": 1789971573.6751804,
+    "seen": 1789972706.9907446,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "public/globe.svg": {
+    "mtime": 1789971573.6765528,
+    "seen": 1789972706.9907458,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo.jpg": {
+    "mtime": 1789972089.78292,
+    "seen": 1789972706.9907472,
+    "ast_hash": "7d386b5ab9613b9035bc18d8e9d33948",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo_transparent.png": {
+    "mtime": 1789972106.8476644,
+    "seen": 1789972706.9907484,
+    "ast_hash": "dae44531efecc2a5acd05cad183728f7",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_1.jpg": {
+    "mtime": 1789972089.8826902,
+    "seen": 1789972706.9907496,
+    "ast_hash": "7d386b5ab9613b9035bc18d8e9d33948",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_2.jpg": {
+    "mtime": 1789972089.9823225,
+    "seen": 1789972706.9907508,
+    "ast_hash": "cacaf9be98b50f9dcb1f1143d281de16",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_3.jpg": {
+    "mtime": 1789972090.0893247,
+    "seen": 1789972706.9907525,
+    "ast_hash": "e4368d31172e156328efc7601b636653",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_4.jpg": {
+    "mtime": 1789972090.197327,
+    "seen": 1789972706.9907537,
+    "ast_hash": "bf2e0ed1d4691b11c8ab7e983c5a8c60",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_5.jpg": {
+    "mtime": 1789972090.2953289,
+    "seen": 1789972706.9907548,
+    "ast_hash": "9def0d2b07e47013ca733102200542ea",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_6.jpg": {
+    "mtime": 1789972090.397331,
+    "seen": 1789972706.990756,
+    "ast_hash": "5d91a23dd2a71a72fe29f4797ee99adf",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_7.jpg": {
+    "mtime": 1789972090.5273337,
+    "seen": 1789972706.9907575,
+    "ast_hash": "40373f6c6db47d9bb969ff4834c4b447",
+    "semantic_hash": ""
+  },
+  "public/images/ww/post_8.jpg": {
+    "mtime": 1789972090.6253357,
+    "seen": 1789972706.9907591,
+    "ast_hash": "a9b66b412bd1a15fd58ca808bf785646",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_1.jpg": {
+    "mtime": 1789972121.3009493,
+    "seen": 1789972706.9907606,
+    "ast_hash": "cacaf9be98b50f9dcb1f1143d281de16",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_10.jpg": {
+    "mtime": 1789972122.3299694,
+    "seen": 1789972706.990762,
+    "ast_hash": "66fd0f51eca14818f638b2565eff216f",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_11.jpg": {
+    "mtime": 1789972122.4369717,
+    "seen": 1789972706.9907632,
+    "ast_hash": "8e7515a0ef1b058ac8fce91d958b91ea",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_12.jpg": {
+    "mtime": 1789972122.5459738,
+    "seen": 1789972706.9907646,
+    "ast_hash": "437e25f978e35f372343c9970dddd9cf",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_2.jpg": {
+    "mtime": 1789972121.4429522,
+    "seen": 1789972706.990766,
+    "ast_hash": "e4368d31172e156328efc7601b636653",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_3.jpg": {
+    "mtime": 1789972121.5589545,
+    "seen": 1789972706.9907675,
+    "ast_hash": "bf2e0ed1d4691b11c8ab7e983c5a8c60",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_4.jpg": {
+    "mtime": 1789972121.6709566,
+    "seen": 1789972706.9907687,
+    "ast_hash": "9def0d2b07e47013ca733102200542ea",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_5.jpg": {
+    "mtime": 1789972121.7729585,
+    "seen": 1789972706.9907699,
+    "ast_hash": "5d91a23dd2a71a72fe29f4797ee99adf",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_6.jpg": {
+    "mtime": 1789972121.8799608,
+    "seen": 1789972706.9907727,
+    "ast_hash": "40373f6c6db47d9bb969ff4834c4b447",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_7.jpg": {
+    "mtime": 1789972121.9869628,
+    "seen": 1789972706.990774,
+    "ast_hash": "a9b66b412bd1a15fd58ca808bf785646",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_8.jpg": {
+    "mtime": 1789972122.099965,
+    "seen": 1789972706.9907753,
+    "ast_hash": "90ef715d88bbd9c2f725302bf2397f5f",
+    "semantic_hash": ""
+  },
+  "public/images/ww/project_9.jpg": {
+    "mtime": 1789972122.2199674,
+    "seen": 1789972706.9907763,
+    "ast_hash": "35c98229381c610e8cd1362e119b0f29",
+    "semantic_hash": ""
+  },
+  "public/next.svg": {
+    "mtime": 1789971573.6765528,
+    "seen": 1789972706.9907775,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "public/preview_desktop.png": {
+    "mtime": 1789972403.2603104,
+    "seen": 1789972706.9907792,
+    "ast_hash": "7dfad26c91cb322e36602e2a251c378a",
+    "semantic_hash": ""
+  },
+  "public/preview_light_hero.png": {
+    "mtime": 1789972693.014811,
+    "seen": 1789972706.9907804,
+    "ast_hash": "50883df343f6ff1a371ac2e5bca0f504",
+    "semantic_hash": ""
+  },
+  "public/preview_light_projects.png": {
+    "mtime": 1789972694.1442962,
+    "seen": 1789972706.9907815,
+    "ast_hash": "537a5008cee6d930063578ef9ec2ee6b",
+    "semantic_hash": ""
+  },
+  "public/vercel.svg": {
+    "mtime": 1789971573.6765528,
+    "seen": 1789972706.9907827,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "public/window.svg": {
+    "mtime": 1789971573.6765528,
+    "seen": 1789972706.9907837,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "src/app/robots.ts": {
+    "mtime": 1789973005.150969,
+    "seen": 1789973128.3615258,
+    "ast_hash": "de9f2f734287689bb213546ece38e4ad",
+    "semantic_hash": ""
+  },
+  "src/app/sitemap.ts": {
+    "mtime": 1789973008.102003,
+    "seen": 1789973128.3615282,
+    "ast_hash": "eed5d45bacfd4eab1151d75a2af6f740",
+    "semantic_hash": ""
+  },
+  "src/components/RemotionSection.tsx": {
+    "mtime": 1789975979.1110241,
+    "seen": 1789976121.999168,
+    "ast_hash": "bba88ed4abb1072af1e19d6fb39b5f1d",
+    "semantic_hash": ""
+  },
+  "src/components/remotion/ArchitecturalBlueprintComp.tsx": {
+    "mtime": 1789975989.1191156,
+    "seen": 1789976121.9991763,
+    "ast_hash": "6066261ff9f204eafad78c2f2d050548",
+    "semantic_hash": ""
+  },
+  "src/components/remotion/RemotionShowcase.tsx": {
+    "mtime": 1789975983.2760623,
+    "seen": 1789976121.9991777,
+    "ast_hash": "8e32fc8afc675677bd5a04bc1bac559c",
+    "semantic_hash": ""
+  },
+  "src/components/remotion/RealProjectReelComp.tsx": {
+    "mtime": 1789975994.963169,
+    "seen": 1789976121.999177,
+    "ast_hash": "817673048e8e5dbde471633212d4cf15",
+    "semantic_hash": ""
+  },
+  "src/components/ThemeSwitcher.tsx": {
+    "mtime": 1789973873.2375154,
+    "seen": 1789974006.3336244,
+    "ast_hash": "730c5701213fb2544ed09b4c6f3f30c9",
+    "semantic_hash": ""
+  },
+  "src/context/ThemeContext.tsx": {
+    "mtime": 1789973860.649367,
+    "seen": 1789974006.3336277,
+    "ast_hash": "6adc742189016c7e71c59f88bd6e65ac",
+    "semantic_hash": ""
+  },
+  "src/components/LayoutSwitcher.tsx": {
+    "mtime": 1789974743.2976387,
+    "seen": 1789974768.0378215,
+    "ast_hash": "8d02cc09145a272e7f17443318423d1d",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/BlueprintLayout.tsx": {
+    "mtime": 1789976411.7331736,
+    "seen": 1789976513.2197216,
+    "ast_hash": "e48020a66eedd6bc59b833f7ecc725f9",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/CorporateLayout.tsx": {
+    "mtime": 1789974274.8152144,
+    "seen": 1789974435.1769671,
+    "ast_hash": "a047dd560a77bf05380a06a495702815",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/EditorialLayout.tsx": {
+    "mtime": 1789976464.681702,
+    "seen": 1789976513.219726,
+    "ast_hash": "a58191e135915d8251c3b76d13f56ba5",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/LuxuryLayout.tsx": {
+    "mtime": 1789976496.3950195,
+    "seen": 1789976513.2197282,
+    "ast_hash": "1fa4a4fbda480c172451102bf1ee91ef",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/MonographLayout.tsx": {
+    "mtime": 1789976310.9821782,
+    "seen": 1789976513.2197297,
+    "ast_hash": "3577bf582c1fab2e9445d06d82c5962c",
+    "semantic_hash": ""
+  },
+  "src/context/LayoutContext.tsx": {
+    "mtime": 1789974268.7951443,
+    "seen": 1789974435.1769729,
+    "ast_hash": "3602a6f59b4a03521010f0c246e99c69",
+    "semantic_hash": ""
+  },
+  "public/images/projects/concrete_rebar_hq.jpg": {
+    "mtime": 1789974939.9609067,
+    "seen": 1789975615.5746448,
+    "ast_hash": "40eeb9e10fbd21a2eec6c810273d81ec",
+    "semantic_hash": ""
+  },
+  "public/images/projects/construction_crane_hq.jpg": {
+    "mtime": 1789974940.2039094,
+    "seen": 1789975615.5746467,
+    "ast_hash": "7c4b76d5617976f0b711692ab0be4fa5",
+    "semantic_hash": ""
+  },
+  "public/images/projects/facade_architecture_hq.jpg": {
+    "mtime": 1789974976.2503247,
+    "seen": 1789975615.5746486,
+    "ast_hash": "d7b5be9897700e094939fe31d654f1b9",
+    "semantic_hash": ""
+  },
+  "public/images/projects/interior_craftsmanship_hq.jpg": {
+    "mtime": 1789974951.3930383,
+    "seen": 1789975615.5746498,
+    "ast_hash": "300e1a21f060777d943dfdef2a245653",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_hq.jpg": {
+    "mtime": 1789974939.7949047,
+    "seen": 1789975615.5746512,
+    "ast_hash": "5bd9728c87e1075c1697e652c51bac10",
+    "semantic_hash": ""
+  },
+  "public/images/projects/luxury_residence_hq.jpg": {
+    "mtime": 1789974940.5729136,
+    "seen": 1789975615.5746524,
+    "ast_hash": "580689aaedc7fa48a3bb734292e08b7e",
+    "semantic_hash": ""
+  },
+  "public/images/projects/modern_villa_hq.jpg": {
+    "mtime": 1789974940.7439156,
+    "seen": 1789975615.5746536,
+    "ast_hash": "9537eabc55b9ac2d8f323c9eab853a81",
+    "semantic_hash": ""
+  },
+  "public/images/projects/site_engineer_hq.jpg": {
+    "mtime": 1789974951.5600402,
+    "seen": 1789975615.5746548,
+    "ast_hash": "381a3f590a8b3d48bcbe72a528e11278",
+    "semantic_hash": ""
+  },
+  "public/images/projects/structural_steel_hq.jpg": {
+    "mtime": 1789974968.3442338,
+    "seen": 1789975615.574656,
+    "ast_hash": "6c9514c2023e6187f17f5b09ce84ea8d",
+    "semantic_hash": ""
+  },
+  "public/images/projects/tropical_facade_hq.jpg": {
+    "mtime": 1789974940.9209177,
+    "seen": 1789975615.574657,
+    "ast_hash": "afdb5a80e1740898dd698659b144c08c",
+    "semantic_hash": ""
+  },
+  "public/videos/construction_timelapse.mp4": {
+    "mtime": 1789975456.9578147,
+    "seen": 1789975615.5747035,
+    "ast_hash": "194c72729c930232b8421546bc1201ef",
+    "semantic_hash": ""
+  }
+}
