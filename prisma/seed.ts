@@ -23,22 +23,18 @@ function slugify(text: string): string {
 }
 
 async function seedAdmin() {
-  const email = process.env.ADMIN_EMAIL;
-  const password = process.env.ADMIN_PASSWORD;
-  const name = process.env.ADMIN_NAME ?? 'Admin';
-
-  if (!email || !password) {
-    console.log('ADMIN_EMAIL / ADMIN_PASSWORD tidak diset di .env — lewati seed admin user.');
-    return;
-  }
+  const email = process.env.ADMIN_EMAIL ?? 'admin@wwconstruction.id';
+  const password = process.env.ADMIN_PASSWORD ?? 'password123';
+  const name = process.env.ADMIN_NAME ?? 'Superadmin WW';
+  const username = process.env.ADMIN_USERNAME ?? 'admin';
 
   const passwordHash = await bcrypt.hash(password, 10);
   await db.adminUser.upsert({
     where: { email },
-    create: { email, name, passwordHash },
-    update: { name, passwordHash },
+    create: { email, username, name, role: 'SUPERADMIN', passwordHash },
+    update: { username, name, role: 'SUPERADMIN', passwordHash },
   });
-  console.log(`Admin user siap: ${email}`);
+  console.log(`Superadmin user siap: email=${email}, username=${username}, role=SUPERADMIN`);
 }
 
 async function seedContent() {

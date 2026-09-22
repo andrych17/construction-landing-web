@@ -10,9 +10,12 @@ datasource db {
 model AdminUser {
   id           String   @id @default(cuid())
   email        String   @unique
+  username     String?  @unique
   passwordHash String
   name         String
+  role         String   @default("ADMIN") // "SUPERADMIN" | "ADMIN"
   createdAt    DateTime @default(now())
+  updatedAt    DateTime @default(now()) @updatedAt
 }
 
 /// Free-form bilingual site text, keyed by section (contact, philosophies,
