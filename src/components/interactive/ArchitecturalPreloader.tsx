@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { WwLogoMark } from '@/components/ui/ModernWwLogo';
 import { motion } from 'framer-motion';
 
@@ -14,6 +15,8 @@ const CURTAIN_MS = 850; // durasi animasi tirai halus
 const TOTAL_MS = COUNT_MS + HOLD_MS + CURTAIN_MS;
 
 export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPreloaderProps) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname === '/login' || pathname.startsWith('/admin');
   const [isDone, setIsDone] = useState(false);
   const [unmounted, setUnmounted] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -59,7 +62,7 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
     return () => clearTimeout(safety);
   }, [onComplete]);
 
-  if (unmounted) return null;
+  if (unmounted || isAdminRoute) return null;
 
   return (
     <motion.div
@@ -74,7 +77,7 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
       }}
       role="status"
       aria-live="polite"
-      aria-label="Memuat ww.cons"
+      aria-label="Memuat Wonderful Works Construction"
     >
       {/* Fullscreen Video Bumper Solid Tanpa Garis atau Celah */}
       <div className="absolute inset-0 bg-[#030303] flex items-center justify-center overflow-hidden">

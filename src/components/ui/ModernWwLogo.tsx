@@ -56,15 +56,13 @@ export default function ModernWwLogo({
       {mark}
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5">
-          {/* Baskervville hanya tersedia weight 400 — font-bold di sini
-              menghasilkan sintesis bold yang kotor. */}
-          <span className={`font-serif ${s.text} tracking-[0.2em] text-white uppercase group-hover:text-amber-400 transition-colors`}>
-            WW.CONS
+          <span className={`font-display font-bold ${s.text} tracking-[0.15em] text-white uppercase group-hover:text-amber-400 transition-colors`}>
+            WONDERFUL WORKS
           </span>
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
         </div>
-        <span className={`${s.subtext} font-mono tracking-[0.28em] text-neutral-400 uppercase group-hover:text-neutral-300 transition-colors`}>
-          ARCHITECTURE · GENERAL CONTRACTING
+        <span className={`${s.subtext} font-mono tracking-[0.22em] text-neutral-400 uppercase group-hover:text-neutral-300 transition-colors`}>
+          CONSTRUCTION · ARCHITECTURE & CONTRACTOR
         </span>
       </div>
     </div>

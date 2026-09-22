@@ -7,11 +7,13 @@ import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import ProjectInspectionModal from '@/components/interactive/ProjectInspectionModal';
-import { WW_PROJECTS, ProjectDetail } from '@/data/siteData';
+import type { ProjectDetail } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
+  const { projects: WW_PROJECTS } = useSiteContent();
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
 
@@ -64,11 +66,11 @@ export default function ProjectsPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           <div className="reveal-load">
-            <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
               {t('Portofolio Proyek', 'Projects')}
             </h1>
             <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
-            <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
+            <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
               {t(
                 'Koleksi hunian privat eksklusif dan bangunan korporat terkemuka di Surabaya dan Jawa Timur.',
                 'Curated portfolio of high-end private residences and flagship corporate headquarters across Surabaya and East Java.'
@@ -131,7 +133,7 @@ export default function ProjectsPage() {
                   </div>
 
                   <div className="flex justify-between items-baseline mb-3">
-                    <h3 className="font-serif text-2xl text-white group-hover:text-amber-400 transition-colors">
+                    <h3 className="font-display text-2xl text-white group-hover:text-amber-400 transition-colors uppercase font-bold tracking-tight">
                       {proj.title}
                     </h3>
                     <span className="font-mono text-xs text-neutral-400">{proj.location}</span>

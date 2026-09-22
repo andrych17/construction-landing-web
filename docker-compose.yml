@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wwcons_web
+    restart: always
+    ports:
+      - "3050:3050"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3050
+    volumes:
+      # Persistent storage di qualiv untuk file/upload wwcons
+      - /var/www/storage/wwcons:/app/public/uploads
+    networks:
+      - default
+      - shared-infra
+
+networks:
+  default:
+  shared-infra:
+    external: true

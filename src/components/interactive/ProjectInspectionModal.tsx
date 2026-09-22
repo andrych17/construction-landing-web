@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LuX, LuMapPin, LuPhone, LuShieldCheck, LuCheck } from 'react-icons/lu';
 import type { ProjectDetail } from '@/data/siteData';
-import { SITE_CONTACT, waLink } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 export type { ProjectDetail };
 
 interface ProjectInspectionModalProps {
@@ -16,6 +16,7 @@ interface ProjectInspectionModalProps {
 
 export default function ProjectInspectionModal({ project, onClose }: ProjectInspectionModalProps) {
   const { lang, t } = useLanguage();
+  const { waLink } = useSiteContent();
 
   // ESC handler & scroll lock
   useEffect(() => {
@@ -74,8 +75,8 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
   const projectDesc = (lang === 'en' && project.descEn) ? project.descEn : project.desc;
 
   const waMessageText = t(
-    `Halo ww.cons, saya melihat dokumentasi proyek "${project.title}" dan ingin konsultasi spesifikasi serupa.`,
-    `Hello ww.cons, I reviewed the project documentation for "${project.title}" and would like to consult on similar architectural specifications.`
+    `Halo Wonderful Works Construction, saya melihat dokumentasi proyek "${project.title}" dan ingin konsultasi spesifikasi serupa.`,
+    `Hello Wonderful Works Construction, I reviewed the project documentation for "${project.title}" and would like to consult on similar architectural specifications.`
   );
 
   return (
@@ -123,7 +124,7 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
               <div className="font-mono text-xs text-amber-400/90 tracking-wider uppercase mb-1">
                 {categoryLabel}
               </div>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight uppercase">
                 {project.title}
               </h2>
               <div className="flex items-center gap-2 mt-2 font-mono text-xs text-neutral-400">

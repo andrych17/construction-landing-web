@@ -76,17 +76,19 @@ Meskipun memiliki fitur interaktif yang lengkap di atas kertas, eksekusi `betade
 ## 3. Typographic Architecture & Rules
 
 ### Font Hierarchy
-1. **Display / Headline (Monumental Editorial):**
-   - **Primary:** Modern Luxury Serif (`Baskervville` / `Playfair Display` / `Instrument Serif` / `PP Editorial New`).
-   - **Characteristics:** Track-tight (`tracking-[-0.03em]`), optical kerning, relaxed line-height (`leading-[1.08]`). Huruf tidak "berteriak", melainkan anggun seperti prasasti monolit.
+1. **Display / Headline (Monumental Architectural & Editorial):**
+   - **Primary Luxury Serif:** `Cormorant Garamond` (Chiseled luxury, sharp contrast, weights 300–700, monumental architectural presence).
+   - **Tectonic Display Grotesk:** `Syne` (Bold geometric structure, architectural weight & monolith presence).
+   - **Characteristics:** Optical kerning, tight tracking on display (`tracking-[-0.03em]`), structured line-height (`leading-[0.98]` to `leading-[1.1]`).
 2. **Body & Interface (Precision Grotesk):**
-   - **Primary:** `Plus Jakarta Sans` / `Geist Sans`.
-   - **Characteristics:** Max line length 62 karakter (`max-w-[62ch]`), leading santai (`leading-relaxed`), berat font `300` (Light) hingga `400` (Regular).
+   - **Primary:** `Plus Jakarta Sans`.
+   - **Characteristics:** Max line length 62 karakter (`max-w-[62ch]`), leading santai (`leading-relaxed`), berat font `300` (Light) hingga `500` (Medium).
 3. **Telemetry & Engineering Spec (Drafting Mono):**
    - **Primary:** `JetBrains Mono`.
-   - **Characteristics:** Tracking lebar (`tracking-[0.18em]`), uppercase, untuk data struktural: koordinat lokasi, mutu beton `K-350`, SNI, elevasi `+0.00`, status toleransi `±0.5mm`.
+   - **Characteristics:** Tracking lebar (`tracking-[0.18em]` s/d `[0.25em]`), uppercase, untuk data struktural: koordinat lokasi, mutu beton `K-350`, SNI, elevasi `+0.00`, status toleransi `±0.5mm`.
 
 ### Typographic Anti-Patterns (BANNED)
+- ❌ **Baskervville / Generic Book Serifs** untuk headline konstruksi modern (terlalu sastra/akademik, kurang kokoh & tajam).
 - ❌ **Inter** untuk display/headline arsitektural.
 - ❌ **Comic Sans**, **Papyrus**, atau sans-serif generik tanpa karakter.
 - ❌ **Gradient text pelangi / AI holographic**.

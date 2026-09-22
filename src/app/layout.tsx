@@ -1,30 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono, Baskervville } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ArchitecturalPreloader from "@/components/interactive/ArchitecturalPreloader";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
-import { SITE_CONTACT, WW_FAQS, CENTRA_SERVICES } from "@/data/siteData";
 import { LanguageProvider } from "@/context/LanguageContext";
-
-const baskervville = Baskervville({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
+import { SiteContentProvider } from "@/context/SiteContentContext";
+import { getAllSiteContent } from "@/lib/content";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -37,15 +22,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://wwconstruction.id"),
   title: {
-    default: "ww.cons | Architecture & General Contractor Surabaya",
-    template: "%s | ww.cons",
+    default: "Wonderful Works Construction | Architecture & General Contractor Surabaya",
+    template: "%s | Wonderful Works Construction",
   },
   description:
-    "ww.cons is a visionary architecture, interior design, and general contracting firm in Surabaya. Specializing in luxury residences, commercial landmarks, and high-precision civil engineering.",
+    "Wonderful Works Construction is a visionary architecture, interior design, and general contracting firm in Surabaya. Specializing in luxury residences, commercial landmarks, and high-precision civil engineering.",
   keywords: [
-    "ww.cons",
-    "ww cons",
-    "wonderful works",
+    "Wonderful Works Construction",
+    "Wonderful Works",
     "wonderfulworks",
     "wonderful works surabaya",
     "ww construction",
@@ -56,20 +40,20 @@ export const metadata: Metadata = {
     "luxury residence surabaya",
     "kontraktor semolowaru surabaya",
   ],
-  authors: [{ name: "ww.cons Studio" }],
-  creator: "ww.cons",
-  publisher: "ww.cons",
+  authors: [{ name: "Wonderful Works Construction" }],
+  creator: "Wonderful Works Construction",
+  publisher: "Wonderful Works Construction",
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
   openGraph: {
-    title: "ww.cons | Architecture & General Contractor Surabaya",
+    title: "Wonderful Works Construction | Architecture & General Contractor Surabaya",
     description:
       "Bringing Your Vision to Life with Expert Craftmanship. Architecture, interior design, and precision general contracting in Surabaya and East Java.",
     url: "https://wwconstruction.id",
-    siteName: "ww.cons",
+    siteName: "Wonderful Works Construction",
     locale: "id_ID",
     type: "website",
     images: [
@@ -77,15 +61,15 @@ export const metadata: Metadata = {
         url: "/images/projects/hero_poster.jpg",
         width: 1200,
         height: 630,
-        alt: "ww.cons - Architecture & General Contractor Surabaya",
+        alt: "Wonderful Works Construction - Architecture & General Contractor Surabaya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ww.cons (@ww.cons)",
+    title: "Wonderful Works Construction (@ww.cons)",
     description:
-      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, Interior, and General Contracting in Surabaya.",
+      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, Interior, and General Contracting in Surabaya by Wonderful Works Construction.",
     images: ["/images/projects/hero_poster.jpg"],
   },
   robots: {
@@ -116,120 +100,125 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["GeneralContractor", "ProfessionalService", "LocalBusiness"],
-      "@id": "https://wwconstruction.id/#contractor",
-      "name": "ww.cons",
-      "legalName": "Wonderful Works Construction",
-      "alternateName": [
-        "WW.CONS",
-        "Wonderful Works Studio",
-        "WW Construction Surabaya",
-        "@ww.cons",
-      ],
-      "url": "https://wwconstruction.id",
-      "logo": "https://wwconstruction.id/images/ww/logo-512.png",
-      "image": "https://wwconstruction.id/images/projects/hero_poster.jpg",
-      "description":
-        "ww.cons adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350.",
-      "telephone": `+${SITE_CONTACT.whatsapp}`,
-      "email": "hello@wwconstruction.id",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": SITE_CONTACT.studio.lines[0],
-        "addressLocality": "Surabaya",
-        "addressRegion": "Jawa Timur",
-        "postalCode": "60119",
-        "addressCountry": "ID",
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -7.2917,
-        "longitude": 112.7936,
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
-          "opens": "08:00",
-          "closes": "18:00",
+function buildStructuredSchema(siteData: Awaited<ReturnType<typeof getAllSiteContent>>) {
+  const { contact, faqs, services } = siteData;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["GeneralContractor", "ProfessionalService", "LocalBusiness"],
+        "@id": "https://wwconstruction.id/#contractor",
+        "name": "Wonderful Works Construction",
+        "legalName": "Wonderful Works Construction",
+        "alternateName": [
+          "Wonderful Works",
+          "Wonderful Works Studio",
+          "Wonderful Works Construction Surabaya",
+        ],
+        "url": "https://wwconstruction.id",
+        "logo": "https://wwconstruction.id/images/ww/logo-512.png",
+        "image": "https://wwconstruction.id/images/projects/hero_poster.jpg",
+        "description":
+          "Wonderful Works Construction adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350.",
+        "telephone": `+${contact.whatsapp}`,
+        "email": "hello@wwconstruction.id",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": contact.studio.lines[0],
+          "addressLocality": "Surabaya",
+          "addressRegion": "Jawa Timur",
+          "postalCode": "60119",
+          "addressCountry": "ID",
         },
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Surabaya" },
-        { "@type": "City", "name": "Sidoarjo" },
-        { "@type": "City", "name": "Gresik" },
-        { "@type": "City", "name": "Malang" },
-        { "@type": "City", "name": "Denpasar" },
-        { "@type": "City", "name": "Jakarta" },
-        { "@type": "AdministrativeArea", "name": "Jawa Timur" },
-      ],
-      "knowsAbout": [
-        "Luxury Residential Architecture",
-        "Civil Engineering & General Contracting",
-        "ReadyMix SNI K-350 Structural Quality",
-        "Laser 90° Corner Alignment Tolerances",
-        "Pre-Cast Embedded MEP Systems",
-        "Commercial Flagship Showrooms & Fit-Out",
-        "PBG & SLF Permitting Compliance",
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Layanan Arsitektur & Kontraktor Utama",
-        "itemListElement": CENTRA_SERVICES.map((srv) => ({
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": srv.category,
-            "description": srv.desc,
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.2917,
+          "longitude": 112.7936,
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            "opens": "08:00",
+            "closes": "18:00",
+          },
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Surabaya" },
+          { "@type": "City", "name": "Sidoarjo" },
+          { "@type": "City", "name": "Gresik" },
+          { "@type": "City", "name": "Malang" },
+          { "@type": "City", "name": "Denpasar" },
+          { "@type": "City", "name": "Jakarta" },
+          { "@type": "AdministrativeArea", "name": "Jawa Timur" },
+        ],
+        "knowsAbout": [
+          "Luxury Residential Architecture",
+          "Civil Engineering & General Contracting",
+          "ReadyMix SNI K-350 Structural Quality",
+          "Laser 90° Corner Alignment Tolerances",
+          "Pre-Cast Embedded MEP Systems",
+          "Commercial Flagship Showrooms & Fit-Out",
+          "PBG & SLF Permitting Compliance",
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Layanan Arsitektur & Kontraktor Utama",
+          "itemListElement": services.map((srv) => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": srv.category,
+              "description": srv.desc,
+            },
+          })),
+        },
+        "sameAs": [contact.instagram],
+        "slogan": "Bringing Your Vision to Life with Expert Craftmanship",
+        "priceRange": "$$$$",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://wwconstruction.id/#faq",
+        "name": "Wonderful Works Construction Frequently Asked Questions",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.questionId,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answerId,
           },
         })),
       },
-      "sameAs": [SITE_CONTACT.instagram],
-      "slogan": "Bringing Your Vision to Life with Expert Craftmanship",
-      "priceRange": "$$$$",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://wwconstruction.id/#faq",
-      "name": "ww.cons Architecture & General Contractor Frequently Asked Questions",
-      "mainEntity": WW_FAQS.map((faq) => ({
-        "@type": "Question",
-        "name": faq.questionId,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answerId,
+      {
+        "@type": "WebSite",
+        "@id": "https://wwconstruction.id/#website",
+        "url": "https://wwconstruction.id",
+        "name": "Wonderful Works Construction | Architecture & General Contractor Surabaya",
+        "publisher": {
+          "@id": "https://wwconstruction.id/#contractor",
         },
-      })),
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://wwconstruction.id/#website",
-      "url": "https://wwconstruction.id",
-      "name": "ww.cons | Architecture & General Contractor Surabaya",
-      "publisher": {
-        "@id": "https://wwconstruction.id/#contractor",
+        "inLanguage": ["id-ID", "en-US"],
       },
-      "inLanguage": ["id-ID", "en-US"],
-    },
-  ],
-};
+    ],
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteData = await getAllSiteContent();
+  const structuredSchema = buildStructuredSchema(siteData);
+
   return (
     <html lang="id" className="dark bg-[#030303]" suppressHydrationWarning>
       <head>
@@ -239,13 +228,15 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${baskervville.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-[#030303] text-neutral-100 antialiased selection:bg-amber-400 selection:text-black min-h-screen`}
+        className={`${plusJakartaSans.variable} font-sans bg-[#030303] text-neutral-100 antialiased selection:bg-amber-400 selection:text-black min-h-screen`}
       >
-        <LanguageProvider>
-          <ArchitecturalPreloader />
-          {children}
-          <FloatingWhatsApp />
-        </LanguageProvider>
+        <SiteContentProvider data={siteData}>
+          <LanguageProvider>
+            <ArchitecturalPreloader />
+            {children}
+            <FloatingWhatsApp />
+          </LanguageProvider>
+        </SiteContentProvider>
       </body>
     </html>
   );

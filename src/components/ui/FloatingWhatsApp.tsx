@@ -1,19 +1,23 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { FaWhatsapp } from 'react-icons/fa';
-import { SITE_CONTACT, waLink } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function FloatingWhatsApp() {
   const { lang, t } = useLanguage();
+  const { contact: SITE_CONTACT, waLink } = useSiteContent();
+  const pathname = usePathname();
 
   if (!SITE_CONTACT.whatsapp) return null;
+  if (pathname === '/login' || pathname.startsWith('/admin')) return null;
 
   const defaultMessage =
     lang === 'en'
-      ? 'Hello ww.cons, I would like to consult on a design & build project.'
-      : 'Halo ww.cons, saya ingin konsultasi rancang bangun.';
+      ? 'Hello Wonderful Works Construction, I would like to consult on a design & build project.'
+      : 'Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.';
 
   return (
     <aside

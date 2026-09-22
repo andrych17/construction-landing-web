@@ -8,11 +8,12 @@ import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
-import { WW_PHILOSOPHIES, WW_FOUNDERS, SITE_CONTACT, waLink } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function AboutPage() {
   const { lang, t } = useLanguage();
+  const { philosophies: WW_PHILOSOPHIES, founders: WW_FOUNDERS, contact: SITE_CONTACT, waLink } = useSiteContent();
   const founder = WW_FOUNDERS[0];
 
   return (
@@ -30,11 +31,11 @@ export default function AboutPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           <div className="reveal-load">
-            <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
               {t('Tentang Kami', 'About Us')}
             </h1>
             <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
-            <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
+            <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
               {t(
                 'Mendefinisikan ulang kemewahan ruang melalui kejujuran material, ketegasan bentuk, dan penguasaan teknik struktur.',
                 'Redefining luxury living through spatial honesty, bold forms, and physical structural mastery.'
@@ -48,10 +49,10 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 border-b border-white/[0.08] relative">
         <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 text-center">
           <div className="space-y-8 reveal">
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
+            <p className="font-sans text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
               {t(
-                'Wonderful Works (ww.cons) adalah biro rancang bangun, arsitektur, dan interior yang berfokus pada hunian privat mewah dan ruang komersial prestisius di Surabaya dan Jawa Timur.',
-                'Wonderful Works (ww.cons) is an architecture, interior design, and general contracting atelier specializing in high-end residential estates and flagship commercial spaces in Surabaya and across East Java.'
+                'Wonderful Works Construction adalah biro rancang bangun, arsitektur, dan interior yang berfokus pada hunian privat mewah dan ruang komersial prestisius di Surabaya dan Jawa Timur.',
+                'Wonderful Works Construction is an architecture, interior design, and general contracting atelier specializing in high-end residential estates and flagship commercial spaces in Surabaya and across East Java.'
               )}
             </p>
             <div className="w-12 h-[1px] bg-white/20 mx-auto" />
@@ -71,7 +72,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Static Column */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
-              <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight leading-[1.02] mb-6">
+              <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.02] mb-6">
                 {t('Filosofi Desain Kami', 'Our Design Philosophy')}
               </h2>
               <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
@@ -97,7 +98,7 @@ export default function AboutPage() {
                         {p.num}
                       </span>
                       <span className="block">
-                        <h3 className="font-serif text-2xl sm:text-3xl text-white tracking-wide">
+                        <h3 className="font-display text-xl sm:text-2xl text-white uppercase font-bold tracking-wide">
                           {p.title}
                         </h3>
                         <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mt-1">
@@ -115,10 +116,10 @@ export default function AboutPage() {
 
                   <div className="bg-[#121212] border-t border-white/5 p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     <div className="md:col-span-7">
-                      <p className="text-base sm:text-lg text-neutral-200 font-serif leading-relaxed mb-6 italic">
+                      <p className="text-base sm:text-lg text-neutral-200 font-sans leading-relaxed mb-6 font-normal">
                         &ldquo;{lang === 'en' && p.descEn ? p.descEn : p.desc}&rdquo;
                       </p>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6">
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6 font-light">
                         {lang === 'en' && p.executionEn ? p.executionEn : p.execution}
                       </p>
                       <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
@@ -154,7 +155,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Header Column */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
-              <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
+              <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
                 The<br />Founder
               </h2>
               <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
@@ -195,7 +196,7 @@ export default function AboutPage() {
                   <span className="px-3 py-1 rounded-none bg-amber-500/10 border border-amber-500/30 font-mono text-[11px] tracking-widest text-neutral-400 uppercase inline-block">
                     {t('MASTER BUILDER & DIREKTUR UTAMA', founder.role)}
                   </span>
-                  <h3 className="font-serif text-3xl sm:text-4xl text-white tracking-tight">
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-white uppercase tracking-tight">
                     {founder.name}
                   </h3>
                   <div className="font-mono text-xs text-amber-400/90 tracking-wider uppercase">
@@ -234,7 +235,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between text-xs font-mono text-neutral-400 gap-3">
-                <span>WW.CONS</span>
+                <span>WONDERFUL WORKS</span>
                 <span className="text-amber-400">
                   {t('KONSULTASI LANGSUNG:', 'DIRECT CONSULTATION:')} {SITE_CONTACT.whatsappLabel}
                 </span>
@@ -247,13 +248,13 @@ export default function AboutPage() {
       {/* 5. CALL TO ACTION */}
       <section className="py-20 bg-[#080808] border-b border-white/[0.08]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white mb-4">
+          <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">
             {t('Mulai Diskusi Proyek Anda', 'Begin Your Project Consultation')}
           </h3>
           <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">
             {t(
-              'Diskusikan rencana hunian privat atau bangunan komersial Anda langsung bersama tim arsitek dan insinyur ww.cons.',
-              'Discuss your private residence or commercial commission directly with the ww.cons architecture and civil engineering team.'
+              'Diskusikan rencana hunian privat atau bangunan komersial Anda langsung bersama tim arsitek dan insinyur Wonderful Works Construction.',
+              'Discuss your private residence or commercial commission directly with the Wonderful Works Construction architecture and civil engineering team.'
             )}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -265,7 +266,7 @@ export default function AboutPage() {
               <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <a
-              href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to consult on a design & build project.'))}
+              href={waLink(t('Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.', 'Hello Wonderful Works Construction, I would like to consult on a design & build project.'))}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 font-mono text-xs uppercase tracking-widest rounded-none transition-all duration-300 ease-expo min-h-[44px]"

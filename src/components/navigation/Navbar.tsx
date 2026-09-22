@@ -7,21 +7,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LuPhone, LuX, LuArrowUpRight } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
-import { SITE_CONTACT, waLink } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const { contact: SITE_CONTACT, waLink } = useSiteContent();
 
   const navLinks = [
-    { href: '/', num: '01', label: t('Beranda', 'Home'), desc: t('Studio & karya terpilih', 'Studio & selected realizations') },
-    { href: '/about', num: '02', label: t('Tentang', 'About Us'), desc: t('Ethos, filosofi & founder', 'Ethos, philosophies & founder') },
-    { href: '/services', num: '03', label: t('Layanan', 'Services'), desc: t('Layanan & alur kerja 10 tahap', 'Signature services & 10-step methodology') },
-    { href: '/projects', num: '04', label: t('Proyek', 'Projects'), desc: t('Portofolio arsitektur', 'Architectural portfolio') },
-    { href: '/contact', num: '05', label: t('Kontak', 'Contact Us'), desc: t('Konsultasi langsung', 'Direct consultation') },
+    { href: '/', num: '01', label: 'HOME', desc: 'Studio & selected realizations' },
+    { href: '/about', num: '02', label: 'ABOUT US', desc: 'Ethos, philosophies & founder' },
+    { href: '/services', num: '03', label: 'SERVICES', desc: 'Signature services & 10-step methodology' },
+    { href: '/projects', num: '04', label: 'PROJECTS', desc: 'Architectural portfolio' },
+    { href: '/contact', num: '05', label: 'CONTACT', desc: 'Direct consultation' },
   ];
 
   useEffect(() => {
@@ -60,22 +61,22 @@ export default function Navbar() {
       >
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="flex items-center justify-between">
-            {/* Left: Authentic @ww.cons (Wonderful Works) Brand Lockup */}
+            {/* Left: Authentic Wonderful Works Construction Brand Lockup */}
             <Link
               href="/"
               className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-sm"
-              aria-label="Wonderful Works ww.cons Home"
+              aria-label="Wonderful Works Construction Home"
             >
               <ModernWwLogo variant="mark" size="md" />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-xl sm:text-2xl font-normal text-white lowercase tracking-tight group-hover:text-amber-400 transition-colors">
-                    ww.cons
+                  <span className="font-display text-lg sm:text-xl font-bold text-white uppercase tracking-tight group-hover:text-amber-400 transition-colors">
+                    Wonderful Works
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
                 </div>
-                <span className="hidden sm:block font-mono text-[11px] tracking-[0.28em] text-neutral-200 uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                  WONDERFUL WORKS · ARCHITECTURE & CONTRACTOR
+                <span className="hidden sm:block font-mono text-[10px] tracking-[0.22em] text-neutral-200 uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                  CONSTRUCTION · ARCHITECTURE & CONTRACTOR
                 </span>
               </div>
             </Link>
@@ -141,7 +142,7 @@ export default function Navbar() {
 
               {SITE_CONTACT.whatsapp && (
               <a
-                href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to inquire about an architectural project.'))}
+                href={waLink(t('Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.', 'Hello Wonderful Works Construction, I would like to inquire about an architectural project.'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden xl:flex items-center gap-2 px-5 py-2.5 rounded-none border border-white/15 hover:border-amber-400/80 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-wider transition-all duration-300 ease-expo min-h-[42px] active:scale-[0.98]"
@@ -186,7 +187,9 @@ export default function Navbar() {
             <div className="flex items-center justify-between w-full max-w-frame mx-auto border-b border-white/10 pb-6">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
                 <ModernWwLogo variant="mark" size="md" />
-                <span className="font-serif text-2xl font-normal text-white lowercase">ww.cons</span>
+                <span className="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-tight">
+                  Wonderful Works
+                </span>
               </Link>
               
               <div className="flex items-center gap-4">
@@ -225,7 +228,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Menu Links in Monumental Baskervville Serif */}
+            {/* Menu Links in Monumental Architectural Font */}
             <div className="w-full max-w-frame mx-auto my-auto py-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-8 space-y-4 sm:space-y-6">
@@ -247,7 +250,7 @@ export default function Navbar() {
                             {link.num}
                           </span>
                           <span
-                            className={`font-serif text-4xl sm:text-6xl md:text-7xl font-normal transition-colors ${
+                            className={`font-display text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight transition-colors ${
                               isActive
                                 ? 'text-amber-400'
                                 : 'text-white group-hover:text-amber-400'
@@ -270,7 +273,7 @@ export default function Navbar() {
                     <span className="font-mono text-[11px] tracking-[0.25em] text-neutral-400 uppercase block mb-2 font-bold">
                       HEADQUARTERS
                     </span>
-                    <p className="font-serif text-xl text-white mb-1">{SITE_CONTACT.studio.name}</p>
+                    <p className="font-display text-lg font-bold text-white mb-1 uppercase">{SITE_CONTACT.studio.name}</p>
                     <address className="text-xs text-neutral-400 leading-relaxed font-sans not-italic">
                       {SITE_CONTACT.studio.lines.join(', ')}
                     </address>
@@ -281,7 +284,7 @@ export default function Navbar() {
                       DIRECT INQUIRIES
                     </span>
                     <a
-                      href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                      href={waLink('Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.')}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-2 text-white hover:text-amber-400 font-mono text-xs transition-colors"
@@ -313,7 +316,7 @@ export default function Navbar() {
 
             {/* Bottom Coordinates Footer */}
             <div className="w-full max-w-frame mx-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-neutral-400 gap-4">
-              <span>© {new Date().getFullYear()} WONDERFUL WORKS · WW.CONS</span>
+              <span>© {new Date().getFullYear()} WONDERFUL WORKS CONSTRUCTION</span>
               <span className="text-neutral-400">SURABAYA · INDONESIA</span>
             </div>
           </motion.div>

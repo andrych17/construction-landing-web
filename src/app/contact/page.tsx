@@ -6,11 +6,12 @@ import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
-import { SITE_CONTACT, waLink } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ContactPage() {
   const { lang, t } = useLanguage();
+  const { contact: SITE_CONTACT, waLink } = useSiteContent();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -24,8 +25,8 @@ export default function ContactPage() {
     if (!SITE_CONTACT.whatsapp) return;
     const text =
       lang === 'en'
-        ? `Hello ww.cons, I am ${formData.name} (${formData.phone}). I would like to inquire about design and construction for a ${formData.type} in ${formData.location}.${formData.message ? ` Notes: ${formData.message}` : ''}`
-        : `Halo ww.cons, saya ${formData.name} (${formData.phone}). Saya ingin konsultasi perancangan/konstruksi ${formData.type} di daerah ${formData.location}.${formData.message ? ` Catatan: ${formData.message}` : ''}`;
+        ? `Hello Wonderful Works Construction, I am ${formData.name} (${formData.phone}). I would like to inquire about design and construction for a ${formData.type} in ${formData.location}.${formData.message ? ` Notes: ${formData.message}` : ''}`
+        : `Halo Wonderful Works Construction, saya ${formData.name} (${formData.phone}). Saya ingin konsultasi perancangan/konstruksi ${formData.type} di daerah ${formData.location}.${formData.message ? ` Catatan: ${formData.message}` : ''}`;
     window.location.href = waLink(text);
   };
 
@@ -39,11 +40,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Monumental Column: 'Contact' Heading */}
             <div className="lg:col-span-6 lg:sticky lg:top-36 reveal-load">
-              <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
+              <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
                 {t('Kontak', 'Contact')}
               </h1>
               <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
-              <p className="font-serif text-lg sm:text-2xl text-neutral-300 font-light leading-relaxed max-w-md mb-8">
+              <p className="font-sans text-base sm:text-xl md:text-2xl text-neutral-300 font-light leading-relaxed max-w-md mb-8">
                 {t(
                   'Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.',
                   'For bespoke residences, commercial developments, and general contracting across Surabaya and East Java.'
@@ -89,12 +90,12 @@ export default function ContactPage() {
                     {SITE_CONTACT.email ? (
                       <a
                         href={`mailto:${SITE_CONTACT.email}`}
-                        className="text-white hover:text-amber-400 transition-colors font-serif tracking-wide block"
+                        className="text-white hover:text-amber-400 transition-colors font-sans tracking-wide block"
                       >
                         {SITE_CONTACT.email}
                       </a>
                     ) : (
-                      <span className="text-neutral-400 font-serif tracking-wide block">
+                      <span className="text-neutral-400 font-sans tracking-wide block">
                         {SITE_CONTACT.emailLabel}
                       </span>
                     )}
@@ -104,8 +105,8 @@ export default function ContactPage() {
                       <a
                         href={waLink(
                           t(
-                            'Halo ww.cons, saya ingin konsultasi rancang bangun.',
-                            'Hello ww.cons, I would like to consult on a design & build project.'
+                            'Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.',
+                            'Hello Wonderful Works Construction, I would like to consult on a design & build project.'
                           )
                         )}
                         target="_blank"
@@ -136,7 +137,7 @@ export default function ContactPage() {
 
               {/* Interactive Quick Dispatch Form */}
               <div className="p-8 rounded-none bg-[#0a0a0a] border border-white/10">
-                <h3 className="font-serif text-2xl text-white mb-2">
+                <h3 className="font-display text-2xl font-bold text-white mb-2 uppercase tracking-tight">
                   {t('Formulir Konsultasi Proyek', 'Request Project Consultation')}
                 </h3>
                 <p className="text-xs text-neutral-400 mb-6 font-mono uppercase">

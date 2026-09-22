@@ -7,11 +7,12 @@ import { LuArrowUpRight, LuCircleCheck } from 'react-icons/lu';
 import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
-import { CENTRA_SERVICES, MASTER_METHODOLOGY, WW_FAQS } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ServicesPage() {
   const { lang, t } = useLanguage();
+  const { services: CENTRA_SERVICES, methodology: MASTER_METHODOLOGY, faqs: WW_FAQS } = useSiteContent();
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
@@ -28,11 +29,11 @@ export default function ServicesPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           <div className="reveal-load">
-            <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
               {t('Layanan', 'Services')}
             </h1>
             <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
-            <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
+            <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
               {t(
                 'Layanan rancang bangun terintegrasi — presisi arsitektur, perhitungan sipil teruji, dan eksekusi lapangan tanpa kompromi.',
                 'Integrated design and build services — architectural precision, certified civil calculations, and uncompromising site execution.'
@@ -46,8 +47,8 @@ export default function ServicesPage() {
       <section className="py-20 md:py-28 border-b border-white/[0.08] relative">
         <div className="max-w-reading mx-auto px-6 sm:px-12 text-center">
           <div className="reveal">
-            <p className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-200 leading-[2.1] sm:leading-[2.3] tracking-[1px] font-normal mb-8">
-              <strong className="text-white">ww.cons</strong>{' '}
+            <p className="font-sans text-lg sm:text-xl md:text-2xl text-neutral-200 leading-[2.1] sm:leading-[2.3] tracking-wide font-normal mb-8">
+              <strong className="text-white font-bold">Wonderful Works Construction</strong>{' '}
               {t(
                 'memadukan perancangan arsitektur dengan disiplin pelaksanaan di lapangan — dari studi tapak, penyusunan anggaran terbuka, hingga serah terima dan masa pemeliharaan.',
                 'unites architectural conceptualization with meticulous field execution discipline — from site feasibility studies and transparent budget schedules to handover and comprehensive retention warranty.'
@@ -70,7 +71,7 @@ export default function ServicesPage() {
             <span className="font-mono text-xs tracking-[0.25em] text-neutral-400 uppercase block mb-3 font-bold">
               {t('DISIPLIN UTAMA', 'CORE DISCIPLINES')}
             </span>
-            <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
+            <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase mb-4">
               {t('Tipologi Bangunan', 'Building Typologies')}
             </h2>
             <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed font-sans">
@@ -103,7 +104,7 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="p-8 sm:p-10">
-                    <h3 className="font-serif text-3xl sm:text-4xl text-white mb-2">
+                    <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
                       {srv.category === 'RESIDENTIAL BUILDING'
                         ? t('Bangunan Residensial', 'Residential Building')
                         : t('Bangunan Komersial', 'Commercial Building')}
@@ -165,7 +166,7 @@ export default function ServicesPage() {
       <section className="py-28 md:py-36 border-b border-white/[0.08] bg-[#020202] w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="max-w-3xl mb-16 reveal">
-            <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
+            <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase mb-4">
               {t('Alur Kerja 10 Tahap', '10-Stage Workflow Methodology')}
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
@@ -191,7 +192,7 @@ export default function ServicesPage() {
                       {t('TAHAP', 'PHASE')}
                     </span>
                   </div>
-                  <h3 className="font-serif text-lg text-white mb-1 group-hover:text-amber-400 transition-colors">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors uppercase">
                     {lang === 'en' && step.titleEn ? step.titleEn : step.title}
                   </h3>
                   <div className="font-mono text-[11px] text-amber-400/80 mb-3 tracking-wider uppercase">
@@ -219,7 +220,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">01</span>
-              <h3 className="font-serif text-2xl text-white mb-2">{t('Beton SNI K-350', 'SNI K-350 Concrete')}</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Beton SNI K-350', 'SNI K-350 Concrete')}</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 {t(
                   'Uji slump independen untuk setiap truk molen cor ready-mix. Rangka pembesian ganda tahan guncangan seismik pesisir Surabaya.',
@@ -229,7 +230,7 @@ export default function ServicesPage() {
             </div>
             <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">02</span>
-              <h3 className="font-serif text-2xl text-white mb-2">{t('Laser 90° Siku Presisi', 'Laser 90° Precision')}</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Laser 90° Siku Presisi', 'Laser 90° Precision')}</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 {t(
                   'Kalibrasi optik laser digital memastikan pertemuan dinding 90° tegak lurus sempurna dengan deviasi nat marmer < 1mm.',
@@ -239,7 +240,7 @@ export default function ServicesPage() {
             </div>
             <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">03</span>
-              <h3 className="font-serif text-2xl text-white mb-2">{t('Garansi Retensi 100 Hari', '100-Day Retention Warranty')}</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Garansi Retensi 100 Hari', '100-Day Retention Warranty')}</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 {t(
                   'Komitmen purna jual resmi tertulis dalam SPK berkekuatan hukum, ditambah inspeksi berkala 2x setahun untuk merawat kenyamanan Anda.',
@@ -258,7 +259,7 @@ export default function ServicesPage() {
             <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
               {t('INFORMASI & PERTANYAAN POPULER', 'FREQUENTLY ASKED QUESTIONS')}
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal text-white tracking-tight mb-4">
+            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase mb-4">
               {t('Tanya Jawab Seputar Rancang Bangun', 'Answers to Common Commission Inquiries')}
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 font-light max-w-xl mx-auto font-sans">
@@ -277,7 +278,7 @@ export default function ServicesPage() {
                 className="group border border-white/10 bg-[#0a0a0a] rounded-none reveal"
               >
                 <summary className="list-none [&::-webkit-details-marker]:hidden w-full p-6 sm:p-7 flex justify-between items-center bg-[#111111] hover:bg-[#161616] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
-                  <h3 className="font-serif text-lg sm:text-xl text-white text-left pr-4">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-white text-left pr-4">
                     {lang === 'en' && faq.questionEn ? faq.questionEn : faq.questionId}
                   </h3>
                   <span
@@ -299,7 +300,7 @@ export default function ServicesPage() {
       {/* 7. CALL TO ACTION */}
       <section className="py-20 bg-[#000000] border-b border-white/[0.08]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white mb-4">
+          <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">
             {t('Siap Mewujudkan Visi Arsitektur Anda?', 'Ready to Build Your Architectural Commission?')}
           </h3>
           <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">

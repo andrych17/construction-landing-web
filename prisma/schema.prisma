@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+/// Free-form bilingual site text, keyed by section (contact, philosophies,
+/// founders, services, methodology, faqs, rotatingDisciplines). One row per
+/// section; shape of `value` mirrors the matching constant previously in
+/// src/data/siteData.ts.
+model SiteContent {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  category     String
+  categoryEn   String?
+  location     String
+  img          String
+  desc         String
+  descEn       String?
+  materials    String?
+  materialsEn  String?
+  /// { landArea, buildingArea, levels, year, concreteGrade }
+  specs        Json?
+  /// string[]
+  features     Json?
+  /// string[]
+  featuresEn   Json?
+  /// { label, value }[]
+  specsTable   Json?
+  /// { label, value }[]
+  specsTableEn Json?
+  order        Int      @default(0)
+  published    Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([published, order])
+}

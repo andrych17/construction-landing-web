@@ -139,12 +139,12 @@ export const WW_PHILOSOPHIES = [
  */
 export const WW_FOUNDERS: FounderDetail[] = [
   {
-    name: 'Founder ww.cons', // TODO: nama founder asli
+    name: 'Founder Wonderful Works', // TODO: nama founder asli
     role: 'Principal & Lead Master Builder',
     image: '', // TODO: '/images/founders/<foto>.jpg'
     isSvgPlaceholder: true,
     focus: 'Architectural Engineering & Structural Master Planning',
-    bio: 'TODO — ganti dengan profil founder ww.cons: latar belakang keteknikan, rekam jejak proyek, dan pendekatan pengawasan lapangan yang dipegang.',
+    bio: 'TODO — ganti dengan profil founder Wonderful Works: latar belakang keteknikan, rekam jejak proyek, dan pendekatan pengawasan lapangan yang dipegang.',
     credentials: [
       'TODO — gelar & registrasi keinsinyuran',
       'TODO — keanggotaan asosiasi kontraktor',
@@ -567,16 +567,16 @@ export interface FaqItem {
 export const WW_FAQS: FaqItem[] = [
   {
     id: 'faq-1',
-    questionId: 'Apa keunggulan dan spesialisasi utama ww.cons di Surabaya?',
-    questionEn: 'What is ww.cons primary specialization and advantage in Surabaya?',
-    answerId: 'ww.cons adalah studio arsitektur dan kontraktor umum premium di Surabaya yang memadukan desain spasial modern-tropis dengan ketelitian rekayasa sipil berstandar SNI. Kami mengkhususkan diri pada hunian mewah (luxury residences), fasad monolitik, dan bangunan komersial representatif dengan toleransi sudut laser 90° deviasi < 1mm.',
-    answerEn: 'ww.cons is a premier architecture and general contracting firm in Surabaya uniting modern-tropical spatial design with civil engineering precision under SNI standards. We specialize in luxury residences, monolithic facades, and bespoke commercial spaces with digital laser 90° corner tolerances under 1mm deviance.',
+    questionId: 'Apa keunggulan dan spesialisasi utama Wonderful Works Construction di Surabaya?',
+    questionEn: 'What is Wonderful Works Construction primary specialization and advantage in Surabaya?',
+    answerId: 'Wonderful Works Construction adalah studio arsitektur dan kontraktor umum premium di Surabaya yang memadukan desain spasial modern-tropis dengan ketelitian rekayasa sipil berstandar SNI. Kami mengkhususkan diri pada hunian mewah (luxury residences), fasad monolitik, dan bangunan komersial representatif dengan toleransi sudut laser 90° deviasi < 1mm.',
+    answerEn: 'Wonderful Works Construction is a premier architecture and general contracting firm in Surabaya uniting modern-tropical spatial design with civil engineering precision under SNI standards. We specialize in luxury residences, monolithic facades, and bespoke commercial spaces with digital laser 90° corner tolerances under 1mm deviance.',
     category: 'General',
   },
   {
     id: 'faq-2',
     questionId: 'Standar mutu beton dan kontrol kualitas apa yang diterapkan dalam pembangunan?',
-    questionEn: 'What concrete quality standards and quality controls does ww.cons employ?',
+    questionEn: 'What concrete quality standards and quality controls does Wonderful Works Construction employ?',
     answerId: 'Untuk seluruh struktur utama (pondasi bore pile, sloof, kolom, dan plat dak lantai), kami menggunakan beton ReadyMix SNI K-350 dengan pengujian slump mandiri pada tiap truk mixer. Besi tulangan anti-seismik diikat kawat bendrat ganda tanpa kompromi rongga (zero honeycomb tolerance).',
     answerEn: 'For all critical load-bearing structures (bore piles, grade beams, columns, and floor slabs), we utilize ReadyMix SNI K-350 concrete with mandatory onsite slump testing per mixer truck. Anti-seismic rebar cages are double-wire secured with zero honeycomb tolerance.',
     category: 'Engineering',
@@ -584,15 +584,15 @@ export const WW_FAQS: FaqItem[] = [
   {
     id: 'faq-3',
     questionId: 'Bagaimana transparansi anggaran biaya (RAB) dan sistem kontrak kerja?',
-    questionEn: 'How does ww.cons manage cost transparency (BOQ) and construction contracts?',
+    questionEn: 'How does Wonderful Works Construction manage cost transparency (BOQ) and construction contracts?',
     answerId: 'Kami menerapkan transparansi 100% tanpa biaya tersembunyi (Zero Hidden Costs). RAB disusun terperinci berdasarkan Analisa Harga Satuan (AHS) internal dan spesifikasi material tertulis jelas. Pekerjaan diikat oleh Surat Perjanjian Kerja (SPK) legal berkekuatan hukum dengan jadwal pembayaran bertahap berbasis kurva progres fisik.',
     answerEn: 'We operate on 100% financial transparency with zero hidden costs. Bills of Quantities (BOQ/RAB) are meticulously itemized with verified unit price analyses and explicit material specifications. All projects are anchored by legally binding construction contracts (SPK) with milestone payments tied to actual physical progress.',
     category: 'Financial & Contract',
   },
   {
     id: 'faq-4',
-    questionId: 'Apakah ww.cons memfasilitasi pengurusan perizinan PBG dan SLF di Jawa Timur?',
-    questionEn: 'Does ww.cons facilitate building permits (PBG) and certification (SLF) in East Java?',
+    questionId: 'Apakah Wonderful Works Construction memfasilitasi pengurusan perizinan PBG dan SLF di Jawa Timur?',
+    questionEn: 'Does Wonderful Works Construction facilitate building permits (PBG) and certification (SLF) in East Java?',
     answerId: 'Ya. Tim kami menyediakan asistensi menyeluruh untuk gambar kerja teknis, perhitungan struktur oleh insinyur bersertifikat, dan dokumen kepatuhan untuk pengajuan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) di Kota Surabaya, Kabupaten Sidoarjo, dan Kabupaten Gresik.',
     answerEn: 'Yes. Our team provides complete technical drafting, licensed structural calculations, and compliance documentation for PBG (Building Approval Permit) and SLF (Certificate of Building Worthiness) submissions across Surabaya, Sidoarjo, and Gresik.',
     category: 'Licensing',
@@ -607,8 +607,8 @@ export const WW_FAQS: FaqItem[] = [
   },
   {
     id: 'faq-6',
-    questionId: 'Wilayah mana saja yang dilayani oleh studio dan workshop ww.cons?',
-    questionEn: 'Which geographic regions are served by ww.cons studio and workshop?',
+    questionId: 'Wilayah mana saja yang dilayani oleh studio dan workshop Wonderful Works Construction?',
+    questionEn: 'Which geographic regions are served by Wonderful Works Construction studio and workshop?',
     answerId: 'Studio dan workshop utama kami berlokasi di Semolowaru, Surabaya. Kami melayani proyek di seluruh wilayah metropolitan Surabaya (Citraland, Graha Famili, Pakuwon City, Dharmahusada), Sidoarjo, Gresik, Malang, serta proyek terpilih di Bali dan Jakarta.',
     answerEn: 'Our central studio and workshop are based in Semolowaru, Surabaya. We handle projects across Greater Surabaya (Citraland, Graha Famili, Pakuwon City, Dharmahusada), Sidoarjo, Gresik, Malang, as well as selected estates in Bali and Jakarta.',
     category: 'Coverage',
