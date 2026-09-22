@@ -75,23 +75,18 @@ export function ProjectForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 pb-16">
-      <div className="flex items-center justify-between sticky top-0 bg-slate-50/95 backdrop-blur-sm -mx-6 px-6 py-4 border-b border-slate-200 z-10">
+    <form onSubmit={handleSubmit} className="space-y-6 pb-28">
+      <div className="flex items-center justify-between border-b border-slate-200 pb-4">
         <h1 className="text-lg font-bold text-slate-900">{mode === 'create' ? 'Proyek Baru' : 'Edit Proyek'}</h1>
-        <div className="flex items-center gap-3">
-          <label className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-            <input
-              type="checkbox"
-              checked={data.published ?? true}
-              onChange={(e) => set('published', e.target.checked)}
-              className="w-5 h-5 rounded border-slate-300 text-amber-500 focus:ring-amber-400"
-            />
-            Terbit
-          </label>
-          <Button type="submit" disabled={saving}>
-            {saving ? 'Menyimpan…' : 'Simpan'}
-          </Button>
-        </div>
+        <label className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+          <input
+            type="checkbox"
+            checked={data.published ?? true}
+            onChange={(e) => set('published', e.target.checked)}
+            className="w-5 h-5 rounded border-slate-300 text-amber-500 focus:ring-amber-400"
+          />
+          Terbit
+        </label>
       </div>
 
       {error && <p className="text-sm font-medium text-red-600">{error}</p>}
@@ -162,6 +157,22 @@ export function ProjectForm({
       ) : (
         <JsonField fieldKey="Tabel Spesifikasi (EN)" value={(data.specsTableEn ?? []) as JsonValue} onChange={(v) => set('specsTableEn', v as ProjectFormData['specsTableEn'])} />
       )}
+
+      {/* Floating bottom save bar — always reachable, stays clear of AdminShell's own sticky top header. */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-2xl">
+        <div className="bg-neutral-900/95 backdrop-blur-md text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-white/10 flex items-center justify-between gap-4">
+          <span className="text-xs font-bold text-white truncate">
+            {mode === 'create' ? 'Proyek Baru' : data.title || 'Edit Proyek'}
+          </span>
+          <Button
+            type="submit"
+            disabled={saving}
+            className="bg-amber-400 hover:bg-amber-300 text-black font-bold shadow-md shadow-amber-400/20 px-4 py-2 text-xs"
+          >
+            {saving ? 'Menyimpan…' : 'Simpan'}
+          </Button>
+        </div>
+      </div>
     </form>
   );
 }

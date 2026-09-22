@@ -744,9 +744,9 @@
     "semantic_hash": ""
   },
   "src/components/admin/ProjectForm.tsx": {
-    "mtime": 1790099349.9923885,
-    "seen": 1790099443.9579008,
-    "ast_hash": "2fd8739fdc5ce07080507e28b5f2b94e",
+    "mtime": 1790100034.592675,
+    "seen": 1790100156.914785,
+    "ast_hash": "993db710af48cb19a7f3a912497dac3c",
     "semantic_hash": ""
   },
   "src/components/admin/ProjectsTable.tsx": {
@@ -756,9 +756,9 @@
     "semantic_hash": ""
   },
   "src/components/admin/SectionEditor.tsx": {
-    "mtime": 1790090970.698655,
-    "seen": 1790091005.6703846,
-    "ast_hash": "2a9f9134a62a0c549d0ab8bd55f79779",
+    "mtime": 1790100047.2126718,
+    "seen": 1790100156.914788,
+    "ast_hash": "b5d4be146ed1a041f96b6c0232b0ca97",
     "semantic_hash": ""
   },
   "src/lib/api-error.ts": {
