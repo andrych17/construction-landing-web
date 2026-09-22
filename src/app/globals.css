@@ -45,6 +45,16 @@ body {
   }
 }
 
+/* Shimmer sapuan cahaya di TopProgressBar admin. */
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(500%);
+  }
+}
+
 /* Logo intro: emblem tersingkap dari bawah ke atas.
    Pola gerak yang sama dengan media-wipe pada gambar proyek, supaya bahasa
    geraknya satu sistem. Menganimasikan SVG inline — tidak ada file video. */

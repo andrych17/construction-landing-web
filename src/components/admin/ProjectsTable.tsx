@@ -5,11 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { DataTable, ColumnDef, FilterDef } from '@/components/admin/ui/DataTable';
+import { ConfirmationModal } from '@/components/admin/ui/ConfirmationModal';
+import { useToast } from '@/components/admin/ui/Toast';
 import {
   LuPlus,
   LuPencil,
   LuTrash2,
-  LuEye,
   LuCircleCheck,
   LuClock,
   LuExternalLink,
@@ -30,6 +31,7 @@ export type ProjectRow = {
 
 export function ProjectsTable({ projects }: { projects: ProjectRow[] }) {
   const router = useRouter();
+  const toast = useToast();
   const [data, setData] = useState<ProjectRow[]>(projects);
   const [deletingProject, setDeletingProject] = useState<ProjectRow | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -51,7 +53,7 @@ export function ProjectsTable({ projects }: { projects: ProjectRow[] }) {
       );
       router.refresh();
     } catch (err) {
-      alert(err instanceof Error ? err.message : 'Terjadi kesalahan.');
+      toast.error(err instanceof Error ? err.message : 'Terjadi kesalahan.');
     } finally {
       setUpdatingId(null);
     }
@@ -67,7 +69,7 @@ export function ProjectsTable({ projects }: { projects: ProjectRow[] }) {
       setDeletingProject(null);
       router.refresh();
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Gagal menghapus proyek.');
+      toast.error(error instanceof Error ? error.message : 'Gagal menghapus proyek.');
     } finally {
       setIsDeleting(false);
     }
@@ -235,39 +237,16 @@ export function ProjectsTable({ projects }: { projects: ProjectRow[] }) {
         }
       />
 
-      {/* Modern Confirmation Delete Modal */}
-      {deletingProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-md bg-white rounded-2xl p-6 shadow-2xl border border-slate-200">
-            <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-4">
-              <LuTrash2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-1">Hapus Portofolio Proyek?</h3>
-            <p className="text-sm text-slate-500 mb-6">
-              Apakah Anda yakin ingin menghapus proyek{' '}
-              <strong className="text-slate-900">"{deletingProject.title}"</strong>? Tindakan ini permanen dan tidak dapat dibatalkan.
-            </p>
-            <div className="flex items-center justify-end gap-3">
-              <button
-                type="button"
-                onClick={() => setDeletingProject(null)}
-                disabled={isDeleting}
-                className="px-4 py-2.5 rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
-              >
-                Batal
-              </button>
-              <button
-                type="button"
-                onClick={confirmDelete}
-                disabled={isDeleting}
-                className="px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-bold shadow-sm transition-colors cursor-pointer disabled:opacity-50"
-              >
-                {isDeleting ? 'Menghapus…' : 'Ya, Hapus Proyek'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ConfirmationModal
+        open={!!deletingProject}
+        title="Hapus Portofolio Proyek?"
+        description={`Apakah Anda yakin ingin menghapus proyek "${deletingProject?.title}"? Tindakan ini permanen dan tidak dapat dibatalkan.`}
+        confirmLabel="Ya, Hapus Proyek"
+        onConfirm={confirmDelete}
+        onCancel={() => setDeletingProject(null)}
+        isConfirming={isDeleting}
+        destructive
+      />
     </>
   );
 }

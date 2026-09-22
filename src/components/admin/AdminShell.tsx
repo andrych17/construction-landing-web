@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { WwLogoMark } from '@/components/ui/ModernWwLogo';
 import { CONTENT_SECTIONS } from '@/lib/content-sections';
 import type { AdminSession } from '@/lib/auth';
+import { ToastProvider } from '@/components/admin/ui/Toast';
 import {
   LuLayoutDashboard,
   LuFolderKanban,
@@ -320,7 +321,9 @@ export function AdminShell({ session, children }: AdminShellProps) {
         </header>
 
         {/* Page Body */}
-        <main className="flex-1 p-6 sm:p-8 max-w-7xl w-full mx-auto">{children}</main>
+        <main className="flex-1 p-6 sm:p-8 max-w-7xl w-full mx-auto">
+          <ToastProvider>{children}</ToastProvider>
+        </main>
       </div>
     </div>
   );

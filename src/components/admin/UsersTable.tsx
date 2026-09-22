@@ -3,15 +3,15 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { DataTable, ColumnDef, FilterDef } from '@/components/admin/ui/DataTable';
+import { ConfirmationModal } from '@/components/admin/ui/ConfirmationModal';
+import { useToast } from '@/components/admin/ui/Toast';
 import {
   LuPlus,
   LuPencil,
   LuTrash2,
   LuShieldCheck,
   LuUser,
-  LuKey,
   LuX,
-  LuCheck,
 } from 'react-icons/lu';
 
 export type UserRow = {
@@ -31,6 +31,7 @@ interface UsersTableProps {
 
 export function UsersTable({ users, currentUserId }: UsersTableProps) {
   const router = useRouter();
+  const toast = useToast();
   const [data, setData] = useState<UserRow[]>(users);
 
   // Modal States
@@ -148,7 +149,7 @@ export function UsersTable({ users, currentUserId }: UsersTableProps) {
       setDeletingUser(null);
       router.refresh();
     } catch (err) {
-      alert(err instanceof Error ? err.message : 'Terjadi kesalahan.');
+      toast.error(err instanceof Error ? err.message : 'Terjadi kesalahan.');
     } finally {
       setIsSubmitting(false);
     }
@@ -552,38 +553,16 @@ export function UsersTable({ users, currentUserId }: UsersTableProps) {
         </div>
       )}
 
-      {/* DELETE USER CONFIRMATION MODAL */}
-      {deletingUser && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-md bg-white rounded-2xl p-6 shadow-2xl border border-slate-200">
-            <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-4">
-              <LuTrash2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-1">Hapus Akun Pengguna?</h3>
-            <p className="text-sm text-slate-500 mb-6">
-              Apakah Anda yakin ingin menghapus akun <strong className="text-slate-900">{deletingUser.name}</strong> ({deletingUser.email})? Tindakan ini tidak dapat dibatalkan.
-            </p>
-            <div className="flex items-center justify-end gap-3">
-              <button
-                type="button"
-                onClick={() => setDeletingUser(null)}
-                disabled={isSubmitting}
-                className="px-4 py-2.5 rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
-              >
-                Batal
-              </button>
-              <button
-                type="button"
-                onClick={handleDelete}
-                disabled={isSubmitting}
-                className="px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-bold shadow-sm transition-colors cursor-pointer disabled:opacity-50"
-              >
-                {isSubmitting ? 'Menghapus…' : 'Ya, Hapus Akun'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ConfirmationModal
+        open={!!deletingUser}
+        title="Hapus Akun Pengguna?"
+        description={`Apakah Anda yakin ingin menghapus akun ${deletingUser?.name} (${deletingUser?.email})? Tindakan ini tidak dapat dibatalkan.`}
+        confirmLabel="Ya, Hapus Akun"
+        onConfirm={handleDelete}
+        onCancel={() => setDeletingUser(null)}
+        isConfirming={isSubmitting}
+        destructive
+      />
     </>
   );
 }
