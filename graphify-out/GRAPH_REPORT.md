@@ -1,16 +1,16 @@
 # Graph Report - construction-landing-web  (2026-09-22)
 
 ## Corpus Check
-- 30 files · ~239,944 words
+- 30 files · ~240,203 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 181 nodes · 222 edges · 21 communities (11 shown, 5 thin omitted)
+- 181 nodes · 222 edges · 20 communities (11 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `78e3724b`
+- Built from commit: `3565a15c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,7 +20,7 @@
 - dependencies
 - BarcwayLayout.tsx
 - include
-- SectionRailIndicator.tsx
+- ArchitecturalPreloader.tsx
 - package.json
 - postcss.config.mjs
 - WW Construction Website
@@ -28,7 +28,6 @@
 - eslint.config.mjs
 - next.config.js
 - next.config.ts
-- app/page.tsx
 - DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO
 - layout.tsx
 
@@ -51,7 +50,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (21 total, 5 thin omitted)
+## Communities (20 total, 4 thin omitted)
 
 ### Community 0 - "devDependencies"
 Cohesion: 0.09
@@ -66,16 +65,16 @@ Cohesion: 0.13
 Nodes (15): framer-motion, dependencies, framer-motion, next, react, react-dom, react-icons, remotion (+7 more)
 
 ### Community 3 - "BarcwayLayout.tsx"
-Cohesion: 0.14
-Nodes (19): ArchitecturalPreloader(), ArchitecturalPreloaderProps, ProjectInspectionModal(), ProjectInspectionModalProps, BarcwayFooter(), BarcwayNav(), NAV_LINKS, FounderSvgPlaceholder() (+11 more)
+Cohesion: 0.13
+Nodes (19): ArchitecturalPreloader(), ProjectInspectionModal(), ProjectInspectionModalProps, BarcwayLayout(), BarcwayFooter(), BarcwayNav(), NAV_LINKS, FounderSvgPlaceholder() (+11 more)
 
 ### Community 4 - "include"
 Cohesion: 0.20
 Nodes (9): **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude (+1 more)
 
-### Community 5 - "SectionRailIndicator.tsx"
-Cohesion: 0.50
-Nodes (3): SectionRailIndicator(), SECTIONS, SectionTarget
+### Community 5 - "ArchitecturalPreloader.tsx"
+Cohesion: 0.40
+Nodes (3): ArchitecturalPreloaderProps, Player, WwLogoAnimation()
 
 ### Community 6 - "package.json"
 Cohesion: 0.22
@@ -98,9 +97,9 @@ Cohesion: 0.25
 Nodes (6): baskervville, jetbrainsMono, metadata, plusJakartaSans, structuredSchema, viewport
 
 ## Knowledge Gaps
-- **93 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+88 more)
+- **92 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+87 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 114 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -112,7 +111,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `compilerOptions` connect `compilerOptions` to `include`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `nextConfig` to the rest of the system?**
-  _93 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _92 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

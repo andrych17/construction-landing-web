@@ -16,7 +16,6 @@ import {
 } from 'react-icons/lu';
 import { FaInstagram } from 'react-icons/fa';
 import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
-import SectionRailIndicator from '@/components/interactive/SectionRailIndicator';
 import ProjectInspectionModal, { ProjectDetail } from '@/components/interactive/ProjectInspectionModal';
 import BarcwayNav from '@/components/navigation/BarcwayNav';
 import BarcwayFooter from '@/components/navigation/BarcwayFooter';
@@ -88,13 +87,10 @@ export default function BarcwayLayout() {
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
-      {/* 1. Architectural Preloader */}
+      {/* 1. Architectural Preloader (Remotion Logo Animation) */}
       <ArchitecturalPreloader />
 
-      {/* 2. Spatial Telemetry Rail */}
-      <SectionRailIndicator />
-
-      {/* 3. Full-Width Barcway Signature Navigation */}
+      {/* 2. Full-Width Barcway Signature Navigation */}
       <BarcwayNav />
 
       {/* 4. FULL-WIDTH CINEMATIC HERO (Anti-Slop: Viewport Fitted, Descender Cleared) */}

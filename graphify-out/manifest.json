@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790043310.805198,
-    "seen": 1790043380.9866047,
-    "ast_hash": "fe8d0889987925c0438e6e8eeafbacd8",
+    "mtime": 1790043508.0639305,
+    "seen": 1790043554.0183115,
+    "ast_hash": "1a177039dde848e882b3a7764eb2f465",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
@@ -335,16 +335,10 @@
     "ast_hash": "4b6a24f6a5cc1b29237d572714fe3a25",
     "semantic_hash": ""
   },
-  "src/components/interactive/SectionRailIndicator.tsx": {
-    "mtime": 1790043263.2530344,
-    "seen": 1790043380.9866083,
-    "ast_hash": "cd46c370e89af61dbeafe67c8b89d32e",
-    "semantic_hash": ""
-  },
   "src/components/layouts/BarcwayLayout.tsx": {
-    "mtime": 1790043298.1661627,
-    "seen": 1790043380.9866097,
-    "ast_hash": "7f354dea271f6cf68ab2748bb4a2c268",
+    "mtime": 1790043528.7703843,
+    "seen": 1790043554.0183148,
+    "ast_hash": "1e430a663b01f623bac5cfb264aa0f81",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -483,6 +477,12 @@
     "mtime": 1790042084.0125334,
     "seen": 1790042288.0710864,
     "ast_hash": "1eb18cd2808dc9300aeb5a064a41fbf1",
+    "semantic_hash": ""
+  },
+  "src/components/remotion/WwLogoAnimation.tsx": {
+    "mtime": 1790043500.831207,
+    "seen": 1790043554.018319,
+    "ast_hash": "86ef1e0f1c031af72b36814bc59c9549",
     "semantic_hash": ""
   }
 }

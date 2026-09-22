@@ -4,19 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
-      "label": "ArchitecturalPreloaderProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "BarcwayLayout.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalpreloaderprops",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L6"
-    },
-    {
       "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodalprops",
       "label": "ProjectInspectionModalProps",
       "_callable": true,
@@ -82,17 +69,17 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_interactive_sectionrailindicator_sectiontarget",
-      "label": "SectionTarget",
+      "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
+      "label": "ArchitecturalPreloaderProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "SectionRailIndicator.tsx",
+      "community_name": "ArchitecturalPreloader.tsx",
       "file_type": "code",
-      "norm_label": "sectiontarget",
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L6"
+      "norm_label": "architecturalpreloaderprops",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L17"
     },
     {
       "id": "src_app_robots_robots",
@@ -117,30 +104,6 @@
       "norm_label": "sitemap()",
       "source_file": "src/app/sitemap.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "src_app_page_home",
-      "label": "Home()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "home()",
-      "source_file": "src/app/page.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_layouts_barcwaylayout_barcwaylayout",
-      "label": "BarcwayLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "barcwaylayout()",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L40"
     },
     {
       "id": "src_app_layout_rootlayout",
@@ -179,6 +142,18 @@
       "source_location": "L12"
     },
     {
+      "id": "src_app_page_home",
+      "label": "Home()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "home()",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L3"
+    },
+    {
       "id": "src_app_projects_page_projectspage",
       "label": "ProjectsPage()",
       "_callable": true,
@@ -212,7 +187,7 @@
       "file_type": "code",
       "norm_label": "architecturalpreloader()",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L10"
+      "source_location": "L21"
     },
     {
       "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
@@ -225,6 +200,18 @@
       "norm_label": "projectinspectionmodal()",
       "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
       "source_location": "L15"
+    },
+    {
+      "id": "src_components_layouts_barcwaylayout_barcwaylayout",
+      "label": "BarcwayLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "barcwaylayout()",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L39"
     },
     {
       "id": "src_components_navigation_barcwayfooter_barcwayfooter",
@@ -275,16 +262,16 @@
       "source_location": "L13"
     },
     {
-      "id": "src_components_interactive_sectionrailindicator_sectionrailindicator",
-      "label": "SectionRailIndicator()",
+      "id": "src_components_remotion_wwlogoanimation_wwlogoanimation",
+      "label": "WwLogoAnimation()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "SectionRailIndicator.tsx",
+      "community_name": "ArchitecturalPreloader.tsx",
       "file_type": "code",
-      "norm_label": "sectionrailindicator()",
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L21"
+      "norm_label": "wwlogoanimation()",
+      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
+      "source_location": "L6"
     },
     {
       "id": "package_devdependencies",
@@ -837,17 +824,6 @@
       "source_location": "L3"
     },
     {
-      "id": "src_app_page",
-      "label": "app/page.tsx",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "app/page.tsx",
-      "source_file": "src/app/page.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "scripts_generate_logos",
       "label": "generate_logos.py",
       "_origin": "ast",
@@ -1385,6 +1361,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_app_page",
+      "label": "app/page.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "app/page.tsx",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_app_project_page",
       "label": "project/page.tsx",
       "_origin": "ast",
@@ -1415,17 +1402,6 @@
       "file_type": "code",
       "norm_label": "services/page.tsx",
       "source_file": "src/app/services/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_interactive_architecturalpreloader",
-      "label": "ArchitecturalPreloader.tsx",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "BarcwayLayout.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalpreloader.tsx",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
       "source_location": "L1"
     },
     {
@@ -1693,26 +1669,48 @@
       "source_location": "L25"
     },
     {
-      "id": "src_components_interactive_sectionrailindicator",
-      "label": "SectionRailIndicator.tsx",
+      "id": "player",
+      "label": "@remotion/player",
       "_origin": "ast",
       "community": 5,
-      "community_name": "SectionRailIndicator.tsx",
+      "community_name": "ArchitecturalPreloader.tsx",
+      "confidence": "EXTRACTED",
       "file_type": "code",
-      "norm_label": "sectionrailindicator.tsx",
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
+      "norm_label": "@remotion/player",
+      "source_file": "@remotion/player"
+    },
+    {
+      "id": "src_components_interactive_architecturalpreloader",
+      "label": "ArchitecturalPreloader.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "ArchitecturalPreloader.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalpreloader.tsx",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_interactive_sectionrailindicator_sections",
-      "label": "SECTIONS",
+      "id": "src_components_interactive_architecturalpreloader_player",
+      "label": "Player",
       "_origin": "ast",
       "community": 5,
-      "community_name": "SectionRailIndicator.tsx",
+      "community_name": "ArchitecturalPreloader.tsx",
       "file_type": "code",
-      "norm_label": "sections",
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L12"
+      "norm_label": "player",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_remotion_wwlogoanimation",
+      "label": "WwLogoAnimation.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "ArchitecturalPreloader.tsx",
+      "file_type": "code",
+      "norm_label": "wwlogoanimation.tsx",
+      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
+      "source_location": "L1"
     },
     {
       "id": "package",
@@ -2702,6 +2700,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_interactive_architecturalpreloader",
+      "target": "src_components_remotion_wwlogoanimation_wwlogoanimation",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_interactive_projectinspectionmodal",
       "target": "src_data_barcwaydata_projectdetail",
       "relation": "imports",
@@ -2727,7 +2737,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_interactive_sectionrailindicator_sectionrailindicator",
+      "target": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2739,18 +2749,6 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
       "target": "src_data_barcwaydata_projectdetail",
       "relation": "imports",
       "_origin": "ast",
@@ -2758,7 +2756,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -2770,7 +2768,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -2782,7 +2780,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -2794,7 +2792,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -2806,7 +2804,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -2818,7 +2816,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2830,7 +2828,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2842,7 +2840,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2854,7 +2852,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2866,7 +2864,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2878,7 +2876,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -3134,6 +3132,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_interactive_architecturalpreloader",
+      "target": "src_components_remotion_wwlogoanimation",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_layouts_barcwaylayout",
       "target": "src_components_interactive_architecturalpreloader",
       "relation": "imports_from",
@@ -3147,7 +3157,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_interactive_sectionrailindicator",
+      "target": "src_components_interactive_projectinspectionmodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3159,7 +3169,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_interactive_projectinspectionmodal",
+      "target": "src_components_navigation_barcwaynav",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3171,7 +3181,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_navigation_barcwaynav",
+      "target": "src_components_navigation_barcwayfooter",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3183,7 +3193,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_navigation_barcwayfooter",
+      "target": "src_components_ui_modernwwlogo",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3195,7 +3205,7 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_ui_modernwwlogo",
+      "target": "src_components_ui_foundersvgplaceholder",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3207,18 +3217,6 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_ui_foundersvgplaceholder",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
       "target": "src_data_barcwaydata",
       "relation": "imports_from",
       "_origin": "ast",
@@ -3226,7 +3224,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -4146,24 +4144,35 @@
     },
     {
       "source": "src_components_interactive_architecturalpreloader",
-      "target": "src_components_interactive_architecturalpreloader_architecturalpreloader",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_interactive_architecturalpreloader",
       "target": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L6",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_interactive_architecturalpreloader",
+      "target": "src_components_interactive_architecturalpreloader_architecturalpreloader",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_interactive_architecturalpreloader",
+      "target": "src_components_interactive_architecturalpreloader_player",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -4189,39 +4198,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_interactive_sectionrailindicator",
-      "target": "src_components_interactive_sectionrailindicator_sections",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_interactive_sectionrailindicator",
-      "target": "src_components_interactive_sectionrailindicator_sectionrailindicator",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_interactive_sectionrailindicator",
-      "target": "src_components_interactive_sectionrailindicator_sectiontarget",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/SectionRailIndicator.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_layouts_barcwaylayout",
       "target": "src_components_layouts_barcwaylayout_barcwaylayout",
       "relation": "contains",
@@ -4229,7 +4205,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4263,6 +4239,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/navigation/BarcwayNav.tsx",
       "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_remotion_wwlogoanimation",
+      "target": "src_components_remotion_wwlogoanimation_wwlogoanimation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -4603,8 +4590,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "postcss.config.mjs"
+    },
+    {
+      "source": "src_components_interactive_architecturalpreloader",
+      "target": "player",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "78e3724b812ded092839c7e4eb2b6a99aca99b41"
+  "built_at_commit": "3565a15c6f5819f9045e9095462a367a4b4af03c"
 }
