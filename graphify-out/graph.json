@@ -40,7 +40,7 @@
       "file_type": "code",
       "norm_label": "modernwwlogoprops",
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L6"
+      "source_location": "L5"
     },
     {
       "id": "src_data_barcwaydata_founderdetail",
@@ -259,7 +259,7 @@
       "file_type": "code",
       "norm_label": "modernwwlogo()",
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L13"
+      "source_location": "L15"
     },
     {
       "id": "src_components_remotion_wwlogoanimation_wwlogoanimation",
@@ -271,7 +271,7 @@
       "file_type": "code",
       "norm_label": "wwlogoanimation()",
       "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "package_devdependencies",
@@ -1713,6 +1713,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_ui_modernwwlogo_official_ww_logo_path",
+      "label": "OFFICIAL_WW_LOGO_PATH",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "ArchitecturalPreloader.tsx",
+      "file_type": "code",
+      "norm_label": "official_ww_logo_path",
+      "source_file": "src/components/ui/ModernWwLogo.tsx",
+      "source_location": "L13"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -2904,6 +2915,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_remotion_wwlogoanimation",
+      "target": "src_components_ui_modernwwlogo_official_ww_logo_path",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_app_about_page",
       "target": "src_components_interactive_architecturalpreloader",
       "relation": "imports_from",
@@ -3249,6 +3272,18 @@
       "context": "import",
       "source_file": "src/components/navigation/BarcwayNav.tsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_remotion_wwlogoanimation",
+      "target": "src_components_ui_modernwwlogo",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4249,7 +4284,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4276,7 +4311,7 @@
     },
     {
       "source": "src_components_ui_modernwwlogo",
-      "target": "src_components_ui_modernwwlogo_modernwwlogo",
+      "target": "src_components_ui_modernwwlogo_official_ww_logo_path",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4287,13 +4322,24 @@
     },
     {
       "source": "src_components_ui_modernwwlogo",
+      "target": "src_components_ui_modernwwlogo_modernwwlogo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/ModernWwLogo.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_modernwwlogo",
       "target": "src_components_ui_modernwwlogo_modernwwlogoprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4602,5 +4648,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3565a15c6f5819f9045e9095462a367a4b4af03c"
+  "built_at_commit": "7123e97853554473246496c00a6c67cd815d339c"
 }

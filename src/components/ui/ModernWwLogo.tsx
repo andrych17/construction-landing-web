@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface ModernWwLogoProps {
   variant?: 'mark' | 'full' | 'minimal' | 'preloader';
@@ -10,129 +9,34 @@ interface ModernWwLogoProps {
   animated?: boolean;
 }
 
+// Official Instagram @ww.cons Vector Logo Path (viewBox 0 0 378 512)
+export const OFFICIAL_WW_LOGO_PATH = "M0,0h17v6h-17zM367,0h11v6h-11zM366,3h1v8h-1zM17,4h1v12h-1zM365,4h1v7h-1zM18,5h2v11h-2zM22,5h2v12h-2zM354,5h6v11h-6zM361,5h4v6h-4zM4,6h13v1h-13zM20,6h2v11h-2zM24,6h3v11h-3zM351,6h3v11h-3zM360,6h1v10h-1zM367,6h7v1h-7zM5,7h12v1h-12zM367,7h6v1h-6zM6,8h11v2h-11zM27,8h1v11h-1zM350,8h1v11h-1zM367,8h5v2h-5zM28,9h1v12h-1zM349,9h1v12h-1zM7,10h10v1h-10zM29,10h1v12h-1zM348,10h1v12h-1zM367,10h4v1h-4zM14,11h3v1h-3zM30,11h7v11h-7zM341,11h7v11h-7zM361,11h3v1h-3zM16,12h1v2h-1zM37,12h1v17h-1zM340,12h1v17h-1zM361,12h1v2h-1zM38,13h1v17h-1zM339,13h1v17h-1zM39,15h1v22h-1zM338,15h1v22h-1zM19,16h1v1h-1zM40,16h2v22h-2zM336,16h2v22h-2zM354,16h5v1h-5zM26,17h1v1h-1zM42,17h1v23h-1zM335,17h1v23h-1zM351,17h1v1h-1zM43,18h1v22h-1zM334,18h1v22h-1zM44,19h1v23h-1zM333,19h1v23h-1zM45,21h1v23h-1zM332,21h1v23h-1zM31,22h6v1h-6zM46,22h8v22h-8zM324,22h8v22h-8zM341,22h6v1h-6zM32,23h5v1h-5zM54,23h1v34h-1zM323,23h1v34h-1zM341,23h5v1h-5zM33,24h4v2h-4zM341,24h4v2h-4zM55,25h1v411h-1zM322,25h1v411h-1zM34,26h3v1h-3zM321,26h1v413h-1zM341,26h3v1h-3zM35,27h2v1h-2zM148,27h4v7h-4zM226,27h4v7h-4zM320,27h1v412h-1zM341,27h2v1h-2zM146,28h2v5h-2zM152,28h8v6h-8zM218,28h8v6h-8zM230,28h2v5h-2zM318,28h2v412h-2zM145,29h1v4h-1zM160,29h1v10h-1zM217,29h1v10h-1zM232,29h1v4h-1zM317,29h1v413h-1zM161,31h1v8h-1zM216,31h1v8h-1zM56,32h1v407h-1zM162,32h1v7h-1zM215,32h1v7h-1zM57,33h2v406h-2zM147,33h1v1h-1zM163,33h13v6h-13zM202,33h13v6h-13zM230,33h1v1h-1zM59,34h1v407h-1zM154,34h6v1h-6zM176,34h1v17h-1zM201,34h1v17h-1zM218,34h6v1h-6zM60,35h1v407h-1zM155,35h5v1h-5zM177,35h1v470h-1zM200,35h1v470h-1zM218,35h5v1h-5zM61,36h1v424h-1zM156,36h4v2h-4zM218,36h4v2h-4zM316,36h1v424h-1zM178,37h1v54h-1zM199,37h1v54h-1zM41,38h1v1h-1zM62,38h1v423h-1zM157,38h3v1h-3zM179,38h1v52h-1zM198,38h1v52h-1zM218,38h3v1h-3zM315,38h1v423h-1zM336,38h1v1h-1zM63,39h2v423h-2zM164,39h12v1h-12zM180,39h2v50h-2zM196,39h2v50h-2zM202,39h12v1h-12zM313,39h2v423h-2zM65,40h1v423h-1zM166,40h10v2h-10zM182,40h1v48h-1zM195,40h1v48h-1zM202,40h10v2h-10zM312,40h1v423h-1zM66,41h1v424h-1zM311,41h1v424h-1zM167,42h9v1h-9zM183,42h1v44h-1zM194,42h1v44h-1zM202,42h9v1h-9zM67,43h1v429h-1zM168,43h8v1h-8zM184,43h1v31h-1zM193,43h1v31h-1zM202,43h8v1h-8zM47,44h7v1h-7zM68,44h2v429h-2zM169,44h7v1h-7zM185,44h3v28h-3zM190,44h3v28h-3zM202,44h7v1h-7zM324,44h7v1h-7zM49,45h5v2h-5zM70,45h1v429h-1zM171,45h5v1h-5zM188,45h2v27h-2zM202,45h5v1h-5zM324,45h5v2h-5zM71,46h1v429h-1zM172,46h4v2h-4zM202,46h4v2h-4zM50,47h4v7h-4zM324,47h4v7h-4zM173,48h3v1h-3zM202,48h3v1h-3zM310,48h1v424h-1zM174,49h2v1h-2zM202,49h2v1h-2zM309,49h1v424h-1zM307,50h2v423h-2zM306,51h1v424h-1zM51,54h3v1h-3zM324,54h3v1h-3zM52,55h2v1h-2zM175,55h2v429h-2zM201,55h2v429h-2zM324,55h2v1h-2zM174,56h1v428h-1zM203,56h1v428h-1zM173,57h1v426h-1zM204,57h1v426h-1zM72,58h1v419h-1zM172,58h1v424h-1zM205,58h1v424h-1zM305,58h1v419h-1zM73,60h1v418h-1zM304,60h1v418h-1zM74,61h2v417h-2zM302,61h2v417h-2zM76,62h1v418h-1zM301,62h1v418h-1zM77,63h1v418h-1zM300,63h1v418h-1zM171,65h1v415h-1zM206,65h1v415h-1zM170,66h1v413h-1zM207,66h1v413h-1zM168,67h2v411h-2zM208,67h2v411h-2zM167,68h1v409h-1zM210,68h1v409h-1zM166,70h1v400h-1zM211,70h1v400h-1zM165,71h1v398h-1zM212,71h1v398h-1zM163,72h2v395h-2zM185,72h2v1h-2zM191,72h2v1h-2zM213,72h2v395h-2zM162,73h1v394h-1zM215,73h1v394h-1zM161,74h1v391h-1zM216,74h1v391h-1zM160,87h1v82h-1zM217,87h1v82h-1zM159,88h1v80h-1zM218,88h1v80h-1zM157,89h2v78h-2zM219,89h2v78h-2zM156,90h1v76h-1zM221,90h1v76h-1zM155,93h1v71h-1zM222,93h1v71h-1zM186,133h6v28h-6zM185,134h1v28h-1zM192,134h1v28h-1zM184,135h1v28h-1zM193,135h1v28h-1zM183,136h1v39h-1zM178,137h1v43h-1zM194,137h1v38h-1zM179,138h1v41h-1zM181,138h2v39h-2zM180,139h1v39h-1zM154,143h1v20h-1zM195,143h1v34h-1zM199,143h1v37h-1zM223,143h1v20h-1zM153,144h1v18h-1zM196,144h3v34h-3zM224,144h1v18h-1zM151,145h2v17h-2zM225,145h2v16h-2zM150,146h1v17h-1zM227,146h1v15h-1zM149,148h1v17h-1zM228,148h1v13h-1zM148,149h1v17h-1zM229,149h1v12h-1zM141,150h7v17h-7zM230,150h7v12h-7zM140,151h1v22h-1zM237,151h1v17h-1zM139,152h1v23h-1zM238,152h1v17h-1zM138,154h1v22h-1zM239,154h1v22h-1zM136,155h2v22h-2zM240,155h2v22h-2zM135,156h1v23h-1zM242,156h1v23h-1zM134,157h1v22h-1zM243,157h1v22h-1zM133,158h1v34h-1zM244,158h1v28h-1zM132,160h1v34h-1zM245,160h1v28h-1zM130,161h2v33h-2zM186,161h1v1h-1zM191,161h1v1h-1zM225,161h1v1h-1zM246,161h2v28h-2zM129,162h1v34h-1zM232,162h5v1h-5zM248,162h1v28h-1zM128,163h1v34h-1zM233,163h4v2h-4zM249,163h1v28h-1zM127,164h1v348h-1zM250,164h1v348h-1zM234,165h3v1h-3zM126,166h1v346h-1zM235,166h2v1h-2zM251,166h1v346h-1zM124,167h2v345h-2zM141,167h6v1h-6zM252,167h2v345h-2zM123,168h1v344h-1zM141,168h4v2h-4zM254,168h1v344h-1zM122,169h1v343h-1zM255,169h1v343h-1zM141,170h3v2h-3zM141,172h1v1h-1zM121,176h1v336h-1zM160,176h1v82h-1zM217,176h1v82h-1zM256,176h1v332h-1zM120,177h1v335h-1zM136,177h1v1h-1zM159,177h1v80h-1zM181,177h1v1h-1zM218,177h1v80h-1zM241,177h1v1h-1zM257,177h1v330h-1zM118,178h2v334h-2zM157,178h2v78h-2zM198,178h1v1h-1zM219,178h2v78h-2zM258,178h2v328h-2zM117,179h1v333h-1zM156,179h1v76h-1zM221,179h1v76h-1zM260,179h1v327h-1zM261,181h1v325h-1zM155,182h1v70h-1zM222,182h1v70h-1zM262,182h1v324h-1zM263,183h1v323h-1zM264,184h2v323h-2zM116,186h1v324h-1zM266,186h1v321h-1zM115,188h1v320h-1zM113,189h2v318h-2zM112,190h1v316h-1zM111,191h1v315h-1zM130,194h1v1h-1zM267,198h1v309h-1zM268,199h1v308h-1zM269,200h1v306h-1zM270,201h1v305h-1zM271,202h1v303h-1zM110,204h1v303h-1zM272,204h1v278h-1zM109,205h1v302h-1zM107,206h2v300h-2zM106,207h1v298h-1zM105,209h1v273h-1zM185,228h8v28h-8zM184,229h1v28h-1zM193,229h1v28h-1zM183,231h1v39h-1zM194,231h1v39h-1zM178,232h1v43h-1zM182,232h1v40h-1zM195,232h1v40h-1zM199,232h1v43h-1zM179,233h3v39h-3zM196,233h3v39h-3zM185,256h1v1h-1zM192,256h1v1h-1zM160,271h1v82h-1zM217,271h1v82h-1zM158,272h2v79h-2zM179,272h2v1h-2zM197,272h2v1h-2zM218,272h2v79h-2zM157,273h1v77h-1zM179,273h1v1h-1zM198,273h1v1h-1zM220,273h1v77h-1zM156,274h1v75h-1zM221,274h1v75h-1zM155,276h1v71h-1zM222,276h1v71h-1zM188,322h2v29h-2zM185,323h3v28h-3zM190,323h3v28h-3zM184,324h1v28h-1zM193,324h1v28h-1zM183,325h1v34h-1zM194,325h1v34h-1zM178,327h1v37h-1zM182,327h1v34h-1zM195,327h1v34h-1zM199,327h1v37h-1zM179,328h3v33h-3zM196,328h3v33h-3zM179,361h2v1h-2zM197,361h2v1h-2zM179,362h1v1h-1zM198,362h1v1h-1zM160,365h1v93h-1zM217,365h1v93h-1zM159,366h1v91h-1zM218,366h1v91h-1zM158,367h1v90h-1zM219,367h1v90h-1zM156,368h2v87h-2zM220,368h2v87h-2zM155,371h1v82h-1zM222,371h1v82h-1zM58,439h1v1h-1zM318,440h1v1h-1zM299,449h1v34h-1zM298,450h1v34h-1zM296,451h2v33h-2zM295,452h1v34h-1zM78,454h1v29h-1zM294,454h1v33h-1zM79,455h1v29h-1zM157,455h1v1h-1zM220,455h1v1h-1zM80,456h1v28h-1zM81,457h1v28h-1zM82,458h1v28h-1zM83,460h1v27h-1zM178,460h1v43h-1zM199,460h1v43h-1zM179,461h1v41h-1zM198,461h1v41h-1zM180,462h2v39h-2zM196,462h2v39h-2zM182,463h1v37h-1zM195,463h1v37h-1zM183,465h1v33h-1zM194,465h1v33h-1zM84,466h1v23h-1zM293,466h1v23h-1zM85,467h2v23h-2zM164,467h1v1h-1zM213,467h1v1h-1zM291,467h2v23h-2zM87,468h1v23h-1zM290,468h1v23h-1zM88,469h1v23h-1zM289,469h1v23h-1zM184,472h2v24h-2zM192,472h2v24h-2zM186,473h6v22h-6zM307,473h1v1h-1zM89,476h1v18h-1zM288,476h1v18h-1zM75,478h1v1h-1zM90,478h2v17h-2zM169,478h1v1h-1zM208,478h1v1h-1zM286,478h2v17h-2zM302,478h1v1h-1zM92,479h1v17h-1zM285,479h1v17h-1zM93,480h1v17h-1zM284,480h1v17h-1zM94,481h1v17h-1zM283,481h1v17h-1zM95,483h1v17h-1zM282,483h1v17h-1zM96,484h2v17h-2zM176,484h1v1h-1zM201,484h1v1h-1zM280,484h2v17h-2zM296,484h1v1h-1zM98,485h1v16h-1zM279,485h1v16h-1zM99,486h1v15h-1zM278,486h1v15h-1zM105,487h1v17h-1zM272,487h1v17h-1zM100,488h1v13h-1zM277,488h1v13h-1zM101,489h4v12h-4zM176,489h1v17h-1zM201,489h1v17h-1zM273,489h4v12h-4zM174,490h2v16h-2zM202,490h2v16h-2zM173,491h1v16h-1zM204,491h1v16h-1zM172,492h1v15h-1zM205,492h1v15h-1zM171,494h1v13h-1zM206,494h1v13h-1zM163,495h8v11h-8zM186,495h1v1h-1zM191,495h1v1h-1zM207,495h8v11h-8zM162,496h1v12h-1zM184,496h1v1h-1zM193,496h1v1h-1zM215,496h1v12h-1zM161,497h1v12h-1zM216,497h1v12h-1zM128,499h1v13h-1zM160,499h1v13h-1zM217,499h1v13h-1zM249,499h1v13h-1zM129,500h1v12h-1zM159,500h1v12h-1zM218,500h1v12h-1zM248,500h1v12h-1zM104,501h1v1h-1zM130,501h29v11h-29zM219,501h29v11h-29zM273,501h1v1h-1zM163,506h2v1h-2zM169,506h2v1h-2zM207,506h2v1h-2zM213,506h2v1h-2zM258,506h1v1h-1z";
+
 export default function ModernWwLogo({
   variant = 'full',
   size = 'md',
   className = '',
-  animated = false,
 }: ModernWwLogoProps) {
-  // Dimensions map
   const sizeMap = {
-    sm: { box: 'w-8 h-8', svg: 32, text: 'text-[15px]', subtext: 'text-[7.5px]' },
-    md: { box: 'w-10 h-10', svg: 40, text: 'text-[17px]', subtext: 'text-[8.5px]' },
-    lg: { box: 'w-14 h-14', svg: 56, text: 'text-2xl', subtext: 'text-[10px]' },
-    xl: { box: 'w-24 h-24', svg: 96, text: 'text-4xl', subtext: 'text-xs' },
+    sm: { box: 'w-6 h-8', svgW: 24, svgH: 32, text: 'text-[15px]', subtext: 'text-[7px]' },
+    md: { box: 'w-8 h-10', svgW: 30, svgH: 40, text: 'text-[17px]', subtext: 'text-[8px]' },
+    lg: { box: 'w-12 h-16', svgW: 46, svgH: 62, text: 'text-2xl', subtext: 'text-[10px]' },
+    xl: { box: 'w-20 h-28', svgW: 80, svgH: 108, text: 'text-4xl', subtext: 'text-xs' },
   };
 
   const currentSize = sizeMap[size];
 
-  // The Pure Vector Architectural WW Emblem
-  const renderSvgMark = (isPreloader = false) => {
+  // The Exact Instagram Vector Logo Mark
+  const renderSvgMark = () => {
     return (
-      <div className={`relative ${isPreloader ? 'w-24 h-24 sm:w-28 sm:h-28' : currentSize.box} shrink-0 group`}>
-        {/* Ambient Backlight Glow on hover or preloader */}
-        <div
-          className={`absolute -inset-1 rounded-xl bg-gradient-to-r from-amber-500/20 via-amber-400/30 to-amber-600/20 blur-md opacity-60 transition-opacity duration-500 ${
-            isPreloader ? 'animate-pulse opacity-80' : 'group-hover:opacity-100'
-          }`}
-        />
-
+      <div className={`relative ${currentSize.box} shrink-0 group flex items-center justify-center`}>
         <svg
-          viewBox="0 0 200 200"
+          viewBox="0 0 378 512"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="relative w-full h-full drop-shadow-lg"
+          className="w-full h-full text-white group-hover:text-amber-400 transition-colors drop-shadow-md"
         >
-          <defs>
-            <linearGradient id="wwGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FDE68A" />
-              <stop offset="45%" stopColor="#F59E0B" />
-              <stop offset="100%" stopColor="#B45309" />
-            </linearGradient>
-            <linearGradient id="wwWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" />
-              <stop offset="100%" stopColor="#94A3B8" />
-            </linearGradient>
-            <linearGradient id="wwBezelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#141923" />
-              <stop offset="100%" stopColor="#05070B" />
-            </linearGradient>
-            <filter id="wwAmberGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="2" stdDeviation="5" floodColor="#F59E0B" floodOpacity="0.45" />
-            </filter>
-          </defs>
-
-          {/* Machined Bezel Container */}
-          <rect
-            x="8"
-            y="8"
-            width="184"
-            height="184"
-            rx="22"
-            fill="url(#wwBezelGrad)"
-            stroke="rgba(255,255,255,0.16)"
-            strokeWidth="2"
-          />
-
-          {/* Architectural Drafting Crosshairs & Datum Axis */}
-          <line x1="16" y1="100" x2="184" y2="100" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="3 3" />
-          <line x1="100" y1="16" x2="100" y2="184" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="3 3" />
-          <circle cx="100" cy="100" r="68" stroke="rgba(245,158,11,0.09)" strokeWidth="1" />
-
-          {/* 4 Precision Corner Calibration Ticks */}
-          <path d="M 22 34 L 22 22 L 34 22" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M 166 22 L 178 22 L 178 34" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M 22 166 L 22 178 L 34 178" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M 166 178 L 178 178 L 178 166" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" />
-
-          {/* First Architectural W (Platinum White Facet Structural Beams) */}
-          {animated || isPreloader ? (
-            <motion.path
-              d="M 38 60 L 58 142 L 78 88 L 98 142 L 118 60"
-              stroke="url(#wwWhiteGrad)"
-              strokeWidth="9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            />
-          ) : (
-            <path
-              d="M 38 60 L 58 142 L 78 88 L 98 142 L 118 60"
-              stroke="url(#wwWhiteGrad)"
-              strokeWidth="9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          )}
-
-          {/* Second Architectural W (Gold Offset Interlocking Structure) */}
-          {animated || isPreloader ? (
-            <motion.path
-              d="M 82 60 L 102 142 L 122 88 L 142 142 L 162 60"
-              stroke="url(#wwGoldGrad)"
-              strokeWidth="9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              filter="url(#wwAmberGlow)"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 1.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            />
-          ) : (
-            <path
-              d="M 82 60 L 102 142 L 122 88 L 142 142 L 162 60"
-              stroke="url(#wwGoldGrad)"
-              strokeWidth="9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              filter="url(#wwAmberGlow)"
-            />
-          )}
-
-          {/* Central Architectural Nexus Dot */}
-          <circle cx="100" cy="88" r="5" fill="#FBBF24" stroke="#06080D" strokeWidth="2" />
+          <path d={OFFICIAL_WW_LOGO_PATH} fill="currentColor" />
         </svg>
       </div>
     );
@@ -140,14 +44,6 @@ export default function ModernWwLogo({
 
   if (variant === 'mark') {
     return <div className={`inline-flex items-center ${className}`}>{renderSvgMark()}</div>;
-  }
-
-  if (variant === 'preloader') {
-    return (
-      <div className={`flex flex-col items-center justify-center ${className}`}>
-        {renderSvgMark(true)}
-      </div>
-    );
   }
 
   if (variant === 'minimal') {
@@ -164,7 +60,7 @@ export default function ModernWwLogo({
     );
   }
 
-  // Full Brand Lockup: Mark + Baskervville Wordmark + Micro-Spaced Subline
+  // Full Brand Lockup: Official Instagram Emblem + Baskervville Wordmark + Subline
   return (
     <div className={`flex items-center gap-3.5 ${className}`}>
       {renderSvgMark()}
@@ -176,7 +72,7 @@ export default function ModernWwLogo({
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
         </div>
         <span className={`${currentSize.subtext} font-mono tracking-[0.28em] text-neutral-400 uppercase group-hover:text-neutral-300 transition-colors`}>
-          ARCHITECTURE · INTERIOR · CONTRACTING
+          ARCHITECTURE · GENERAL CONTRACTING
         </span>
       </div>
     </div>

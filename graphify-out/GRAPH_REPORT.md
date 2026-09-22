@@ -1,16 +1,16 @@
 # Graph Report - construction-landing-web  (2026-09-22)
 
 ## Corpus Check
-- 30 files · ~240,203 words
+- 30 files · ~240,386 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 181 nodes · 222 edges · 20 communities (11 shown, 4 thin omitted)
+- 182 nodes · 225 edges · 20 communities (11 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3565a15c`
+- Built from commit: `7123e978`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -73,8 +73,8 @@ Cohesion: 0.20
 Nodes (9): **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude (+1 more)
 
 ### Community 5 - "ArchitecturalPreloader.tsx"
-Cohesion: 0.40
-Nodes (3): ArchitecturalPreloaderProps, Player, WwLogoAnimation()
+Cohesion: 0.33
+Nodes (4): ArchitecturalPreloaderProps, Player, WwLogoAnimation(), OFFICIAL_WW_LOGO_PATH
 
 ### Community 6 - "package.json"
 Cohesion: 0.22

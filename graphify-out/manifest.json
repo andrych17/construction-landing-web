@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/ModernWwLogo.tsx": {
-    "mtime": 1789997900.7551284,
-    "seen": 1789998171.4342847,
-    "ast_hash": "80f52950c6766b090b8b30474c003e7d",
+    "mtime": 1790043698.0915937,
+    "seen": 1790043743.325793,
+    "ast_hash": "4542a73fd2aff7b41b0216abd4bbd13d",
     "semantic_hash": ""
   },
   "public/images/ww/logo_modern.svg": {
@@ -480,9 +480,21 @@
     "semantic_hash": ""
   },
   "src/components/remotion/WwLogoAnimation.tsx": {
-    "mtime": 1790043500.831207,
-    "seen": 1790043554.018319,
-    "ast_hash": "86ef1e0f1c031af72b36814bc59c9549",
+    "mtime": 1790043717.0977418,
+    "seen": 1790043743.3257875,
+    "ast_hash": "a2b2764ca25c88dcab4f6dfa9d81d0c2",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo_clean_white.png": {
+    "mtime": 1790043657.3502839,
+    "seen": 1790043743.325827,
+    "ast_hash": "0d6048368afdaa38db129acf4f5bf5d4",
+    "semantic_hash": ""
+  },
+  "public/images/ww/ww_logo_official.svg": {
+    "mtime": 1790043670.4090044,
+    "seen": 1790043743.3258762,
+    "ast_hash": "acd84c43e3109b43937120005a097173",
     "semantic_hash": ""
   }
 }
