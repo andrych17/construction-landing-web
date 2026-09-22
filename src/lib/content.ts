@@ -23,8 +23,12 @@ export type MethodologyStep = (typeof MASTER_METHODOLOGY)[number];
 export type { ProjectDetail, FounderDetail, FaqItem };
 
 async function getSection<T>(key: string, fallback: T): Promise<T> {
-  const row = await db.siteContent.findUnique({ where: { key } });
-  return row ? (row.value as T) : fallback;
+  try {
+    const row = await db.siteContent.findUnique({ where: { key } });
+    return row ? (row.value as T) : fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 export const getContact = () => getSection<Contact>('contact', SITE_CONTACT);
@@ -76,14 +80,18 @@ function dbProjectToDetail(p: {
   };
 }
 
-/** Proyek terbit untuk halaman publik. Fallback ke data statis bila DB belum diseed. */
+/** Proyek terbit untuk halaman publik. Fallback ke data statis bila DB belum diseed atau saat build. */
 export async function getProjects(): Promise<ProjectDetail[]> {
-  const rows = await db.project.findMany({
-    where: { published: true },
-    orderBy: [{ order: 'asc' }, { createdAt: 'asc' }],
-  });
-  if (rows.length === 0) return WW_PROJECTS;
-  return rows.map(dbProjectToDetail);
+  try {
+    const rows = await db.project.findMany({
+      where: { published: true },
+      orderBy: [{ order: 'asc' }, { createdAt: 'asc' }],
+    });
+    if (rows.length === 0) return WW_PROJECTS;
+    return rows.map(dbProjectToDetail);
+  } catch {
+    return WW_PROJECTS;
+  }
 }
 
 export type SiteData = {
