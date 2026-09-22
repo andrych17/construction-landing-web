@@ -16,7 +16,7 @@ export default function AboutPage() {
   const founder = BARCWAY_FOUNDERS[0];
 
   return (
-    <div className="bg-[#000000] text-slate-100 font-sans min-h-screen selection:bg-amber-500 selection:text-black relative w-full overflow-x-hidden">
+    <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       <ArchitecturalPreloader />
       <BarcwayNav />
 

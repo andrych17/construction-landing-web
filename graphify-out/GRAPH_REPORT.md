@@ -1,16 +1,16 @@
 # Graph Report - construction-landing-web  (2026-09-22)
 
 ## Corpus Check
-- 58 files · ~267,483 words
+- 30 files · ~239,944 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 293 nodes · 408 edges · 22 communities (12 shown, 4 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.85)
+- 181 nodes · 222 edges · 21 communities (11 shown, 5 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b20dffca`
+- Built from commit: `78e3724b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,9 +19,9 @@
 - compilerOptions
 - dependencies
 - BarcwayLayout.tsx
-- CorporateLayout.tsx
-- LuxuryLayout.tsx
-- ThemeContext.tsx
+- include
+- SectionRailIndicator.tsx
+- package.json
 - postcss.config.mjs
 - WW Construction Website
 - WW Construction Portfolio Website
@@ -30,64 +30,56 @@
 - next.config.ts
 - app/page.tsx
 - DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO
-- LayoutContext.tsx
+- layout.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
-2. `ArchitecturalPreloader()` - 8 edges
-3. `DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO` - 8 edges
-4. `WW Construction Website` - 8 edges
-5. `RemotionShowcase()` - 7 edges
-6. `ModernWwLogo()` - 7 edges
-7. `ProjectDetail` - 7 edges
-8. `include` - 7 edges
-9. `BarcwayFooter()` - 6 edges
-10. `BarcwayNav()` - 6 edges
+2. `DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO` - 8 edges
+3. `WW Construction Website` - 8 edges
+4. `include` - 7 edges
+5. `ArchitecturalPreloader()` - 6 edges
+6. `BarcwayFooter()` - 6 edges
+7. `BarcwayNav()` - 6 edges
+8. `WW Construction Portfolio Website` - 6 edges
+9. `4. Reverse-Engineered & Elevated Interaction Engine` - 6 edges
+10. `scripts` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Home()` --calls--> `useLayoutMode()`  [EXTRACTED]
-  src/app/page.tsx → src/context/LayoutContext.tsx
 - `ProjectInspectionModalProps` --references--> `ProjectDetail`  [EXTRACTED]
   src/components/interactive/ProjectInspectionModal.tsx → src/data/barcwayData.ts
-- `RemotionShowcase()` --calls--> `useTheme()`  [EXTRACTED]
-  src/components/remotion/RemotionShowcase.tsx → src/context/ThemeContext.tsx
-- `LayoutSwitcher()` --calls--> `useLayoutMode()`  [EXTRACTED]
-  src/components/LayoutSwitcher.tsx → src/context/LayoutContext.tsx
-- `ThemeSwitcher()` --calls--> `useTheme()`  [EXTRACTED]
-  src/components/ThemeSwitcher.tsx → src/context/ThemeContext.tsx
 
 ## Import Cycles
 - None detected.
 
-## Communities (22 total, 4 thin omitted)
+## Communities (21 total, 5 thin omitted)
 
 ### Community 0 - "devDependencies"
 Cohesion: 0.09
 Nodes (23): autoprefixer, babel-plugin-react-compiler, eslint, eslint-config-next, devDependencies, autoprefixer, babel-plugin-react-compiler, eslint (+15 more)
 
 ### Community 1 - "compilerOptions"
-Cohesion: 0.07
-Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
+Cohesion: 0.11
+Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules (+11 more)
 
 ### Community 2 - "dependencies"
-Cohesion: 0.08
-Nodes (23): framer-motion, dependencies, framer-motion, next, react, react-dom, react-icons, remotion (+15 more)
+Cohesion: 0.13
+Nodes (15): framer-motion, dependencies, framer-motion, next, react, react-dom, react-icons, remotion (+7 more)
 
 ### Community 3 - "BarcwayLayout.tsx"
-Cohesion: 0.10
-Nodes (29): ArchitecturalMegaMenu(), ArchitecturalMegaMenuProps, DISCIPLINES, NavItem, STANDARDS, ArchitecturalPreloader(), ArchitecturalPreloaderProps, PHASES (+21 more)
+Cohesion: 0.14
+Nodes (19): ArchitecturalPreloader(), ArchitecturalPreloaderProps, ProjectInspectionModal(), ProjectInspectionModalProps, BarcwayFooter(), BarcwayNav(), NAV_LINKS, FounderSvgPlaceholder() (+11 more)
 
-### Community 4 - "CorporateLayout.tsx"
-Cohesion: 0.09
-Nodes (19): About(), companyCredentials, Achievements(), commitments, BuildingAnimation(), precisionPillars, Contact(), CTA() (+11 more)
+### Community 4 - "include"
+Cohesion: 0.20
+Nodes (9): **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude (+1 more)
 
-### Community 5 - "LuxuryLayout.tsx"
-Cohesion: 0.18
-Nodes (10): HERO_SLIDES, HeroCinematicStage(), Slide, SectionRailIndicator(), SECTIONS, SectionTarget, LuxuryLayout(), luxuryNavLinks (+2 more)
+### Community 5 - "SectionRailIndicator.tsx"
+Cohesion: 0.50
+Nodes (3): SectionRailIndicator(), SECTIONS, SectionTarget
 
-### Community 6 - "ThemeContext.tsx"
-Cohesion: 0.21
-Nodes (11): ThemeSwitcher(), getThemeServerSnapshot(), getThemeSnapshot(), subscribeTheme(), ThemeConfig, ThemeContext, ThemeContextType, ThemeId (+3 more)
+### Community 6 - "package.json"
+Cohesion: 0.22
+Nodes (8): name, private, scripts, build, dev, lint, start, version
 
 ### Community 8 - "WW Construction Website"
 Cohesion: 0.18
@@ -97,37 +89,33 @@ Nodes (10): Build untuk Production, Cara Menjalankan, Customization, Fitur, Lise
 Cohesion: 0.29
 Nodes (6): Description, Development Server, Features Implemented, Project Status, Project Type, WW Construction Portfolio Website
 
-### Community 15 - "app/page.tsx"
-Cohesion: 0.08
-Nodes (26): Home(), BarcwayLayout(), BlueprintLayout(), blueprintSheets, qaGates, wbsServices, CorporateLayout(), EditorialLayout() (+18 more)
-
 ### Community 18 - "DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO"
 Cohesion: 0.10
 Nodes (19): 1. Executive Summary: The Anti-AI-Slop Teardown, 2. Visual Theme & Calibrated Atmosphere, 3. Typographic Architecture & Rules, 4. Reverse-Engineered & Elevated Interaction Engine, 5. Component Master Table & Behavioral States, 6. Performance & Implementation Guardrails, 7. Implementation Roadmap & Milestones, A. Diagnosa: Mengapa betadesain.com Terasa "Full AI & Jelek"? (+11 more)
 
-### Community 21 - "LayoutContext.tsx"
-Cohesion: 0.14
-Nodes (15): baskervville, jetbrainsMono, metadata, montserrat, plusJakartaSans, structuredSchema, viewport, getLayoutServerSnapshot() (+7 more)
+### Community 21 - "layout.tsx"
+Cohesion: 0.25
+Nodes (6): baskervville, jetbrainsMono, metadata, plusJakartaSans, structuredSchema, viewport
 
 ## Knowledge Gaps
-- **136 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+131 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 161 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **93 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+88 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 114 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `devDependencies` to `dependencies`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `ArchitecturalPreloader()` connect `BarcwayLayout.tsx` to `LuxuryLayout.tsx`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `package.json`?**
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `compilerOptions` connect `compilerOptions` to `include`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `nextConfig` to the rest of the system?**
-  _136 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _93 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
-  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
-- **Should `BarcwayLayout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10017730496453901 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

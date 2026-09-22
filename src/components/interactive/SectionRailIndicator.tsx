@@ -12,7 +12,7 @@ interface SectionTarget {
 const SECTIONS: SectionTarget[] = [
   { id: 'hero', num: '01', name: 'Home' },
   { id: 'about', num: '02', name: 'About' },
-  { id: 'founders', num: '03', name: 'Founders' },
+  { id: 'founder', num: '03', name: 'Founder' },
   { id: 'services', num: '04', name: 'Services' },
   { id: 'projects', num: '05', name: 'Projects' },
   { id: 'contact', num: '06', name: 'Contact' },

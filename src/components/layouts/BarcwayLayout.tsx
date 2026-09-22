@@ -87,7 +87,7 @@ export default function BarcwayLayout() {
   }, []);
 
   return (
-    <div className="bg-[#000000] text-slate-100 font-sans min-h-screen selection:bg-amber-500 selection:text-black relative w-full overflow-x-hidden">
+    <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       {/* 1. Architectural Preloader */}
       <ArchitecturalPreloader />
 
