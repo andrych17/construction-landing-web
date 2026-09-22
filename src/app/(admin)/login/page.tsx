@@ -62,13 +62,13 @@ function LoginForm() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-xs font-mono tracking-wider text-neutral-400 uppercase mb-2">
-              Email Pengguna
+              Username
             </label>
             <input
-              type="email"
+              type="text"
               required
               autoComplete="username"
-              placeholder="admin@wwconstruction.id"
+              placeholder="Username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-white/15 bg-[#121212] text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all font-sans"
@@ -83,7 +83,7 @@ function LoginForm() {
               type="password"
               required
               autoComplete="current-password"
-              placeholder="••••••••"
+              placeholder="Password Admin"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-white/15 bg-[#121212] text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all font-sans"
