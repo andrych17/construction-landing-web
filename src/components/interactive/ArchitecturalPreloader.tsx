@@ -99,53 +99,55 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
             exit={{ opacity: 0, transition: { duration: 0.35 } }}
             className="absolute inset-0 z-30 pointer-events-none"
           >
+            {/* Fullscreen Video Bumper */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-[#030303]">
+              {!videoError ? (
+                <video
+                  src="/videos/logo.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover object-center"
+                  onError={() => setVideoError(true)}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <WwLogoMark className="w-24 h-24 text-white/90 logo-wipe" />
+                </div>
+              )}
+              {/* Subtle architectural vignette gradient to keep overlays sharp */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/50 pointer-events-none" />
+            </div>
+
             {/* Bingkai ala lembar gambar kerja arsitektur */}
-            <div className="absolute inset-4 sm:inset-8 border border-white/10" />
+            <div className="absolute inset-4 sm:inset-8 border border-white/10 z-10" />
 
             {/* Kepala lembar */}
-            <div className="absolute top-8 sm:top-14 left-8 sm:left-14 right-8 sm:right-14 flex items-center justify-between font-mono text-[11px] tracking-[0.28em] text-neutral-400 uppercase">
+            <div className="absolute top-8 sm:top-14 left-8 sm:left-14 right-8 sm:right-14 flex items-center justify-between font-mono text-[11px] tracking-[0.28em] text-neutral-400 uppercase z-10">
               <span>WW.CONS</span>
               <span className="hidden sm:inline">Studio Surabaya</span>
             </div>
 
-            {/* Pusat layar: Video Bumper Emblem ww.cons */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-8">
-              <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 flex items-center justify-center overflow-hidden mb-5">
-                {!videoError ? (
-                  <video
-                    src="/videos/logo.mp4"
-                    autoPlay
-                    muted
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full object-cover"
-                    onError={() => setVideoError(true)}
+            {/* Typographic Label & Hairline Progress Bar di area bawah agar emblem tengah tetap bebas */}
+            <div className="absolute bottom-20 sm:bottom-24 left-0 right-0 flex flex-col items-center gap-2.5 z-10">
+              <span className="font-serif text-xs sm:text-sm tracking-[0.38em] text-white/80 uppercase font-light">
+                WW.CONS
+              </span>
+
+              <div className="flex items-center gap-3 font-mono text-[10px] sm:text-[11px] tracking-[0.25em] text-neutral-400">
+                <div className="w-32 sm:w-44 h-[1px] bg-white/15 relative overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-amber-300 transition-all duration-100 ease-out"
+                    style={{ width: `${progress}%` }}
                   />
-                ) : (
-                  <WwLogoMark className="w-20 h-20 text-white/90 logo-wipe" />
-                )}
-              </div>
-
-              {/* Typographic Label & Hairline Progress Bar */}
-              <div className="flex flex-col items-center gap-3">
-                <span className="font-serif text-lg sm:text-xl tracking-[0.38em] text-white/90 uppercase font-light">
-                  WW.CONS
-                </span>
-
-                <div className="flex items-center gap-3 font-mono text-[10px] sm:text-[11px] tracking-[0.25em] text-neutral-400">
-                  <div className="w-28 sm:w-36 h-[1px] bg-white/10 relative overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-amber-300 transition-all duration-100 ease-out"
-                      style={{ width: `${progress}%` }}
-                    />
-                  </div>
-                  <span className="tabular-nums text-neutral-300">{String(progress).padStart(2, '0')}%</span>
                 </div>
+                <span className="tabular-nums text-neutral-300">{String(progress).padStart(2, '0')}%</span>
               </div>
             </div>
 
             {/* Kaki lembar — menyeimbangkan kepala di atas */}
-            <div className="absolute bottom-8 sm:bottom-14 left-8 sm:left-14 right-8 sm:right-14 flex items-center justify-between font-mono text-[11px] tracking-[0.28em] text-neutral-400 uppercase">
+            <div className="absolute bottom-8 sm:bottom-14 left-8 sm:left-14 right-8 sm:right-14 flex items-center justify-between font-mono text-[11px] tracking-[0.28em] text-neutral-400 uppercase z-10">
               <span className="hidden sm:inline">Architecture · General Contractor</span>
               <span className="ml-auto">Wonderful Works</span>
             </div>

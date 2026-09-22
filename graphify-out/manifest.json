@@ -300,9 +300,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790068607.4768865,
-    "seen": 1790068611.8270519,
-    "ast_hash": "6cdc1094540bde048f23b2a94cc615fb",
+    "mtime": 1790068737.7620366,
+    "seen": 1790068742.5226126,
+    "ast_hash": "0776e5c062c72137e1f304d5d0383352",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
