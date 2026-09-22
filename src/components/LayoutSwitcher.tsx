@@ -40,7 +40,7 @@ export default function LayoutSwitcher() {
         />
         <div className="flex flex-col text-left">
           <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400 leading-none">
-            Ganti Layout (5 Pilihan)
+            Ganti Layout (7 Pilihan)
           </span>
           <span className="text-xs font-bold text-white leading-tight font-mono truncate max-w-[160px] sm:max-w-[200px]">
             {activeConfig.name}
@@ -49,14 +49,14 @@ export default function LayoutSwitcher() {
         <LuLayoutGrid className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors ml-1" />
       </button>
 
-      {/* 5 Distinct Layouts Drawer */}
+      {/* 7 Distinct Layouts Drawer */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-88 sm:w-[420px] bg-slate-950 text-slate-100 border border-slate-800 rounded-sm shadow-2xl p-5 overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="absolute bottom-16 right-0 w-88 sm:w-[420px] bg-slate-950 text-slate-100 border border-slate-800 rounded-sm shadow-2xl p-5 overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-200 max-h-[85vh] overflow-y-auto">
           {/* Header */}
           <div className="flex items-start justify-between pb-3 border-b border-slate-800 mb-3">
             <div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-orange-500 font-bold block">
-                5 ARSITEKTUR LAYOUT TOTAL BERBEDA
+                7 ARSITEKTUR LAYOUT TOTAL BERBEDA
               </span>
               <h4 className="text-sm font-bold text-white font-mono">
                 Pilih Konsep & Tata Letak Situs

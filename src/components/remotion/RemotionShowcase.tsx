@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useSyncExternalStore } from 'react';
 import dynamic from 'next/dynamic';
 import { RealProjectReelComp } from './RealProjectReelComp';
 import { useTheme } from '@/context/ThemeContext';
@@ -29,13 +29,13 @@ const Player = dynamic(
 
 export default function RemotionShowcase() {
   const { currentTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const [isPlaying, setIsPlaying] = useState(true);
   const [viewMode, setViewMode] = useState<'remotion' | 'live_timelapse'>('remotion');
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return null;

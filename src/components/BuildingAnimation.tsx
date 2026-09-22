@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { LuArrowUpRight, LuArrowRight } from 'react-icons/lu';
+import { LuArrowRight } from 'react-icons/lu';
 import { FaInstagram } from 'react-icons/fa';
 
 const precisionPillars = [

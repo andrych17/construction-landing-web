@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { LuArrowUpRight, LuPhone, LuQuote, LuMapPin, LuMenu, LuX } from 'react-icons/lu';
+import { LuArrowUpRight, LuPhone, LuMapPin, LuMenu, LuX } from 'react-icons/lu';
 import { FaInstagram } from 'react-icons/fa';
 import RemotionShowcase from '@/components/remotion/RemotionShowcase';
 

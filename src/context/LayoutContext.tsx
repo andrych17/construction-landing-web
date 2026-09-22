@@ -1,8 +1,8 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useSyncExternalStore } from 'react';
 
-export type LayoutId = 'corporate' | 'monograph' | 'blueprint' | 'editorial' | 'luxury';
+export type LayoutId = 'barcway' | 'fusion' | 'corporate' | 'monograph' | 'blueprint' | 'editorial' | 'luxury';
 
 export interface LayoutConfig {
   id: LayoutId;
@@ -14,9 +14,25 @@ export interface LayoutConfig {
 }
 
 export const LAYOUTS: Record<LayoutId, LayoutConfig> = {
+  barcway: {
+    id: 'barcway',
+    name: '01. WW.CONS (Barcway Baseline Flagship)',
+    subtitle: 'Architecture · Interior · General Contractor',
+    inspiration: 'Bold Artisan Living & Monolithic Luxury (barcway.com)',
+    themeColor: '#C29B38',
+    description: 'Estetika autentik barcway.com untuk ww.cons: Baskervville serif, headline berputar dinamis, filosofi Inside Out / Balanced Contrast / Narrative Space, dan swiper projects.',
+  },
+  fusion: {
+    id: 'fusion',
+    name: '02. Centra × Barcway Fusion',
+    subtitle: 'Contractor Provenance × Bold Artisan Luxury',
+    inspiration: 'Centra Arya Loka × Barcway Design',
+    themeColor: '#D97706',
+    description: 'Sinergi kekuatan kontraktor umum Surabaya berstandar SNI dengan estetika arsitektur gelap monolitik kelas dunia Barcway.',
+  },
   corporate: {
     id: 'corporate',
-    name: '01. Corporate General Contractor',
+    name: '03. Corporate General Contractor',
     subtitle: 'Turner Construction & Skanska Style',
     inspiration: 'Kontraktor Korporat & K3 Fisik',
     themeColor: '#EA580C',
@@ -24,7 +40,7 @@ export const LAYOUTS: Record<LayoutId, LayoutConfig> = {
   },
   monograph: {
     id: 'monograph',
-    name: '02. Architectural Monograph',
+    name: '04. Architectural Monograph',
     subtitle: 'Foster + Partners & Swiss Minimalist',
     inspiration: 'Monograf Arsitektur & Tipografi Swiss',
     themeColor: '#0F172A',
@@ -32,7 +48,7 @@ export const LAYOUTS: Record<LayoutId, LayoutConfig> = {
   },
   blueprint: {
     id: 'blueprint',
-    name: '03. Blueprint Engineering Matrix',
+    name: '05. Blueprint Engineering Matrix',
     subtitle: 'SOM & ARUP Technical Spec Sheet',
     inspiration: 'Cetak Biru Teknis & Lembar Spesifikasi CAD',
     themeColor: '#2563EB',
@@ -40,7 +56,7 @@ export const LAYOUTS: Record<LayoutId, LayoutConfig> = {
   },
   editorial: {
     id: 'editorial',
-    name: '04. Editorial Design Magazine',
+    name: '06. Editorial Design Magazine',
     subtitle: 'Architectural Digest & Monocle Style',
     inspiration: 'Majalah Desain Arsitektur & Jurnal Lapangan',
     themeColor: '#B45309',
@@ -48,7 +64,7 @@ export const LAYOUTS: Record<LayoutId, LayoutConfig> = {
   },
   luxury: {
     id: 'luxury',
-    name: '05. Bespoke Luxury & Craftsmanship',
+    name: '07. Bespoke Luxury & Craftsmanship',
     subtitle: 'Olson Kundig & Custom Estate Builder',
     inspiration: 'Showroom Eksklusif & Hunian Mewah Privat',
     themeColor: '#D97706',
@@ -64,28 +80,49 @@ interface LayoutContextType {
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
+function subscribeLayout(callback: () => void) {
+  window.addEventListener('ww-layout-change', callback);
+  window.addEventListener('storage', callback);
+  return () => {
+    window.removeEventListener('ww-layout-change', callback);
+    window.removeEventListener('storage', callback);
+  };
+}
+
+function getLayoutSnapshot(): LayoutId {
+  try {
+    const saved = localStorage.getItem('ww_construction_layout') as LayoutId;
+    if (saved && LAYOUTS[saved]) return saved;
+  } catch {
+    // ignore
+  }
+  return 'barcway';
+}
+
+function getLayoutServerSnapshot(): LayoutId {
+  return 'barcway';
+}
+
 export function LayoutProvider({ children }: { children: React.ReactNode }) {
-  const [layoutId, setLayoutId] = useState<LayoutId>('corporate');
+  const layoutId = useSyncExternalStore(
+    subscribeLayout,
+    getLayoutSnapshot,
+    getLayoutServerSnapshot
+  );
 
   useEffect(() => {
-    const saved = localStorage.getItem('ww_construction_layout') as LayoutId;
-    if (saved && LAYOUTS[saved]) {
-      setLayoutId(saved);
-      document.documentElement.setAttribute('data-layout', saved);
-    } else {
-      document.documentElement.setAttribute('data-layout', 'corporate');
-    }
-  }, []);
+    document.documentElement.setAttribute('data-layout', layoutId);
+  }, [layoutId]);
 
   const handleSetLayout = (id: LayoutId) => {
     if (!LAYOUTS[id]) return;
-    setLayoutId(id);
-    document.documentElement.setAttribute('data-layout', id);
     try {
       localStorage.setItem('ww_construction_layout', id);
+      window.dispatchEvent(new Event('ww-layout-change'));
     } catch {
       // ignore
     }
+    document.documentElement.setAttribute('data-layout', id);
   };
 
   return (
@@ -105,7 +142,7 @@ export function useLayoutMode() {
   const context = useContext(LayoutContext);
   if (!context) {
     return {
-      currentLayout: 'corporate' as LayoutId,
+      currentLayout: 'barcway' as LayoutId,
       setLayout: () => {},
       layouts: Object.values(LAYOUTS),
     };

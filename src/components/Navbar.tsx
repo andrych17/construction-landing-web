@@ -14,7 +14,6 @@ import {
   LuVideo,
   LuClock,
   LuMapPin,
-  LuSparkles,
 } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
@@ -185,7 +184,7 @@ export default function Navbar() {
             >
               <div className="relative w-11 h-11 bg-slate-950 border border-slate-800 rounded-xs flex items-center justify-center overflow-hidden p-1 shadow-xs group-hover:border-brand transition-colors">
                 <Image
-                  src="/images/ww/logo.jpg"
+                  src="/images/ww/logo_transparent.png"
                   alt="Wonderful Works Construction Logo"
                   width={44}
                   height={44}

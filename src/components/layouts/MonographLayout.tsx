@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { LuArrowUpRight, LuPhone, LuMapPin, LuArrowRight, LuMenu, LuX } from 'react-icons/lu';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { LuArrowUpRight, LuPhone, LuArrowRight, LuMenu, LuX } from 'react-icons/lu';
+import { FaInstagram } from 'react-icons/fa';
 import RemotionShowcase from '@/components/remotion/RemotionShowcase';
 
 const monographWorks = [

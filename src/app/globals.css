@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), "Baskervville", Georgia, serif;
+  --font-sans: var(--font-sans), "Montserrat", "Inter", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+}
+
 :root,
 [data-theme="orange"] {
   --brand-color: #EA580C;

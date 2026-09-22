@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useSyncExternalStore } from 'react';
 
 export type ThemeId = 'orange' | 'blue' | 'emerald' | 'slate' | 'amber';
 
@@ -82,29 +82,49 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+function subscribeTheme(callback: () => void) {
+  window.addEventListener('ww-theme-change', callback);
+  window.addEventListener('storage', callback);
+  return () => {
+    window.removeEventListener('ww-theme-change', callback);
+    window.removeEventListener('storage', callback);
+  };
+}
+
+function getThemeSnapshot(): ThemeId {
+  try {
+    const saved = localStorage.getItem('ww_construction_theme') as ThemeId;
+    if (saved && THEMES[saved]) return saved;
+  } catch {
+    // ignore
+  }
+  return 'orange';
+}
+
+function getThemeServerSnapshot(): ThemeId {
+  return 'orange';
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [themeId, setThemeId] = useState<ThemeId>('orange');
+  const themeId = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getThemeServerSnapshot
+  );
 
   useEffect(() => {
-    // Read saved theme from localStorage
-    const saved = localStorage.getItem('ww_construction_theme') as ThemeId;
-    if (saved && THEMES[saved]) {
-      setThemeId(saved);
-      document.documentElement.setAttribute('data-theme', saved);
-    } else {
-      document.documentElement.setAttribute('data-theme', 'orange');
-    }
-  }, []);
+    document.documentElement.setAttribute('data-theme', themeId);
+  }, [themeId]);
 
   const handleSetTheme = (id: ThemeId) => {
     if (!THEMES[id]) return;
-    setThemeId(id);
-    document.documentElement.setAttribute('data-theme', id);
     try {
       localStorage.setItem('ww_construction_theme', id);
+      window.dispatchEvent(new Event('ww-theme-change'));
     } catch {
       // ignore storage errors
     }
+    document.documentElement.setAttribute('data-theme', id);
   };
 
   return (
@@ -123,7 +143,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    // Fallback if rendered outside provider
     return {
       currentTheme: THEMES.orange,
       setTheme: () => {},

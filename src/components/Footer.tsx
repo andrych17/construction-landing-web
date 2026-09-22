@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="flex items-center gap-3.5 mb-4">
               <div className="w-10 h-10 bg-black border border-slate-800 rounded-sm p-1 flex items-center justify-center shadow-sm">
                 <Image
-                  src="/images/ww/logo.jpg"
+                  src="/images/ww/logo_transparent.png"
                   alt="WW Construction Monogram"
                   width={36}
                   height={36}

@@ -1,11 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Baskervville, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { LayoutProvider } from "@/context/LayoutContext";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const baskervville = Baskervville({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+});
+
+const montserrat = Montserrat({
   variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -25,58 +38,58 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://wwconstruction.id"),
   title: {
-    default: "Wonderful Works Construction | General Contractor Surabaya",
-    template: "%s | Wonderful Works Construction",
+    default: "ww.cons | Architecture & General Contractor Surabaya",
+    template: "%s | ww.cons",
   },
   description:
-    "Wonderful Works Construction (@ww.cons) adalah general contractor tepercaya di Surabaya. Melayani rancang bangun komersial, hunian mewah, renovasi struktural, dan fit-out interior dengan prinsip 'Quality is our priority'.",
+    "ww.cons (@ww.cons) is a visionary architecture, interior design, and general contracting firm in Surabaya. Specializing in luxury residences, corporate headquarters, and high-precision civil engineering with 35-year structural provenance.",
   keywords: [
+    "ww.cons",
+    "ww cons",
+    "ww construction",
+    "arsitektur surabaya",
     "kontraktor surabaya",
     "general contractor surabaya",
     "jasa bangun rumah surabaya",
     "jasa kontraktor surabaya",
-    "kontraktor ruko surabaya",
-    "kontraktor renovasi surabaya",
-    "wonderful works construction",
-    "ww construction",
-    "ww konstruksi",
+    "luxury residence surabaya",
+    "kontraktor voza surabaya",
     "kontraktor semolowaru",
-    "kontraktor surabaya timur",
-    "jasa renovasi rumah sidoarjo",
+    "kontraktor citraland",
+    "kontraktor graha famili",
     "kontraktor interior surabaya",
-    "kontraktor showroom surabaya",
   ],
-  authors: [{ name: "Wonderful Works Construction" }],
-  creator: "Wonderful Works Construction",
-  publisher: "Wonderful Works Construction",
+  authors: [{ name: "ww.cons (Wonderful Works Studio)" }],
+  creator: "ww.cons",
+  publisher: "ww.cons",
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
   openGraph: {
-    title: "Wonderful Works Construction | General Contractor Surabaya",
+    title: "ww.cons | Architecture & General Contractor Surabaya",
     description:
-      "Bringing Your Vision to Life with Expert Craftsmanship. General contractor tepercaya di Surabaya dengan presisi ukuran, transparansi RAB, dan komitmen tepat waktu.",
+      "Bold Artisan Design for Inspired Living. Architecture, interior design, and precision general contracting in Surabaya and East Java.",
     url: "https://wwconstruction.id",
-    siteName: "Wonderful Works Construction",
+    siteName: "ww.cons",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/images/ww/project_8.jpg",
+        url: "/images/projects/facade_architecture_hq.jpg",
         width: 1200,
         height: 630,
-        alt: "Wonderful Works Construction - General Contractor Surabaya",
+        alt: "ww.cons - Architecture & General Contractor Surabaya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wonderful Works Construction (@ww.cons)",
+    title: "ww.cons (@ww.cons)",
     description:
-      "General contractor resmi di Surabaya. Presisi struktur, transparansi RAB, dan kualitas tanpa kompromi.",
-    images: ["/images/ww/project_8.jpg"],
+      "Bold Artisan Design for Inspired Living. Architecture, Interior, and General Contracting in Surabaya.",
+    images: ["/images/projects/facade_architecture_hq.jpg"],
   },
   robots: {
     index: true,
@@ -90,8 +103,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/images/ww/logo.jpg",
-    apple: "/images/ww/logo.jpg",
+    icon: "/images/ww/logo_transparent.png",
+    apple: "/images/ww/logo_transparent.png",
   },
   alternates: {
     canonical: "https://wwconstruction.id",
@@ -102,33 +115,35 @@ const structuredSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "GeneralContractor",
+      "@type": ["GeneralContractor", "ProfessionalService", "LocalBusiness"],
       "@id": "https://wwconstruction.id/#contractor",
-      "name": "Wonderful Works Construction",
+      "name": "ww.cons",
+      "legalName": "Wonderful Works Construction",
       "alternateName": [
-        "WW Construction",
-        "WW Cons",
-        "Wonderful Works",
+        "WW.CONS",
+        "Wonderful Works Studio",
+        "WW Construction Surabaya",
         "@ww.cons"
       ],
       "url": "https://wwconstruction.id",
-      "logo": "https://wwconstruction.id/images/ww/logo.jpg",
-      "image": "https://wwconstruction.id/images/ww/project_8.jpg",
+      "logo": "https://wwconstruction.id/images/ww/logo_transparent.png",
+      "image": "https://wwconstruction.id/images/projects/facade_architecture_hq.jpg",
       "description":
-        "General contractor resmi berbasis di Surabaya. Melayani jasa konstruksi gedung komersial, pembangunan rumah mewah modern & klasik, renovasi struktural, dan interior fit-out dengan standar mutu presisi tinggi.",
-      "telephone": "+62-811-3313-347",
+        "ww.cons (@ww.cons) adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350 dengan garansi retensi resmi 100 hari.",
+      "telephone": "+62-822-9819-9902",
+      "email": "info@wwconstruction.id",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Jl. Serenity No. 29, Semolowaru",
+        "streetAddress": "Gedung Voza Premium Office Lt. 20, Jl. HR Muhammad No. 31A",
         "addressLocality": "Surabaya",
         "addressRegion": "Jawa Timur",
-        "postalCode": "60119",
+        "postalCode": "60226",
         "addressCountry": "ID"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": -7.3015,
-        "longitude": 112.7758
+        "latitude": -7.2889,
+        "longitude": 112.6961
       },
       "openingHoursSpecification": [
         {
@@ -142,54 +157,65 @@ const structuredSchema = {
             "Saturday"
           ],
           "opens": "08:00",
-          "closes": "17:00"
+          "closes": "18:00"
         }
       ],
       "areaServed": [
         { "@type": "City", "name": "Surabaya" },
         { "@type": "City", "name": "Sidoarjo" },
         { "@type": "City", "name": "Gresik" },
+        { "@type": "City", "name": "Malang" },
         { "@type": "AdministrativeArea", "name": "Jawa Timur" }
       ],
       "sameAs": [
         "https://www.instagram.com/ww.cons/"
       ],
-      "slogan": "Bringing your vision to life with expert craftsmanship - Quality is our priority",
-      "priceRange": "$$",
+      "slogan": "Bold Artisan Design for Inspired Living",
+      "priceRange": "$$$$",
+      "knowsAbout": [
+        "Bespoke Architecture",
+        "Luxury Residential Construction",
+        "Commercial Office Fit-Out",
+        "SNI K-350 Structural Concrete",
+        "Digital Laser 90° Precision Alignment",
+        "Anti-Seismic Civil Engineering",
+        "MEP Pre-Cast Embedded Infrastructure",
+        "PBG & SLF Permitting Surabaya"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Layanan Konstruksi Surabaya",
+        "name": "Layanan Arsitektur & Kontraktor ww.cons",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "General Contractor & Gedung Komersial",
-              "description": "Konstruksi perkantoran, ruko, showroom komersial, dan sarana usaha di Surabaya."
+              "name": "Bespoke Architecture & Spatial Design",
+              "description": "Perancangan arsitektur dan interior hunian mewah dengan filosofi Inside Out, Balanced Contrast, dan Narrative Space."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Pembangunan Rumah Tinggal Mewah Modern & Klasik",
-              "description": "Rancang bangun hunian premium dengan standar rekayasa sipil teruji dan finishing presisi."
+              "name": "High-End Residential General Contracting",
+              "description": "Konstruksi rumah tinggal mewah di kawasan Citraland, Graha Famili, Pakuwon City, dan Dharmahusada dengan toleransi laser < 1mm."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Renovasi & Re-Engineering Struktur",
-              "description": "Perkuatan struktur pondasi/kolom, penambahan lantai, dan transformasi fasad bangunan eksisting."
+              "name": "Corporate Headquarters & Commercial Fit-Out",
+              "description": "Rancang bangun ruang pamer, gedung komersial, dan kantor eksekutif dengan plafon akustik NRC 0.85 dan instalasi MEP terpadu."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Interior Fit-Out & MEP Integration",
-              "description": "Pengerjaan interior arsitektural komersial dan instalasi mekanikal/elektrikal terpadu."
+              "name": "Structural Engineering & Quality Audit",
+              "description": "Rekayasa sipil struktur beton bertulang K-350 SNI, uji slump independen, dan sertifikat garansi retensi resmi 100 hari."
             }
           }
         ]
@@ -326,7 +352,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-white text-slate-900 antialiased`}
+        className={`${baskervville.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-black text-slate-100 antialiased selection:bg-amber-500 selection:text-black`}
       >
         <ThemeProvider>
           <LayoutProvider>

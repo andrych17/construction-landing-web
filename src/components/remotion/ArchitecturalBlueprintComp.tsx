@@ -93,7 +93,7 @@ export const ArchitecturalBlueprintComp: React.FC = () => {
             <span>PROJ: JOTUN SHOWROOM SURABAYA</span>
           </div>
           <div style={{ display: 'flex', gap: 20 }}>
-            <span>LOC: 07°18'S 112°47'E</span>
+            <span>LOC: 07°18&apos;S 112°47&apos;E</span>
             <span>SCALE: 1:50</span>
             <span style={{ color: '#38BDF8' }}>TOL: ±0.5mm</span>
           </div>

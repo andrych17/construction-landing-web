@@ -55,7 +55,6 @@ export const RealProjectReelComp: React.FC<RealProjectReelProps> = ({
   brandColor = '#EA580C',
 }) => {
   const frame = useCurrentFrame();
-  const totalFrames = 360; // 12 seconds at 30 fps
   const sceneDuration = 90; // 3 seconds per project
 
   const currentSceneIndex = Math.min(
@@ -87,9 +86,6 @@ export const RealProjectReelComp: React.FC<RealProjectReelProps> = ({
   const textOpacity = interpolate(sceneFrame, [5, 20], [0, 1], {
     extrapolateRight: 'clamp',
   });
-
-  // Overall timeline progress
-  const progressPercent = (frame / totalFrames) * 100;
 
   return (
     <div
