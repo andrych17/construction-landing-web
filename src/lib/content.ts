@@ -10,9 +10,15 @@ import {
   MASTER_METHODOLOGY,
   WW_FAQS,
   WW_PROJECTS,
+  DEFAULT_HERO_HOME,
+  DEFAULT_HERO_ABOUT,
+  DEFAULT_HERO_SERVICES,
+  DEFAULT_HERO_PROJECTS,
+  DEFAULT_HERO_CONTACT,
   type ProjectDetail,
   type FounderDetail,
   type FaqItem,
+  type HeroMediaValue,
 } from '@/data/siteData';
 
 export type Contact = typeof SITE_CONTACT;
@@ -20,7 +26,7 @@ export type RotatingDisciplines = { id: string[]; en: string[] };
 export type Philosophy = (typeof WW_PHILOSOPHIES)[number];
 export type Service = (typeof CENTRA_SERVICES)[number];
 export type MethodologyStep = (typeof MASTER_METHODOLOGY)[number];
-export type { ProjectDetail, FounderDetail, FaqItem };
+export type { ProjectDetail, FounderDetail, FaqItem, HeroMediaValue };
 
 async function getSection<T>(key: string, fallback: T): Promise<T> {
   try {
@@ -45,6 +51,12 @@ export const getServices = () => getSection<Service[]>('services', CENTRA_SERVIC
 export const getMethodology = () => getSection<MethodologyStep[]>('methodology', MASTER_METHODOLOGY);
 
 export const getFaqs = () => getSection<FaqItem[]>('faqs', WW_FAQS);
+
+export const getHeroHome = () => getSection<HeroMediaValue>('heroHome', DEFAULT_HERO_HOME);
+export const getHeroAbout = () => getSection<HeroMediaValue>('heroAbout', DEFAULT_HERO_ABOUT);
+export const getHeroServices = () => getSection<HeroMediaValue>('heroServices', DEFAULT_HERO_SERVICES);
+export const getHeroProjects = () => getSection<HeroMediaValue>('heroProjects', DEFAULT_HERO_PROJECTS);
+export const getHeroContact = () => getSection<HeroMediaValue>('heroContact', DEFAULT_HERO_CONTACT);
 
 function dbProjectToDetail(p: {
   title: string;
@@ -103,20 +115,55 @@ export type SiteData = {
   methodology: MethodologyStep[];
   faqs: FaqItem[];
   projects: ProjectDetail[];
+  hero: {
+    home: HeroMediaValue;
+    about: HeroMediaValue;
+    services: HeroMediaValue;
+    projects: HeroMediaValue;
+    contact: HeroMediaValue;
+  };
 };
 
 /** Satu fetch gabungan dipakai sekali di root layout, lalu disebar via SiteContentContext. */
 export async function getAllSiteContent(): Promise<SiteData> {
-  const [contact, rotatingDisciplines, philosophies, founders, services, methodology, faqs, projects] =
-    await Promise.all([
-      getContact(),
-      getRotatingDisciplines(),
-      getPhilosophies(),
-      getFounders(),
-      getServices(),
-      getMethodology(),
-      getFaqs(),
-      getProjects(),
-    ]);
-  return { contact, rotatingDisciplines, philosophies, founders, services, methodology, faqs, projects };
+  const [
+    contact,
+    rotatingDisciplines,
+    philosophies,
+    founders,
+    services,
+    methodology,
+    faqs,
+    projects,
+    heroHome,
+    heroAbout,
+    heroServices,
+    heroProjects,
+    heroContact,
+  ] = await Promise.all([
+    getContact(),
+    getRotatingDisciplines(),
+    getPhilosophies(),
+    getFounders(),
+    getServices(),
+    getMethodology(),
+    getFaqs(),
+    getProjects(),
+    getHeroHome(),
+    getHeroAbout(),
+    getHeroServices(),
+    getHeroProjects(),
+    getHeroContact(),
+  ]);
+  return {
+    contact,
+    rotatingDisciplines,
+    philosophies,
+    founders,
+    services,
+    methodology,
+    faqs,
+    projects,
+    hero: { home: heroHome, about: heroAbout, services: heroServices, projects: heroProjects, contact: heroContact },
+  };
 }

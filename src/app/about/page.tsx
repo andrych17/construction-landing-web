@@ -13,7 +13,7 @@ import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function AboutPage() {
   const { lang, t } = useLanguage();
-  const { philosophies: WW_PHILOSOPHIES, founders: WW_FOUNDERS, contact: SITE_CONTACT, waLink } = useSiteContent();
+  const { philosophies: WW_PHILOSOPHIES, founders: WW_FOUNDERS, contact: SITE_CONTACT, hero, waLink } = useSiteContent();
   const founder = WW_FOUNDERS[0];
 
   return (
@@ -23,9 +23,9 @@ export default function AboutPage() {
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
         <HeroMedia
-          src="/videos/material-detail.mp4"
-          poster="/images/projects/material-detail_poster.jpg"
-          alt={t('Detail pertemuan beton dan kayu jati', 'Junction detail of raw concrete and solid teak')}
+          src={hero.about.video || undefined}
+          poster={hero.about.poster}
+          alt={t(hero.about.alt, hero.about.altEn)}
           priority
         />
 

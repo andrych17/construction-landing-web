@@ -7,6 +7,11 @@ export const CONTENT_SECTIONS = [
   { key: 'services', label: 'Layanan' },
   { key: 'methodology', label: 'Alur Kerja 10 Tahap' },
   { key: 'faqs', label: 'FAQ' },
+  { key: 'heroHome', label: 'Hero Video — Beranda' },
+  { key: 'heroAbout', label: 'Hero Video — Tentang Kami' },
+  { key: 'heroServices', label: 'Hero Video — Layanan' },
+  { key: 'heroProjects', label: 'Hero Video — Proyek' },
+  { key: 'heroContact', label: 'Hero Video — Kontak' },
 ] as const;
 
 export type ContentSectionKey = (typeof CONTENT_SECTIONS)[number]['key'];

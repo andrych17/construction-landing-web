@@ -12,7 +12,7 @@ import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ServicesPage() {
   const { lang, t } = useLanguage();
-  const { services: CENTRA_SERVICES, methodology: MASTER_METHODOLOGY, faqs: WW_FAQS } = useSiteContent();
+  const { services: CENTRA_SERVICES, methodology: MASTER_METHODOLOGY, faqs: WW_FAQS, hero } = useSiteContent();
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
@@ -21,9 +21,9 @@ export default function ServicesPage() {
       {/* 1. MONUMENTAL SERVICES HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
         <HeroMedia
-          src="/videos/concrete-structure.mp4"
-          poster="/images/projects/concrete-structure_poster.jpg"
-          alt={t('Struktur beton dalam pengerjaan', 'Concrete structure in progress')}
+          src={hero.services.video || undefined}
+          poster={hero.services.poster}
+          alt={t(hero.services.alt, hero.services.altEn)}
           priority
         />
 

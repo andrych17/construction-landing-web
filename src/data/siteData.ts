@@ -45,6 +45,48 @@ export function waLink(message: string): string {
   return `https://wa.me/${SITE_CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+export interface HeroMediaValue {
+  video: string;
+  poster: string;
+  alt: string;
+  altEn: string;
+}
+
+export const DEFAULT_HERO_HOME: HeroMediaValue = {
+  video: '/videos/hero.mp4',
+  poster: '/images/projects/hero_poster.jpg',
+  alt: '',
+  altEn: '',
+};
+export const DEFAULT_HERO_ABOUT: HeroMediaValue = {
+  video: '/videos/material-detail.mp4',
+  poster: '/images/projects/material-detail_poster.jpg',
+  alt: 'Detail pertemuan beton dan kayu jati',
+  altEn: 'Junction detail of raw concrete and solid teak',
+};
+export const DEFAULT_HERO_SERVICES: HeroMediaValue = {
+  video: '/videos/concrete-structure.mp4',
+  poster: '/images/projects/concrete-structure_poster.jpg',
+  alt: 'Struktur beton dalam pengerjaan',
+  altEn: 'Concrete structure in progress',
+};
+export const DEFAULT_HERO_PROJECTS: HeroMediaValue = {
+  video: '/videos/villa-dusk.mp4',
+  poster: '/images/projects/villa-dusk_poster.jpg',
+  alt: 'Vila modern saat senja',
+  altEn: 'Modern villa at dusk',
+};
+// Contact page previously had no hero video at all. We reuse villa-dusk.mp4 as a
+// tasteful temporary default (dusk/completed-project mood fits a contact page)
+// rather than shipping a blank/poster-only hero — the admin can replace it via
+// the new Hero Media CMS editor whenever they have a dedicated Contact video.
+export const DEFAULT_HERO_CONTACT: HeroMediaValue = {
+  video: '/videos/villa-dusk.mp4',
+  poster: '/images/projects/villa-dusk_poster.jpg',
+  alt: 'Vila modern saat senja',
+  altEn: 'Modern villa at dusk',
+};
+
 export interface ProjectDetail {
   title: string;
   category: string;

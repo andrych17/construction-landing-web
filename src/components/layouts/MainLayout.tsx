@@ -37,6 +37,7 @@ export default function MainLayout() {
     services: CENTRA_SERVICES,
     projects: WW_PROJECTS,
     contact: SITE_CONTACT,
+    hero,
     waLink,
   } = useSiteContent();
   const ROTATING_DISCIPLINES = rotatingDisciplines.id;
@@ -94,7 +95,7 @@ export default function MainLayout() {
         id="hero"
         className="relative pt-36 pb-20 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28 overflow-hidden border-b border-white/[0.08] w-full"
       >
-        <HeroMedia src="/videos/hero.mp4" poster="/images/projects/hero_poster.jpg" priority />
+        <HeroMedia src={hero.home.video || undefined} poster={hero.home.poster} alt={t(hero.home.alt, hero.home.altEn)} priority />
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           {/* Top Badge from reference pictures */}

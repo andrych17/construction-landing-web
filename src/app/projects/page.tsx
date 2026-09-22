@@ -13,7 +13,7 @@ import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
-  const { projects: WW_PROJECTS } = useSiteContent();
+  const { projects: WW_PROJECTS, hero } = useSiteContent();
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
 
@@ -58,9 +58,9 @@ export default function ProjectsPage() {
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
         <HeroMedia
-          src="/videos/villa-dusk.mp4"
-          poster="/images/projects/villa-dusk_poster.jpg"
-          alt={t('Vila modern saat senja', 'Modern villa at dusk')}
+          src={hero.projects.video || undefined}
+          poster={hero.projects.poster}
+          alt={t(hero.projects.alt, hero.projects.altEn)}
           priority
         />
 

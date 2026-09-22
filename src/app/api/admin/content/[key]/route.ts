@@ -12,6 +12,11 @@ import {
   getServices,
   getMethodology,
   getFaqs,
+  getHeroHome,
+  getHeroAbout,
+  getHeroServices,
+  getHeroProjects,
+  getHeroContact,
 } from '@/lib/content';
 
 const SECTION_DEFAULTS: Record<string, () => Promise<unknown>> = {
@@ -22,6 +27,11 @@ const SECTION_DEFAULTS: Record<string, () => Promise<unknown>> = {
   services: getServices,
   methodology: getMethodology,
   faqs: getFaqs,
+  heroHome: getHeroHome,
+  heroAbout: getHeroAbout,
+  heroServices: getHeroServices,
+  heroProjects: getHeroProjects,
+  heroContact: getHeroContact,
 };
 
 export async function GET(_request: Request, { params }: { params: Promise<{ key: string }> }) {

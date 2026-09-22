@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { LuMapPin, LuClock, LuShieldCheck } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
@@ -11,7 +12,7 @@ import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function ContactPage() {
   const { lang, t } = useLanguage();
-  const { contact: SITE_CONTACT, waLink } = useSiteContent();
+  const { contact: SITE_CONTACT, hero, waLink } = useSiteContent();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -35,8 +36,14 @@ export default function ContactPage() {
       <Navbar />
 
       {/* 1. 50/50 SPLIT CONTACT VIEWPORT */}
-      <section className="pt-36 pb-28 md:pt-48 md:pb-36 min-h-[90vh] flex items-center border-b border-white/[0.08]">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+      <section className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-36 min-h-[90vh] flex items-center border-b border-white/[0.08]">
+        <HeroMedia
+          src={hero.contact.video || undefined}
+          poster={hero.contact.poster}
+          alt={t(hero.contact.alt, hero.contact.altEn)}
+          priority
+        />
+        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Monumental Column: 'Contact' Heading */}
             <div className="lg:col-span-6 lg:sticky lg:top-36 reveal-load">

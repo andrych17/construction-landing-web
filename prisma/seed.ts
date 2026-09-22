@@ -10,6 +10,11 @@ import {
   MASTER_METHODOLOGY,
   WW_FAQS,
   WW_PROJECTS,
+  DEFAULT_HERO_HOME,
+  DEFAULT_HERO_ABOUT,
+  DEFAULT_HERO_SERVICES,
+  DEFAULT_HERO_PROJECTS,
+  DEFAULT_HERO_CONTACT,
 } from '../src/data/siteData';
 
 const db = new PrismaClient();
@@ -46,6 +51,11 @@ async function seedContent() {
     ['services', CENTRA_SERVICES],
     ['methodology', MASTER_METHODOLOGY],
     ['faqs', WW_FAQS],
+    ['heroHome', DEFAULT_HERO_HOME],
+    ['heroAbout', DEFAULT_HERO_ABOUT],
+    ['heroServices', DEFAULT_HERO_SERVICES],
+    ['heroProjects', DEFAULT_HERO_PROJECTS],
+    ['heroContact', DEFAULT_HERO_CONTACT],
   ];
 
   for (const [key, value] of sections) {
