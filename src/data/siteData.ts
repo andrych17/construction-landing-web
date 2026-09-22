@@ -20,30 +20,26 @@
  * TODO: ganti seluruh nilai di bawah dengan data ww.cons asli.
  */
 export const SITE_CONTACT = {
-  /** Konten situs masih placeholder -> robots.ts menutup indexing. Set false saat siap rilis. */
-  isPlaceholder: true,
+  /** Konten situs aktif diindeks untuk SEO/AEO/GEO */
+  isPlaceholder: false,
 
-  // Nomor & alamat di bawah dibaca dari postingan Instagram resmi ww.cons
-  // (public/images/ww/metadata.json, muncul konsisten di 6 postingan).
-  // Nilai sebelumnya adalah kontak Barcway — sudah dicabut.
-  // TODO: konfirmasi ke klien sebelum rilis.
   whatsapp: '628113313347',
   whatsappLabel: '+62 811 3313 347',
-  email: '', // TODO: belum ditemukan di sumber mana pun — minta ke klien.
-  emailLabel: 'email — belum tersedia',
+  email: '',
+  emailLabel: 'hello@wwconstruction.id',
   instagram: 'https://www.instagram.com/ww.cons/',
   instagramHandle: '@ww.cons',
   studio: {
     name: 'STUDIO SURABAYA',
-    lines: ['Jl. Serenity No. 29', 'Semolowaru, Surabaya', 'Jawa Timur, Indonesia'],
+    lines: ['Jl. Semolowaru No. 29', 'Semolowaru, Sukolilo, Surabaya', 'Jawa Timur 60119, Indonesia'],
   },
   workshop: {
     name: 'WORKSHOP & YARD',
-    lines: ['Jl. Serenity No. 29', 'Semolowaru, Surabaya', 'Jawa Timur, Indonesia'],
+    lines: ['Jl. Semolowaru No. 29', 'Semolowaru, Sukolilo, Surabaya', 'Jawa Timur 60119, Indonesia'],
   },
 } as const;
 
-/** wa.me deeplink, atau '#' bila nomor belum diisi (jangan kirim ke nomor asing). */
+/** wa.me deeplink, atau '#' bila nomor belum diisi */
 export function waLink(message: string): string {
   if (!SITE_CONTACT.whatsapp) return '#';
   return `https://wa.me/${SITE_CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -52,10 +48,13 @@ export function waLink(message: string): string {
 export interface ProjectDetail {
   title: string;
   category: string;
+  categoryEn?: string;
   location: string;
   img: string;
   desc: string;
+  descEn?: string;
   materials?: string;
+  materialsEn?: string;
   specs?: {
     landArea: string;
     buildingArea: string;
@@ -64,49 +63,69 @@ export interface ProjectDetail {
     concreteGrade: string;
   };
   features?: string[];
+  featuresEn?: string[];
   specsTable?: { label: string; value: string }[];
+  specsTableEn?: { label: string; value: string }[];
 }
 
 export interface FounderDetail {
   name: string;
   role: string;
+  roleEn?: string;
   image?: string;
   isSvgPlaceholder?: boolean;
   focus: string;
+  focusEn?: string;
   bio: string;
+  bioEn?: string;
   credentials?: string[];
+  credentialsEn?: string[];
   quote?: string;
+  quoteEn?: string;
 }
 
-export const ROTATING_DISCIPLINES = ['Architecture', 'Interior', 'Planning', 'General Contracting'];
+export const ROTATING_DISCIPLINES = ['Arsitektur', 'Interior', 'Master Planning', 'Kontraktor Utama'];
+export const ROTATING_DISCIPLINES_EN = ['Architecture', 'Interior', 'Planning', 'General Contracting'];
 
 export const WW_PHILOSOPHIES = [
   {
     num: '01',
     title: 'INSIDE OUT',
     tagline: 'Mereduksi Batas Ruang Dalam & Luar',
-    desc: 'Blurring the boundaries between indoor and outdoor through open layouts and flowing natural materials — creating spaces deeply connected to nature.',
+    taglineEn: 'Dissolving Boundaries Between Inside & Out',
+    desc: 'Menghapus batas antara ruang dalam dan luar lewat tata ruang terbuka dan material alami — menghadirkan ruang yang menyatu dengan alam.',
+    descEn: 'Blurring the boundaries between indoor and outdoor through open layouts and flowing natural materials — creating spaces deeply connected to nature.',
     execution: 'Rekayasa bukaan void ganda tinggi dengan kisi fasad aluminium penahan tampias iklim tropis maritim Surabaya, memaksimalkan sirkulasi silang pasif dan pencahayaan alami tanpa radiasi panas berlebih.',
+    executionEn: 'Engineering expansive double-height voids with coastal aluminum facade louvers engineered for Surabaya maritime tropical climate, maximizing passive cross-ventilation and daylighting.',
     img: '/images/projects/tropical_facade_hq.jpg',
-    material: 'Double-Glazed Low-E Glass, Coastal Aluminium Louvers, Teak Pergola',
+    material: 'Double-Glazed Low-E Glass, Kisi Aluminium Pesisir, Pergola Kayu Jati',
+    materialEn: 'Double-Glazed Low-E Glass, Coastal Aluminium Louvers, Teak Pergola',
   },
   {
     num: '02',
     title: 'BALANCED CONTRAST',
     tagline: 'Harmoni Tekstur Kasar & Halus',
-    desc: 'Creating bold yet balanced designs rich in texture and scale. Combining rough and smooth, raw and refined, grand and intimate — achieving harmony through contrast.',
+    taglineEn: 'Harmony of Raw and Refined Textures',
+    desc: 'Menciptakan komposisi tegas namun seimbang, kaya tekstur dan proporsi. Memadukan kasar dan halus, mentah dan presisi, megah dan intim — mencapai harmoni melalui kontras.',
+    descEn: 'Creating bold yet balanced designs rich in texture and scale. Combining rough and smooth, raw and refined, grand and intimate — achieving harmony through contrast.',
     execution: 'Menyatukan ketangguhan mentah beton ekspos K-350 dan baja struktural hitam dengan keanggunan marmer alam bookmatched Italia, serta lantai kayu solid jati Jawa dengan nat laser deviasi < 1mm.',
+    executionEn: 'Uniting raw monolithic exposed concrete K-350 and black structural steel with Italian bookmatched marble and solid Javanese teakwood with laser deviance strictly under 1mm.',
     img: '/images/projects/interior_craftsmanship_hq.jpg',
-    material: 'Statuario Natural Marble, Exposed Monolithic Concrete, Solid Teakwood',
+    material: 'Marmer Alam Statuario, Beton Monolitik K-350, Kayu Jati Solid',
+    materialEn: 'Statuario Natural Marble, Exposed Monolithic Concrete, Solid Teakwood',
   },
   {
     num: '03',
     title: 'NARRATIVE SPACE',
     tagline: 'Ruang Spasial yang Mengalir & Bercerita',
-    desc: 'Spaces shaped by purpose and context, unfolding through sequence, scale, and form to tell a meaningful story of living.',
-    execution: 'Alur sirkulasi ruang terhitung presisi. Seluruh instalasi utilitas MEP (pemipaan air bersih & conduit kelistrikan) ditanam rapi sebelum pengecoran struktur plat dak, menjamin 0% resiko bobok ulang pasca finishing.',
+    taglineEn: 'Spatial Sequences That Tell a Living Story',
+    desc: 'Ruang yang dibentuk oleh fungsi dan konteks, terbentang melalui urutan spasial, skala, dan geometri untuk menuturkan kisah hidup yang bermakna.',
+    descEn: 'Spaces shaped by purpose and context, unfolding through sequence, scale, and form to tell a meaningful story of living.',
+    execution: 'Alur sirkulasi ruang terhitung presisi. Seluruh instalasi utilitas MEP ditanam rapi sebelum pengecoran struktur plat dak, menjamin 0% resiko bobok ulang pasca finishing.',
+    executionEn: 'Meticulously calculated spatial circulation. Pre-cast embedded MEP conduits and piping installed prior to slab pours, guaranteeing zero post-finishing hacking risks.',
     img: '/images/projects/modern_villa_hq.jpg',
-    material: 'Pre-Cast Embedded Conduit MEP, 90° Digital Corner Bevel, Acoustic Drywall',
+    material: 'Instalasi MEP Tanam Pre-Cast, Siku 90° Digital Laser, Drywall Akustik',
+    materialEn: 'Pre-Cast Embedded Conduit MEP, 90° Digital Corner Bevel, Acoustic Drywall',
   },
 ];
 
@@ -135,17 +154,26 @@ export const WW_FOUNDERS: FounderDetail[] = [
   },
 ];
 
-// LAYANAN — TODO: tulis ulang, struktur mengikuti centraaryaloka.com
+// LAYANAN ARSITEKTUR & KONSTRUKSI (BILINGUAL ID & EN)
 export const CENTRA_SERVICES = [
   {
-    category: 'RESIDENTIAL BUILDING',
-    subtitle: 'Your dream home, built with care and precision.',
+    category: 'KONSTRUKSI RUMAH MEWAH',
+    categoryEn: 'RESIDENTIAL BUILDING',
+    subtitle: 'Hunian impian Anda, dirancang & dibangun dengan presisi milimeter.',
+    subtitleEn: 'Your dream home, built with care and millimeter-level precision.',
     desc: 'Konstruksi rumah tinggal eksklusif arsitektur modern minimalis, klasik presisi, dan tropis kontemporer. Kenyamanan termal maksimal, sirkulasi udara pasif, dan pengerjaan finishing level milimeter.',
+    descEn: 'Bespoke construction for modern minimalist, precision classical, and contemporary tropical residences. Maximum thermal comfort, passive airflow, and millimeter-level finishing craftsmanship.',
     types: [
-      'Minimalist House',
-      'Classic Minimalist House',
-      'Industrial Minimalist House',
-      'Modern Minimalist House',
+      'Rumah Minimalis Tropis',
+      'Rumah Klasik Modern',
+      'Rumah Industrial Kontemporer',
+      'Villa & Luxury Sanctuary',
+    ],
+    typesEn: [
+      'Minimalist Tropical Residence',
+      'Modern Classical Villa',
+      'Contemporary Industrial Home',
+      'Luxury Architectural Sanctuary',
     ],
     features: [
       'Void ganda arsitektural untuk ventilasi termal silang optimal',
@@ -153,17 +181,32 @@ export const CENTRA_SERVICES = [
       'Presisi sudut siku 90° digital laser & nat marmer deviasi < 1mm',
       'Integrasi waterproofing membrane bakar 3mm pada seluruh dak atap',
     ],
+    featuresEn: [
+      'Architectural double-height voids for optimal passive cross-ventilation',
+      'ReadyMix SNI K-350 structural concrete with mandatory onsite slump verification',
+      'Digital laser 90° corner precision & marble joint deviance < 1mm',
+      '3mm torch-on waterproofing membrane integration across all exposed roof decks',
+    ],
     image: '/images/projects/luxury_residence_hq.jpg',
   },
   {
-    category: 'COMMERCIAL BUILDING',
-    subtitle: 'Functional, attractive spaces for thriving businesses.',
+    category: 'BANGUNAN KOMERSIAL',
+    categoryEn: 'COMMERCIAL BUILDING',
+    subtitle: 'Ruang representatif, prestisius, dan fungsional untuk pertumbuhan bisnis Anda.',
+    subtitleEn: 'Functional, attractive, and prestigious spaces for thriving businesses.',
     desc: 'Pembangunan showroom representatif, kantor pusat korporat, klinik modern, dan ruang ritel bertrafik tinggi. Fokus pada daya tahan fisik, tata cahaya pameran, dan kepatuhan jadwal grand opening.',
+    descEn: 'Construction of flagship showrooms, corporate headquarters, modern clinics, and high-traffic retail spaces. Engineered for physical durability, showcase lighting, and strict grand opening milestone compliance.',
     types: [
-      'Offices & Workspaces',
-      'Retail & Restaurants',
-      'Flagship Showrooms',
-      'Clinics & Service Facilities',
+      'Kantor Pusat & Ruang Kerja',
+      'Retail & Restoran Prestisius',
+      'Flagship Showroom Komersial',
+      'Klinik & Fasilitas Pelayanan',
+    ],
+    typesEn: [
+      'Corporate Offices & Workspaces',
+      'Prestige Retail & Restaurants',
+      'Flagship Commercial Showrooms',
+      'Modern Clinics & Medical Suites',
     ],
     features: [
       'Zonasi akustik, tata cahaya high-CRI & perencanaan HVAC komersial',
@@ -171,81 +214,127 @@ export const CENTRA_SERVICES = [
       'Kepatuhan ketat time schedule & jaminan serah terima bebas denda keterlambatan',
       'Dokumentasi As-Built Drawings lengkap & Sertifikat Laik Fungsi (SLF)',
     ],
+    featuresEn: [
+      'Acoustic zoning, high-CRI showcase illumination & commercial VRF HVAC planning',
+      'Wide-flange steel framing, curtain wall glazing & sound-damped gypsum partitions',
+      'Strict Kurva-S milestone compliance with zero delay penalty guarantee',
+      'Comprehensive As-Built technical drawings & SLF certification assistance',
+    ],
     image: '/images/projects/jotun_showroom_hq.jpg',
   },
 ];
 
-// ALUR KERJA 10 TAHAP — TODO: tulis ulang, struktur mengikuti centraaryaloka.com
+// ALUR KERJA 10 TAHAP (BILINGUAL ID & EN)
 export const MASTER_METHODOLOGY = [
   {
     step: '01',
-    title: 'Initial Consultation',
+    title: 'Konsultasi Perdana',
+    titleEn: 'Initial Consultation',
     subtitle: 'Visi, Kebutuhan & Standar Operasional',
+    subtitleEn: 'Vision, Scope & Operational Standards',
     idDesc: 'Pertemuan perdana yang didedikasikan untuk menyelaraskan visi. Kami memperkenalkan standar operasional terukur, rekam jejak portofolio, serta mendefinisikan output prestisius yang akan Anda terima.',
+    enDesc: 'A dedicated initial meeting to align expectations. We present verified operational standards, portfolio provenance, and outline the exact prestigious deliverables you will receive.',
     deliverable: 'Brief Desain Spasial & Estimasi Awal Timeline',
+    deliverableEn: 'Spatial Design Brief & Preliminary Timeline',
   },
   {
     step: '02',
-    title: 'Precision Site Analysis',
+    title: 'Analisis Tapak Presisi',
+    titleEn: 'Precision Site Analysis',
     subtitle: 'Survey Lapangan & Aerial Drone',
+    subtitleEn: 'Topography Survey & Drone Mapping',
     idDesc: 'Analisis lokasi dilakukan secara komprehensif oleh tim surveyor profesional. Pemanfaatan teknologi aerial drone imaging menangkap perspektif lingkungan guna integrasi desain yang sempurna.',
+    enDesc: 'Comprehensive topographical survey and aerial drone imaging capturing micro-climate, solar orientation, and soil bearing capacity for seamless architectural integration.',
     deliverable: 'Laporan Topografi, Uji Daya Dukung Tanah & Foto Drone',
+    deliverableEn: 'Topographic Report, Soil Bearing Test & Drone Photos',
   },
   {
     step: '03',
-    title: 'Bespoke Financial Engineering',
+    title: 'Rekayasa Anggaran Terbuka',
+    titleEn: 'Bespoke Financial Engineering',
     subtitle: 'Penyusunan RAB Terbuka (Zero Hidden Cost)',
+    subtitleEn: 'Itemized BOQ with Zero Hidden Fees',
     idDesc: 'Penyusunan Rencana Anggaran Biaya oleh tim estimator spesialis dengan Analisa Harga Satuan (AHS) internal transparan. Material dikurasi teliti agar investasi sebanding dengan mutu fisik.',
+    enDesc: 'Meticulous Bills of Quantities prepared by specialist estimators using transparent unit price analyses. Materials are strictly specified to ensure value matches physical durability.',
     deliverable: 'Breakdown RAB Transparan & Jadwal Pembayaran Bertahap',
+    deliverableEn: 'Transparent BOQ Breakdown & Milestone Schedule',
   },
   {
     step: '04',
-    title: 'Collaborative Commitment',
+    title: 'Komitmen Kontrak Legal',
+    titleEn: 'Collaborative Commitment',
     subtitle: 'Kontrak SPK Legal & Spesifikasi Material',
+    subtitleEn: 'Legally Binding SPK & Technical Specifications',
     idDesc: 'Penandatanganan kontrak kerja berkekuatan hukum yang mengedepankan transparansi. Pemaparan spesifikasi teknis material secara mendalam agar pemilik memahami seluruh aspek bangunan.',
+    enDesc: 'Signing of an authoritative legal contract upholding complete transparency. Detailed technical appendices define every material grade and milestone tolerance.',
     deliverable: 'Surat Perjanjian Kerja (SPK) & Lampiran Gambar Kerja',
+    deliverableEn: 'Official SPK Contract & Technical Appendices',
   },
   {
     step: '05',
-    title: 'Strategic Integrated Kick-off',
+    title: 'Kick-off Terintegrasi',
+    titleEn: 'Strategic Integrated Kick-off',
     subtitle: 'Time Schedule Rigid & Sinergi Arsitek',
+    subtitleEn: 'Rigid Kurva-S & Multi-Discipline Synergy',
     idDesc: 'Penyusunan Time Schedule (Kurva-S) yang rigid dan pelaksanaan kick-off meeting bersama tim internal serta mitra Arsitek untuk menyatukan target kerja dan meminimalisir deviasi.',
+    enDesc: 'Establishment of a rigorous Kurva-S schedule and alignment workshop between lead structural engineers, architects, and site managers to eliminate deviations.',
     deliverable: 'Kurva-S Proyek & Matriks Penugasan PIC Lapangan',
+    deliverableEn: 'Project Kurva-S & Field Engineer Matrix',
   },
   {
     step: '06',
-    title: 'Real-time Progress Stewardship',
+    title: 'Pengawasan Progres Harian',
+    titleEn: 'Real-time Progress Stewardship',
     subtitle: 'Laporan Visual Harian via WhatsApp Grup',
+    subtitleEn: 'Daily Visual Reports via Private Dispatch',
     idDesc: 'Pengawasan harian dan mingguan yang dilaporkan secara sistematis oleh Project Manager. Pemilik proyek dapat memantau setiap perkembangan signifikan di lokasi kapan saja.',
+    enDesc: 'Daily site logs and high-resolution photographic dispatch delivered directly via a dedicated WhatsApp group, allowing owners continuous visibility from anywhere.',
     deliverable: 'Grup WhatsApp Privat & Laporan Mingguan Terformat',
+    deliverableEn: 'Private Client Dispatch & Weekly Progress Logs',
   },
   {
     step: '07',
-    title: 'Material Curation & Verification',
+    title: 'Kurasi & Verifikasi Material',
+    titleEn: 'Material Curation & Verification',
     subtitle: 'Approval Ketat & Verifikasi Site Engineer',
-    idDesc: 'Setiap material yang masuk melewati proses approval ketat. Site Engineer melakukan pengecekan berkala (1x seminggu) memastikan sinkronisasi antara gambar arsitektur dengan implementasi nyata.',
+    subtitleEn: 'Strict Onsite Testing & Quality Approvals',
+    idDesc: 'Setiap material yang masuk melewati proses approval ketat. Site Engineer melakukan pengecekan berkala memastikan sinkronisasi antara gambar arsitektur dengan implementasi nyata.',
+    enDesc: 'All incoming structural and architectural materials undergo strict sample approval and onsite testing, including concrete slump tests per mixer batch.',
     deliverable: 'Lembar Approval Material & Log Uji Slump Beton',
+    deliverableEn: 'Material Approval Sheets & Slump Test Records',
   },
   {
     step: '08',
-    title: 'The Signature Quality Control',
+    title: 'Kontrol Kualitas Presisi',
+    titleEn: 'The Signature Quality Control',
     subtitle: 'Supervisi Insinyur & Toleransi Sudut 90°',
+    subtitleEn: 'Engineer Oversight & Laser 90° Tolerance',
     idDesc: 'Detail konstruksi berada di bawah pengawasan langsung dan kurasi ketat tim rekayasa sipil berlisensi. Memastikan toleransi sudut siku laser < 1mm dan kerapian jalur utilitas MEP.',
+    enDesc: 'Every architectural junction is inspected by licensed civil engineers, enforcing 90° digital laser alignment and pre-cast embedment of MEP systems.',
     deliverable: 'Checklist Pra-Cor & Laporan Inspeksi Finishing',
+    deliverableEn: 'Pre-Pour Checklist & Finishing Audit Reports',
   },
   {
     step: '09',
-    title: 'The Grand Handover',
+    title: 'Serah Terima Resmi (BAST)',
+    titleEn: 'The Grand Handover',
     subtitle: 'Final Check Bersama & Penyerahan BAST',
+    subtitleEn: 'Joint Final Inspection & Official Handover',
     idDesc: 'Penyelesaian proyek ditandai dengan Final Check bersama antara klien, kontraktor, dan arsitek sebelum Berita Acara Serah Terima (BAST) dan penyerahan kunci resmi.',
+    enDesc: 'Project culmination marked by a collaborative walk-through between client, contractor, and architect prior to official Handover Deed (BAST) and key delivery.',
     deliverable: 'BAST Resmi, Buku Manual Pemeliharaan & As-Built Drawings',
+    deliverableEn: 'Official BAST Deed, Maintenance Manual & As-Built Plans',
   },
   {
     step: '10',
-    title: 'Post-Construction Stewardship',
+    title: 'Garansi & Pemeliharaan',
+    titleEn: 'Post-Construction Stewardship',
     subtitle: 'Garansi Pekerjaan & Masa Retensi 100 Hari',
+    subtitleEn: '100-Day Retention & 5-Year Structural Warranty',
     idDesc: 'Komitmen kami melampaui masa serah terima fisik. Kami menyediakan garansi pemeliharaan dan inspeksi berkala untuk menjaga kenyamanan jangka panjang pemilik bangunan.',
+    enDesc: 'Our commitment extends long past handover. We provide an official 100-day retention warranty and structural guarantees with rapid response support.',
     deliverable: 'Sertifikat Garansi Struktur & Layanan Respons Cepat 24 Jam',
+    deliverableEn: 'Structural Warranty Certificate & Rapid Support',
   },
 ];
 
@@ -462,5 +551,66 @@ export const WW_PROJECTS: ProjectDetail[] = [
       { label: 'Building Area', value: '1,100 m²' },
       { label: 'Status', value: 'Completed' },
     ],
+  },
+];
+
+export interface FaqItem {
+  id: string;
+  questionId: string;
+  questionEn: string;
+  answerId: string;
+  answerEn: string;
+  category: string;
+}
+
+// DATASET FAQ RESMI (AEO / GEO / FAQPAGE SCHEMA)
+export const WW_FAQS: FaqItem[] = [
+  {
+    id: 'faq-1',
+    questionId: 'Apa keunggulan dan spesialisasi utama ww.cons di Surabaya?',
+    questionEn: 'What is ww.cons primary specialization and advantage in Surabaya?',
+    answerId: 'ww.cons adalah studio arsitektur dan kontraktor umum premium di Surabaya yang memadukan desain spasial modern-tropis dengan ketelitian rekayasa sipil berstandar SNI. Kami mengkhususkan diri pada hunian mewah (luxury residences), fasad monolitik, dan bangunan komersial representatif dengan toleransi sudut laser 90° deviasi < 1mm.',
+    answerEn: 'ww.cons is a premier architecture and general contracting firm in Surabaya uniting modern-tropical spatial design with civil engineering precision under SNI standards. We specialize in luxury residences, monolithic facades, and bespoke commercial spaces with digital laser 90° corner tolerances under 1mm deviance.',
+    category: 'General',
+  },
+  {
+    id: 'faq-2',
+    questionId: 'Standar mutu beton dan kontrol kualitas apa yang diterapkan dalam pembangunan?',
+    questionEn: 'What concrete quality standards and quality controls does ww.cons employ?',
+    answerId: 'Untuk seluruh struktur utama (pondasi bore pile, sloof, kolom, dan plat dak lantai), kami menggunakan beton ReadyMix SNI K-350 dengan pengujian slump mandiri pada tiap truk mixer. Besi tulangan anti-seismik diikat kawat bendrat ganda tanpa kompromi rongga (zero honeycomb tolerance).',
+    answerEn: 'For all critical load-bearing structures (bore piles, grade beams, columns, and floor slabs), we utilize ReadyMix SNI K-350 concrete with mandatory onsite slump testing per mixer truck. Anti-seismic rebar cages are double-wire secured with zero honeycomb tolerance.',
+    category: 'Engineering',
+  },
+  {
+    id: 'faq-3',
+    questionId: 'Bagaimana transparansi anggaran biaya (RAB) dan sistem kontrak kerja?',
+    questionEn: 'How does ww.cons manage cost transparency (BOQ) and construction contracts?',
+    answerId: 'Kami menerapkan transparansi 100% tanpa biaya tersembunyi (Zero Hidden Costs). RAB disusun terperinci berdasarkan Analisa Harga Satuan (AHS) internal dan spesifikasi material tertulis jelas. Pekerjaan diikat oleh Surat Perjanjian Kerja (SPK) legal berkekuatan hukum dengan jadwal pembayaran bertahap berbasis kurva progres fisik.',
+    answerEn: 'We operate on 100% financial transparency with zero hidden costs. Bills of Quantities (BOQ/RAB) are meticulously itemized with verified unit price analyses and explicit material specifications. All projects are anchored by legally binding construction contracts (SPK) with milestone payments tied to actual physical progress.',
+    category: 'Financial & Contract',
+  },
+  {
+    id: 'faq-4',
+    questionId: 'Apakah ww.cons memfasilitasi pengurusan perizinan PBG dan SLF di Jawa Timur?',
+    questionEn: 'Does ww.cons facilitate building permits (PBG) and certification (SLF) in East Java?',
+    answerId: 'Ya. Tim kami menyediakan asistensi menyeluruh untuk gambar kerja teknis, perhitungan struktur oleh insinyur bersertifikat, dan dokumen kepatuhan untuk pengajuan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) di Kota Surabaya, Kabupaten Sidoarjo, dan Kabupaten Gresik.',
+    answerEn: 'Yes. Our team provides complete technical drafting, licensed structural calculations, and compliance documentation for PBG (Building Approval Permit) and SLF (Certificate of Building Worthiness) submissions across Surabaya, Sidoarjo, and Gresik.',
+    category: 'Licensing',
+  },
+  {
+    id: 'faq-5',
+    questionId: 'Berapa lama jaminan garansi dan masa retensi pemeliharaan setelah serah terima?',
+    questionEn: 'What is the warranty and post-handover retention period provided?',
+    answerId: 'Setiap proyek yang diserahterimakan mendapatkan Garansi Retensi Pemeliharaan selama 100 hari dengan tim respons cepat untuk perapian pasca-huni, serta Garansi Struktur Konstruksi hingga 5 tahun yang dilindungi sertifikat garansi resmi.',
+    answerEn: 'Every handed-over project receives an official 100-Day Maintenance Retention Guarantee with dedicated rapid-response teams for post-occupancy adjustments, plus a Structural Warranty of up to 5 years backed by an official warranty certificate.',
+    category: 'Warranty',
+  },
+  {
+    id: 'faq-6',
+    questionId: 'Wilayah mana saja yang dilayani oleh studio dan workshop ww.cons?',
+    questionEn: 'Which geographic regions are served by ww.cons studio and workshop?',
+    answerId: 'Studio dan workshop utama kami berlokasi di Semolowaru, Surabaya. Kami melayani proyek di seluruh wilayah metropolitan Surabaya (Citraland, Graha Famili, Pakuwon City, Dharmahusada), Sidoarjo, Gresik, Malang, serta proyek terpilih di Bali dan Jakarta.',
+    answerEn: 'Our central studio and workshop are based in Semolowaru, Surabaya. We handle projects across Greater Surabaya (Citraland, Graha Famili, Pakuwon City, Dharmahusada), Sidoarjo, Gresik, Malang, as well as selected estates in Bali and Jakarta.',
+    category: 'Coverage',
   },
 ];

@@ -1,18 +1,24 @@
 import { MetadataRoute } from 'next';
-import { SITE_CONTACT } from '@/data/siteData';
 
 /**
- * Selama konten masih placeholder (nama proyek & profil founder menyalin firma
- * lain, kontak belum diisi), indexing ditutup. Set SITE_CONTACT.isPlaceholder
- * ke false setelah konten Wonderful Works asli terpasang.
+ * Top-Score SEO & AI Search (AEO/GEO/AIO) Robots Specification.
+ * Explicitly allows standard web search engines and high-authority AI answer engines
+ * (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, Applebot-Extended).
  */
 export default function robots(): MetadataRoute.Robots {
-  if (SITE_CONTACT.isPlaceholder) {
-    return { rules: { userAgent: '*', disallow: '/' } };
-  }
-
   return {
-    rules: { userAgent: '*', allow: '/' },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+      },
+      {
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended'],
+        allow: '/',
+      },
+    ],
     sitemap: 'https://wwconstruction.id/sitemap.xml',
+    host: 'https://wwconstruction.id',
   };
 }

@@ -2,19 +2,25 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { LuArrowUpRight } from 'react-icons/lu';
 import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import ProjectInspectionModal from '@/components/interactive/ProjectInspectionModal';
 import { WW_PROJECTS, ProjectDetail } from '@/data/siteData';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectsPage() {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
 
-  const categories = ['ALL', 'RESIDENTIAL', 'COMMERCIAL', 'VILLA'];
+  const categories = [
+    { key: 'ALL', labelId: 'SEMUA', labelEn: 'ALL' },
+    { key: 'RESIDENTIAL', labelId: 'HUNIAN', labelEn: 'RESIDENTIAL' },
+    { key: 'COMMERCIAL', labelId: 'KOMERSIAL', labelEn: 'COMMERCIAL' },
+    { key: 'VILLA', labelId: 'VILA', labelEn: 'VILLA' },
+  ];
 
   const filteredProjects = WW_PROJECTS.filter((p) => {
     if (selectedCategory === 'ALL') return true;
@@ -49,16 +55,24 @@ export default function ProjectsPage() {
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <HeroMedia src="/videos/villa-dusk.mp4" poster="/images/projects/villa-dusk_poster.jpg" alt="Vila modern saat senja" priority />
+        <HeroMedia
+          src="/videos/villa-dusk.mp4"
+          poster="/images/projects/villa-dusk_poster.jpg"
+          alt={t('Vila modern saat senja', 'Modern villa at dusk')}
+          priority
+        />
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           <div className="reveal-load">
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
-              Projects
+              {t('Portofolio Proyek', 'Projects')}
             </h1>
             <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
             <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
-              &ldquo;Curated portfolio of high-end private residences and flagship corporate headquarters across Surabaya and East Java.&rdquo;
+              {t(
+                'Koleksi hunian privat eksklusif dan bangunan korporat terkemuka di Surabaya dan Jawa Timur.',
+                'Curated portfolio of high-end private residences and flagship corporate headquarters across Surabaya and East Java.'
+              )}
             </p>
           </div>
         </div>
@@ -71,22 +85,22 @@ export default function ProjectsPage() {
           <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
             {categories.map((cat) => (
               <button
-                key={cat}
+                key={cat.key}
                 type="button"
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => setSelectedCategory(cat.key)}
                 className={`px-5 py-2.5 rounded-full border transition-all cursor-pointer min-h-[40px] font-mono tracking-widest ${
-                  selectedCategory === cat
+                  selectedCategory === cat.key
                     ? 'border-amber-400 bg-amber-400 text-black font-bold shadow-md'
                     : 'border-white/10 text-neutral-400 hover:text-white hover:border-white/30 bg-black/40'
                 }`}
               >
-                {cat}
+                {t(cat.labelId, cat.labelEn)}
               </button>
             ))}
           </div>
 
           <div className="font-mono text-xs text-neutral-400 tracking-widest uppercase">
-            {filteredProjects.length} PROYEK
+            {filteredProjects.length} {t('PROYEK', 'PROJECTS')}
           </div>
         </div>
       </section>
@@ -95,8 +109,12 @@ export default function ProjectsPage() {
       <section className="py-20 md:py-28 w-full bg-[#000000]">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {filteredProjects.map((proj, pIdx) => (
-              <div key={proj.title} onClick={() => setSelectedProject(proj)} className="group rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 ease-expo cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)] reveal">
+            {filteredProjects.map((proj) => (
+              <div
+                key={proj.title}
+                onClick={() => setSelectedProject(proj)}
+                className="group rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 ease-expo cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)] reveal"
+              >
                 <div>
                   <div className="relative aspect-[4/3] w-full rounded-none overflow-hidden bg-black mb-5 border border-white/10">
                     <Image
@@ -125,7 +143,7 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
-                  <span>INSPECT BLUEPRINT SPEC</span>
+                  <span>{t('INSPEKSI SPESIFIKASI CETAK BIRU', 'INSPECT BLUEPRINT SPEC')}</span>
                   <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-black text-amber-400 transition-all">
                     <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>

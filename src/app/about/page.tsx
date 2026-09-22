@@ -3,15 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { LuArrowUpRight, LuShieldCheck, LuAward, LuCheck, LuQuote } from 'react-icons/lu';
 import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 import { WW_PHILOSOPHIES, WW_FOUNDERS, SITE_CONTACT, waLink } from '@/data/siteData';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutPage() {
+  const { lang, t } = useLanguage();
   const founder = WW_FOUNDERS[0];
 
   return (
@@ -20,16 +21,24 @@ export default function AboutPage() {
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <HeroMedia src="/videos/material-detail.mp4" poster="/images/projects/material-detail_poster.jpg" alt="Detail pertemuan beton dan kayu jati" priority />
+        <HeroMedia
+          src="/videos/material-detail.mp4"
+          poster="/images/projects/material-detail_poster.jpg"
+          alt={t('Detail pertemuan beton dan kayu jati', 'Junction detail of raw concrete and solid teak')}
+          priority
+        />
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
           <div className="reveal-load">
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
-              About Us
+              {t('Tentang Kami', 'About Us')}
             </h1>
             <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
             <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
-              &ldquo;Redefining luxury living through spatial honesty, bold forms, and physical structural mastery.&rdquo;
+              {t(
+                'Mendefinisikan ulang kemewahan ruang melalui kejujuran material, ketegasan bentuk, dan penguasaan teknik struktur.',
+                'Redefining luxury living through spatial honesty, bold forms, and physical structural mastery.'
+              )}
             </p>
           </div>
         </div>
@@ -40,11 +49,17 @@ export default function AboutPage() {
         <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 text-center">
           <div className="space-y-8 reveal">
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
-              Wonderful Works (ww.cons) is a leading architecture, interior design, and general contracting atelier specializing in high-end residential estates and flagship commercial spaces in Surabaya and across Indonesia.
+              {t(
+                'Wonderful Works (ww.cons) adalah biro rancang bangun, arsitektur, dan interior yang berfokus pada hunian privat mewah dan ruang komersial prestisius di Surabaya dan Jawa Timur.',
+                'Wonderful Works (ww.cons) is an architecture, interior design, and general contracting atelier specializing in high-end residential estates and flagship commercial spaces in Surabaya and across East Java.'
+              )}
             </p>
             <div className="w-12 h-[1px] bg-white/20 mx-auto" />
             <p className="text-sm sm:text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-3xl mx-auto font-sans">
-              Our approach goes beyond aesthetics — we design spaces that inspire well-being, foster meaningful connections, and support fulfilling lifestyles. By combining bold architectural ideas, thoughtful craftsmanship, and robust civil structural engineering, we deliver projects that are both functional and breathtaking.
+              {t(
+                'Pendekatan kami melampaui estetika visual — kami merancang ruang yang memberi ketenangan batin, membangun interaksi bermakna, dan bertahan lintas generasi. Dengan memadukan visi desain kontemporer, ketelitian pengerjaan tangan, dan kalkulasi teknik sipil bersertifikasi, setiap karya lahir dengan integritas struktural tertinggi.',
+                'Our approach goes beyond surface aesthetics — we design environments that foster well-being, encourage meaningful connection, and endure through generations. By combining progressive architectural concepts, meticulous artisanal craft, and certified civil structural calculations, every commission is executed with absolute structural integrity.'
+              )}
             </p>
           </div>
         </div>
@@ -57,11 +72,14 @@ export default function AboutPage() {
             {/* Left Static Column */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
               <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight leading-[1.02] mb-6">
-                Our Design Philosophy
+                {t('Filosofi Desain Kami', 'Our Design Philosophy')}
               </h2>
               <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Three foundational pillars dictate every line drawn, material selected, and structural calculation performed at our studio.
+                {t(
+                  'Tiga pilar fundamental yang memandu setiap goresan garis, pemilihan material, dan kalkulasi struktur di studio kami.',
+                  'Three foundational pillars dictate every line drawn, material selected, and structural calculation performed at our studio.'
+                )}
               </p>
             </div>
 
@@ -83,7 +101,7 @@ export default function AboutPage() {
                           {p.title}
                         </h3>
                         <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mt-1">
-                          {p.tagline}
+                          {lang === 'en' && p.taglineEn ? p.taglineEn : p.tagline}
                         </span>
                       </span>
                     </span>
@@ -98,14 +116,18 @@ export default function AboutPage() {
                   <div className="bg-[#121212] border-t border-white/5 p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     <div className="md:col-span-7">
                       <p className="text-base sm:text-lg text-neutral-200 font-serif leading-relaxed mb-6 italic">
-                        &ldquo;{p.desc}&rdquo;
+                        &ldquo;{lang === 'en' && p.descEn ? p.descEn : p.desc}&rdquo;
                       </p>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6">
-                        {p.execution}
+                        {lang === 'en' && p.executionEn ? p.executionEn : p.execution}
                       </p>
                       <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
-                        <span className="text-neutral-300 block mb-1">MATERIAL &amp; STRUCTURAL REALIZATION:</span>
-                        <span className="text-neutral-300">{p.material}</span>
+                        <span className="text-neutral-300 block mb-1">
+                          {t('REALISASI MATERIAL & STRUKTUR:', 'MATERIAL & STRUCTURAL REALIZATION:')}
+                        </span>
+                        <span className="text-neutral-300">
+                          {lang === 'en' && p.materialEn ? p.materialEn : p.material}
+                        </span>
                       </div>
                     </div>
 
@@ -137,20 +159,22 @@ export default function AboutPage() {
               </h2>
               <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Combining 50+ years of family construction pedigree in Surabaya with contemporary architectural vision, structural calculation precision, and transparent financial stewardship.
+                {t(
+                  'Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima dengan standar teknik sipil tertinggi.',
+                  'Leading architectural design and construction execution, from feasibility studies to handover with rigorous civil engineering standards.'
+                )}
               </p>
 
               <div className="space-y-3 font-mono text-xs text-neutral-400 mb-8">
                 <div className="flex items-center gap-3 text-neutral-300">
                   <LuShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>REGISTERED CIVIL ENGINEER & MASTER BUILDER</span>
+                  <span>{t('INSINYUR SIPIL TERDAFTAR & MASTER BUILDER', 'REGISTERED CIVIL ENGINEER & MASTER BUILDER')}</span>
                 </div>
                 <div className="flex items-center gap-3 text-neutral-300">
                   <LuAward className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>WONDERFUL WORKS · SURABAYA</span>
                 </div>
               </div>
-
             </div>
 
             {/* Right Single Founder Card Showcase with SVG Placeholder */}
@@ -160,7 +184,7 @@ export default function AboutPage() {
                 <div className="md:col-span-6">
                   <div className="relative aspect-[3/4] w-full rounded-none overflow-hidden border border-white/15 bg-black shadow-inner">
                     <FounderSvgPlaceholder
-                      title="LEAD MASTER BUILDER"
+                      title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
                       subtitle={founder.name}
                     />
                   </div>
@@ -169,16 +193,19 @@ export default function AboutPage() {
                 {/* Founder Details */}
                 <div className="md:col-span-6 space-y-4">
                   <span className="px-3 py-1 rounded-none bg-amber-500/10 border border-amber-500/30 font-mono text-[11px] tracking-widest text-neutral-400 uppercase inline-block">
-                    {founder.role}
+                    {t('MASTER BUILDER & DIREKTUR UTAMA', founder.role)}
                   </span>
                   <h3 className="font-serif text-3xl sm:text-4xl text-white tracking-tight">
                     {founder.name}
                   </h3>
                   <div className="font-mono text-xs text-amber-400/90 tracking-wider uppercase">
-                    {founder.focus}
+                    {t('Disiplin Struktural & Kejujuran Material', founder.focus)}
                   </div>
                   <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
-                    {founder.bio}
+                    {t(
+                      'Mengawasi langsung integrasi antara desain arsitektur dan eksekusi lapangan. Memastikan presisi toleransi milimeter dan efisiensi struktural di setiap tahap pembangunan.',
+                      founder.bio
+                    )}
                   </p>
                 </div>
               </div>
@@ -188,7 +215,7 @@ export default function AboutPage() {
                 <div className="p-6 rounded-none bg-[#111111] border border-white/10 mb-8 relative">
                   <LuQuote className="w-8 h-8 text-amber-500/30 absolute top-4 right-4" />
                   <p className="font-serif italic text-sm sm:text-base text-neutral-200 leading-relaxed pr-8">
-                    &ldquo;{founder.quote}&rdquo;
+                    &ldquo;{t('Bentuk mengikuti tujuan, dan kemewahan sejati lahir dari presisi eksekusi, bukan ornamen berlebihan.', founder.quote)}&rdquo;
                   </p>
                 </div>
               )}
@@ -196,7 +223,7 @@ export default function AboutPage() {
               {/* Verified Credentials */}
               <div className="space-y-2.5 pt-6 border-t border-white/[0.08]">
                 <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest block mb-3 font-bold">
-                  KEY ACCREDITATIONS & CORE PRINCIPLES:
+                  {t('AKREDITASI & PRINSIP UTAMA:', 'KEY ACCREDITATIONS & CORE PRINCIPLES:')}
                 </span>
                 {founder.credentials?.map((cred) => (
                   <div key={cred} className="flex items-start gap-2.5 text-xs text-neutral-300 font-sans">
@@ -208,7 +235,9 @@ export default function AboutPage() {
 
               <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between text-xs font-mono text-neutral-400 gap-3">
                 <span>WW.CONS</span>
-                <span className="text-amber-400">DIRECT CONSULTATION: {SITE_CONTACT.whatsappLabel}</span>
+                <span className="text-amber-400">
+                  {t('KONSULTASI LANGSUNG:', 'DIRECT CONSULTATION:')} {SITE_CONTACT.whatsappLabel}
+                </span>
               </div>
             </div>
           </div>
@@ -219,26 +248,29 @@ export default function AboutPage() {
       <section className="py-20 bg-[#080808] border-b border-white/[0.08]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white mb-4">
-            Mulai Diskusi Proyek
+            {t('Mulai Diskusi Proyek Anda', 'Begin Your Project Consultation')}
           </h3>
           <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">
-            Diskusikan rencana hunian atau bangunan komersial Anda langsung dengan tim ww.cons.
+            {t(
+              'Diskusikan rencana hunian privat atau bangunan komersial Anda langsung bersama tim arsitek dan insinyur ww.cons.',
+              'Discuss your private residence or commercial commission directly with the ww.cons architecture and civil engineering team.'
+            )}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-widest rounded-none transition-all duration-300 ease-expo shadow-xl min-h-[44px]"
             >
-              <span>Schedule Studio Session</span>
+              <span>{t('Jadwalkan Konsultasi', 'Schedule Studio Session')}</span>
               <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <a
-              href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+              href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to consult on a design & build project.'))}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 font-mono text-xs uppercase tracking-widest rounded-none transition-all duration-300 ease-expo min-h-[44px]"
             >
-              <span>Direct WhatsApp</span>
+              <span>WhatsApp Direct</span>
             </a>
           </div>
         </div>

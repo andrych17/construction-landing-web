@@ -24,6 +24,7 @@ import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 
 import {
   ROTATING_DISCIPLINES,
+  ROTATING_DISCIPLINES_EN,
   WW_PHILOSOPHIES,
   WW_FOUNDERS,
   CENTRA_SERVICES,
@@ -31,8 +32,10 @@ import {
   SITE_CONTACT,
   waLink,
 } from '@/data/siteData';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function MainLayout() {
+  const { lang, t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -99,12 +102,12 @@ export default function MainLayout() {
               (melanggar WCAG 2.2.2) dan terkunci di kotak tinggi tetap yang
               memotong descender. Referensi Barcway juga menampilkannya statis. */}
           <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 tracking-wide leading-[1.25] mb-5 drop-shadow-md reveal-load reveal-delay-1">
-            {ROTATING_DISCIPLINES.join(' · ')}
+            {(lang === 'en' ? ROTATING_DISCIPLINES_EN : ROTATING_DISCIPLINES).join(' · ')}
           </p>
 
           {/* Subtitle */}
           <p className="text-neutral-200 text-lg sm:text-xl font-light tracking-wide max-w-xl mx-auto mb-10 reveal-load reveal-delay-2">
-            Bringing Your Vision to Life with Expert Craftmanship
+            {t('Mewujudkan Visi Anda dengan Keahlian Keteknikan Presisi', 'Bringing Your Vision to Life with Expert Craftmanship')}
           </p>
 
           {/* Minimalist Action CTAs */}
@@ -113,7 +116,7 @@ export default function MainLayout() {
               href="/projects"
               className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] flex items-center gap-2 active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 shadow-lg"
             >
-              <span>Lihat Proyek</span>
+              <span>{t('Lihat Proyek', 'View Projects')}</span>
               <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
@@ -121,7 +124,7 @@ export default function MainLayout() {
               href="/about"
               className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[48px] flex items-center active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
-              Tentang Kami
+              {t('Tentang Kami', 'About Us')}
             </Link>
           </div>
         </div>
@@ -130,27 +133,30 @@ export default function MainLayout() {
 
       {/* 4. ABOUT US (STUDIO ETHOS & MANIFESTO) */}
       <section id="about" className="py-28 md:py-36 border-b border-white/[0.08] relative w-full scroll-mt-20">
-        {/* Section paling tenang di halaman: tanpa eyebrow, tanpa garis hias,
-            hanya prosa. Kontras dengan section bergrid di bawahnya — itu yang
-            menciptakan ritme, bukan mengulang pola header yang sama tujuh kali. */}
         <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 reveal">
           <h2 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal text-white tracking-tight leading-[0.95] mb-12">
-            About Us
+            {t('Tentang Kami', 'About Us')}
           </h2>
 
           <p className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-100 leading-[1.7] font-normal mb-10">
-            Wonderful Works (ww.cons) is a leading architecture, interior design, and general contracting firm specializing in high-end residential and commercial spaces. We create extraordinary environments that blend luxury, innovation, and artistry, crafting unique designs that elevate lifestyles and reflect individuality.
+            {t(
+              'Wonderful Works (ww.cons) adalah studio arsitektur, desain interior spasial, dan kontraktor umum terkemuka di Surabaya yang berspesialisasi pada hunian mewah dan ruang komersial prestisius. Kami menciptakan lingkungan luar biasa yang memadukan kemewahan, inovasi material, dan seni keteknikan tingkat tinggi.',
+              'Wonderful Works (ww.cons) is a leading architecture, interior design, and general contracting firm specializing in high-end residential and commercial spaces. We create extraordinary environments that blend luxury, innovation, and artistry, crafting unique designs that elevate lifestyles and reflect individuality.'
+            )}
           </p>
 
           <p className="font-serif text-lg sm:text-xl text-neutral-400 leading-[1.9] font-normal mb-14">
-            Our approach goes beyond aesthetics—we design spaces that inspire well-being, foster connections, and support fulfilling lifestyles. By combining bold ideas, thoughtful details, and innovative materials, we deliver designs that are both functional and breathtaking. At ww.cons, every project is a collaboration to create spaces that feel personal, timeless, and truly extraordinary.
+            {t(
+              'Pendekatan kami melampaui sekadar estetika visual — kami merancang ruang yang menginspirasi kenyamanan, mempererat koneksi, dan mendukung gaya hidup berkualitas. Dengan memadukan gagasan berani, detail cermat, dan material pilihan berstandar SNI, kami menghadirkan hasil karya yang fungsional sekaligus menakjubkan.',
+              'Our approach goes beyond aesthetics—we design spaces that inspire well-being, foster connections, and support fulfilling lifestyles. By combining bold ideas, thoughtful details, and innovative materials, we deliver designs that are both functional and breathtaking. At ww.cons, every project is a collaboration to create spaces that feel personal, timeless, and truly extraordinary.'
+            )}
           </p>
 
           <Link
             href="/about"
             className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
           >
-            <span>Tentang Studio</span>
+            <span>{t('Tentang Studio', 'About Studio')}</span>
             <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -163,10 +169,13 @@ export default function MainLayout() {
             {/* Left Header Column (Sticky on Desktop) */}
             <div className="lg:col-span-4 lg:sticky lg:top-32 reveal">
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-[1.08] mb-6">
-                Our Design Philosophy
+                {t('Filosofi Desain Kami', 'Our Design Philosophy')}
               </h2>
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Setiap proyek dimulai dari tujuan ruang dan kejujuran material.
+                {t(
+                  'Setiap proyek dimulai dari tujuan ruang dan kejujuran material.',
+                  'Every project begins with spatial purpose and the honesty of materials.'
+                )}
               </p>
             </div>
 
@@ -191,7 +200,7 @@ export default function MainLayout() {
                         {p.title}
                       </h3>
                       <span className="hidden md:inline font-mono text-xs text-neutral-400 tracking-wider">
-                        — {p.tagline}
+                        — {lang === 'en' && p.taglineEn ? p.taglineEn : p.tagline}
                       </span>
                     </span>
                     <span
@@ -205,14 +214,18 @@ export default function MainLayout() {
                   <div className="bg-[#181818] border-t border-white/5 p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     <div className="md:col-span-7">
                       <p className="text-base sm:text-lg text-neutral-200 font-serif leading-relaxed mb-6 italic">
-                        &ldquo;{p.desc}&rdquo;
+                        &ldquo;{lang === 'en' && p.descEn ? p.descEn : p.desc}&rdquo;
                       </p>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6">
-                        {p.execution}
+                        {lang === 'en' && p.executionEn ? p.executionEn : p.execution}
                       </p>
                       <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
-                        <span className="text-neutral-300 block mb-1">MATERIAL &amp; STRUCTURAL REALIZATION:</span>
-                        <span className="text-neutral-300">{p.material}</span>
+                        <span className="text-neutral-300 block mb-1">
+                          {t('REALISASI MATERIAL & STRUKTUR:', 'MATERIAL & STRUCTURAL REALIZATION:')}
+                        </span>
+                        <span className="text-neutral-300">
+                          {lang === 'en' && p.materialEn ? p.materialEn : p.material}
+                        </span>
                       </div>
                     </div>
 
@@ -246,7 +259,10 @@ export default function MainLayout() {
               </h2>
               <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima.
+                {t(
+                  'Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima.',
+                  'Leading architectural planning and construction execution, from site feasibility to handover.'
+                )}
               </p>
             </div>
 
@@ -268,12 +284,12 @@ export default function MainLayout() {
                           />
                         ) : (
                           <FounderSvgPlaceholder
-                            title="LEAD MASTER BUILDER"
+                            title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
                             subtitle={founder.name}
                           />
                         )}
                         <div className="absolute top-3 left-3 px-3 py-1 rounded-none bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[11px] tracking-widest text-neutral-400 uppercase">
-                          {founder.role}
+                          {t('MASTER BUILDER & DIREKTUR', founder.role)}
                         </div>
                       </div>
                     </div>
@@ -281,7 +297,7 @@ export default function MainLayout() {
                     {/* Information */}
                     <div className="md:col-span-6 space-y-4">
                       <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
-                        {founder.role} — {founder.focus}
+                        {t('Master Builder & Direktur', founder.role)} — {t('Disiplin Struktural & Kejujuran Material', founder.focus)}
                       </div>
                       <h3 className="font-serif text-2xl sm:text-3xl text-white group-hover:text-amber-400 transition-colors">
                         {founder.name}
@@ -290,11 +306,14 @@ export default function MainLayout() {
                         {founder.credentials}
                       </div>
                       <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
-                        {founder.bio}
+                        {t(
+                          'Mengawasi langsung integrasi antara desain arsitektur dan eksekusi lapangan. Memastikan presisi toleransi milimeter dan efisiensi struktural di setiap tahap pembangunan.',
+                          founder.bio
+                        )}
                       </p>
                       {founder.quote && (
                         <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
-                          &ldquo;{founder.quote}&rdquo;
+                          &ldquo;{t('Bentuk mengikuti tujuan, dan kemewahan sejati lahir dari presisi eksekusi, bukan ornamen berlebihan.', founder.quote)}&rdquo;
                         </blockquote>
                       )}
                     </div>
@@ -313,10 +332,13 @@ export default function MainLayout() {
           {/* Section Header */}
           <div className="max-w-3xl mb-16 reveal">
             <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight mb-4">
-              Services
+              {t('Layanan Kami', 'Services')}
             </h2>
             <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
-              Layanan rancang bangun untuk hunian dan bangunan komersial, dikerjakan dengan disiplin teknik sipil dan pengawasan lapangan langsung.
+              {t(
+                'Layanan rancang bangun untuk hunian dan bangunan komersial, dikerjakan dengan disiplin teknik sipil dan pengawasan lapangan langsung.',
+                'Design and build services for residential and commercial architecture, delivered with civil engineering discipline and direct on-site supervision.'
+              )}
             </p>
           </div>
 
@@ -328,34 +350,36 @@ export default function MainLayout() {
                   <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black media-reveal">
                     <Image
                       src={srv.image}
-                      alt={srv.category}
+                      alt={lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
                     <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-lg">
-                      {srv.category}
+                      {lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
                     </div>
                   </div>
 
                   <div className="p-8 sm:p-10">
                     <h3 className="font-serif text-3xl sm:text-4xl text-white mb-2">
-                      {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential Building' : 'Commercial Building'}
+                      {srv.category === 'RESIDENTIAL BUILDING'
+                        ? t('Bangunan Residensial', 'Residential Building')
+                        : t('Bangunan Komersial', 'Commercial Building')}
                     </h3>
                     <p className="font-serif text-base text-amber-400/90 italic mb-4">
-                      &ldquo;{srv.subtitle}&rdquo;
+                      &ldquo;{lang === 'en' && srv.subtitleEn ? srv.subtitleEn : srv.subtitle}&rdquo;
                     </p>
                     <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-8">
-                      {srv.desc}
+                      {lang === 'en' && srv.descEn ? srv.descEn : srv.desc}
                     </p>
 
                     <div className="mb-6">
                       <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mb-3 font-bold">
-                        WHAT WE DO:
+                        {t('CAKUPAN KERJA:', 'WHAT WE DO:')}
                       </span>
                       <div className="flex flex-wrap gap-2">
-                        {srv.types.map((type) => (
+                        {(lang === 'en' && srv.typesEn ? srv.typesEn : srv.types).map((type) => (
                           <span
                             key={type}
                             className="px-3.5 py-1.5 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
@@ -367,7 +391,7 @@ export default function MainLayout() {
                     </div>
 
                     <div className="pt-6 border-t border-white/10 space-y-2.5 font-mono text-xs text-neutral-300">
-                      {srv.features.map((feat) => (
+                      {(lang === 'en' && srv.featuresEn ? srv.featuresEn : srv.features).map((feat) => (
                         <div key={feat} className="flex items-center gap-2">
                           <LuCircleCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                           <span>{feat}</span>
@@ -382,7 +406,11 @@ export default function MainLayout() {
                     href="#contact"
                     className="group w-full py-3.5 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
                   >
-                    <span>Inquire {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential' : 'Commercial'}</span>
+                    <span>
+                      {srv.category === 'RESIDENTIAL BUILDING'
+                        ? t('Konsultasi Residensial', 'Inquire Residential')
+                        : t('Konsultasi Komersial', 'Inquire Commercial')}
+                    </span>
                     <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
@@ -398,7 +426,7 @@ export default function MainLayout() {
               href="/services"
               className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
-              <span>Layanan &amp; Alur Kerja 10 Tahap</span>
+              <span>{t('Layanan & Alur Kerja 10 Tahap', 'Services & 10-Stage Methodology')}</span>
               <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -412,7 +440,7 @@ export default function MainLayout() {
           <div className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6 reveal">
             <div>
               <h2 className="font-serif text-5xl sm:text-7xl font-normal text-white tracking-tight">
-                Projects
+                {t('Proyek Pilihan', 'Selected Projects')}
               </h2>
             </div>
 
@@ -425,7 +453,7 @@ export default function MainLayout() {
                   type="button"
                   onClick={() => setIsPaused((v) => !v)}
                   className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                  aria-label={isPaused ? 'Jalankan gerak otomatis galeri proyek' : 'Jeda gerak otomatis galeri proyek'}
+                  aria-label={isPaused ? t('Jalankan gerak otomatis galeri proyek', 'Resume carousel') : t('Jeda gerak otomatis galeri proyek', 'Pause carousel')}
                   aria-pressed={isPaused}
                 >
                   {isPaused ? <LuPlay className="w-4 h-4" /> : <LuPause className="w-4 h-4" />}
@@ -435,7 +463,7 @@ export default function MainLayout() {
                 type="button"
                 onClick={() => scrollCarousel('left')}
                 className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                aria-label="Previous Projects"
+                aria-label={t('Proyek Sebelumnya', 'Previous Projects')}
               >
                 <LuChevronLeft className="w-5 h-5" />
               </button>
@@ -443,7 +471,7 @@ export default function MainLayout() {
                 type="button"
                 onClick={() => scrollCarousel('right')}
                 className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                aria-label="Next Projects"
+                aria-label={t('Proyek Berikutnya', 'Next Projects')}
               >
                 <LuChevronRight className="w-5 h-5" />
               </button>
@@ -451,7 +479,7 @@ export default function MainLayout() {
           </div>
 
           {/* Full-Width Continuous Infinite Swiper */}
-          <div ref={carouselRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onTouchStart={() => setIsHovered(true)} onTouchEnd={() => setIsHovered(false)} role="region" aria-label="Galeri proyek pilihan" tabIndex={0} className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-sm reveal">
+          <div ref={carouselRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onTouchStart={() => setIsHovered(true)} onTouchEnd={() => setIsHovered(false)} role="region" aria-label={t('Galeri proyek pilihan', 'Selected projects gallery')} tabIndex={0} className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-sm reveal">
             {[...WW_PROJECTS, ...WW_PROJECTS].map((proj, idx) => {
               // Separuh kedua hanya penyambung visual agar loop terasa mulus.
               // Disembunyikan dari teknologi bantu supaya tiap proyek tidak dibacakan dua kali.
@@ -465,7 +493,7 @@ export default function MainLayout() {
                   tabIndex={isClone ? -1 : 0}
                   className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-none"
                 >
-                  <span className="sr-only">Lihat detail proyek {proj.title}</span>
+                  <span className="sr-only">{t(`Lihat detail proyek ${proj.title}`, `View details for project ${proj.title}`)}</span>
                   <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full overflow-hidden bg-neutral-900 mb-5 border border-white/10 group-hover:border-white/40 transition-colors duration-500 ease-expo">
                     <Image
                       src={proj.img}
@@ -512,7 +540,7 @@ export default function MainLayout() {
               href="/projects"
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-none border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] font-bold shadow-lg"
             >
-              <span>Lihat Semua {WW_PROJECTS.length} Proyek</span>
+              <span>{t(`Lihat Semua ${WW_PROJECTS.length} Proyek`, `View All ${WW_PROJECTS.length} Projects`)}</span>
               <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -526,11 +554,14 @@ export default function MainLayout() {
             {/* Left Monumental Column: 'Contact' Heading */}
             <div className="lg:col-span-6 reveal">
               <h2 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
-                Contact
+                {t('Kontak', 'Contact')}
               </h2>
               <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
               <p className="font-serif text-lg sm:text-xl text-neutral-300 font-light leading-relaxed max-w-md">
-                Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.
+                {t(
+                  'Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.',
+                  'For bespoke residences, commercial developments, and general contracting across Surabaya and East Java.'
+                )}
               </p>
             </div>
 
@@ -544,7 +575,7 @@ export default function MainLayout() {
               {/* Inquiries Details */}
               <div>
                 <h3 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-[0.25em] mb-4">
-                  FOR INQUIRIES
+                  {t('KONSULTASI & TANYA JAWAB', 'FOR INQUIRIES')}
                 </h3>
                 <div className="space-y-4 font-sans text-base sm:text-lg">
                   <div>
@@ -564,7 +595,7 @@ export default function MainLayout() {
                   <div>
                     {SITE_CONTACT.whatsapp ? (
                       <a
-                        href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                        href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to consult on a design & build project.'))}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white hover:text-amber-400 transition-colors font-mono tracking-wider block"
@@ -614,12 +645,12 @@ export default function MainLayout() {
                   href="/contact"
                   className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98] shadow-lg"
                 >
-                  <span>Hubungi Kami</span>
+                  <span>{t('Hubungi Kami', 'Contact Us')}</span>
                   <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
                 {SITE_CONTACT.whatsapp && (
                   <a
-                    href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                    href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to consult on a design & build project.'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98]"

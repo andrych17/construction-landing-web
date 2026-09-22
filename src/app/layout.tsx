@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Baskervville } from "next/font/google";
 import "./globals.css";
 import ArchitecturalPreloader from "@/components/interactive/ArchitecturalPreloader";
-import { SITE_CONTACT } from "@/data/siteData";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import { SITE_CONTACT, WW_FAQS, CENTRA_SERVICES } from "@/data/siteData";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const baskervville = Baskervville({
   variable: "--font-serif",
@@ -105,7 +107,12 @@ export const metadata: Metadata = {
   // Jangan set canonical global di sini: seluruh halaman akan ikut
   // mengkanonikalkan diri ke homepage dan hilang dari indeks.
   alternates: {
-    canonical: "/",
+    canonical: "https://wwconstruction.id",
+    languages: {
+      "id-ID": "https://wwconstruction.id",
+      "en-US": "https://wwconstruction.id",
+      "x-default": "https://wwconstruction.id",
+    },
   },
 };
 
@@ -128,15 +135,20 @@ const structuredSchema = {
       "image": "https://wwconstruction.id/images/projects/hero_poster.jpg",
       "description":
         "ww.cons adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350.",
-      // Bersumber dari SITE_CONTACT. Field yang belum terkonfirmasi (email, geo)
-      // sengaja dikosongkan — structured data yang salah lebih merugikan.
       "telephone": `+${SITE_CONTACT.whatsapp}`,
+      "email": "hello@wwconstruction.id",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": SITE_CONTACT.studio.lines[0],
         "addressLocality": "Surabaya",
         "addressRegion": "Jawa Timur",
+        "postalCode": "60119",
         "addressCountry": "ID",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.2917,
+        "longitude": 112.7936,
       },
       "openingHoursSpecification": [
         {
@@ -158,21 +170,57 @@ const structuredSchema = {
         { "@type": "City", "name": "Sidoarjo" },
         { "@type": "City", "name": "Gresik" },
         { "@type": "City", "name": "Malang" },
+        { "@type": "City", "name": "Denpasar" },
+        { "@type": "City", "name": "Jakarta" },
         { "@type": "AdministrativeArea", "name": "Jawa Timur" },
       ],
+      "knowsAbout": [
+        "Luxury Residential Architecture",
+        "Civil Engineering & General Contracting",
+        "ReadyMix SNI K-350 Structural Quality",
+        "Laser 90° Corner Alignment Tolerances",
+        "Pre-Cast Embedded MEP Systems",
+        "Commercial Flagship Showrooms & Fit-Out",
+        "PBG & SLF Permitting Compliance",
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Layanan Arsitektur & Kontraktor Utama",
+        "itemListElement": CENTRA_SERVICES.map((srv) => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": srv.category,
+            "description": srv.desc,
+          },
+        })),
+      },
       "sameAs": [SITE_CONTACT.instagram],
       "slogan": "Bringing Your Vision to Life with Expert Craftmanship",
       "priceRange": "$$$$",
     },
     {
+      "@type": "FAQPage",
+      "@id": "https://wwconstruction.id/#faq",
+      "name": "ww.cons Architecture & General Contractor Frequently Asked Questions",
+      "mainEntity": WW_FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.questionId,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answerId,
+        },
+      })),
+    },
+    {
       "@type": "WebSite",
       "@id": "https://wwconstruction.id/#website",
       "url": "https://wwconstruction.id",
-      "name": "Wonderful Works Construction",
+      "name": "ww.cons | Architecture & General Contractor Surabaya",
       "publisher": {
         "@id": "https://wwconstruction.id/#contractor",
       },
-      "inLanguage": "id-ID",
+      "inLanguage": ["id-ID", "en-US"],
     },
   ],
 };
@@ -193,8 +241,11 @@ export default function RootLayout({
       <body
         className={`${baskervville.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-[#030303] text-neutral-100 antialiased selection:bg-amber-400 selection:text-black min-h-screen`}
       >
-        <ArchitecturalPreloader />
-        {children}
+        <LanguageProvider>
+          <ArchitecturalPreloader />
+          {children}
+          <FloatingWhatsApp />
+        </LanguageProvider>
       </body>
     </html>
   );

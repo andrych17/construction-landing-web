@@ -3,17 +3,32 @@ import { MetadataRoute } from 'next';
 const BASE_URL = 'https://wwconstruction.id';
 
 /**
- * Hanya rute nyata. Versi sebelumnya mendaftarkan anchor (`/#projects`,
- * `/#faq` — yang bahkan tidak ada) dan justru melewatkan seluruh halaman asli.
+ * Top-Score Multilingual XML Sitemap with alternate hreflang support.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return [
-    { url: BASE_URL, lastModified, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE_URL}/projects`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${BASE_URL}/services`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE_URL}/about`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/contact`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+  const routes = [
+    { path: '', changeFrequency: 'weekly' as const, priority: 1.0 },
+    { path: '/projects', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/services', changeFrequency: 'monthly' as const, priority: 0.85 },
+    { path: '/about', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.8 },
   ];
+
+  return routes.map(({ path, changeFrequency, priority }) => {
+    const url = `${BASE_URL}${path}`;
+    return {
+      url,
+      lastModified,
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: {
+          id: url,
+          en: url,
+        },
+      },
+    };
+  });
 }

@@ -8,19 +8,21 @@ import { LuPhone, LuX, LuArrowUpRight } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
 import { SITE_CONTACT, waLink } from '@/data/siteData';
-
-const NAV_LINKS = [
-  { href: '/', num: '01', label: 'Home', desc: 'Studio & karya terpilih' },
-  { href: '/about', num: '02', label: 'About Us', desc: 'Ethos, filosofi & founder' },
-  { href: '/services', num: '03', label: 'Services', desc: 'Layanan & alur kerja 10 tahap' },
-  { href: '/projects', num: '04', label: 'Projects', desc: 'Portofolio arsitektur' },
-  { href: '/contact', num: '05', label: 'Contact Us', desc: 'Konsultasi langsung' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { href: '/', num: '01', label: t('Beranda', 'Home'), desc: t('Studio & karya terpilih', 'Studio & selected realizations') },
+    { href: '/about', num: '02', label: t('Tentang', 'About Us'), desc: t('Ethos, filosofi & founder', 'Ethos, philosophies & founder') },
+    { href: '/services', num: '03', label: t('Layanan', 'Services'), desc: t('Layanan & alur kerja 10 tahap', 'Signature services & 10-step methodology') },
+    { href: '/projects', num: '04', label: t('Proyek', 'Projects'), desc: t('Portofolio arsitektur', 'Architectural portfolio') },
+    { href: '/contact', num: '05', label: t('Kontak', 'Contact Us'), desc: t('Konsultasi langsung', 'Direct consultation') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +85,7 @@ export default function Navbar() {
               aria-label="Navigasi Utama"
               className="hidden lg:flex items-center gap-8 xl:gap-10 font-mono text-xs tracking-[0.25em] uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
             >
-              {NAV_LINKS.map((link) => {
+              {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
@@ -104,17 +106,48 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Right: Sleek WhatsApp Dispatch & Minimalist Hamburger Button */}
-            <div className="flex items-center gap-4 sm:gap-6">
+            {/* Right: Language Switcher, Sleek WhatsApp Dispatch & Minimalist Hamburger Button */}
+            <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+              {/* Language Switcher ID / EN */}
+              <div
+                role="group"
+                aria-label="Language selector"
+                className="flex items-center border border-white/20 bg-black/40 px-2.5 py-1.5 font-mono text-xs tracking-wider"
+              >
+                <button
+                  type="button"
+                  onClick={() => setLang('id')}
+                  className={`px-1.5 py-0.5 transition-colors cursor-pointer ${
+                    lang === 'id' ? 'text-amber-400 font-bold' : 'text-neutral-400 hover:text-white'
+                  }`}
+                  aria-pressed={lang === 'id'}
+                  aria-label="Bahasa Indonesia"
+                >
+                  ID
+                </button>
+                <span className="text-white/20 select-none mx-0.5">/</span>
+                <button
+                  type="button"
+                  onClick={() => setLang('en')}
+                  className={`px-1.5 py-0.5 transition-colors cursor-pointer ${
+                    lang === 'en' ? 'text-amber-400 font-bold' : 'text-neutral-400 hover:text-white'
+                  }`}
+                  aria-pressed={lang === 'en'}
+                  aria-label="English"
+                >
+                  EN
+                </button>
+              </div>
+
               {SITE_CONTACT.whatsapp && (
               <a
-                href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to inquire about an architectural project.'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden xl:flex items-center gap-2 px-5 py-2.5 rounded-none border border-white/15 hover:border-amber-400/80 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-wider transition-all duration-300 ease-expo min-h-[42px] active:scale-[0.98]"
               >
                 <FaWhatsapp className="w-3.5 h-3.5 text-amber-400 hover:text-black" />
-                <span className="whitespace-nowrap">CONSULTATION</span>
+                <span className="whitespace-nowrap">{t('KONSULTASI', 'CONSULTATION')}</span>
               </a>
               )}
 
@@ -156,22 +189,47 @@ export default function Navbar() {
                 <span className="font-serif text-2xl font-normal text-white lowercase">ww.cons</span>
               </Link>
               
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="group flex items-center gap-2.5 px-5 py-2.5 rounded-none border border-white/20 hover:border-amber-400 text-white hover:text-amber-400 transition-colors font-mono text-xs tracking-widest cursor-pointer active:scale-[0.98]"
-                aria-label="Close Navigation Menu"
-              >
-                <LuX className="w-4 h-4 transition-transform group-hover:rotate-90" />
-                <span>CLOSE</span>
-              </button>
+              <div className="flex items-center gap-4">
+                {/* Language Switcher in Mobile Drawer */}
+                <div className="flex items-center border border-white/20 bg-white/5 px-2.5 py-1 font-mono text-xs tracking-wider">
+                  <button
+                    type="button"
+                    onClick={() => setLang('id')}
+                    className={`px-1.5 py-0.5 transition-colors cursor-pointer ${
+                      lang === 'id' ? 'text-amber-400 font-bold' : 'text-neutral-400 hover:text-white'
+                    }`}
+                  >
+                    ID
+                  </button>
+                  <span className="text-white/20 select-none mx-0.5">/</span>
+                  <button
+                    type="button"
+                    onClick={() => setLang('en')}
+                    className={`px-1.5 py-0.5 transition-colors cursor-pointer ${
+                      lang === 'en' ? 'text-amber-400 font-bold' : 'text-neutral-400 hover:text-white'
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-none border border-white/20 hover:border-amber-400 text-white hover:text-amber-400 transition-colors font-mono text-xs tracking-widest cursor-pointer active:scale-[0.98]"
+                  aria-label="Close Navigation Menu"
+                >
+                  <LuX className="w-4 h-4 transition-transform group-hover:rotate-90" />
+                  <span>{t('TUTUP', 'CLOSE')}</span>
+                </button>
+              </div>
             </div>
 
             {/* Menu Links in Monumental Baskervville Serif */}
             <div className="w-full max-w-frame mx-auto my-auto py-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-8 space-y-4 sm:space-y-6">
-                  {NAV_LINKS.map((link, idx) => {
+                  {navLinks.map((link, idx) => {
                     const isActive = pathname === link.href;
                     return (
                       <motion.div

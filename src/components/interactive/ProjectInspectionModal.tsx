@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LuX, LuMapPin, LuPhone, LuShieldCheck, LuCheck } from 'react-icons/lu';
 import type { ProjectDetail } from '@/data/siteData';
 import { SITE_CONTACT, waLink } from '@/data/siteData';
+import { useLanguage } from '@/context/LanguageContext';
 export type { ProjectDetail };
 
 interface ProjectInspectionModalProps {
@@ -14,6 +15,8 @@ interface ProjectInspectionModalProps {
 }
 
 export default function ProjectInspectionModal({ project, onClose }: ProjectInspectionModalProps) {
+  const { lang, t } = useLanguage();
+
   // ESC handler & scroll lock
   useEffect(() => {
     if (!project) return;
@@ -34,35 +37,46 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
 
   const defaultSpecs = [
     {
-      label: 'Mutu Beton Struktur',
+      label: t('Mutu Beton Struktur', 'Structural Concrete Grade'),
       value: project.specs?.concreteGrade || 'K-300 / K-350 SNI ReadyMix dengan Uji Slump',
     },
     {
-      label: 'Dimensi Lahan & Bangunan',
-      value: project.specs ? `LT ${project.specs.landArea} · LB ${project.specs.buildingArea} (${project.specs.levels})` : 'Presisi Custom Arsitektur Surabaya',
+      label: t('Dimensi Lahan & Bangunan', 'Site & Building Dimensions'),
+      value: project.specs
+        ? `LT ${project.specs.landArea} · LB ${project.specs.buildingArea} (${project.specs.levels})`
+        : t('Presisi Custom Arsitektur Surabaya', 'Bespoke Architectural Precision Surabaya'),
     },
     {
-      label: 'Toleransi Presisi Siku',
-      value: 'Sudut 90° Digital Laser (Toleransi < 1mm)',
+      label: t('Toleransi Presisi Siku', 'Corner Alignment Tolerance'),
+      value: t('Sudut 90° Digital Laser (Toleransi < 1mm)', 'Digital Laser 90° Angle (< 1mm deviance)'),
     },
     {
-      label: 'Sistem Fasad & Partisi',
-      value: project.materials || (project.features ? project.features.join(' · ') : 'Double-Glazed Low-E Glass & Architectural Partitions'),
+      label: t('Sistem Fasad & Partisi', 'Facade & Partition System'),
+      value: (lang === 'en' && project.materialsEn)
+        ? project.materialsEn
+        : (project.materials || (project.features ? project.features.join(' · ') : 'Double-Glazed Low-E Glass & Architectural Partitions')),
     },
     {
-      label: 'Sistem MEP',
-      value: 'Jalur Pipa & Listrik Tertanam Pra-Cor Dak (0% Resiko Bobok)',
+      label: t('Sistem MEP', 'MEP Infrastructure'),
+      value: t('Jalur Pipa & Listrik Tertanam Pra-Cor Dak (0% Resiko Bobok)', 'Pre-Cast Embedded Conduits & Piping (Zero Hacking Risk)'),
     },
     {
-      label: 'Garansi & Pemeliharaan',
-      value: 'Masa Retensi Fisik 100 Hari + Sertifikat Garansi Resmi',
+      label: t('Garansi & Pemeliharaan', 'Warranty & Retention'),
+      value: t('Masa Retensi Fisik 100 Hari + Sertifikat Garansi Resmi', '100-Day Retention Guarantee + Official Structural Warranty'),
     },
   ];
 
-  const specs = project.specsTable || defaultSpecs;
+  const specs = (lang === 'en' && project.specsTableEn)
+    ? project.specsTableEn
+    : (project.specsTable || defaultSpecs);
 
-  // waLink yang meng-encode; jangan encode dua kali.
-  const waMessageText = `Halo ww.cons, saya melihat dokumentasi proyek "${project.title}" dan ingin konsultasi spesifikasi serupa.`;
+  const categoryLabel = (lang === 'en' && project.categoryEn) ? project.categoryEn : project.category;
+  const projectDesc = (lang === 'en' && project.descEn) ? project.descEn : project.desc;
+
+  const waMessageText = t(
+    `Halo ww.cons, saya melihat dokumentasi proyek "${project.title}" dan ingin konsultasi spesifikasi serupa.`,
+    `Hello ww.cons, I reviewed the project documentation for "${project.title}" and would like to consult on similar architectural specifications.`
+  );
 
   return (
     <AnimatePresence>
@@ -92,13 +106,13 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-amber-400" />
                 <span className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase font-bold">
-                  DOKUMENTASI TEKNIS & INSPEKSI
+                  {t('DOKUMENTASI TEKNIS & INSPEKSI', 'TECHNICAL SPECIFICATIONS & INSPECTION')}
                 </span>
               </div>
               <button
                 onClick={onClose}
                 className="p-2 rounded-none border border-white/10 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors cursor-pointer"
-                aria-label="Tutup inspeksi proyek"
+                aria-label={t('Tutup inspeksi proyek', 'Close project inspection')}
               >
                 <LuX className="w-4 h-4" />
               </button>
@@ -106,8 +120,8 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
 
             {/* Project Title & Category */}
             <div className="mb-6">
-              <div className="font-mono text-xs text-neutral-400 tracking-wider uppercase mb-1">
-                {project.category}
+              <div className="font-mono text-xs text-amber-400/90 tracking-wider uppercase mb-1">
+                {categoryLabel}
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
                 {project.title}
@@ -132,18 +146,18 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
             {/* Description Narrative */}
             <div className="mb-8">
               <h3 className="font-mono text-xs tracking-widest text-neutral-400 uppercase font-semibold mb-2">
-                NARASI & METODE EKSEKUSI
+                {t('NARASI & METODE EKSEKUSI', 'NARRATIVE & EXECUTION METHOD')}
               </h3>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
-                {project.desc}
+                {projectDesc}
               </p>
             </div>
 
             {/* Technical Specifications Table */}
             <div className="mb-8 rounded-none border border-white/10 overflow-hidden bg-black/30">
               <div className="bg-white/5 px-4 py-3 font-mono text-xs tracking-wider text-neutral-300 border-b border-white/10 flex items-center gap-2">
-                <LuShieldCheck className="w-4 h-4" />
-                <span>SPESIFIKASI TEKNIS & STANDAR MUTU</span>
+                <LuShieldCheck className="w-4 h-4 text-amber-400" />
+                <span>{t('SPESIFIKASI TEKNIS & STANDAR MUTU', 'TECHNICAL SPECIFICATIONS & QUALITY STANDARDS')}</span>
               </div>
               <div className="divide-y divide-white/5 font-mono text-xs">
                 {specs.map((item, idx) => (
@@ -161,7 +175,7 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
             {/* Footer CTA */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
               <div className="text-xs text-neutral-400 font-sans">
-                Konsultasikan kebutuhan teknis proyek komersial atau residensial Anda.
+                {t('Konsultasikan kebutuhan teknis proyek komersial atau residensial Anda.', 'Consult the technical requirements for your bespoke residential or commercial project.')}
               </div>
               <a
                 href={waLink(waMessageText)}
@@ -170,7 +184,7 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
                 className="w-full sm:w-auto px-6 py-3 rounded-none bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg min-h-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               >
                 <LuPhone className="w-3.5 h-3.5" />
-                <span>Konsultasi Proyek Serupa</span>
+                <span>{t('Konsultasi Proyek Serupa', 'Inquire Similar Project')}</span>
               </a>
             </div>
           </div>

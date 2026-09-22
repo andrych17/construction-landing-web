@@ -30,9 +30,9 @@
     "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790068164.2040818,
-    "seen": 1790068223.0694776,
-    "ast_hash": "505c9bc9367b817b963b746180650c82",
+    "mtime": 1790069798.7319267,
+    "seen": 1790069829.1908386,
+    "ast_hash": "db6b047b91e697679bca857202db008c",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -228,15 +228,15 @@
     "semantic_hash": ""
   },
   "src/app/robots.ts": {
-    "mtime": 1790046133.507649,
-    "seen": 1790046510.9012566,
-    "ast_hash": "0a091e8ce63da14b179efcc829b9ddf8",
+    "mtime": 1790069083.2174346,
+    "seen": 1790069407.4975245,
+    "ast_hash": "85defaa63db31c7ca74aae5c1bb7d698",
     "semantic_hash": ""
   },
   "src/app/sitemap.ts": {
-    "mtime": 1790046130.5653162,
-    "seen": 1790046510.9012587,
-    "ast_hash": "807052250860fce5a0a2d9d349174382",
+    "mtime": 1790069087.9825068,
+    "seen": 1790069407.4975297,
+    "ast_hash": "5da2ab5515ae49c88a359b5902cd6b4d",
     "semantic_hash": ""
   },
   "public/images/projects/concrete_rebar_hq.jpg": {
@@ -300,15 +300,15 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790068847.3287888,
-    "seen": 1790068852.309774,
-    "ast_hash": "a9dacf470e3c1d31c1c4b9bf1be7293e",
+    "mtime": 1790069763.0804148,
+    "seen": 1790069829.1908646,
+    "ast_hash": "a5356f289089c0ba786a18d4e856fe17",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
-    "mtime": 1790046639.9951675,
-    "seen": 1790047397.7517793,
-    "ast_hash": "3224d2641419899391ee3f8aba27c67b",
+    "mtime": 1790069416.404391,
+    "seen": 1790069829.1908674,
+    "ast_hash": "da7142a8f31dea4c77a865501d6357cf",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "public/llms.txt": {
-    "mtime": 1790046419.1341598,
-    "seen": 1790046510.9012704,
-    "ast_hash": "da8f33cd5f0e07305e85761d06417990",
+    "mtime": 1790069093.8225954,
+    "seen": 1790069407.497571,
+    "ast_hash": "2c2d5a6c8065857b3c3f7af64a17f073",
     "semantic_hash": ""
   },
   "public/images/founders/edward_matthew.jpg": {
@@ -336,27 +336,27 @@
     "semantic_hash": ""
   },
   "src/app/about/page.tsx": {
-    "mtime": 1790068360.869091,
-    "seen": 1790068482.4200144,
-    "ast_hash": "d36899689a31281746ffd0a28ee8922b",
+    "mtime": 1790069615.2202835,
+    "seen": 1790069829.190828,
+    "ast_hash": "e94e176fef31552301a78e5038bd7d9d",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
-    "mtime": 1790048344.3297591,
-    "seen": 1790048646.1460173,
-    "ast_hash": "2d2eb3444962fd4bab8f1d8008fe3d6b",
+    "mtime": 1790069640.092643,
+    "seen": 1790069829.1908355,
+    "ast_hash": "2b99ae4f82c41b4b0e15ad9af0fe175e",
     "semantic_hash": ""
   },
   "src/app/projects/page.tsx": {
-    "mtime": 1790068360.8695235,
-    "seen": 1790068482.4200258,
-    "ast_hash": "23a578b99af0f76b92435ae757178143",
+    "mtime": 1790069623.9804103,
+    "seen": 1790069829.1908484,
+    "ast_hash": "5358bdf4c9287ebd57072fee67523393",
     "semantic_hash": ""
   },
   "src/app/services/page.tsx": {
-    "mtime": 1790068454.8962507,
-    "seen": 1790068482.420032,
-    "ast_hash": "823dd1ae69ebb25d88b7baab89f3f350",
+    "mtime": 1790069681.5552413,
+    "seen": 1790069829.1908581,
+    "ast_hash": "02f746ba83f063208f17b68bf5118d59",
     "semantic_hash": ""
   },
   "scripts/generate_logos.py": {
@@ -390,27 +390,27 @@
     "semantic_hash": ""
   },
   "src/components/layouts/MainLayout.tsx": {
-    "mtime": 1790068360.8668633,
-    "seen": 1790068482.4200394,
-    "ast_hash": "ea15e6071cb1601105d3d1f6fbe50145",
+    "mtime": 1790069556.9754398,
+    "seen": 1790069829.1908703,
+    "ast_hash": "52ffa04580c6e9e41e048f192b0baa4c",
     "semantic_hash": ""
   },
   "src/components/navigation/Footer.tsx": {
-    "mtime": 1790046629.8772871,
-    "seen": 1790047397.7517805,
-    "ast_hash": "8f5a970e4996d5849383917f64c52cbb",
+    "mtime": 1790069376.518806,
+    "seen": 1790069407.4975371,
+    "ast_hash": "5372e243521da41af33b351a7e6166db",
     "semantic_hash": ""
   },
   "src/components/navigation/Navbar.tsx": {
-    "mtime": 1790048344.3278143,
-    "seen": 1790048646.1460295,
-    "ast_hash": "b60739070b1bc0ac945639a0899ef335",
+    "mtime": 1790069145.960382,
+    "seen": 1790069407.4975383,
+    "ast_hash": "7454476355e88cbb068bfa92ad6fd854",
     "semantic_hash": ""
   },
   "src/data/siteData.ts": {
-    "mtime": 1790048583.9371119,
-    "seen": 1790048646.146032,
-    "ast_hash": "1ddec9f64e00aac1a622e10a2158a66a",
+    "mtime": 1790069042.2848122,
+    "seen": 1790069407.4975483,
+    "ast_hash": "017359a79c6a4874f27a95c67c90d584",
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
@@ -579,6 +579,24 @@
     "mtime": 1790068485.0407834,
     "seen": 1790068611.8271806,
     "ast_hash": "cf26b468c4b3043fec28fe3fc2da7bba",
+    "semantic_hash": ""
+  },
+  "src/context/LanguageContext.tsx": {
+    "mtime": 1790068965.7306373,
+    "seen": 1790069407.497546,
+    "ast_hash": "628f995162dcb2dbf7fdfe986548cf65",
+    "semantic_hash": ""
+  },
+  "public/llms-full.txt": {
+    "mtime": 1790069100.4326954,
+    "seen": 1790069407.4975693,
+    "ast_hash": "2a224b35ee262038f071809b70270d92",
+    "semantic_hash": ""
+  },
+  "src/components/ui/FloatingWhatsApp.tsx": {
+    "mtime": 1790069773.1375592,
+    "seen": 1790069829.1908803,
+    "ast_hash": "dd783d07684932fd157532793d4940a2",
     "semantic_hash": ""
   }
 }

@@ -4,8 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
 import { SITE_CONTACT } from '@/data/siteData';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-12 bg-[#050505] text-neutral-400 border-t border-white/[0.08] w-full">
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-[11px]">
@@ -17,15 +20,17 @@ export default function Footer() {
             </span>
           </Link>
           <span className="hidden sm:inline text-neutral-400" aria-hidden="true">|</span>
-          <span className="text-neutral-400">Wonderful Works · Architecture &amp; General Contractor</span>
+          <span className="text-neutral-400">
+            {t('Wonderful Works · Arsitektur & Kontraktor Utama', 'Wonderful Works · Architecture & General Contractor')}
+          </span>
         </div>
 
         <nav aria-label="Navigasi footer" className="flex flex-wrap items-center justify-center gap-6 text-neutral-400">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-white transition-colors">About</Link>
-          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
-          <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+          <Link href="/" className="hover:text-white transition-colors">{t('Beranda', 'Home')}</Link>
+          <Link href="/about" className="hover:text-white transition-colors">{t('Tentang', 'About')}</Link>
+          <Link href="/services" className="hover:text-white transition-colors">{t('Layanan', 'Services')}</Link>
+          <Link href="/projects" className="hover:text-white transition-colors">{t('Proyek', 'Projects')}</Link>
+          <Link href="/contact" className="hover:text-white transition-colors">{t('Kontak', 'Contact')}</Link>
         </nav>
 
         <div className="text-center md:text-right text-neutral-400">
