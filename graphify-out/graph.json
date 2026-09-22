@@ -211,7 +211,7 @@
       "file_type": "code",
       "norm_label": "barcwaylayout()",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L39"
+      "source_location": "L34"
     },
     {
       "id": "src_components_navigation_barcwayfooter_barcwayfooter",
@@ -2759,7 +2759,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -2771,7 +2771,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -2783,7 +2783,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -2795,7 +2795,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -2807,7 +2807,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -2819,7 +2819,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -3155,7 +3155,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -4125,7 +4125,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L39",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -4502,5 +4502,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9f8fa5ce994807b1c329a50fdc35be54611bcfd6"
+  "built_at_commit": "4bc6d6ba2793af937f33bcac29b27ec4fddc82ac"
 }

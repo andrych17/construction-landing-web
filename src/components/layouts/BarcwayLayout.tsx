@@ -22,11 +22,6 @@ import BarcwayFooter from '@/components/navigation/BarcwayFooter';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
 import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 
-// Design Read:
-// Luxury Architectural Studio & High-End General Contractor landing page for discerning residential & commercial patrons in Surabaya.
-// Monolithic dark aesthetic, Baskervville serif typography, full-width expansive framing, anti-slop restraint, and tactile feedback.
-// Dials: DESIGN_VARIANCE: 8 | MOTION_INTENSITY: 6 | VISUAL_DENSITY: 3
-
 import {
   ROTATING_DISCIPLINES,
   BARCWAY_PHILOSOPHIES,
@@ -80,23 +75,23 @@ export default function BarcwayLayout() {
 
   const scrollCarousel = useCallback((direction: 'left' | 'right') => {
     if (carouselRef.current) {
-      const scrollAmount = direction === 'left' ? -460 : 460;
+      const scrollAmount = direction === 'left' ? -480 : 480;
       carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   }, []);
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
-      {/* 1. Architectural Preloader (Remotion Logo Animation) */}
+      {/* 1. Architectural Preloader (MP4 Video / Official Monogram Animation) */}
       <ArchitecturalPreloader />
 
-      {/* 2. Full-Width Barcway Signature Navigation */}
+      {/* 2. Full-Width Barcway Luxury Minimalist Navigation */}
       <BarcwayNav />
 
-      {/* 4. FULL-WIDTH CINEMATIC HERO (Anti-Slop: Viewport Fitted, Descender Cleared) */}
+      {/* 3. MONUMENTAL CINEMATIC HERO (Exact Barcway Aesthetic) */}
       <section
         id="hero"
-        className="relative min-h-[100dvh] flex items-end justify-center pb-20 pt-24 overflow-hidden border-b border-white/[0.08] w-full"
+        className="relative min-h-[100dvh] flex items-end justify-center pb-20 pt-28 sm:pt-36 overflow-hidden border-b border-white/[0.08] w-full"
       >
         {/* Ambient Dark Atmospheric Background (Video & High-Res Poster) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -120,12 +115,12 @@ export default function BarcwayLayout() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] font-normal text-white tracking-tight leading-[1.02] mb-3 lowercase"
+            className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal text-white tracking-tight leading-[0.98] mb-3 lowercase"
           >
             ww.cons
           </motion.h1>
 
-          {/* Animated Rotating Headline with Italic Descender Clearance (pb-1 leading-[1.1]) */}
+          {/* Animated Rotating Headline with Italic Descender Clearance */}
           <div className="h-14 sm:h-16 flex items-center justify-center overflow-hidden mb-4">
             <AnimatePresence mode="wait">
               <motion.div
@@ -141,7 +136,7 @@ export default function BarcwayLayout() {
             </AnimatePresence>
           </div>
 
-          {/* Subtitle (Strict < 20 Words Anti-Slop Limit) */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,7 +146,7 @@ export default function BarcwayLayout() {
             Bold Artisan Design for Inspired Living
           </motion.p>
 
-          {/* Minimalist Action CTAs (Single-Line, Tactile Feedback, WCAG Contrast) */}
+          {/* Minimalist Action CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -181,7 +176,7 @@ export default function BarcwayLayout() {
         </div>
       </section>
 
-      {/* 5. ABOUT US (BARCWAY STUDIO ETHOS & PEDIGREE) */}
+      {/* 4. ABOUT US (BARCWAY STUDIO ETHOS & MANIFESTO) */}
       <section id="about" className="py-28 md:py-36 border-b border-white/[0.08] relative w-full scroll-mt-20">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -223,7 +218,7 @@ export default function BarcwayLayout() {
         </motion.div>
       </section>
 
-      {/* 6. FULL-WIDTH PHILOSOPHY ACCORDION */}
+      {/* 5. OUR DESIGN PHILOSOPHY ACCORDION */}
       <section id="philosophy" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -338,102 +333,193 @@ export default function BarcwayLayout() {
         </div>
       </section>
 
-      {/* 7. THE FOUNDER (BARCWAY VISIONARY & PRINCIPAL) */}
-      <section id="founder" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Header Column */}
+      {/* 6. PROJECTS (BARCWAY EXACT PLACEMENT: SITS DIRECTLY BELOW DESIGN PHILOSOPHY) */}
+      <section id="projects" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden bg-[#000000]">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto">
+          {/* Section Header with Controls */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row justify-between sm:items-end mb-12 pb-6 border-b border-white/[0.08] gap-6"
+          >
+            <div>
+              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
+                PORTFOLIO COMMISSIONS & REALIZATIONS
+              </span>
+              <h2 className="font-serif text-5xl sm:text-7xl font-normal text-white tracking-tight">
+                Projects
+              </h2>
+            </div>
+
+            {/* View Mode & Carousel Controls */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center border border-white/15 rounded-full p-1 bg-neutral-900 text-xs font-mono">
+                <button
+                  type="button"
+                  onClick={() => setViewMode('carousel')}
+                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
+                    viewMode === 'carousel' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
+                  }`}
+                >
+                  Slider
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode('grid')}
+                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
+                    viewMode === 'grid' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
+                  }`}
+                >
+                  Matrix
+                </button>
+              </div>
+
+              {viewMode === 'carousel' && (
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsCarouselPaused((prev) => !prev)}
+                    className="w-11 h-11 rounded-full border border-white/20 hover:border-amber-400 flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                    title={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
+                    aria-label={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
+                  >
+                    {isCarouselPaused ? (
+                      <LuPlay className="w-4 h-4 text-amber-400 ml-0.5" />
+                    ) : (
+                      <LuPause className="w-4 h-4 text-neutral-300" />
+                    )}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => scrollCarousel('left')}
+                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                    aria-label="Previous Projects"
+                  >
+                    <LuChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => scrollCarousel('right')}
+                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                    aria-label="Next Projects"
+                  >
+                    <LuChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Full-Width Carousel Mode (Signature Barcway Continuous Infinite Swiper) */}
+          {viewMode === 'carousel' ? (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
+              viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 lg:sticky lg:top-32"
+              ref={carouselRef}
+              onMouseEnter={() => setIsCarouselPaused(true)}
+              onMouseLeave={() => setIsCarouselPaused(false)}
+              onTouchStart={() => setIsCarouselPaused(true)}
+              onTouchEnd={() => setIsCarouselPaused(false)}
+              className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-                LEADERSHIP & PROVENANCE
-              </span>
-              <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
-                The<br />Founder
-              </h2>
-              <div className="w-16 h-[1.5px] bg-amber-400 mb-6" />
-              <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Dedicated to shaping evocative architectural landmarks and bespoke private sanctuaries that harmonize bold form exploration with physical structural mastery and transparent financial stewardship.
-              </p>
-              <div className="hidden lg:block font-mono text-xs text-neutral-500 tracking-widest uppercase">
-                PRINCIPAL · STUDIO VOZA TOWER SURABAYA
-              </div>
-            </motion.div>
-
-            {/* Right Founder Card Showcase with SVG Placeholder */}
-            <div className="lg:col-span-7">
-              {BARCWAY_FOUNDERS.map((founder, fIdx) => (
-                <motion.div
-                  key={founder.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.75, delay: fIdx * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="group rounded-2xl bg-[#080808] border border-white/10 hover:border-amber-400/60 p-6 sm:p-10 transition-all duration-500 shadow-2xl"
+              {[...BARCWAY_PROJECTS, ...BARCWAY_PROJECTS].map((proj, idx) => (
+                <div
+                  key={`${proj.title}-${idx}`}
+                  onClick={() => setSelectedProject(proj)}
+                  className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
-                    {/* Vector Silhouette Portrait Box */}
-                    <div className="md:col-span-6">
-                      <div className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-white/15 bg-black shadow-inner">
-                        {founder.image ? (
-                          <Image
-                            src={founder.image}
-                            alt={`${founder.name} - ${founder.role}`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.9] group-hover:brightness-100"
-                            sizes="(max-width: 768px) 100vw, 400px"
-                          />
-                        ) : (
-                          <FounderSvgPlaceholder
-                            title="LEAD MASTER BUILDER"
-                            subtitle={founder.name}
-                          />
-                        )}
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
-                          {founder.role}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Information */}
-                    <div className="md:col-span-6 space-y-4">
-                      <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
-                        {founder.role} — {founder.focus}
-                      </div>
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                        {founder.name}
-                      </h3>
-                      <div className="font-mono text-[11px] text-neutral-400">
-                        {founder.credentials}
-                      </div>
-                      <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
-                        {founder.bio}
-                      </p>
-                      {founder.quote && (
-                        <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
-                          &ldquo;{founder.quote}&rdquo;
-                        </blockquote>
-                      )}
+                  <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-950 mb-4 border border-white/10 group-hover:border-amber-400/60 transition-colors">
+                    <Image
+                      src={proj.img}
+                      alt={proj.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
+                      sizes="(max-width: 768px) 440px, 540px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
+                      {proj.category}
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-500">
-                    <span>WW.CONS PRINCIPAL</span>
-                    <span className="text-neutral-400">VOZA TOWER LT. 20</span>
+                  <div className="flex justify-between items-baseline px-1">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                      {proj.title}
+                    </h3>
+                    <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          ) : (
+            /* Full-Width 3-Column Responsive Grid */
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {BARCWAY_PROJECTS.map((proj, pIdx) => (
+                <motion.div
+                  key={proj.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.65, delay: (pIdx % 3) * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => setSelectedProject(proj)}
+                  className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/5">
+                      <Image
+                        src={proj.img}
+                        alt={proj.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
+                        {proj.category}
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-baseline mb-3">
+                      <h3 className="font-serif text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                        {proj.title}
+                      </h3>
+                      <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light line-clamp-2 mb-6 font-sans">
+                      {proj.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
+                    <span>INSPECT BLUEPRINT</span>
+                    <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 text-amber-400 transition-colors">
+                      <LuArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
                   </div>
                 </motion.div>
               ))}
             </div>
+          )}
+
+          {/* Link to Dedicated Projects Page */}
+          <div className="mt-14 text-center">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[48px] font-bold shadow-lg"
+            >
+              <span>Explore All 10 Signature Projects & Blueprints</span>
+              <LuArrowUpRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 8. SERVICES (CENTRA ARYA LOKA MASTER BUILDERS) */}
+      {/* 7. SERVICES (CENTRA ARYA LOKA MASTER BUILDERS) */}
       <section id="services" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#050505] scroll-mt-20 w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
           {/* Section Header */}
@@ -532,7 +618,7 @@ export default function BarcwayLayout() {
             ))}
           </div>
 
-          {/* Centra Arya Loka 8-Stage Methodology */}
+          {/* Centra Arya Loka 10-Stage Methodology */}
           <div className="pt-16 border-t border-white/[0.08]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -597,193 +683,102 @@ export default function BarcwayLayout() {
         </div>
       </section>
 
-      {/* 9. FULL-WIDTH EDGE-TO-EDGE PROJECTS SHOWCASE */}
-      <section id="projects" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto">
-          {/* Section Header with Controls */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row justify-between sm:items-end mb-12 pb-6 border-b border-white/[0.08] gap-6"
-          >
-            <div>
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
-                PORTFOLIO COMMISSIONS
-              </span>
-              <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight">
-                Projects
-              </h2>
-            </div>
-
-            {/* View Mode & Carousel Controls */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-white/15 rounded-full p-1 bg-neutral-900 text-xs font-mono">
-                <button
-                  type="button"
-                  onClick={() => setViewMode('carousel')}
-                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
-                    viewMode === 'carousel' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  Slider
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setViewMode('grid')}
-                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
-                    viewMode === 'grid' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  Matrix
-                </button>
-              </div>
-
-              {viewMode === 'carousel' && (
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setIsCarouselPaused((prev) => !prev)}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-amber-400 flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    title={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
-                    aria-label={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
-                  >
-                    {isCarouselPaused ? (
-                      <LuPlay className="w-4 h-4 text-amber-400 ml-0.5" />
-                    ) : (
-                      <LuPause className="w-4 h-4 text-neutral-300" />
-                    )}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => scrollCarousel('left')}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    aria-label="Previous Projects"
-                  >
-                    <LuChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => scrollCarousel('right')}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    aria-label="Next Projects"
-                  >
-                    <LuChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-              )}
-            </div>
-          </motion.div>
-
-          {/* Full-Width Carousel Mode (Signature Barcway Continuous Infinite Swiper) */}
-          {viewMode === 'carousel' ? (
+      {/* 8. THE FOUNDER (1 FOUNDER PROFILE WITH ARCHITECTURAL CAD VECTOR SILHOUETTE) */}
+      <section id="founder" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Header Column */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
+              viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              ref={carouselRef}
-              onMouseEnter={() => setIsCarouselPaused(true)}
-              onMouseLeave={() => setIsCarouselPaused(false)}
-              onTouchStart={() => setIsCarouselPaused(true)}
-              onTouchEnd={() => setIsCarouselPaused(false)}
-              className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              className="lg:col-span-5 lg:sticky lg:top-32"
             >
-              {[...BARCWAY_PROJECTS, ...BARCWAY_PROJECTS].map((proj, idx) => (
-                <div
-                  key={`${proj.title}-${idx}`}
-                  onClick={() => setSelectedProject(proj)}
-                  className="w-[320px] sm:w-[400px] md:w-[460px] lg:w-[500px] shrink-0 group cursor-pointer"
-                >
-                  <div className="relative h-[380px] sm:h-[440px] md:h-[500px] w-full rounded-2xl overflow-hidden bg-neutral-950 mb-4 border border-white/10 group-hover:border-amber-400/60 transition-colors">
-                    <Image
-                      src={proj.img}
-                      alt={proj.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
-                      sizes="(max-width: 768px) 400px, 500px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                    <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
-                      {proj.category}
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-baseline px-1">
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                      {proj.title}
-                    </h3>
-                    <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
-                  </div>
-                </div>
-              ))}
+              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
+                LEADERSHIP & PROVENANCE
+              </span>
+              <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
+                The<br />Founder
+              </h2>
+              <div className="w-16 h-[1.5px] bg-amber-400 mb-6" />
+              <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
+                Dedicated to shaping evocative architectural landmarks and bespoke private sanctuaries that harmonize bold form exploration with physical structural mastery and transparent financial stewardship.
+              </p>
+              <div className="hidden lg:block font-mono text-xs text-neutral-500 tracking-widest uppercase">
+                PRINCIPAL · STUDIO VOZA TOWER SURABAYA
+              </div>
             </motion.div>
-          ) : (
-            /* Full-Width 3-Column Responsive Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {BARCWAY_PROJECTS.map((proj, pIdx) => (
+
+            {/* Right Single Founder Card Showcase with SVG Placeholder */}
+            <div className="lg:col-span-7">
+              {BARCWAY_FOUNDERS.map((founder, fIdx) => (
                 <motion.div
-                  key={proj.title}
+                  key={founder.name}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.65, delay: (pIdx % 3) * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => setSelectedProject(proj)}
-                  className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                  transition={{ duration: 0.75, delay: fIdx * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="group rounded-2xl bg-[#080808] border border-white/10 hover:border-amber-400/60 p-6 sm:p-10 transition-all duration-500 shadow-2xl"
                 >
-                  <div>
-                    <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/5">
-                      <Image
-                        src={proj.img}
-                        alt={proj.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
-                        {proj.category}
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
+                    {/* Vector Silhouette Portrait Box */}
+                    <div className="md:col-span-6">
+                      <div className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-white/15 bg-black shadow-inner">
+                        {founder.image ? (
+                          <Image
+                            src={founder.image}
+                            alt={`${founder.name} - ${founder.role}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.9] group-hover:brightness-100"
+                            sizes="(max-width: 768px) 100vw, 400px"
+                          />
+                        ) : (
+                          <FounderSvgPlaceholder
+                            title="LEAD MASTER BUILDER"
+                            subtitle={founder.name}
+                          />
+                        )}
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
+                          {founder.role}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-baseline mb-3">
-                      <h3 className="font-serif text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                        {proj.title}
+                    {/* Information */}
+                    <div className="md:col-span-6 space-y-4">
+                      <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
+                        {founder.role} — {founder.focus}
+                      </div>
+                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                        {founder.name}
                       </h3>
-                      <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
+                      <div className="font-mono text-[11px] text-neutral-400">
+                        {founder.credentials}
+                      </div>
+                      <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
+                        {founder.bio}
+                      </p>
+                      {founder.quote && (
+                        <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
+                          &ldquo;{founder.quote}&rdquo;
+                        </blockquote>
+                      )}
                     </div>
-
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light line-clamp-2 mb-6 font-sans">
-                      {proj.desc}
-                    </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
-                    <span>INSPECT BLUEPRINT</span>
-                    <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 text-amber-400 transition-colors">
-                      <LuArrowUpRight className="w-3.5 h-3.5" />
-                    </span>
+                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-500">
+                    <span>WW.CONS PRINCIPAL</span>
+                    <span className="text-neutral-400">VOZA TOWER LT. 20</span>
                   </div>
                 </motion.div>
               ))}
             </div>
-          )}
-
-          {/* Link to Dedicated Projects Page */}
-          <div className="mt-14 text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[48px] font-bold shadow-lg"
-            >
-              <span>Explore All 10 Signature Projects & Blueprints</span>
-              <LuArrowUpRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* 10. FULL-WIDTH SIGNATURE CONTACT SECTION (BARCWAY 50/50 SPLIT) */}
+      {/* 9. SIGNATURE CONTACT SECTION (BARCWAY 50/50 SPLIT) */}
       <section id="contact" className="py-28 md:py-36 bg-[#000000] border-t border-white/[0.08] scroll-mt-20 w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
