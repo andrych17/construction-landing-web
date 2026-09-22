@@ -35,8 +35,7 @@ export default function BarcwayLayout() {
   const [currentDisciplineIndex, setCurrentDisciplineIndex] = useState(0);
   const [openPhilosophyIndex, setOpenPhilosophyIndex] = useState<number | null>(0);
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
-  const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
-  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +49,6 @@ export default function BarcwayLayout() {
 
   // Continuous smooth auto-glide replicating barcway.com's continuous Swiper autoplay
   useEffect(() => {
-    if (viewMode !== 'carousel' || isCarouselPaused) return;
     const container = carouselRef.current;
     if (!container) return;
 
@@ -58,7 +56,7 @@ export default function BarcwayLayout() {
     const speed = 0.85;
 
     const step = () => {
-      if (container) {
+      if (!isHovered && container) {
         const halfWidth = container.scrollWidth / 2;
         if (halfWidth > 0 && container.scrollLeft >= halfWidth) {
           container.scrollLeft -= halfWidth;
@@ -71,7 +69,7 @@ export default function BarcwayLayout() {
 
     animId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animId);
-  }, [viewMode, isCarouselPaused]);
+  }, [isHovered]);
 
   const scrollCarousel = useCallback((direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -333,178 +331,90 @@ export default function BarcwayLayout() {
         </div>
       </section>
 
-      {/* 6. PROJECTS (BARCWAY EXACT PLACEMENT: SITS DIRECTLY BELOW DESIGN PHILOSOPHY) */}
+      {/* 6. PROJECTS (BARCWAY EXACT PLACEMENT: AUTOMATIC CONTINUOUS SWIPER) */}
       <section id="projects" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden bg-[#000000]">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto">
-          {/* Section Header with Controls */}
+          {/* Section Header with Subtle Navigation Arrows */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row justify-between sm:items-end mb-12 pb-6 border-b border-white/[0.08] gap-6"
+            className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6"
           >
             <div>
               <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
-                PORTFOLIO COMMISSIONS & REALIZATIONS
+                SELECTED WORKS & PORTFOLIO
               </span>
               <h2 className="font-serif text-5xl sm:text-7xl font-normal text-white tracking-tight">
                 Projects
               </h2>
             </div>
 
-            {/* View Mode & Carousel Controls */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center border border-white/15 rounded-full p-1 bg-neutral-900 text-xs font-mono">
-                <button
-                  type="button"
-                  onClick={() => setViewMode('carousel')}
-                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
-                    viewMode === 'carousel' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  Slider
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setViewMode('grid')}
-                  className={`px-4 py-2 rounded-full transition-colors cursor-pointer min-h-[38px] active:scale-[0.98] ${
-                    viewMode === 'grid' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  Matrix
-                </button>
-              </div>
-
-              {viewMode === 'carousel' && (
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setIsCarouselPaused((prev) => !prev)}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-amber-400 flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    title={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
-                    aria-label={isCarouselPaused ? 'Resume auto-glide' : 'Pause auto-glide'}
-                  >
-                    {isCarouselPaused ? (
-                      <LuPlay className="w-4 h-4 text-amber-400 ml-0.5" />
-                    ) : (
-                      <LuPause className="w-4 h-4 text-neutral-300" />
-                    )}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => scrollCarousel('left')}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    aria-label="Previous Projects"
-                  >
-                    <LuChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => scrollCarousel('right')}
-                    className="w-11 h-11 rounded-full border border-white/20 hover:border-white flex items-center justify-center text-white transition-colors cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                    aria-label="Next Projects"
-                  >
-                    <LuChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-              )}
+            {/* Subtle Minimalist Navigation Arrows */}
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => scrollCarousel('left')}
+                className="w-11 h-11 rounded-full border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label="Previous Projects"
+              >
+                <LuChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel('right')}
+                className="w-11 h-11 rounded-full border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label="Next Projects"
+              >
+                <LuChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </motion.div>
 
-          {/* Full-Width Carousel Mode (Signature Barcway Continuous Infinite Swiper) */}
-          {viewMode === 'carousel' ? (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              ref={carouselRef}
-              onMouseEnter={() => setIsCarouselPaused(true)}
-              onMouseLeave={() => setIsCarouselPaused(false)}
-              onTouchStart={() => setIsCarouselPaused(true)}
-              onTouchEnd={() => setIsCarouselPaused(false)}
-              className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {[...BARCWAY_PROJECTS, ...BARCWAY_PROJECTS].map((proj, idx) => (
-                <div
-                  key={`${proj.title}-${idx}`}
-                  onClick={() => setSelectedProject(proj)}
-                  className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer"
-                >
-                  <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-950 mb-4 border border-white/10 group-hover:border-amber-400/60 transition-colors">
-                    <Image
-                      src={proj.img}
-                      alt={proj.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
-                      sizes="(max-width: 768px) 440px, 540px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
-                      {proj.category}
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-baseline px-1">
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                      {proj.title}
-                    </h3>
-                    <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
+          {/* Full-Width Signature Barcway Continuous Infinite Swiper */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            ref={carouselRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={() => setIsHovered(true)}
+            onTouchEnd={() => setIsHovered(false)}
+            className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {[...BARCWAY_PROJECTS, ...BARCWAY_PROJECTS].map((proj, idx) => (
+              <div
+                key={`${proj.title}-${idx}`}
+                onClick={() => setSelectedProject(proj)}
+                className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer"
+              >
+                <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-950 mb-4 border border-white/10 group-hover:border-amber-400/60 transition-colors">
+                  <Image
+                    src={proj.img}
+                    alt={proj.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
+                    sizes="(max-width: 768px) 440px, 540px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
+                    {proj.category}
                   </div>
                 </div>
-              ))}
-            </motion.div>
-          ) : (
-            /* Full-Width 3-Column Responsive Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {BARCWAY_PROJECTS.map((proj, pIdx) => (
-                <motion.div
-                  key={proj.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.65, delay: (pIdx % 3) * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => setSelectedProject(proj)}
-                  className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/5">
-                      <Image
-                        src={proj.img}
-                        alt={proj.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
-                        {proj.category}
-                      </div>
-                    </div>
 
-                    <div className="flex justify-between items-baseline mb-3">
-                      <h3 className="font-serif text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                        {proj.title}
-                      </h3>
-                      <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light line-clamp-2 mb-6 font-sans">
-                      {proj.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
-                    <span>INSPECT BLUEPRINT</span>
-                    <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 text-amber-400 transition-colors">
-                      <LuArrowUpRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
+                <div className="flex justify-between items-baseline px-1">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                    {proj.title}
+                  </h3>
+                  <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
 
           {/* Link to Dedicated Projects Page */}
           <div className="mt-14 text-center">

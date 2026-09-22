@@ -163,7 +163,7 @@
       "file_type": "code",
       "norm_label": "projectspage()",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L20"
+      "source_location": "L13"
     },
     {
       "id": "src_app_services_page_servicespage",
@@ -2524,42 +2524,6 @@
     },
     {
       "source": "src_app_projects_page",
-      "target": "src_components_navigation_barcwaynav_barcwaynav",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
-      "target": "src_components_navigation_barcwayfooter_barcwayfooter",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
-      "target": "src_components_interactive_architecturalpreloader_architecturalpreloader",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
       "target": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
       "relation": "imports",
       "_origin": "ast",
@@ -2567,7 +2531,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L17",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -2579,7 +2543,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L18",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -2591,7 +2555,43 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L18",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_navigation_barcwaynav_barcwaynav",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_navigation_barcwayfooter_barcwayfooter",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_interactive_architecturalpreloader_architecturalpreloader",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -2968,42 +2968,6 @@
     },
     {
       "source": "src_app_projects_page",
-      "target": "src_components_navigation_barcwaynav",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
-      "target": "src_components_navigation_barcwayfooter",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
-      "target": "src_components_interactive_architecturalpreloader",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/app/projects/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_projects_page",
       "target": "src_components_interactive_projectinspectionmodal",
       "relation": "imports_from",
       "_origin": "ast",
@@ -3011,7 +2975,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L17",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -3023,7 +2987,43 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L18",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_navigation_barcwaynav",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_navigation_barcwayfooter",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_projects_page",
+      "target": "src_components_interactive_architecturalpreloader",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/projects/page.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -4037,7 +4037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/projects/page.tsx",
-      "source_location": "L20",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -4502,5 +4502,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4bc6d6ba2793af937f33bcac29b27ec4fddc82ac"
+  "built_at_commit": "b1a6906cb9d5f21644089e29ad9ec7513457730c"
 }

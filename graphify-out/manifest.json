@@ -336,9 +336,9 @@
     "semantic_hash": ""
   },
   "src/components/layouts/BarcwayLayout.tsx": {
-    "mtime": 1790044443.287494,
-    "seen": 1790044465.0456858,
-    "ast_hash": "123650c3581a28d8f5113da6df10154d",
+    "mtime": 1790044584.7143803,
+    "seen": 1790044611.266404,
+    "ast_hash": "55ecf02a15491c05913ffc292db175d8",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -378,9 +378,9 @@
     "semantic_hash": ""
   },
   "src/app/projects/page.tsx": {
-    "mtime": 1790043289.437129,
-    "seen": 1790043380.986596,
-    "ast_hash": "7471bdaefc1a13c727760c318416c2e1",
+    "mtime": 1790044595.7790654,
+    "seen": 1790044611.2663958,
+    "ast_hash": "4bb901da88b85104420a5ac8872ddb41",
     "semantic_hash": ""
   },
   "src/app/services/page.tsx": {
