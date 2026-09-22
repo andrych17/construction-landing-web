@@ -31,8 +31,11 @@ pipeline {
                         fi
 
                         # Jalankan migrasi database ke qualiv_postgres
-                        export DATABASE_URL=\\"postgresql://qualiv:d74b3b3a10870ef988f874746aad0d552b9f4f313722f8e6@127.0.0.1:5434/wwcons_db?schema=public\\"
-                        npx prisma migrate deploy || true
+                        for f in prisma/migrations/*/migration.sql; do
+                            if [ -f "$f" ]; then
+                                docker exec -i qualiv_postgres psql -U qualiv -d wwcons_db < "$f" 2>/dev/null || true
+                            fi
+                        done
 
                         # Build dan restart container Next.js
                         docker compose up -d --build --remove-orphans
