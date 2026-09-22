@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuMapPin, LuClock, LuShieldCheck } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import BarcwayNav from '@/components/navigation/BarcwayNav';
-import BarcwayFooter from '@/components/navigation/BarcwayFooter';
+import Navbar from '@/components/navigation/Navbar';
+import Footer from '@/components/navigation/Footer';
 import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
 
@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       <ArchitecturalPreloader />
-      <BarcwayNav />
+      <Navbar />
 
       {/* 1. SIGNATURE BARCWAY 50/50 SPLIT CONTACT VIEWPORT */}
       <section className="pt-36 pb-28 md:pt-48 md:pb-36 min-h-[90vh] flex items-center border-b border-white/[0.08]">
@@ -248,7 +248,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <BarcwayFooter />
+      <Footer />
     </div>
   );
 }

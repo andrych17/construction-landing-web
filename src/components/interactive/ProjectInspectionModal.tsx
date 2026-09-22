@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LuX, LuMapPin, LuPhone, LuShieldCheck, LuCheck } from 'react-icons/lu';
-import type { ProjectDetail } from '@/data/barcwayData';
+import type { ProjectDetail } from '@/data/siteData';
 export type { ProjectDetail };
 
 interface ProjectInspectionModalProps {

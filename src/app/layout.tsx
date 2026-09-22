@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   keywords: [
     "ww.cons",
     "ww cons",
+    "wonderful works",
+    "wonderfulworks",
+    "wonderful works surabaya",
     "ww construction",
     "arsitektur surabaya",
     "kontraktor surabaya",
@@ -48,7 +51,6 @@ export const metadata: Metadata = {
     "jasa bangun rumah surabaya",
     "luxury residence surabaya",
     "kontraktor voza surabaya",
-    "barcway architecture surabaya",
     "centra arya loka kontraktor",
   ],
   authors: [{ name: "ww.cons Studio" }],

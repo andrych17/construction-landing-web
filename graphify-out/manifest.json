@@ -36,15 +36,15 @@
     "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790043227.8789222,
-    "seen": 1790043380.9865906,
-    "ast_hash": "b81b8cc9ac3eab39909a4207debc463e",
+    "mtime": 1790045399.4256487,
+    "seen": 1790045444.2603118,
+    "ast_hash": "4e47307150c60e83c3cc7e13c0be1adb",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1790043221.2119033,
-    "seen": 1790043380.9865923,
-    "ast_hash": "e9ceb60728eda22ded77cd393c908f76",
+    "mtime": 1790045306.8706434,
+    "seen": 1790045444.2603145,
+    "ast_hash": "1b85e45f9f8158ef569d36b85d74086d",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -330,15 +330,15 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
-    "mtime": 1790041718.1739886,
-    "seen": 1790041871.6951976,
-    "ast_hash": "4b6a24f6a5cc1b29237d572714fe3a25",
+    "mtime": 1790045375.5133889,
+    "seen": 1790045444.2603369,
+    "ast_hash": "99299edfad201f57f608881530ff5e4b",
     "semantic_hash": ""
   },
   "src/components/layouts/BarcwayLayout.tsx": {
-    "mtime": 1790044584.7143803,
-    "seen": 1790044611.266404,
-    "ast_hash": "55ecf02a15491c05913ffc292db175d8",
+    "mtime": 1790045303.6506085,
+    "seen": 1790045444.2603388,
+    "ast_hash": "c8f5610312d4c1a5e5a12934bffb438b",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -366,45 +366,45 @@
     "semantic_hash": ""
   },
   "src/app/about/page.tsx": {
-    "mtime": 1790043283.9011083,
-    "seen": 1790043380.9865854,
-    "ast_hash": "2cf7e4e9738767f425b791d54da2d993",
+    "mtime": 1790045330.3548985,
+    "seen": 1790045444.2603052,
+    "ast_hash": "83fe960f253c1419450800d4d626e5dc",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
-    "mtime": 1790043291.6571376,
-    "seen": 1790043380.986589,
-    "ast_hash": "528c5e320aa4ae077e87e184507655ec",
+    "mtime": 1790045369.739326,
+    "seen": 1790045444.2603087,
+    "ast_hash": "2fbfdff8db105874ceaf2b8761e1f7ad",
     "semantic_hash": ""
   },
   "src/app/projects/page.tsx": {
-    "mtime": 1790044595.7790654,
-    "seen": 1790044611.2663958,
-    "ast_hash": "4bb901da88b85104420a5ac8872ddb41",
+    "mtime": 1790045356.0761776,
+    "seen": 1790045444.26032,
+    "ast_hash": "ec3069314552ac58176f36621fd083fe",
     "semantic_hash": ""
   },
   "src/app/services/page.tsx": {
-    "mtime": 1790043286.3071172,
-    "seen": 1790043380.9866006,
-    "ast_hash": "e7f84d1db8c0b3c1454e4f200254c1e7",
+    "mtime": 1790045341.370018,
+    "seen": 1790045444.2603269,
+    "ast_hash": "1eae20637156955f3249f583884d9858",
     "semantic_hash": ""
   },
   "src/components/navigation/BarcwayFooter.tsx": {
-    "mtime": 1789997972.0723252,
-    "seen": 1789998171.4342656,
-    "ast_hash": "cb1ad4a60da7a9b52bee846b87e0cb20",
+    "mtime": 1790045246.564989,
+    "seen": 1790045444.2603457,
+    "ast_hash": "214e38e260abd4d47976e69d826b6585",
     "semantic_hash": ""
   },
   "src/components/navigation/BarcwayNav.tsx": {
-    "mtime": 1790044202.3390856,
-    "seen": 1790044205.5690467,
-    "ast_hash": "d38a55e754b2ad42a299e340ce68c3c1",
+    "mtime": 1790045243.7469587,
+    "seen": 1790045444.2603467,
+    "ast_hash": "19f586e8e0df4857b820a78d2138abc5",
     "semantic_hash": ""
   },
   "src/data/barcwayData.ts": {
-    "mtime": 1790042105.253795,
-    "seen": 1790042288.0710928,
-    "ast_hash": "400ba1b79c3d2cee3f470fe53bb0ad82",
+    "mtime": 1790045224.685752,
+    "seen": 1790045444.2603545,
+    "ast_hash": "61db4e2cf4e599ca0c92baf904953731",
     "semantic_hash": ""
   },
   "scripts/generate_logos.py": {
@@ -507,6 +507,30 @@
     "mtime": 1790043821.5275931,
     "seen": 1790043882.7261198,
     "ast_hash": "a21bac783b62db8e0a7167ec30d4581d",
+    "semantic_hash": ""
+  },
+  "src/components/layouts/MainLayout.tsx": {
+    "mtime": 1790045299.0435584,
+    "seen": 1790045444.2603412,
+    "ast_hash": "f3b869964625f5d2b12c41be37d38d7d",
+    "semantic_hash": ""
+  },
+  "src/components/navigation/Footer.tsx": {
+    "mtime": 1790045241.3339324,
+    "seen": 1790045444.2603478,
+    "ast_hash": "73c51fa36c152889704d81b37104c6d2",
+    "semantic_hash": ""
+  },
+  "src/components/navigation/Navbar.tsx": {
+    "mtime": 1790045236.664882,
+    "seen": 1790045444.2603495,
+    "ast_hash": "3a15bfa86bf47eb250c9df3d4d406d57",
+    "semantic_hash": ""
+  },
+  "src/data/siteData.ts": {
+    "mtime": 1790045222.4147274,
+    "seen": 1790045444.2603555,
+    "ast_hash": "f5a548c5e8dfd8b0a609d0bc59f454de",
     "semantic_hash": ""
   }
 }

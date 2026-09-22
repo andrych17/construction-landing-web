@@ -2,7 +2,7 @@
   "0": "devDependencies",
   "1": "compilerOptions",
   "2": "dependencies",
-  "3": "BarcwayLayout.tsx",
+  "3": "MainLayout.tsx",
   "4": "include",
   "6": "package.json",
   "7": "postcss.config.mjs",

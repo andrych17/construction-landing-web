@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { LuArrowUpRight } from 'react-icons/lu';
-import BarcwayNav from '@/components/navigation/BarcwayNav';
-import BarcwayFooter from '@/components/navigation/BarcwayFooter';
+import Navbar from '@/components/navigation/Navbar';
+import Footer from '@/components/navigation/Footer';
 import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import ProjectInspectionModal from '@/components/interactive/ProjectInspectionModal';
-import { BARCWAY_PROJECTS, ProjectDetail } from '@/data/barcwayData';
+import { WW_PROJECTS, ProjectDetail } from '@/data/siteData';
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
   const categories = ['ALL', 'RESIDENTIAL', 'COMMERCIAL', 'VILLA'];
 
-  const filteredProjects = BARCWAY_PROJECTS.filter((p) => {
+  const filteredProjects = WW_PROJECTS.filter((p) => {
     if (selectedCategory === 'ALL') return true;
     if (selectedCategory === 'RESIDENTIAL') {
       return (
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       <ArchitecturalPreloader />
-      <BarcwayNav />
+      <Navbar />
 
       {/* Blueprint Inspection Modal */}
       {selectedProject && (
@@ -163,8 +163,8 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* 4. SIGNATURE BARCWAY FOOTER */}
-      <BarcwayFooter />
+      {/* 4. FOOTER */}
+      <Footer />
     </div>
   );
 }

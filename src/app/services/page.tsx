@@ -5,16 +5,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { LuArrowUpRight, LuCircleCheck } from 'react-icons/lu';
-import BarcwayNav from '@/components/navigation/BarcwayNav';
-import BarcwayFooter from '@/components/navigation/BarcwayFooter';
+import Navbar from '@/components/navigation/Navbar';
+import Footer from '@/components/navigation/Footer';
 import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
-import { CENTRA_SERVICES, MASTER_METHODOLOGY } from '@/data/barcwayData';
+import { CENTRA_SERVICES, MASTER_METHODOLOGY } from '@/data/siteData';
 
 export default function ServicesPage() {
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       <ArchitecturalPreloader />
-      <BarcwayNav />
+      <Navbar />
 
       {/* 1. MONUMENTAL SERVICES HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
@@ -285,7 +285,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <BarcwayFooter />
+      <Footer />
     </div>
   );
 }

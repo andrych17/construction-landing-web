@@ -1,16 +1,16 @@
 # Graph Report - construction-landing-web  (2026-09-22)
 
 ## Corpus Check
-- 29 files · ~242,890 words
+- 33 files · ~243,005 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 177 nodes · 217 edges · 19 communities (10 shown, 4 thin omitted)
+- 184 nodes · 224 edges · 19 communities (10 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b1a6906c`
+- Built from commit: `bb3fa19d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,7 +18,7 @@
 - devDependencies
 - compilerOptions
 - dependencies
-- BarcwayLayout.tsx
+- MainLayout.tsx
 - include
 - package.json
 - postcss.config.mjs
@@ -36,15 +36,15 @@
 3. `WW Construction Website` - 8 edges
 4. `include` - 7 edges
 5. `ArchitecturalPreloader()` - 6 edges
-6. `BarcwayFooter()` - 6 edges
-7. `BarcwayNav()` - 6 edges
+6. `Footer()` - 6 edges
+7. `Navbar()` - 6 edges
 8. `WW Construction Portfolio Website` - 6 edges
 9. `4. Reverse-Engineered & Elevated Interaction Engine` - 6 edges
 10. `scripts` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `ProjectInspectionModalProps` --references--> `ProjectDetail`  [EXTRACTED]
-  src/components/interactive/ProjectInspectionModal.tsx → src/data/barcwayData.ts
+  src/components/interactive/ProjectInspectionModal.tsx → src/data/siteData.ts
 
 ## Import Cycles
 - None detected.
@@ -63,9 +63,9 @@ Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop
 Cohesion: 0.13
 Nodes (15): framer-motion, dependencies, framer-motion, next, react, react-dom, react-icons, remotion (+7 more)
 
-### Community 3 - "BarcwayLayout.tsx"
-Cohesion: 0.13
-Nodes (20): ArchitecturalPreloader(), ArchitecturalPreloaderProps, ProjectInspectionModal(), ProjectInspectionModalProps, BarcwayLayout(), BarcwayFooter(), BarcwayNav(), NAV_LINKS (+12 more)
+### Community 3 - "MainLayout.tsx"
+Cohesion: 0.10
+Nodes (23): ArchitecturalPreloader(), ArchitecturalPreloaderProps, ProjectInspectionModal(), ProjectInspectionModalProps, MainLayout(), Footer(), NAV_LINKS, Navbar() (+15 more)
 
 ### Community 4 - "include"
 Cohesion: 0.20
@@ -92,21 +92,21 @@ Cohesion: 0.25
 Nodes (6): baskervville, jetbrainsMono, metadata, plusJakartaSans, structuredSchema, viewport
 
 ## Knowledge Gaps
-- **91 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+86 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 112 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **94 isolated node(s):** `eslintConfig`, `nextConfig`, `nextConfig`, `name`, `version` (+89 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 119 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `compilerOptions` connect `compilerOptions` to `include`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `nextConfig` to the rest of the system?**
-  _91 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _94 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

@@ -5,20 +5,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LuArrowUpRight, LuShieldCheck, LuAward, LuCheck, LuQuote } from 'react-icons/lu';
-import BarcwayNav from '@/components/navigation/BarcwayNav';
-import BarcwayFooter from '@/components/navigation/BarcwayFooter';
+import Navbar from '@/components/navigation/Navbar';
+import Footer from '@/components/navigation/Footer';
 import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
-import { BARCWAY_PHILOSOPHIES, BARCWAY_FOUNDERS } from '@/data/barcwayData';
+import { WW_PHILOSOPHIES, WW_FOUNDERS } from '@/data/siteData';
 
 export default function AboutPage() {
   const [openPhilosophyIndex, setOpenPhilosophyIndex] = useState<number | null>(0);
-  const founder = BARCWAY_FOUNDERS[0];
+  const founder = WW_FOUNDERS[0];
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
       <ArchitecturalPreloader />
-      <BarcwayNav />
+      <Navbar />
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
@@ -108,7 +108,7 @@ export default function AboutPage() {
 
             {/* Right Interactive Accordion Column */}
             <div className="lg:col-span-7 space-y-4">
-              {BARCWAY_PHILOSOPHIES.map((p, idx) => {
+              {WW_PHILOSOPHIES.map((p, idx) => {
                 const isOpen = openPhilosophyIndex === idx;
                 return (
                   <motion.div
@@ -325,7 +325,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <BarcwayFooter />
+      <Footer />
     </div>
   );
 }
