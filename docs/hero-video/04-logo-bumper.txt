@@ -1,0 +1,55 @@
+VARIAN 04 — Logo bumper
+Animasi emblem ww.cons.
+
+PENTING — MODE YANG DIPAKAI: image-to-video, BUKAN text-to-video.
+
+Unggah salah satu file ini sebagai start frame / ingredient:
+  logo-start-frame.png          1920x1080  (16:9, serbaguna)
+  logo-start-frame-square.png   1080x1080  (1:1)
+
+Alasan: kalau hanya diberi teks, Veo akan mengarang bentuk logonya sendiri dan
+hasilnya tidak akan sama dengan emblem ww.cons. Dengan start frame, model
+bergerak DARI gambar asli, sehingga bentuknya terjaga.
+
+Karena itu prompt di bawah hanya mendeskripsikan GERAKAN dan CAHAYA — sengaja
+tidak menyebut bentuk logo sama sekali. Menyebut bentuk justru memancing model
+mengubahnya.
+
+
+=== PROMPT ========================================================
+
+The emblem in the frame stays perfectly still, centered, and unchanged in
+shape. A single soft rim of warm light slowly sweeps across it from the left to
+the right, catching the edges of the form as if it were brushed metal inlaid
+into a dark matte surface. The camera pushes in almost imperceptibly. Very fine
+dust particles drift slowly through the dark background, catching faint light.
+Deep black background, no background change, no colour shift. Slow, restrained,
+premium brand bumper. One continuous take, no cuts.
+
+
+=== NEGATIVE PROMPT ===============================================
+
+morphing shape, deforming logo, changing emblem, extra lines, extra symbols,
+added letters, text, typography, watermark, redrawing, warping, liquid
+distortion, glitch, rotation, flipping, spinning, bouncing, elastic motion,
+rainbow colors, neon glow, heavy lens flare, sparkles, fireworks, particles
+burst, background change, camera shake, fast zoom, cartoon, 3d render look
+
+
+=== CATATAN =======================================================
+
+1. Periksa hasilnya frame per frame. Kalau emblem berubah bentuk sedikit pun
+   di detik mana pun, buang dan generate ulang. Logo tidak boleh "hampir benar".
+
+2. Di situs ini logo preloader sekarang cuma 28px dan sudah dianimasikan lewat
+   SVG + CSS clip-path — video 28px tidak akan terlihat bedanya, malah menambah
+   berat. Kalau ingin memakai video ini di preloader, komposisinya perlu diubah
+   agar logo kembali jadi elemen utama (saat ini angka progres yang jadi pusat).
+
+3. Nilai paling tinggi untuk file ini justru DI LUAR situs: bumper pembuka
+   video Instagram/TikTok, closing reel, atau intro presentasi. Untuk itu
+   16:9 atau 1:1 keduanya berguna.
+
+4. Spek keluaran bila dipakai di situs: 1:1, 1024x1024, latar solid #030303
+   (MP4 tidak mendukung transparansi), 2-3 detik, simpan sebagai
+   public/videos/logo.mp4 lalu beri tahu saya untuk memasang elemennya.

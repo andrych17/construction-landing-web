@@ -1,0 +1,37 @@
+VARIAN 03 — Detail pertemuan material
+Paling minimalis, paling mudah di-loop karena gerakannya nyaris tak terlihat.
+
+Aset yang perlu diunggah: TIDAK ADA. Ini text-to-video, cukup salin dua blok
+di bawah ke kolom masing-masing di Google Flow.
+
+
+=== PROMPT ========================================================
+
+Extreme slow push-in on the corner detail of a modern building facade where
+smooth white concrete meets vertical teak wood battens and a dark recessed
+glass reveal. Warm late afternoon sunlight travels slowly across the surface,
+revealing the texture of the wood grain and the fine joint lines between
+panels. The camera moves almost imperceptibly forward, perfectly centered,
+locked and steady, one continuous take, no cuts. The top of the frame catches a
+bright sky reflection in the glass, the bottom of the frame sits in soft
+shadow. Photorealistic macro architectural detail, 50mm lens, shallow depth of
+field, natural colour. 16:9 aspect ratio, 10 seconds.
+
+
+=== NEGATIVE PROMPT ===============================================
+
+text, letters, typography, watermark, logo, signage, subtitles, people, faces,
+crowd, fast cuts, jump cuts, camera shake, handheld, zoom burst, whip pan,
+lens flare, drone propeller visible, tilted horizon, dutch angle, vertical
+video, 4:3 aspect ratio, cartoon, illustration, 3d render look, oversaturated
+colors, HDR halo, motion blur artifacts, warped architecture, distorted
+perspective
+
+
+=== KENAPA DITOLAK =================================================
+
+teks & logo  : hasil generate selalu berantakan, dan wordmark "ww.cons"
+               sudah dirender sebagai teks hidup di atas video
+wajah orang  : memunculkan isu izin penggunaan wajah
+gerak cepat  : kacau di belakang tipografi serif berukuran raksasa
+video tegak  : hero butuh 16:9, video tegak terpotong parah

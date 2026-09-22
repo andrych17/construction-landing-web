@@ -1,0 +1,22 @@
+VARIAN 01 — Modern Tropical Luxury Villa at Dusk / Golden Hour
+Arah paling mewah, aman, dan paling sesuai dengan positioning Wonderful Works (ww.cons).
+
+Aset yang perlu diunggah: TIDAK ADA. Ini text-to-video, cukup salin blok PROMPT dan NEGATIVE PROMPT ke Google Flow / Veo 3.1.
+
+
+=== PROMPT ========================================================
+
+Cinematic slow forward dolly shot approaching a monumental modern tropical luxury villa in Surabaya at golden hour twilight. The architecture features fair-faced monolithic concrete K-350 walls, warm Italian travertine stone, and double-height floor-to-ceiling glass curtain walls with glowing warm 2700K interior ambient lighting. In the foreground, a dark reflective infinity pool has subtle gentle water ripples reflecting the illuminated mansion. Lush minimalist tropical frangipani landscaping under a deepening twilight sky. Ultra-stable camera motion, photorealistic, 8k resolution, architectural digest film, 24fps, centered composition, horizon perfectly level, no cuts, no people, no text, no watermark. 16:9 aspect ratio, 10 seconds.
+
+
+=== NEGATIVE PROMPT ===============================================
+
+text, letters, typography, watermark, logo, signage, subtitles, people, faces, crowd, fast cuts, jump cuts, camera shake, handheld, zoom burst, whip pan, lens flare, drone propeller visible, tilted horizon, dutch angle, vertical video, 4:3 aspect ratio, cartoon, illustration, 3d render look, oversaturated colors, HDR halo, motion blur artifacts, warped architecture, distorted perspective
+
+
+=== KENAPA DITOLAK =================================================
+
+teks & logo  : hasil generate AI selalu berantakan, dan wordmark "ww.cons" sudah dirender sebagai teks hidup di atas video
+wajah orang  : memunculkan resiko glitch atau gerakan tubuh aneh
+gerak cepat  : membuat mata lelah di belakang tipografi serif berukuran raksasa
+video tegak  : hero web butuh rasio 16:9 widescreen

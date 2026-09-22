@@ -1,0 +1,37 @@
+VARIAN 02 — Struktur beton, cahaya masuk
+Menonjolkan sisi kontraktor / rekayasa sipil.
+
+Aset yang perlu diunggah: TIDAK ADA. Ini text-to-video, cukup salin dua blok
+di bawah ke kolom masing-masing di Google Flow.
+
+
+=== PROMPT ========================================================
+
+Slow cinematic dolly moving forward through the interior of an unfinished
+modern concrete building. Exposed board-formed concrete columns, black steel
+beams overhead, strong shafts of daylight cutting diagonally through open
+facade openings, fine construction dust floating slowly in the light. The
+camera glides forward smoothly at a constant speed, perfectly centered, one
+continuous take, no cuts, no shake. The upper third of the frame is bright with
+daylight, the lower half falls into deep shadow. Muted palette of grey
+concrete, black steel and warm daylight. Photorealistic, 35mm lens, high
+contrast architectural cinematography. 16:9 aspect ratio, 10 seconds.
+
+
+=== NEGATIVE PROMPT ===============================================
+
+text, letters, typography, watermark, logo, signage, subtitles, people, faces,
+crowd, fast cuts, jump cuts, camera shake, handheld, zoom burst, whip pan,
+lens flare, drone propeller visible, tilted horizon, dutch angle, vertical
+video, 4:3 aspect ratio, cartoon, illustration, 3d render look, oversaturated
+colors, HDR halo, motion blur artifacts, warped architecture, distorted
+perspective
+
+
+=== KENAPA DITOLAK =================================================
+
+teks & logo  : hasil generate selalu berantakan, dan wordmark "ww.cons"
+               sudah dirender sebagai teks hidup di atas video
+wajah orang  : memunculkan isu izin penggunaan wajah
+gerak cepat  : kacau di belakang tipografi serif berukuran raksasa
+video tegak  : hero butuh 16:9, video tegak terpotong parah

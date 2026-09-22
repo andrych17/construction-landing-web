@@ -1,0 +1,22 @@
+VARIAN 05 — Luxury Waterfront Villa & Reflection Pool
+Menonjolkan pantulan air kolam renang yang tenang dan kemewahan pencahayaan perimeter saat senja (blue hour).
+
+Aset yang perlu diunggah: TIDAK ADA. Ini text-to-video, cukup salin dua blok di bawah ke Google Flow / Veo 3.1.
+
+
+=== PROMPT ========================================================
+
+Low-angle slow tracking shot gliding smoothly over the calm glass-like water surface of an infinity reflection pool toward a multi-level luxury modern villa at blue hour dusk. Warm architectural perimeter lights and pool under-water spotlights illuminate smooth stone columns and cantilevered terraces. Peaceful tropical evening atmosphere in Surabaya, ultra-clear water reflections, cinematic depth of field, 8k photorealism, professional architectural real estate film, perfectly centered horizon, smooth continuous take, no cuts, no humans, no text. 16:9 aspect ratio, 10 seconds.
+
+
+=== NEGATIVE PROMPT ===============================================
+
+text, letters, typography, watermark, logo, signage, subtitles, people, faces, crowd, fast cuts, jump cuts, camera shake, handheld, zoom burst, whip pan, lens flare, drone propeller visible, tilted horizon, dutch angle, vertical video, 4:3 aspect ratio, cartoon, illustration, 3d render look, oversaturated colors, HDR halo, motion blur artifacts, warped architecture, distorted perspective
+
+
+=== KENAPA DITOLAK =================================================
+
+teks & logo  : hasil generate AI selalu berantakan, dan wordmark "ww.cons" sudah dirender sebagai teks hidup di atas video
+wajah orang  : memunculkan resiko glitch atau gerakan tubuh aneh
+gerak cepat  : membuat mata lelah di belakang tipografi serif berukuran raksasa
+video tegak  : hero web butuh rasio 16:9 widescreen
