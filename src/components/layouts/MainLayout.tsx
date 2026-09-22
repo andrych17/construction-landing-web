@@ -93,28 +93,25 @@ export default function MainLayout() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-24 text-center max-w-frame mx-auto">
           {/* Monumental Baskervville Serif Headline */}
-          <h1 className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] font-normal text-white tracking-tight leading-[0.95] mb-4 lowercase drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load">
+          <h1 className="font-serif text-5xl sm:text-7xl md:text-9xl lg:text-[11.5rem] font-normal text-white tracking-tight leading-[0.95] mb-4 lowercase drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load">
             ww.cons
           </h1>
 
-          {/* Disiplin studio — statis.
-              Sebelumnya teks ini berotasi tiap 2,5 detik tanpa kontrol jeda
-              (melanggar WCAG 2.2.2) dan terkunci di kotak tinggi tetap yang
-              memotong descender. Referensi Barcway juga menampilkannya statis. */}
-          <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 tracking-wide leading-[1.25] mb-5 drop-shadow-md reveal-load reveal-delay-1">
+          {/* Disiplin studio — statis */}
+          <p className="font-serif italic text-lg sm:text-2xl md:text-4xl lg:text-5xl text-white/90 tracking-wide leading-[1.3] mb-5 drop-shadow-md reveal-load reveal-delay-1 max-w-4xl mx-auto">
             {(lang === 'en' ? ROTATING_DISCIPLINES_EN : ROTATING_DISCIPLINES).join(' · ')}
           </p>
 
           {/* Subtitle */}
-          <p className="text-neutral-200 text-lg sm:text-xl font-light tracking-wide max-w-xl mx-auto mb-10 reveal-load reveal-delay-2">
+          <p className="text-neutral-200 text-sm sm:text-lg md:text-xl font-light tracking-wide max-w-xl mx-auto mb-10 reveal-load reveal-delay-2">
             {t('Mewujudkan Visi Anda dengan Keahlian Keteknikan Presisi', 'Bringing Your Vision to Life with Expert Craftmanship')}
           </p>
 
           {/* Minimalist Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 reveal-load reveal-delay-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 reveal-load reveal-delay-3 max-w-md sm:max-w-none mx-auto">
             <Link
               href="/projects"
-              className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] flex items-center gap-2 active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 shadow-lg"
+              className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] flex items-center justify-center gap-2 active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 shadow-lg w-full sm:w-auto"
             >
               <span>{t('Lihat Proyek', 'View Projects')}</span>
               <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -122,7 +119,7 @@ export default function MainLayout() {
 
             <Link
               href="/about"
-              className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[48px] flex items-center active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[48px] flex items-center justify-center active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 w-full sm:w-auto"
             >
               {t('Tentang Kami', 'About Us')}
             </Link>
@@ -491,10 +488,10 @@ export default function MainLayout() {
                   onClick={() => setSelectedProject(proj)}
                   aria-hidden={isClone}
                   tabIndex={isClone ? -1 : 0}
-                  className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-none"
+                  className="w-[82vw] max-w-[340px] sm:max-w-none sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-none"
                 >
                   <span className="sr-only">{t(`Lihat detail proyek ${proj.title}`, `View details for project ${proj.title}`)}</span>
-                  <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full overflow-hidden bg-neutral-900 mb-5 border border-white/10 group-hover:border-white/40 transition-colors duration-500 ease-expo">
+                  <div className="relative h-[320px] sm:h-[460px] md:h-[520px] w-full overflow-hidden bg-neutral-900 mb-5 border border-white/10 group-hover:border-white/40 transition-colors duration-500 ease-expo">
                     <Image
                       src={proj.img}
                       alt=""
@@ -553,7 +550,7 @@ export default function MainLayout() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Monumental Column: 'Contact' Heading */}
             <div className="lg:col-span-6 reveal">
-              <h2 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
+              <h2 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
                 {t('Kontak', 'Contact')}
               </h2>
               <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
@@ -640,10 +637,10 @@ export default function MainLayout() {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98] shadow-lg"
+                  className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center justify-center gap-2 min-h-[48px] active:scale-[0.98] shadow-lg w-full sm:w-auto"
                 >
                   <span>{t('Hubungi Kami', 'Contact Us')}</span>
                   <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -653,7 +650,7 @@ export default function MainLayout() {
                     href={waLink(t('Halo ww.cons, saya ingin konsultasi rancang bangun.', 'Hello ww.cons, I would like to consult on a design & build project.'))}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98]"
+                    className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center justify-center gap-2 min-h-[48px] active:scale-[0.98] w-full sm:w-auto"
                   >
                     <LuPhone className="w-4 h-4 text-amber-400" />
                     <span>WhatsApp</span>

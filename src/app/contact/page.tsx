@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Monumental Column: 'Contact' Heading */}
             <div className="lg:col-span-6 lg:sticky lg:top-36 reveal-load">
-              <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
+              <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
                 {t('Kontak', 'Contact')}
               </h1>
               <div className="w-24 h-[1.5px] bg-white/25 mb-8" />

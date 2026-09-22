@@ -2588,7 +2588,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/layouts/MainLayout.tsx",
-      "source_location": "L598",
+      "source_location": "L595",
       "weight": 1.0
     },
     {
@@ -6572,5 +6572,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "04a63bdd89d1b84db4bde1950ce235f852978e62"
+  "built_at_commit": "39fd1e450aea6575e0763fc960429434a7604eb9"
 }
