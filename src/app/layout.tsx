@@ -83,13 +83,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Ikon tidak didaftarkan di sini. Next.js App Router memungutnya otomatis
-  // dari src/app/icon.svg dan src/app/apple-icon.png.
-  // Sebelumnya keduanya menunjuk PNG 150x150 — di bawah minimum 180x180 yang
-  // diminta iOS, sehingga ikonnya buram saat ditambahkan ke Home Screen.
-  // Canonical per-rute didefinisikan di masing-masing src/app/<rute>/layout.tsx.
-  // Jangan set canonical global di sini: seluruh halaman akan ikut
-  // mengkanonikalkan diri ke homepage dan hilang dari indeks.
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   alternates: {
     canonical: "https://wwconstruction.id",
     languages: {

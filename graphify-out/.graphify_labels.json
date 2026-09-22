@@ -1,5 +1,5 @@
 {
-  "0": "devDependencies",
+  "0": "app/layout.tsx",
   "1": "compilerOptions",
   "2": "dependencies",
   "3": "content.ts",
@@ -13,7 +13,7 @@
   "12": "migration.sql",
   "13": "ProjectForm.tsx",
   "17": "generate_logos.py",
-  "18": "app/layout.tsx",
+  "18": "DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO",
   "19": "Hero Video — Panduan & Koleksi Prompt Google Flow (Veo 3.1)",
   "20": "pil"
 }
