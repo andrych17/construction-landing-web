@@ -11,6 +11,7 @@ import {
   LuLayoutDashboard,
   LuFolderKanban,
   LuFileText,
+  LuFilm,
   LuUsers,
   LuExternalLink,
   LuLogOut,
@@ -69,6 +70,11 @@ export function AdminShell({ session, children }: AdminShellProps) {
     {
       title: 'KONTEN SITUS',
       items: [
+        {
+          href: '/admin/hero',
+          label: 'Hero Video & Media',
+          icon: LuFilm,
+        },
         {
           href: '/admin/content',
           label: 'CMS Konten Teks',
