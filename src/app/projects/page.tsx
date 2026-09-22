@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { LuArrowUpRight } from 'react-icons/lu';
+import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
-import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import ProjectInspectionModal from '@/components/interactive/ProjectInspectionModal';
 import { WW_PROJECTS, ProjectDetail } from '@/data/siteData';
 
@@ -37,7 +37,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
-      <ArchitecturalPreloader />
       <Navbar />
 
       {/* Blueprint Inspection Modal */}
@@ -50,42 +49,24 @@ export default function ProjectsPage() {
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/projects/luxury_residence_hq.jpg"
-            alt="ww.cons Portfolio"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.7] contrast-[1.08] scale-105"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent" />
-        </div>
+        <HeroMedia src="/videos/villa-dusk.mp4" poster="/images/projects/villa-dusk_poster.jpg" alt="Vila modern saat senja" priority />
 
-        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="font-mono text-xs tracking-[0.28em] text-amber-400 uppercase block mb-4 font-bold">
-              PORTFOLIO COMMISSIONS & REALIZATIONS
-            </span>
+        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
+          <div className="reveal-load">
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
               Projects
             </h1>
-            <div className="w-20 h-[1.5px] bg-amber-400 mx-auto mb-6" />
+            <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
             <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
               &ldquo;Curated portfolio of high-end private residences and flagship corporate headquarters across Surabaya and East Java.&rdquo;
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* 2. CATEGORY FILTER TOOLBAR */}
       <section className="py-8 border-b border-white/[0.08] bg-[#050505] sticky top-[72px] z-30 backdrop-blur-md">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
           {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
             {categories.map((cat) => (
@@ -105,42 +86,34 @@ export default function ProjectsPage() {
           </div>
 
           <div className="font-mono text-xs text-neutral-400 tracking-widest uppercase">
-            SHOWING {filteredProjects.length} COMMISSIONS
+            {filteredProjects.length} PROYEK
           </div>
         </div>
       </section>
 
       {/* 3. ARCHITECTURAL GALLERY GRID */}
       <section className="py-20 md:py-28 w-full bg-[#000000]">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {filteredProjects.map((proj, pIdx) => (
-              <motion.div
-                key={proj.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.65, delay: (pIdx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => setSelectedProject(proj)}
-                className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)]"
-              >
+              <div key={proj.title} onClick={() => setSelectedProject(proj)} className="group rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 ease-expo cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)] reveal">
                 <div>
-                  <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/10">
+                  <div className="relative aspect-[4/3] w-full rounded-none overflow-hidden bg-black mb-5 border border-white/10">
                     <Image
                       src={proj.img}
                       alt={proj.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9px] tracking-widest text-amber-400 uppercase shadow-md">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-md">
                       {proj.category}
                     </div>
                   </div>
 
                   <div className="flex justify-between items-baseline mb-3">
-                    <h3 className="font-serif text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                    <h3 className="font-serif text-2xl text-white group-hover:text-amber-400 transition-colors">
                       {proj.title}
                     </h3>
                     <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
@@ -154,10 +127,10 @@ export default function ProjectsPage() {
                 <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
                   <span>INSPECT BLUEPRINT SPEC</span>
                   <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-black text-amber-400 transition-all">
-                    <LuArrowUpRight className="w-4 h-4" />
+                    <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

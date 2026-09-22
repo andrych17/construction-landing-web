@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
   LuArrowUpRight,
   LuPhone,
@@ -11,13 +11,15 @@ import {
   LuChevronLeft,
   LuChevronRight,
   LuCircleCheck,
+  LuPause,
+  LuPlay,
 } from 'react-icons/lu';
 import { FaInstagram } from 'react-icons/fa';
-import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import ProjectInspectionModal, { ProjectDetail } from '@/components/interactive/ProjectInspectionModal';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
+import HeroMedia from '@/components/ui/HeroMedia';
 import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 
 import {
@@ -25,49 +27,46 @@ import {
   WW_PHILOSOPHIES,
   WW_FOUNDERS,
   CENTRA_SERVICES,
-  MASTER_METHODOLOGY,
   WW_PROJECTS,
+  SITE_CONTACT,
+  waLink,
 } from '@/data/siteData';
 
 export default function MainLayout() {
-  const [currentDisciplineIndex, setCurrentDisciplineIndex] = useState(0);
-  const [openPhilosophyIndex, setOpenPhilosophyIndex] = useState<number | null>(0);
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Rotating disciplines cycle
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentDisciplineIndex((prev) => (prev + 1) % ROTATING_DISCIPLINES.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+  // framer-motion sudah terpasang; pakai hook-nya, jangan tulis matchMedia sendiri.
+  const prefersReducedMotion = useReducedMotion();
 
-  // Continuous smooth auto-glide replicating continuous Swiper autoplay
+  // Auto-glide kontinu ala Swiper autoplay.
+  // Berhenti saat hover, saat dijeda manual, atau saat reduced-motion aktif
+  // (WCAG 2.2.2 mensyaratkan gerak otomatis >5 detik bisa dihentikan).
+  const autoScrollActive = !isHovered && !isPaused && !prefersReducedMotion;
+
   useEffect(() => {
     const container = carouselRef.current;
-    if (!container) return;
+    if (!container || !autoScrollActive) return;
 
     let animId: number;
     const speed = 0.85;
 
     const step = () => {
-      if (!isHovered && container) {
-        const halfWidth = container.scrollWidth / 2;
-        if (halfWidth > 0 && container.scrollLeft >= halfWidth) {
-          container.scrollLeft -= halfWidth;
-        } else {
-          container.scrollLeft += speed;
-        }
+      const halfWidth = container.scrollWidth / 2;
+      if (halfWidth > 0 && container.scrollLeft >= halfWidth) {
+        container.scrollLeft -= halfWidth;
+      } else {
+        container.scrollLeft += speed;
       }
       animId = requestAnimationFrame(step);
     };
 
     animId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animId);
-  }, [isHovered]);
+  }, [autoScrollActive]);
 
   const scrollCarousel = useCallback((direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -78,8 +77,6 @@ export default function MainLayout() {
 
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
-      {/* 1. Architectural Preloader (MP4 Video / Official Monogram Animation) */}
-      <ArchitecturalPreloader />
 
       {/* 2. Full-Width Luxury Minimalist Navigation */}
       <Navbar />
@@ -89,398 +86,261 @@ export default function MainLayout() {
         id="hero"
         className="relative min-h-[100dvh] flex items-end justify-center pb-20 pt-28 sm:pt-36 overflow-hidden border-b border-white/[0.08] w-full"
       >
-        {/* Ambient Luminous Cinematic Background (Video & High-Res Poster) */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/projects/facade_architecture_hq.jpg"
-            className="w-full h-full object-cover object-center brightness-[0.72] contrast-[1.08] scale-105"
-          >
-            <source src="/videos/construction_timelapse.mp4" type="video/mp4" />
-          </video>
-          {/* Top navigation contrast gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
-          {/* Bottom text legibility & grounding gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
-          {/* Subtle cinematic vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(3,3,3,0.75)_100%)]" />
-        </div>
+        <HeroMedia src="/videos/hero.mp4" poster="/images/projects/hero_poster.jpg" priority />
 
-        <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-24 text-center max-w-[1400px] mx-auto">
+        <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-24 text-center max-w-frame mx-auto">
           {/* Monumental Baskervville Serif Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] font-normal text-white tracking-tight leading-[0.95] mb-4 lowercase drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)]"
-          >
+          <h1 className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] font-normal text-white tracking-tight leading-[0.95] mb-4 lowercase drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load">
             ww.cons
-          </motion.h1>
+          </h1>
 
-          {/* Animated Rotating Headline with Italic Descender Clearance */}
-          <div className="h-14 sm:h-16 flex items-center justify-center overflow-hidden mb-4">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={ROTATING_DISCIPLINES[currentDisciplineIndex]}
-                initial={{ y: -30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 30, opacity: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-amber-300/95 tracking-wide leading-[1.1] pb-1 drop-shadow-md"
-              >
-                {ROTATING_DISCIPLINES[currentDisciplineIndex]}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          {/* Disiplin studio — statis.
+              Sebelumnya teks ini berotasi tiap 2,5 detik tanpa kontrol jeda
+              (melanggar WCAG 2.2.2) dan terkunci di kotak tinggi tetap yang
+              memotong descender. Referensi Barcway juga menampilkannya statis. */}
+          <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 tracking-wide leading-[1.25] mb-5 drop-shadow-md reveal-load reveal-delay-1">
+            {ROTATING_DISCIPLINES.join(' · ')}
+          </p>
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-neutral-200 text-lg sm:text-xl font-light tracking-wide max-w-xl mx-auto mb-10"
-          >
-            Bold Artisan Design for Inspired Living
-          </motion.p>
+          <p className="text-neutral-200 text-lg sm:text-xl font-light tracking-wide max-w-xl mx-auto mb-10 reveal-load reveal-delay-2">
+            Bringing Your Vision to Life with Expert Craftmanship
+          </p>
 
           {/* Minimalist Action CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
+          <div className="flex flex-wrap items-center justify-center gap-4 reveal-load reveal-delay-3">
             <Link
               href="/projects"
-              className="px-8 py-4 rounded-full bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 min-h-[48px] flex items-center gap-2 active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 shadow-lg"
+              className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] flex items-center gap-2 active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 shadow-lg"
             >
-              <span>Explore Projects</span>
-              <LuArrowUpRight className="w-4 h-4" />
+              <span>Lihat Proyek</span>
+              <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
             <Link
               href="/about"
-              className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[48px] flex items-center active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[48px] flex items-center active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
-              Our Studio & Philosophy
+              Tentang Kami
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Bottom Coordinates Bar */}
-        <div className="absolute bottom-6 left-0 right-0 z-10 text-center font-mono text-[9.5px] tracking-[0.3em] text-neutral-500 uppercase px-4">
-          WONDERFUL WORKS (WW.CONS) · ARCHITECTURE & GENERAL CONTRACTOR · SURABAYA
-        </div>
       </section>
 
       {/* 4. ABOUT US (STUDIO ETHOS & MANIFESTO) */}
       <section id="about" className="py-28 md:py-36 border-b border-white/[0.08] relative w-full scroll-mt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1200px] mx-auto px-6 sm:px-12 md:px-16 text-center"
-        >
-          <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-4 font-bold">
-            STUDIO ETHOS & ARCHITECTURAL PEDIGREE
-          </span>
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[1.05] mb-10">
+        {/* Section paling tenang di halaman: tanpa eyebrow, tanpa garis hias,
+            hanya prosa. Kontras dengan section bergrid di bawahnya — itu yang
+            menciptakan ritme, bukan mengulang pola header yang sama tujuh kali. */}
+        <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 reveal">
+          <h2 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal text-white tracking-tight leading-[0.95] mb-12">
             About Us
           </h2>
 
-          <p className="font-serif text-base sm:text-lg md:text-xl text-neutral-200 leading-[2.1] sm:leading-[2.3] tracking-[1.1px] font-normal mb-8 max-w-4xl mx-auto">
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-100 leading-[1.7] font-normal mb-10">
             Wonderful Works (ww.cons) is a leading architecture, interior design, and general contracting firm specializing in high-end residential and commercial spaces. We create extraordinary environments that blend luxury, innovation, and artistry, crafting unique designs that elevate lifestyles and reflect individuality.
           </p>
 
-          <p className="font-serif text-base sm:text-lg md:text-xl text-neutral-400 leading-[2.1] sm:leading-[2.3] tracking-[1.1px] font-normal mb-12 max-w-4xl mx-auto">
+          <p className="font-serif text-lg sm:text-xl text-neutral-400 leading-[1.9] font-normal mb-14">
             Our approach goes beyond aesthetics—we design spaces that inspire well-being, foster connections, and support fulfilling lifestyles. By combining bold ideas, thoughtful details, and innovative materials, we deliver designs that are both functional and breathtaking. At ww.cons, every project is a collaboration to create spaces that feel personal, timeless, and truly extraordinary.
           </p>
 
-          <div className="w-20 h-[1px] bg-amber-400/40 mx-auto mb-8" />
-
-          <p className="font-mono text-xs md:text-sm text-neutral-400 max-w-2xl mx-auto tracking-[0.2em] leading-relaxed uppercase mb-8">
-            35 TAHUN DEDIKASI TEKNIK SIPIL SURABAYA · STANDAR STRUKTUR SNI K-350 · AKURASI LASER 90° DEV. &lt; 1MM · GARANSI RETENSI RESMI 100 HARI
-          </p>
-
-          <div className="flex justify-center">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-white/10 text-neutral-200 hover:text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px]"
-            >
-              <span>Explore Studio Ethos & Founders</span>
-              <LuArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
-            </Link>
-          </div>
-        </motion.div>
+          <Link
+            href="/about"
+            className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+          >
+            <span>Tentang Studio</span>
+            <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
       </section>
 
       {/* 5. OUR DESIGN PHILOSOPHY ACCORDION */}
       <section id="philosophy" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Header Column (Sticky on Desktop) */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-4 lg:sticky lg:top-32"
-            >
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-                THE FOUNDATION OF EVERY SPACE
-              </span>
+            <div className="lg:col-span-4 lg:sticky lg:top-32 reveal">
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-[1.08] mb-6">
                 Our Design Philosophy
               </h2>
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Every architectural commission begins with spatial purpose and material honesty. We unite bold form exploration with physical structural mastery.
+                Setiap proyek dimulai dari tujuan ruang dan kejujuran material.
               </p>
-              <div className="hidden lg:block font-mono text-xs text-neutral-500 tracking-widest uppercase">
-                SURABAYA · SIDOARJO · MALANG HIGHLANDS
-              </div>
-            </motion.div>
+            </div>
 
             {/* Right Accordion Column */}
+            {/* <details> native: buka/tutup, keyboard, dan ARIA sudah ditangani
+                browser. Versi sebelumnya memakai state + animasi tinggi JS,
+                sehingga isi accordion tidak pernah terlihat kalau animasinya
+                tidak selesai — persis bug void hitam di halaman ini. */}
             <div className="lg:col-span-8 space-y-6">
-              {WW_PHILOSOPHIES.map((p, idx) => {
-                const isOpen = openPhilosophyIndex === idx;
-                return (
-                  <motion.div
-                    key={p.num}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ duration: 0.65, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                    className="rounded-2xl border border-white/10 bg-[#0a0a0a] overflow-hidden transition-all duration-300"
-                  >
-                    {/* Interactive Accordion Bar */}
-                    <button
-                      type="button"
-                      onClick={() => setOpenPhilosophyIndex(isOpen ? null : idx)}
-                      className="w-full text-left p-6 sm:p-8 flex justify-between items-center bg-[#111111] hover:bg-[#161616] transition-colors min-h-[64px] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 group"
-                      aria-expanded={isOpen}
+              {WW_PHILOSOPHIES.map((p, idx) => (
+                <details
+                  key={p.num}
+                  open={idx === 0}
+                  className="group border border-white/10 bg-[#0a0a0a] reveal"
+                >
+                  <summary className="list-none [&::-webkit-details-marker]:hidden w-full p-6 sm:p-8 flex justify-between items-center bg-[#111111] hover:bg-[#161616] transition-colors min-h-[64px] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
+                    <span className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="font-mono text-lg sm:text-xl font-bold text-amber-400">
+                        {p.num}
+                      </span>
+                      <h3 className="font-serif text-xl sm:text-2xl text-white tracking-wide">
+                        {p.title}
+                      </h3>
+                      <span className="hidden md:inline font-mono text-xs text-neutral-400 tracking-wider">
+                        — {p.tagline}
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="w-9 h-9 border border-white/20 flex items-center justify-center font-mono text-xl text-white shrink-0 ml-4 transition-all duration-300 ease-expo select-none group-hover:border-amber-400 group-hover:text-amber-400 group-open:rotate-45"
                     >
-                      <div className="flex items-baseline gap-4 sm:gap-6">
-                        <span className="font-mono text-lg sm:text-xl font-bold text-amber-400">
-                          {p.num}
-                        </span>
-                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide">
-                          {p.title}
-                        </h3>
-                        <span className="hidden md:inline font-mono text-xs text-neutral-400 tracking-wider">
-                          — {p.tagline}
-                        </span>
+                      +
+                    </span>
+                  </summary>
+
+                  <div className="bg-[#181818] border-t border-white/5 p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div className="md:col-span-7">
+                      <p className="text-base sm:text-lg text-neutral-200 font-serif leading-relaxed mb-6 italic">
+                        &ldquo;{p.desc}&rdquo;
+                      </p>
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6">
+                        {p.execution}
+                      </p>
+                      <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
+                        <span className="text-neutral-300 block mb-1">MATERIAL &amp; STRUCTURAL REALIZATION:</span>
+                        <span className="text-neutral-300">{p.material}</span>
                       </div>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center font-mono text-xl text-white shrink-0 ml-4 group-hover:border-amber-400 group-hover:text-amber-400 transition-colors select-none"
-                      >
-                        +
-                      </motion.span>
-                    </button>
+                    </div>
 
-                    {/* Expandable Body */}
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                          className="overflow-hidden bg-[#181818] border-t border-white/5"
-                        >
-                          <div className="p-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                            <div className="md:col-span-7">
-                              <p className="text-base sm:text-lg text-neutral-200 font-serif leading-relaxed mb-6 italic">
-                                &ldquo;{p.desc}&rdquo;
-                              </p>
-                              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-sans mb-6">
-                                {p.execution}
-                              </p>
-                              <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
-                                <span className="text-amber-400 block mb-1 font-bold">MATERIAL & STRUCTURAL REALIZATION:</span>
-                                <span className="text-neutral-300">{p.material}</span>
-                              </div>
-                            </div>
-
-                            <div className="md:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10">
-                              <Image
-                                src={p.img}
-                                alt={p.title}
-                                fill
-                                className="object-cover brightness-100 contrast-[1.02]"
-                                sizes="(max-width: 768px) 100vw, 500px"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                              <div className="absolute bottom-3 left-3 font-mono text-[9px] text-amber-400 uppercase tracking-widest bg-black/75 px-2.5 py-1 rounded-md backdrop-blur-xs">
-                                WW.CONS COMMISSIONS
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. PROJECTS (AUTOMATIC CONTINUOUS SWIPER) */}
-      <section id="projects" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden bg-[#000000]">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1800px] mx-auto">
-          {/* Section Header with Subtle Navigation Arrows */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6"
-          >
-            <div>
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
-                SELECTED WORKS & PORTFOLIO
-              </span>
-              <h2 className="font-serif text-5xl sm:text-7xl font-normal text-white tracking-tight">
-                Projects
-              </h2>
-            </div>
-
-            {/* Subtle Minimalist Navigation Arrows */}
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => scrollCarousel('left')}
-                className="w-11 h-11 rounded-full border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                aria-label="Previous Projects"
-              >
-                <LuChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollCarousel('right')}
-                className="w-11 h-11 rounded-full border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                aria-label="Next Projects"
-              >
-                <LuChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Full-Width Continuous Infinite Swiper */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            ref={carouselRef}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onTouchStart={() => setIsHovered(true)}
-            onTouchEnd={() => setIsHovered(false)}
-            className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {[...WW_PROJECTS, ...WW_PROJECTS].map((proj, idx) => (
-              <div
-                key={`${proj.title}-${idx}`}
-                onClick={() => setSelectedProject(proj)}
-                className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer"
-              >
-                <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-900 mb-4 border border-white/10 group-hover:border-amber-400/80 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-                  <Image
-                    src={proj.img}
-                    alt={proj.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
-                    sizes="(max-width: 768px) 440px, 540px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
-                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
-                    {proj.category}
+                    <div className="md:col-span-5 relative aspect-[4/3] overflow-hidden border border-white/10 media-reveal">
+                      <Image
+                        src={p.img}
+                        alt={p.title}
+                        fill
+                        priority={idx === 0}
+                        className="object-cover brightness-100 contrast-[1.02]"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex justify-between items-baseline px-1">
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                    {proj.title}
-                  </h3>
-                  <span className="font-mono text-xs text-neutral-400">{proj.location}</span>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Link to Dedicated Projects Page */}
-          <div className="mt-14 text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[48px] font-bold shadow-lg"
-            >
-              <span>Explore All 10 Signature Projects & Blueprints</span>
-              <LuArrowUpRight className="w-4 h-4" />
-            </Link>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 7. SERVICES (CENTRA ARYA LOKA MASTER BUILDERS) */}
+      {/* 6. THE FOUNDER (1 FOUNDER PROFILE WITH ARCHITECTURAL CAD VECTOR SILHOUETTE) */}
+      <section id="founder" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Header Column */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
+              <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
+                The<br />Founder
+              </h2>
+              <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
+              <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
+                Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima.
+              </p>
+            </div>
+
+            {/* Right Single Founder Card Showcase with SVG Placeholder */}
+            <div className="lg:col-span-7">
+              {WW_FOUNDERS.map((founder, fIdx) => (
+                <div key={founder.name} className="group rounded-none bg-[#080808] border border-white/10 hover:border-amber-400/60 p-6 sm:p-10 transition-all duration-500 ease-expo shadow-2xl reveal">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
+                    {/* Vector Silhouette Portrait Box */}
+                    <div className="md:col-span-6">
+                      <div className="relative aspect-[3/4] w-full rounded-none overflow-hidden border border-white/15 bg-black shadow-inner">
+                        {founder.image ? (
+                          <Image
+                            src={founder.image}
+                            alt={`${founder.name} - ${founder.role}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-[0.9] group-hover:brightness-100"
+                            sizes="(max-width: 768px) 100vw, 400px"
+                          />
+                        ) : (
+                          <FounderSvgPlaceholder
+                            title="LEAD MASTER BUILDER"
+                            subtitle={founder.name}
+                          />
+                        )}
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-none bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[11px] tracking-widest text-neutral-400 uppercase">
+                          {founder.role}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Information */}
+                    <div className="md:col-span-6 space-y-4">
+                      <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
+                        {founder.role} — {founder.focus}
+                      </div>
+                      <h3 className="font-serif text-2xl sm:text-3xl text-white group-hover:text-amber-400 transition-colors">
+                        {founder.name}
+                      </h3>
+                      <div className="font-mono text-[11px] text-neutral-400">
+                        {founder.credentials}
+                      </div>
+                      <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
+                        {founder.bio}
+                      </p>
+                      {founder.quote && (
+                        <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
+                          &ldquo;{founder.quote}&rdquo;
+                        </blockquote>
+                      )}
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SERVICES */}
       <section id="services" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#050505] scroll-mt-20 w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mb-16"
-          >
-            <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-              MASTER BUILDERS · PT. CENTRA ARYA LOKA HERITAGE
-            </span>
+          <div className="max-w-3xl mb-16 reveal">
             <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight mb-4">
-              Master Builders
+              Services
             </h2>
             <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
-              Explore our services tailored to meet your construction needs. Backed by 35 years of physical engineering discipline in Surabaya, we build your dream spaces with unyielding care, structural rigor, and material artistry.
+              Layanan rancang bangun untuk hunian dan bangunan komersial, dikerjakan dengan disiplin teknik sipil dan pengawasan lapangan langsung.
             </p>
-          </motion.div>
+          </div>
 
           {/* 2 Major Service Categories (Residential & Commercial) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 mb-20">
             {CENTRA_SERVICES.map((srv, sIdx) => (
-              <motion.div
-                key={srv.category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.75, delay: sIdx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group rounded-2xl bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)]"
-              >
+              <div key={srv.category} className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
                 <div>
-                  <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black">
+                  <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black media-reveal">
                     <Image
                       src={srv.image}
                       alt={srv.category}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-lg">
                       {srv.category}
                     </div>
                   </div>
 
                   <div className="p-8 sm:p-10">
-                    <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">
+                    <h3 className="font-serif text-3xl sm:text-4xl text-white mb-2">
                       {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential Building' : 'Commercial Building'}
                     </h3>
                     <p className="font-serif text-base text-amber-400/90 italic mb-4">
@@ -498,7 +358,7 @@ export default function MainLayout() {
                         {srv.types.map((type) => (
                           <span
                             key={type}
-                            className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
+                            className="px-3.5 py-1.5 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
                           >
                             {type}
                           </span>
@@ -520,208 +380,162 @@ export default function MainLayout() {
                 <div className="px-8 sm:px-10 pb-8 pt-2">
                   <a
                     href="#contact"
-                    className="w-full py-3.5 rounded-xl border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 font-bold"
+                    className="group w-full py-3.5 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
                   >
                     <span>Inquire {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential' : 'Commercial'}</span>
-                    <LuArrowUpRight className="w-4 h-4" />
+                    <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* Centra Arya Loka 10-Stage Methodology */}
-          <div className="pt-16 border-t border-white/[0.08]">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-2xl mb-12"
+          {/* Alur kerja 10 tahap sengaja TIDAK ditampilkan di sini.
+              Isinya identik dengan /services, dan 10 kartu padat teks memutus
+              ritme image-first homepage. Tautan di bawah yang mengantar ke sana. */}
+          <div className="pt-14 border-t border-white/[0.08] flex justify-center">
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
-                CAL.IDN CONSTRUCTION WORKFLOW
-              </span>
-              <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white tracking-tight mb-3">
-                10 Pillars of Execution Discipline
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed font-sans">
-                Dari penelusuran visi perdana hingga inspeksi rutin purna serah terima, setiap tahapan diawasi langsung oleh tim insinyur sipil profesional.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-              {MASTER_METHODOLOGY.map((step, mIdx) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.6, delay: (mIdx % 5) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="p-6 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/50 transition-colors flex flex-col justify-between"
-                >
-                  <div>
-                    <span className="font-mono text-2xl font-bold text-amber-400 block mb-2">
-                      {step.step}
-                    </span>
-                    <h4 className="font-serif text-base font-bold text-white mb-1">
-                      {step.title}
-                    </h4>
-                    <div className="font-mono text-[9.5px] text-amber-400/80 mb-2 uppercase">
-                      {step.subtitle}
-                    </div>
-                    <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
-                      {step.idDesc}
-                    </p>
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-white/5 font-mono text-[9px] text-neutral-400">
-                    <span className="text-amber-400 block font-bold">OUTPUT:</span>
-                    <span className="text-neutral-300">{step.deliverable}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-12 flex justify-center">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-white/10 text-neutral-200 hover:text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px]"
-              >
-                <span>Explore Full Services & 10-Stage Methodology</span>
-                <LuArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
-              </Link>
-            </div>
+              <span>Layanan &amp; Alur Kerja 10 Tahap</span>
+              <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 8. THE FOUNDER (1 FOUNDER PROFILE WITH ARCHITECTURAL CAD VECTOR SILHOUETTE) */}
-      <section id="founder" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Header Column */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 lg:sticky lg:top-32"
-            >
-              <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-                LEADERSHIP & PROVENANCE
-              </span>
-              <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
-                The<br />Founder
+      {/* 8. PROJECTS (AUTOMATIC CONTINUOUS SWIPER) */}
+      <section id="projects" className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden bg-[#000000]">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+          {/* Section Header with Subtle Navigation Arrows */}
+          <div className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6 reveal">
+            <div>
+              <h2 className="font-serif text-5xl sm:text-7xl font-normal text-white tracking-tight">
+                Projects
               </h2>
-              <div className="w-16 h-[1.5px] bg-amber-400 mb-6" />
-              <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Dedicated to shaping evocative architectural landmarks and bespoke private sanctuaries that harmonize bold form exploration with physical structural mastery and transparent financial stewardship.
-              </p>
-              <div className="hidden lg:block font-mono text-xs text-neutral-500 tracking-widest uppercase">
-                PRINCIPAL · STUDIO VOZA TOWER SURABAYA
-              </div>
-            </motion.div>
-
-            {/* Right Single Founder Card Showcase with SVG Placeholder */}
-            <div className="lg:col-span-7">
-              {WW_FOUNDERS.map((founder, fIdx) => (
-                <motion.div
-                  key={founder.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.75, delay: fIdx * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="group rounded-2xl bg-[#080808] border border-white/10 hover:border-amber-400/60 p-6 sm:p-10 transition-all duration-500 shadow-2xl"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
-                    {/* Vector Silhouette Portrait Box */}
-                    <div className="md:col-span-6">
-                      <div className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-white/15 bg-black shadow-inner">
-                        {founder.image ? (
-                          <Image
-                            src={founder.image}
-                            alt={`${founder.name} - ${founder.role}`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.9] group-hover:brightness-100"
-                            sizes="(max-width: 768px) 100vw, 400px"
-                          />
-                        ) : (
-                          <FounderSvgPlaceholder
-                            title="LEAD MASTER BUILDER"
-                            subtitle={founder.name}
-                          />
-                        )}
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
-                          {founder.role}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Information */}
-                    <div className="md:col-span-6 space-y-4">
-                      <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
-                        {founder.role} — {founder.focus}
-                      </div>
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                        {founder.name}
-                      </h3>
-                      <div className="font-mono text-[11px] text-neutral-400">
-                        {founder.credentials}
-                      </div>
-                      <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
-                        {founder.bio}
-                      </p>
-                      {founder.quote && (
-                        <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
-                          &ldquo;{founder.quote}&rdquo;
-                        </blockquote>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-500">
-                    <span>WW.CONS PRINCIPAL</span>
-                    <span className="text-neutral-400">VOZA TOWER LT. 20</span>
-                  </div>
-                </motion.div>
-              ))}
             </div>
+
+            {/* Subtle Minimalist Navigation Arrows */}
+            <div className="flex items-center gap-3">
+              {/* Kontrol jeda eksplisit. Hover saja tidak cukup: pengguna
+                  keyboard dan layar sentuh tidak punya cara menghentikan gerak. */}
+              {!prefersReducedMotion && (
+                <button
+                  type="button"
+                  onClick={() => setIsPaused((v) => !v)}
+                  className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                  aria-label={isPaused ? 'Jalankan gerak otomatis galeri proyek' : 'Jeda gerak otomatis galeri proyek'}
+                  aria-pressed={isPaused}
+                >
+                  {isPaused ? <LuPlay className="w-4 h-4" /> : <LuPause className="w-4 h-4" />}
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => scrollCarousel('left')}
+                className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label="Previous Projects"
+              >
+                <LuChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel('right')}
+                className="w-11 h-11 rounded-none border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer min-h-[44px] min-w-[44px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                aria-label="Next Projects"
+              >
+                <LuChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Full-Width Continuous Infinite Swiper */}
+          <div ref={carouselRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onTouchStart={() => setIsHovered(true)} onTouchEnd={() => setIsHovered(false)} role="region" aria-label="Galeri proyek pilihan" tabIndex={0} className="flex gap-7 overflow-x-auto scrollbar-none pb-6 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-sm reveal">
+            {[...WW_PROJECTS, ...WW_PROJECTS].map((proj, idx) => {
+              // Separuh kedua hanya penyambung visual agar loop terasa mulus.
+              // Disembunyikan dari teknologi bantu supaya tiap proyek tidak dibacakan dua kali.
+              const isClone = idx >= WW_PROJECTS.length;
+              return (
+                <button
+                  key={`${proj.title}-${idx}`}
+                  type="button"
+                  onClick={() => setSelectedProject(proj)}
+                  aria-hidden={isClone}
+                  tabIndex={isClone ? -1 : 0}
+                  className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-none"
+                >
+                  <span className="sr-only">Lihat detail proyek {proj.title}</span>
+                  <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full overflow-hidden bg-neutral-900 mb-5 border border-white/10 group-hover:border-white/40 transition-colors duration-500 ease-expo">
+                    <Image
+                      src={proj.img}
+                      alt=""
+                      fill
+                      className="object-cover transition-transform duration-[900ms] ease-expo group-hover:scale-[1.06]"
+                      sizes="(max-width: 768px) 440px, 540px"
+                    />
+                    {/* Gelap saat diam, membuka saat disentuh — gambarnya yang jadi hadiah. */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-70 group-hover:opacity-25 transition-opacity duration-500 ease-expo" />
+
+                    <span className="absolute top-4 left-4 px-3.5 py-1.5 bg-black/70 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-200 uppercase">
+                      {proj.category}
+                    </span>
+
+                    {/* Penanda arah yang masuk dari pojok saat hover */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-4 right-4 w-11 h-11 flex items-center justify-center bg-white text-black translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-expo"
+                    >
+                      <LuArrowUpRight className="w-5 h-5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-baseline px-1 gap-4">
+                    <h3 className="font-serif text-2xl sm:text-3xl text-white">
+                      {proj.title}
+                    </h3>
+                    <span className="font-mono text-xs text-neutral-400 shrink-0">{proj.location}</span>
+                  </div>
+                  {/* Garis yang ditarik dari kiri, menggantikan perubahan warna judul */}
+                  <span
+                    aria-hidden="true"
+                    className="mt-3 block h-px w-0 bg-amber-400 transition-[width] duration-500 ease-expo group-hover:w-full"
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Link to Dedicated Projects Page */}
+          <div className="mt-14 text-center">
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-none border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-amber-400 hover:text-black text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] font-bold shadow-lg"
+            >
+              <span>Lihat Semua {WW_PROJECTS.length} Proyek</span>
+              <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 9. SIGNATURE CONTACT SECTION */}
       <section id="contact" className="py-28 md:py-36 bg-[#000000] border-t border-white/[0.08] scroll-mt-20 w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Monumental Column: 'Contact' Heading */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-6"
-            >
+            <div className="lg:col-span-6 reveal">
               <h2 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] font-normal text-white tracking-tight leading-[0.95] mb-6">
                 Contact
               </h2>
-              <div className="w-24 h-[1.5px] bg-amber-400 mb-8" />
+              <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
               <p className="font-serif text-lg sm:text-xl text-neutral-300 font-light leading-relaxed max-w-md">
-                For private luxury residence commissions, flagship corporate headquarters, or structural general contracting consultations in Surabaya and East Java.
+                Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.
               </p>
-              <div className="mt-8 font-mono text-[11px] tracking-widest text-neutral-500 uppercase">
-                INSIDE OUT · BALANCED CONTRAST · NARRATIVE SPACE
-              </div>
-            </motion.div>
+            </div>
 
             {/* Right Information Column */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-6 space-y-10"
-            >
+            <div className="lg:col-span-6 space-y-10 reveal">
               {/* Horizontal Brand Lockup */}
               <div className="pb-6 border-b border-white/10">
                 <ModernWwLogo variant="full" size="lg" />
@@ -729,45 +543,49 @@ export default function MainLayout() {
 
               {/* Inquiries Details */}
               <div>
-                <h3 className="font-mono text-xs font-bold text-amber-400 uppercase tracking-[0.25em] mb-4">
+                <h3 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-[0.25em] mb-4">
                   FOR INQUIRIES
                 </h3>
                 <div className="space-y-4 font-sans text-base sm:text-lg">
                   <div>
-                    <a
-                      href="mailto:info@wwconstruction.id"
-                      className="text-white hover:text-amber-400 transition-colors font-serif tracking-wide block"
-                    >
-                      info@wwconstruction.id
-                    </a>
+                    {SITE_CONTACT.email ? (
+                      <a
+                        href={`mailto:${SITE_CONTACT.email}`}
+                        className="text-white hover:text-amber-400 transition-colors font-serif tracking-wide block"
+                      >
+                        {SITE_CONTACT.email}
+                      </a>
+                    ) : (
+                      <span className="text-neutral-400 font-serif tracking-wide block">
+                        {SITE_CONTACT.emailLabel}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    {SITE_CONTACT.whatsapp ? (
+                      <a
+                        href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-amber-400 transition-colors font-mono tracking-wider block"
+                      >
+                        {SITE_CONTACT.whatsappLabel}
+                      </a>
+                    ) : (
+                      <span className="text-neutral-400 font-mono tracking-wider block">
+                        {SITE_CONTACT.whatsappLabel}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <a
-                      href="https://wa.me/6282298199902?text=Halo%20ww.cons%2C%20saya%20ingin%20konsultasi%20rancang%20bangun%20Surabaya."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-amber-400 transition-colors font-mono tracking-wider block"
-                    >
-                      +62 822 9819 9902 <span className="text-xs font-mono text-neutral-500">(Direct Client Hotline)</span>
-                    </a>
-                    <a
-                      href="https://wa.me/628113313347?text=Halo%20ww.cons%2C%20saya%20ingin%20konsultasi%20teknik%20sipil."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-neutral-400 hover:text-amber-400 transition-colors font-mono tracking-wider block text-sm mt-1"
-                    >
-                      +62 811 3313 347 <span className="text-xs font-mono text-neutral-500">(Field Engineering Base)</span>
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://instagram.com/ww.cons"
+                      href={SITE_CONTACT.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-amber-400 hover:text-white transition-colors font-mono text-sm tracking-wider inline-flex items-center gap-2"
                     >
                       <FaInstagram className="w-4 h-4" />
-                      <span>@ww.cons</span>
+                      <span>{SITE_CONTACT.instagramHandle}</span>
                     </a>
                   </div>
                 </div>
@@ -775,50 +593,43 @@ export default function MainLayout() {
 
               {/* Physical Addresses */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10 text-xs font-mono">
-                <div>
-                  <div className="text-white font-bold mb-1 flex items-center gap-2">
-                    <LuMapPin className="w-3.5 h-3.5 text-amber-400" />
-                    <span>SURABAYA STUDIO</span>
+                {[SITE_CONTACT.studio, SITE_CONTACT.workshop].map((place) => (
+                  <div key={place.name}>
+                    <div className="text-white mb-1 flex items-center gap-2">
+                      <LuMapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{place.name}</span>
+                    </div>
+                    <address className="text-neutral-400 leading-relaxed not-italic">
+                      {place.lines.map((line) => (
+                        <span key={line} className="block">{line}</span>
+                      ))}
+                    </address>
                   </div>
-                  <div className="text-neutral-400 leading-relaxed">
-                    Gedung Voza Premium Office, Lt. 20<br />
-                    Jl. HR Muhammad No. 31A<br />
-                    Surabaya, Indonesia
-                  </div>
-                </div>
-                <div>
-                  <div className="text-neutral-300 font-bold mb-1 flex items-center gap-2">
-                    <LuMapPin className="w-3.5 h-3.5 text-neutral-500" />
-                    <span>WORKSHOP & YARD</span>
-                  </div>
-                  <div className="text-neutral-400 leading-relaxed">
-                    Jl. Semolowaru No. 48<br />
-                    Surabaya Timur, Jawa Timur<br />
-                    Indonesia
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 rounded-full bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98] shadow-lg"
+                  className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98] shadow-lg"
                 >
-                  <span>Open Contact Desk & Inquiries</span>
-                  <LuArrowUpRight className="w-4 h-4" />
+                  <span>Hubungi Kami</span>
+                  <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
-                <a
-                  href="https://wa.me/6282298199902?text=Halo%20ww.cons%2C%20saya%20ingin%20konsultasi%20rancang%20bangun%20Surabaya."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98]"
-                >
-                  <LuPhone className="w-4 h-4 text-amber-400" />
-                  <span>WhatsApp Direct Dispatch</span>
-                </a>
+                {SITE_CONTACT.whatsapp && (
+                  <a
+                    href={waLink('Halo ww.cons, saya ingin konsultasi rancang bangun.')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 ease-expo inline-flex items-center gap-2 min-h-[48px] active:scale-[0.98]"
+                  >
+                    <LuPhone className="w-4 h-4 text-amber-400" />
+                    <span>WhatsApp</span>
+                  </a>
+                )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -834,5 +645,3 @@ export default function MainLayout() {
     </div>
   );
 }
-
-export { MainLayout as BarcwayLayout };

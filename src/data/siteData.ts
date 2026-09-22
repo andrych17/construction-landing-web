@@ -1,3 +1,54 @@
+/* ============================================================================
+ * ⚠️  KONTEN PLACEHOLDER — BELUM SIAP PRODUKSI
+ *
+ * Nama proyek, filosofi 01/02/03, tagline, dan profil founder di file ini
+ * masih menyalin barcway.com dan centraaryaloka.com. Dipakai sementara untuk
+ * meniru struktur layout. WAJIB diganti dengan data Wonderful Works asli
+ * sebelum situs dipublikasikan atau diindeks.
+ *
+ * Checklist sebelum go-live:
+ *   [ ] SITE_CONTACT diisi data ww.cons asli (saat ini placeholder)
+ *   [ ] WW_PROJECTS diganti proyek ww.cons + foto ww.cons
+ *   [ ] WW_FOUNDERS diisi nama & foto founder ww.cons
+ *   [ ] WW_PHILOSOPHIES ditulis ulang dengan suara sendiri
+ * ========================================================================== */
+
+/**
+ * Sumber tunggal data kontak. Sebelumnya nomor/alamat tersebar di 6 file dan
+ * semuanya berisi kontak milik Barcway — satu tempat supaya tidak terulang.
+ *
+ * TODO: ganti seluruh nilai di bawah dengan data ww.cons asli.
+ */
+export const SITE_CONTACT = {
+  /** Konten situs masih placeholder -> robots.ts menutup indexing. Set false saat siap rilis. */
+  isPlaceholder: true,
+
+  // Nomor & alamat di bawah dibaca dari postingan Instagram resmi ww.cons
+  // (public/images/ww/metadata.json, muncul konsisten di 6 postingan).
+  // Nilai sebelumnya adalah kontak Barcway — sudah dicabut.
+  // TODO: konfirmasi ke klien sebelum rilis.
+  whatsapp: '628113313347',
+  whatsappLabel: '+62 811 3313 347',
+  email: '', // TODO: belum ditemukan di sumber mana pun — minta ke klien.
+  emailLabel: 'email — belum tersedia',
+  instagram: 'https://www.instagram.com/ww.cons/',
+  instagramHandle: '@ww.cons',
+  studio: {
+    name: 'STUDIO SURABAYA',
+    lines: ['Jl. Serenity No. 29', 'Semolowaru, Surabaya', 'Jawa Timur, Indonesia'],
+  },
+  workshop: {
+    name: 'WORKSHOP & YARD',
+    lines: ['Jl. Serenity No. 29', 'Semolowaru, Surabaya', 'Jawa Timur, Indonesia'],
+  },
+} as const;
+
+/** wa.me deeplink, atau '#' bila nomor belum diisi (jangan kirim ke nomor asing). */
+export function waLink(message: string): string {
+  if (!SITE_CONTACT.whatsapp) return '#';
+  return `https://wa.me/${SITE_CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
 export interface ProjectDetail {
   title: string;
   category: string;
@@ -59,26 +110,32 @@ export const WW_PHILOSOPHIES = [
   },
 ];
 
-// 1 FOUNDER PROFILE (Photo placeholder handled via architectural SVG)
+/**
+ * PROFIL FOUNDER — PLACEHOLDER.
+ *
+ * Nama sebelumnya ("Ir. Calvin Limantoro, S.T., M.T.") adalah principal
+ * PT Centra Arya Loka, bukan ww.cons. Dicabut agar identitas orang lain tidak
+ * ikut terpublikasi. Isi `image` dengan path foto founder ww.cons; selama masih
+ * kosong, FounderSvgPlaceholder yang dirender.
+ */
 export const WW_FOUNDERS: FounderDetail[] = [
   {
-    name: 'Ir. Calvin Limantoro, S.T., M.T.',
+    name: 'Founder ww.cons', // TODO: nama founder asli
     role: 'Principal & Lead Master Builder',
-    image: '',
+    image: '', // TODO: '/images/founders/<foto>.jpg'
     isSvgPlaceholder: true,
     focus: 'Architectural Engineering & Structural Master Planning',
-    bio: 'Memimpin perencanaan arsitektur, rekayasa sipil presisi tinggi, dan konstruksi hunian mewah serta gedung komersial di Surabaya. Melanjutkan warisan 50+ tahun keluarga dalam dunia konstruksi dengan sistem pengawasan digital terintegrasi dan jaminan keterbukaan anggaran.',
+    bio: 'TODO — ganti dengan profil founder ww.cons: latar belakang keteknikan, rekam jejak proyek, dan pendekatan pengawasan lapangan yang dipegang.',
     credentials: [
-      'Sarjana Teknik Sipil (S.T.) & Magister Teknik Sipil Struktur (M.T.)',
-      'Insinyur Profesional Teregistrasi (Ir.) & Asosiasi Kontraktor Nasional',
-      '50+ Tahun Warisan Keluarga Konstruksi & Fabrikasi Presisi',
-      'Pengawasan Langsung Lapangan & Kontrak SPK Transparan Tanpa Biaya Tersembunyi',
+      'TODO — gelar & registrasi keinsinyuran',
+      'TODO — keanggotaan asosiasi kontraktor',
+      'TODO — rekam jejak tahun pengalaman',
     ],
-    quote: 'Kami memberikan solusi inovatif untuk efisiensi anggaran dalam konstruksi hunian mewah dan komersial tanpa mengorbankan kualitas, integritas struktur, dan ketepatan waktu.',
+    quote: 'TODO — kutipan prinsip kerja founder.',
   },
 ];
 
-// SERVICES FROM CENTRA ARYA LOKA (PT. Centra Arya Loka & Wonderful Works)
+// LAYANAN — TODO: tulis ulang, struktur mengikuti centraaryaloka.com
 export const CENTRA_SERVICES = [
   {
     category: 'RESIDENTIAL BUILDING',
@@ -118,7 +175,7 @@ export const CENTRA_SERVICES = [
   },
 ];
 
-// 10-STEP WORKFLOW FROM CENTRA ARYA LOKA (PT. CENTRA ARYA LOKA HERITAGE)
+// ALUR KERJA 10 TAHAP — TODO: tulis ulang, struktur mengikuti centraaryaloka.com
 export const MASTER_METHODOLOGY = [
   {
     step: '01',
@@ -198,7 +255,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'DG House',
     category: 'Private Residence',
     location: 'Jakarta, Indonesia',
-    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/modern_villa_hq.jpg',
     desc: 'Monumental modern residence structured around tranquil courtyards and cantilevered monolithic concrete volumes. The open-plan living quarters integrate seamlessly with lush tropical landscaping.',
     materials: 'Monolithic Concrete K-350, Italian Travertine Slab, Teak Louvers, Low-E Glass',
     specs: {
@@ -226,7 +283,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'M House',
     category: 'Private Residence',
     location: 'Surabaya, Indonesia',
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/tropical_facade_hq.jpg',
     desc: 'A residence that stands with quiet confidence. Its facade is defined by warm timber screens and clean horizontal lines, balancing openness and privacy in the maritime climate of East Surabaya.',
     materials: 'Weatherproof Solid Teakwood, Statuario Marble, Exposed Concrete, Custom Steel Brackets',
     specs: {
@@ -254,7 +311,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'MJ House',
     category: 'Private Residence',
     location: 'Cibubur, Indonesia',
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/interior_craftsmanship_hq.jpg',
     desc: 'Refined geometric sanctuary blending natural basalt masonry with rich American walnut finishes. Employs cascading spatial sequences to curate intimate moments of comfort.',
     materials: 'Black Basalt Stone, Natural American Walnut, Matt Black Aluminium, Low-Iron Glass',
     specs: {
@@ -280,7 +337,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'AW House',
     category: 'Luxury Villa',
     location: 'Seminyak, Bali',
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/luxury_residence_hq.jpg',
     desc: 'A bespoke tropical estate designed around the rhythm of coastal living. Expansive motorized sliding glass panels blur the transition between internal living halls and the reflective infinity pool.',
     materials: 'Paras Kerobokan Stone, Reclaimed Ulin Ironwood, Microcement, Double Glazed Glass',
     specs: {
@@ -306,7 +363,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'W Office',
     category: 'Commercial Headquarters',
     location: 'Surabaya, Indonesia',
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/facade_architecture_hq.jpg',
     desc: 'Flagship corporate headquarters engineered for productivity, prestige, and seamless collaboration. Features acoustic zoning, intelligent LED lighting, and an expansive boardroom.',
     materials: 'Architectural Curtain Wall, Black Powder-Coated Steel, Acoustic Oak Panels, Terrazzo',
     specs: {
@@ -358,7 +415,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'Puri Indah Residence',
     category: 'Private Residence',
     location: 'Surabaya Barat, Indonesia',
-    img: 'https://images.unsplash.com/photo-16005851554526-990dced4db0d?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/modern_villa_hq.jpg',
     desc: 'Modern minimalist residence featuring clean rectilinear volumes, cantilevered steel canopy, and warm mood lighting. Engineered to maximize natural breezes and garden vistas.',
     materials: 'Bespoke Perforated Steel, Concrete Finish, Imported Granite, Weatherproof Silicone Sealant',
     specs: {
@@ -384,7 +441,7 @@ export const WW_PROJECTS: ProjectDetail[] = [
     title: 'RMB House',
     category: 'Private Residence',
     location: 'Surabaya Timur, Indonesia',
-    img: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80',
+    img: '/images/projects/construction_crane_hq.jpg',
     desc: 'Timeless modern-classic residence featuring elegant proportions, bespoke mouldings, and an expansive double-height foyer with bespoke crystal chandelier support framework.',
     materials: 'Classic Profiling, Botticino Marble, Solid Mahogany Joinery, Cast Iron Balustrades',
     specs: {
@@ -407,8 +464,3 @@ export const WW_PROJECTS: ProjectDetail[] = [
     ],
   },
 ];
-
-// Clean backward compatibility aliases
-export const BARCWAY_PHILOSOPHIES = WW_PHILOSOPHIES;
-export const BARCWAY_FOUNDERS = WW_FOUNDERS;
-export const BARCWAY_PROJECTS = WW_PROJECTS;

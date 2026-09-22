@@ -5,82 +5,56 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { LuArrowUpRight, LuCircleCheck } from 'react-icons/lu';
+import HeroMedia from '@/components/ui/HeroMedia';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
-import ArchitecturalPreloader from '@/components/interactive/ArchitecturalPreloader';
 import { CENTRA_SERVICES, MASTER_METHODOLOGY } from '@/data/siteData';
 
 export default function ServicesPage() {
   return (
     <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
-      <ArchitecturalPreloader />
       <Navbar />
 
       {/* 1. MONUMENTAL SERVICES HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/projects/concrete_rebar_hq.jpg"
-            alt="Centra Arya Loka Master Builders"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.7] contrast-[1.08] scale-105"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent" />
-        </div>
+        <HeroMedia src="/videos/concrete-structure.mp4" poster="/images/projects/concrete-structure_poster.jpg" alt="Struktur beton dalam pengerjaan" priority />
 
-        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="font-mono text-xs tracking-[0.28em] text-amber-400 uppercase block mb-4 font-bold">
-              MASTER BUILDERS · PT. CENTRA ARYA LOKA HERITAGE
-            </span>
+        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
+          <div className="reveal-load">
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-normal text-white tracking-tight leading-[0.98] mb-6">
               Services
             </h1>
-            <div className="w-20 h-[1.5px] bg-amber-400 mx-auto mb-6" />
+            <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
             <p className="font-serif italic text-lg sm:text-2xl text-neutral-300 font-light max-w-2xl mx-auto">
-              &ldquo;Master Builders — Explore our services tailored to meet your construction needs.&rdquo;
+              &ldquo;Services — Explore our services tailored to meet your construction needs.&rdquo;
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* 2. OVERVIEW STATEMENT */}
       <section className="py-20 md:py-28 border-b border-white/[0.08] relative">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
+        <div className="max-w-reading mx-auto px-6 sm:px-12 text-center">
+          <div className="reveal">
+            {/* TODO: tulis ulang dengan rekam jejak ww.cons yang sebenarnya.
+                Versi lama menyebut "lebih dari 35 tahun" (tidak terverifikasi dan
+                bertabrakan dengan klaim 50+ tahun di tempat lain) serta
+                memposisikan PT Centra Arya Loka sebagai mitra — itu firma lain. */}
             <p className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-200 leading-[2.1] sm:leading-[2.3] tracking-[1px] font-normal mb-8">
-              Perjalanan kami berakar dari tradisi konstruksi teknik sipil Surabaya lebih dari 35 tahun lalu. Kini di bawah sinergi <strong className="text-white">PT. Centra Arya Loka (cal.idn)</strong> dan <strong className="text-white">ww.cons</strong>, kami memadukan eksplorasi arsitektur visioner dengan disiplin rekayasa struktur tanpa kompromi.
+              <strong className="text-white">ww.cons</strong> memadukan perancangan arsitektur dengan disiplin pelaksanaan di lapangan — dari studi tapak, penyusunan anggaran terbuka, hingga serah terima dan masa pemeliharaan.
             </p>
             <div className="font-mono text-xs text-neutral-400 tracking-[0.2em] uppercase">
               STANDAR SNI K-350 · KONTRAK KERJA TRANSPARAN · PENGAWASAN LANGSUNG INSINYUR
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* 3. PRIMARY SERVICE PILLARS (RESIDENTIAL & COMMERCIAL) */}
       <section className="py-28 md:py-36 border-b border-white/[0.08] bg-[#050505] w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mb-16"
-          >
-            <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+          <div className="max-w-3xl mb-16 reveal">
+            <span className="font-mono text-xs tracking-[0.25em] text-neutral-400 uppercase block mb-3 font-bold">
               CORE DISCIPLINES
             </span>
             <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
@@ -89,35 +63,28 @@ export default function ServicesPage() {
             <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed font-sans">
               Dari vila privat mewah hingga kantor korporat dan fasilitas komersial, setiap proyek dikerjakan dengan presisi terukur.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
             {CENTRA_SERVICES.map((srv, sIdx) => (
-              <motion.div
-                key={srv.category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.75, delay: sIdx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group rounded-2xl bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)]"
-              >
+              <div key={srv.category} className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
                 <div>
                   <div className="relative h-[300px] sm:h-[360px] w-full overflow-hidden bg-black">
                     <Image
                       src={srv.image}
                       alt={srv.category}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-lg">
                       {srv.category}
                     </div>
                   </div>
 
                   <div className="p-8 sm:p-10">
-                    <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">
+                    <h3 className="font-serif text-3xl sm:text-4xl text-white mb-2">
                       {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential Building' : 'Commercial Building'}
                     </h3>
                     <p className="font-serif text-base text-amber-400/90 italic mb-4">
@@ -135,7 +102,7 @@ export default function ServicesPage() {
                         {srv.types.map((type) => (
                           <span
                             key={type}
-                            className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
+                            className="px-4 py-2 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
                           >
                             {type}
                           </span>
@@ -157,73 +124,57 @@ export default function ServicesPage() {
                 <div className="px-8 sm:px-10 pb-8 pt-2">
                   <Link
                     href="/contact"
-                    className="w-full py-4 rounded-xl border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 font-bold"
+                    className="group w-full py-4 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
                   >
                     <span>Consult {srv.category === 'RESIDENTIAL BUILDING' ? 'Residential' : 'Commercial'} Project</span>
-                    <LuArrowUpRight className="w-4 h-4" />
+                    <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. CENTRA ARYA LOKA 10-STEP WORKFLOW METHODOLOGY */}
+      {/* 4. 10-STEP WORKFLOW METHODOLOGY */}
       <section className="py-28 md:py-36 border-b border-white/[0.08] bg-[#020202] w-full">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mb-16"
-          >
-            <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-              CAL.IDN CONSTRUCTION WORKFLOW
-            </span>
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+          <div className="max-w-3xl mb-16 reveal">
             <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
-              10 Pillars of Execution Discipline
+              Alur Kerja 10 Tahap
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
               Setiap langkah dari perjumpaan perdana hingga garansi purna serah terima dikelola secara transparan dengan supervisi langsung insinyur sipil.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {MASTER_METHODOLOGY.map((step, mIdx) => (
-              <motion.div
-                key={step.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.6, delay: (mIdx % 5) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between group shadow-lg"
-              >
+              <div key={step.step} className="p-6 rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 ease-expo flex flex-col justify-between group shadow-lg reveal">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="font-mono text-3xl font-bold text-amber-400 group-hover:scale-105 transition-transform">
                       {step.step}
                     </span>
-                    <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
+                    <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
                       PHASE
                     </span>
                   </div>
-                  <h4 className="font-serif text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">
+                  <h4 className="font-serif text-lg text-white mb-1 group-hover:text-amber-400 transition-colors">
                     {step.title}
                   </h4>
-                  <div className="font-mono text-[10px] text-amber-400/80 mb-3 tracking-wider uppercase">
+                  <div className="font-mono text-[11px] text-amber-400/80 mb-3 tracking-wider uppercase">
                     {step.subtitle}
                   </div>
                   <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans mb-4">
                     {step.idDesc}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-white/10 font-mono text-[10px] text-neutral-400">
-                  <span className="text-amber-400 block font-bold mb-0.5">OUTPUT:</span>
+                <div className="pt-3 border-t border-white/10 font-mono text-[11px] text-neutral-400">
+                  <span className="text-neutral-300 block mb-0.5">OUTPUT:</span>
                   <span className="text-neutral-300">{step.deliverable}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -231,25 +182,25 @@ export default function ServicesPage() {
 
       {/* 5. PHYSICAL REALIZATION BENCHMARKS */}
       <section className="py-24 bg-[#080808] border-b border-white/[0.08]">
-        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
+        <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-[#0d0d0d] border border-white/10">
+            <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">01</span>
-              <h3 className="font-serif text-2xl font-bold text-white mb-2">SNI K-350 Concrete</h3>
+              <h3 className="font-serif text-2xl text-white mb-2">SNI K-350 Concrete</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 Uji slump independen untuk setiap truk molen cor ready-mix. Rangka pembesian ganda tahan guncangan seismik pesisir Surabaya.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-[#0d0d0d] border border-white/10">
+            <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">02</span>
-              <h3 className="font-serif text-2xl font-bold text-white mb-2">Laser 90° Siku Presisi</h3>
+              <h3 className="font-serif text-2xl text-white mb-2">Laser 90° Siku Presisi</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 Kalibrasi optik laser digital memastikan pertemuan dinding 90° tegak lurus sempurna dengan deviasi nat marmer &lt; 1mm.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-[#0d0d0d] border border-white/10">
+            <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">03</span>
-              <h3 className="font-serif text-2xl font-bold text-white mb-2">Garansi Retensi 100 Hari</h3>
+              <h3 className="font-serif text-2xl text-white mb-2">Garansi Retensi 100 Hari</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                 Komitmen purna jual resmi tertulis dalam SPK berkekuatan hukum, ditambah inspeksi berkala 2x setahun untuk merawat kenyamanan Anda.
               </p>
@@ -270,14 +221,14 @@ export default function ServicesPage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-full bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 min-h-[44px]"
+              className="group px-8 py-4 rounded-none bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo flex items-center gap-2 min-h-[44px]"
             >
               <span>Konsultasi Proyek</span>
-              <LuArrowUpRight className="w-4 h-4" />
+              <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
               href="/projects"
-              className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[44px]"
+              className="px-8 py-4 rounded-none border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[44px]"
             >
               Lihat Hasil Karya
             </Link>

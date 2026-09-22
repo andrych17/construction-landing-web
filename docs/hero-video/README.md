@@ -60,7 +60,7 @@ Tersedia varian file prompt di folder `docs/hero-video/` yang bisa langsung di-c
 | **Durasi** | 8 – 10 detik |
 | **Format** | MP4 / H.264 |
 | **Ukuran Target** | **≤ 4 MB** *(web optimized)* |
-| **Path Tujuan** | `public/videos/construction_timelapse.mp4` |
+| **Path Tujuan** | `public/videos/hero.mp4` |
 | **Poster Path** | `public/images/projects/hero_poster.jpg` |
 
 ### Perintah Kompresi FFmpeg (Opsional):
@@ -68,10 +68,10 @@ Jika file video hasil unduhan dari Google Flow terlalu besar (> 10 MB), jalankan
 
 ```bash
 # 1. Kompres video ke ukuran web-ready (~2-3 MB)
-ffmpeg -i hasil_flow.mp4 -an -vf scale=1920:-2 -c:v libx264 -crf 26 -preset slow -movflags +faststart public/videos/construction_timelapse.mp4
+ffmpeg -i hasil_flow.mp4 -an -vf scale=1920:-2 -c:v libx264 -crf 26 -preset slow -movflags +faststart public/videos/hero.mp4
 
 # 2. Ambil 1 frame pertama sebagai gambar poster cadangan (fallback)
-ffmpeg -i public/videos/construction_timelapse.mp4 -vframes 1 -q:v 3 public/images/projects/hero_poster.jpg
+ffmpeg -i public/videos/hero.mp4 -vframes 1 -q:v 3 public/images/projects/hero_poster.jpg
 ```
 
 ---
@@ -81,5 +81,5 @@ ffmpeg -i public/videos/construction_timelapse.mp4 -vframes 1 -q:v 3 public/imag
 - [ ] Subjek bangunan terpusat di tengah frame
 - [ ] Bagian bawah frame gelap dan polos untuk keterbacaan teks
 - [ ] Tanpa teks / logo / wajah orang di dalam video
-- [ ] File diletakkan di `public/videos/construction_timelapse.mp4`
+- [ ] File diletakkan di `public/videos/hero.mp4`
 - [ ] Web `http://localhost:3000` memutar video baru dengan mulus

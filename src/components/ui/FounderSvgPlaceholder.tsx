@@ -169,7 +169,7 @@ export default function FounderSvgPlaceholder({
           fontFamily="ui-monospace, monospace"
           letterSpacing="0.2em"
         >
-          PT. CENTRA ARYA LOKA · WW.CONS SURABAYA
+          WW.CONS · SURABAYA
         </text>
       </svg>
 
@@ -180,7 +180,7 @@ export default function FounderSvgPlaceholder({
       <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-amber-500/40 pointer-events-none" />
 
       {/* 4. Top Tag */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/80 border border-amber-500/30 font-mono text-[9px] text-amber-400 uppercase tracking-widest backdrop-blur-md">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-none bg-black/80 border border-amber-500/30 font-mono text-[11px] text-neutral-400 uppercase tracking-widest backdrop-blur-md">
         PORTRAIT ARCHIVE // SPEC-01
       </div>
     </div>

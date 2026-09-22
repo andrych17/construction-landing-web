@@ -4,22 +4,115 @@
   --font-serif: var(--font-serif), "Baskervville", Georgia, serif;
   --font-sans: var(--font-sans), var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-}
 
-:root {
-  --brand-color: #F59E0B;
-  --brand-color-hover: #D97706;
-  --brand-color-active: #B45309;
-  --brand-color-light: #78350F;
-  --brand-color-border: rgba(245, 158, 11, 0.25);
-  --brand-color-text: #FBBF24;
-  --brand-color-ring: rgba(245, 158, 11, 0.35);
+  /* Dua lebar container saja. Sebelumnya tersebar di 1200/1400/1600/1700/1800px
+     sehingga tidak ada satu pun section yang bertepi sejajar. */
+  --container-frame: 1600px; /* max-w-frame — seluruh section */
+  --container-reading: 56rem; /* max-w-reading — blok teks panjang */
+
+  /* Satu kurva easing untuk seluruh situs. Sebelumnya tiap transisi memakai
+     easing bawaan yang berbeda-beda, jadi gerakannya terasa tidak satu tangan. */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
   background-color: #030303;
   color: #f5f5f5;
+}
+
+/* Reveal saat masuk viewport — progressive enhancement, bukan gerbang konten.
+ *
+ * Sebelumnya tiap section dibungkus framer-motion `whileInView`, sehingga HTML
+ * dari server membawa style="opacity:0" di 33 elemen: JS gagal atau lambat =
+ * halaman hitam, dan LCP baru bisa melukis setelah hidrasi.
+ *
+ * Di sini animasi ditangani CSS. Browser tanpa dukungan scroll-driven animation
+ * (Safari/Firefox saat ini) melewatkan animasinya dan langsung menampilkan
+ * konten — itu perilaku yang benar untuk fallback. */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Logo intro: emblem tersingkap dari bawah ke atas.
+   Pola gerak yang sama dengan media-wipe pada gambar proyek, supaya bahasa
+   geraknya satu sistem. Menganimasikan SVG inline — tidak ada file video. */
+@keyframes logo-wipe {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-wipe {
+    animation: logo-wipe 1s var(--ease-expo) both;
+  }
+}
+
+/* Hanya clip-path: kalau ikut menganimasikan transform, ia bentrok dengan
+   efek zoom hover pada gambar di dalamnya. */
+@keyframes media-wipe {
+  from {
+    clip-path: inset(0 0 40% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 50%;
+    }
+  }
+
+  /* Gambar tersingkap dari bawah ke atas mengikuti scroll — hanya clip-path,
+     jadi tetap di compositor dan tidak memicu layout. Gambar sudah terlihat
+     penuh di browser tanpa scroll-driven animation. */
+  @supports (animation-timeline: view()) {
+    .media-reveal {
+      animation: media-wipe linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 65%;
+    }
+  }
+
+  /* Elemen paruh atas: tampil saat load, tidak menunggu scroll. */
+  .reveal-load {
+    animation: reveal-in 0.9s var(--ease-expo) both;
+  }
+  .reveal-delay-1 { animation-delay: 0.1s; }
+  .reveal-delay-2 { animation-delay: 0.2s; }
+  .reveal-delay-3 { animation-delay: 0.3s; }
+}
+
+/* WCAG 2.3.3 — hormati preferensi sistem, matikan seluruh motion non-esensial */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -48,6 +141,17 @@ body {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Dipakai carousel proyek. Tailwind v4 tidak menyediakan utility ini dan
+   plugin scrollbar tidak terpasang, jadi didefinisikan manual di sini. */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 /* High-end smooth scrollbar */

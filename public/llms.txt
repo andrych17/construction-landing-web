@@ -1,13 +1,14 @@
+# CATATAN: konten situs masih placeholder. Data kontak sengaja dikosongkan
+# sampai informasi Wonderful Works yang asli tersedia.
+
 # ww.cons (Wonderful Works Studio)
 > Luxury Architecture, Spatial Interior Planning, and Structural General Contracting in Surabaya & East Java, Indonesia.
 
 ## Canonical Entity Identity
 - **Brand Identity**: ww.cons (also referenced as WW.CONS, Wonderful Works Studio, @ww.cons)
 - **Official Domain**: https://wwconstruction.id
-- **Headquarters & Executive Showroom**: Gedung Voza Premium Office, Lt. 20, Jl. HR Muhammad No. 31A, Surabaya Barat, Jawa Timur, Indonesia (Geo: -7.2889, 112.6961)
-- **Civil Engineering Workshop & Field Base**: Jl. Semolowaru No. 48, Surabaya Timur, Jawa Timur, Indonesia (Geo: -7.3015, 112.7758)
-- **Primary Direct Concierge (WhatsApp)**: +62 822 9819 9902
-- **Email Contact**: info@wwconstruction.id
+- **Headquarters**: Surabaya, Jawa Timur, Indonesia (alamat lengkap: belum dipublikasikan)
+- **Workshop & Field Base**: Surabaya, Jawa Timur, Indonesia (alamat lengkap: belum dipublikasikan)
 - **Instagram**: https://www.instagram.com/ww.cons/ (@ww.cons)
 
 ## Design Philosophy & Typology
@@ -27,7 +28,7 @@
 - **MJ House**: Tropical Modern Estate, Surabaya Barat. Monolithic basalt, cantilever canopy, water mirror pool.
 - **M House**: Minimalist Contemporary Residence, Dharmahusada Indah, Surabaya. 4.2m void, custom 4-meter pivot entrance door.
 - **AW House**: Courtyard Estate, Kertajaya Indah, Surabaya. Inner courtyard privacy sanctuary with automated sump-pit drainage.
-- **W Office & Showroom**: Commercial Headquarters, Voza Premium Tower, Surabaya. Acoustic wall panels (NRC 0.85), integrated HVAC trunking, international grade fit-out.
+- **W Office & Showroom**: Commercial Headquarters, Surabaya. Acoustic wall panels (NRC 0.85), integrated HVAC trunking, international grade fit-out.
 - **O House**: Hillside Modern Villa, Citraland, Surabaya Barat. Heavy steel I-beams, engineered retaining wall.
 - **A House**: Pavilion Villa, Graha Famili, Surabaya Barat. Teak millwork, honed travertine, fluted glass.
 - **NE House**: Coastal Minimalist Luxury, Pakuwon City, Surabaya Timur. Marine-grade 316 stainless steel, double-laminated wind-resistant glazing.

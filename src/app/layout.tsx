@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Baskervville } from "next/font/google";
 import "./globals.css";
+import ArchitecturalPreloader from "@/components/interactive/ArchitecturalPreloader";
+import { SITE_CONTACT } from "@/data/siteData";
 
 const baskervville = Baskervville({
   variable: "--font-serif",
@@ -50,8 +52,7 @@ export const metadata: Metadata = {
     "general contractor surabaya",
     "jasa bangun rumah surabaya",
     "luxury residence surabaya",
-    "kontraktor voza surabaya",
-    "centra arya loka kontraktor",
+    "kontraktor semolowaru surabaya",
   ],
   authors: [{ name: "ww.cons Studio" }],
   creator: "ww.cons",
@@ -64,14 +65,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ww.cons | Architecture & General Contractor Surabaya",
     description:
-      "Bold Artisan Design for Inspired Living. Architecture, interior design, and precision general contracting in Surabaya and East Java.",
+      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, interior design, and precision general contracting in Surabaya and East Java.",
     url: "https://wwconstruction.id",
     siteName: "ww.cons",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/images/projects/facade_architecture_hq.jpg",
+        url: "/images/projects/hero_poster.jpg",
         width: 1200,
         height: 630,
         alt: "ww.cons - Architecture & General Contractor Surabaya",
@@ -82,8 +83,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ww.cons (@ww.cons)",
     description:
-      "Bold Artisan Design for Inspired Living. Architecture, Interior, and General Contracting in Surabaya.",
-    images: ["/images/projects/facade_architecture_hq.jpg"],
+      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, Interior, and General Contracting in Surabaya.",
+    images: ["/images/projects/hero_poster.jpg"],
   },
   robots: {
     index: true,
@@ -96,12 +97,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/images/ww/logo_transparent.png",
-    apple: "/images/ww/logo_transparent.png",
-  },
+  // Ikon tidak didaftarkan di sini. Next.js App Router memungutnya otomatis
+  // dari src/app/icon.svg dan src/app/apple-icon.png.
+  // Sebelumnya keduanya menunjuk PNG 150x150 — di bawah minimum 180x180 yang
+  // diminta iOS, sehingga ikonnya buram saat ditambahkan ke Home Screen.
+  // Canonical per-rute didefinisikan di masing-masing src/app/<rute>/layout.tsx.
+  // Jangan set canonical global di sini: seluruh halaman akan ikut
+  // mengkanonikalkan diri ke homepage dan hilang dari indeks.
   alternates: {
-    canonical: "https://wwconstruction.id",
+    canonical: "/",
   },
 };
 
@@ -120,24 +124,19 @@ const structuredSchema = {
         "@ww.cons",
       ],
       "url": "https://wwconstruction.id",
-      "logo": "https://wwconstruction.id/images/ww/logo_transparent.png",
-      "image": "https://wwconstruction.id/images/projects/facade_architecture_hq.jpg",
+      "logo": "https://wwconstruction.id/images/ww/logo-512.png",
+      "image": "https://wwconstruction.id/images/projects/hero_poster.jpg",
       "description":
         "ww.cons adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350.",
-      "telephone": "+62-822-9819-9902",
-      "email": "info@wwconstruction.id",
+      // Bersumber dari SITE_CONTACT. Field yang belum terkonfirmasi (email, geo)
+      // sengaja dikosongkan — structured data yang salah lebih merugikan.
+      "telephone": `+${SITE_CONTACT.whatsapp}`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Gedung Voza Premium Office Lt. 20, Jl. HR Muhammad No. 31A",
+        "streetAddress": SITE_CONTACT.studio.lines[0],
         "addressLocality": "Surabaya",
         "addressRegion": "Jawa Timur",
-        "postalCode": "60226",
         "addressCountry": "ID",
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -7.2889,
-        "longitude": 112.6961,
       },
       "openingHoursSpecification": [
         {
@@ -161,8 +160,8 @@ const structuredSchema = {
         { "@type": "City", "name": "Malang" },
         { "@type": "AdministrativeArea", "name": "Jawa Timur" },
       ],
-      "sameAs": ["https://www.instagram.com/ww.cons/"],
-      "slogan": "Bold Artisan Design for Inspired Living",
+      "sameAs": [SITE_CONTACT.instagram],
+      "slogan": "Bringing Your Vision to Life with Expert Craftmanship",
       "priceRange": "$$$$",
     },
     {
@@ -194,6 +193,7 @@ export default function RootLayout({
       <body
         className={`${baskervville.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-[#030303] text-neutral-100 antialiased selection:bg-amber-400 selection:text-black min-h-screen`}
       >
+        <ArchitecturalPreloader />
         {children}
       </body>
     </html>

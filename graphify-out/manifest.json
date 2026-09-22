@@ -5,17 +5,11 @@
     "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
     "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
-  "next.config.js": {
-    "mtime": 1789971573.6740785,
-    "seen": 1789972429.7394037,
-    "ast_hash": "74c74da6d2bf1423b135688f71df0b0e",
-    "semantic_hash": "74c74da6d2bf1423b135688f71df0b0e"
-  },
   "next.config.ts": {
-    "mtime": 1789971573.6740785,
-    "seen": 1789972429.739407,
-    "ast_hash": "073c476be067d6d4649b355483ee2690",
-    "semantic_hash": "073c476be067d6d4649b355483ee2690"
+    "mtime": 1790045970.17114,
+    "seen": 1790046006.7963097,
+    "ast_hash": "67c3ebaf090087e6fae369f1850fed3e",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1789973163.5698864,
@@ -36,9 +30,9 @@
     "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790045399.4256487,
-    "seen": 1790045444.2603118,
-    "ast_hash": "4e47307150c60e83c3cc7e13c0be1adb",
+    "mtime": 1790068164.2040818,
+    "seen": 1790068223.0694776,
+    "ast_hash": "505c9bc9367b817b963b746180650c82",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -75,18 +69,6 @@
     "mtime": 1789971573.6765528,
     "seen": 1789972706.9907458,
     "ast_hash": "2aaafa6a49b6563925fe440891e32717",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo.jpg": {
-    "mtime": 1789972089.78292,
-    "seen": 1789972706.9907472,
-    "ast_hash": "7d386b5ab9613b9035bc18d8e9d33948",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_transparent.png": {
-    "mtime": 1789998639.6625853,
-    "seen": 1790002805.555312,
-    "ast_hash": "dae44531efecc2a5acd05cad183728f7",
     "semantic_hash": ""
   },
   "public/images/ww/post_1.jpg": {
@@ -246,15 +228,15 @@
     "semantic_hash": ""
   },
   "src/app/robots.ts": {
-    "mtime": 1789973005.150969,
-    "seen": 1789973128.3615258,
-    "ast_hash": "de9f2f734287689bb213546ece38e4ad",
+    "mtime": 1790046133.507649,
+    "seen": 1790046510.9012566,
+    "ast_hash": "0a091e8ce63da14b179efcc829b9ddf8",
     "semantic_hash": ""
   },
   "src/app/sitemap.ts": {
-    "mtime": 1789973008.102003,
-    "seen": 1789973128.3615282,
-    "ast_hash": "eed5d45bacfd4eab1151d75a2af6f740",
+    "mtime": 1790046130.5653162,
+    "seen": 1790046510.9012587,
+    "ast_hash": "807052250860fce5a0a2d9d349174382",
     "semantic_hash": ""
   },
   "public/images/projects/concrete_rebar_hq.jpg": {
@@ -317,28 +299,16 @@
     "ast_hash": "afdb5a80e1740898dd698659b144c08c",
     "semantic_hash": ""
   },
-  "public/videos/construction_timelapse.mp4": {
-    "mtime": 1789975456.9578147,
-    "seen": 1789975615.5747035,
-    "ast_hash": "194c72729c930232b8421546bc1201ef",
-    "semantic_hash": ""
-  },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790044189.3639593,
-    "seen": 1790044205.569038,
-    "ast_hash": "161e66849a1ab9881fedac54b4775e86",
+    "mtime": 1790068607.4768865,
+    "seen": 1790068611.8270519,
+    "ast_hash": "6cdc1094540bde048f23b2a94cc615fb",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
-    "mtime": 1790045375.5133889,
-    "seen": 1790045444.2603369,
-    "ast_hash": "99299edfad201f57f608881530ff5e4b",
-    "semantic_hash": ""
-  },
-  "src/components/layouts/BarcwayLayout.tsx": {
-    "mtime": 1790045303.6506085,
-    "seen": 1790045444.2603388,
-    "ast_hash": "c8f5610312d4c1a5e5a12934bffb438b",
+    "mtime": 1790046639.9951675,
+    "seen": 1790047397.7517793,
+    "ast_hash": "3224d2641419899391ee3f8aba27c67b",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -348,9 +318,9 @@
     "semantic_hash": ""
   },
   "public/llms.txt": {
-    "mtime": 1789992944.7999263,
-    "seen": 1789992967.1633499,
-    "ast_hash": "7b819c774bdf0b1e717863d9f0ab02cf",
+    "mtime": 1790046419.1341598,
+    "seen": 1790046510.9012704,
+    "ast_hash": "da8f33cd5f0e07305e85761d06417990",
     "semantic_hash": ""
   },
   "public/images/founders/edward_matthew.jpg": {
@@ -366,45 +336,27 @@
     "semantic_hash": ""
   },
   "src/app/about/page.tsx": {
-    "mtime": 1790045330.3548985,
-    "seen": 1790045444.2603052,
-    "ast_hash": "83fe960f253c1419450800d4d626e5dc",
+    "mtime": 1790068360.869091,
+    "seen": 1790068482.4200144,
+    "ast_hash": "d36899689a31281746ffd0a28ee8922b",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
-    "mtime": 1790045369.739326,
-    "seen": 1790045444.2603087,
-    "ast_hash": "2fbfdff8db105874ceaf2b8761e1f7ad",
+    "mtime": 1790048344.3297591,
+    "seen": 1790048646.1460173,
+    "ast_hash": "2d2eb3444962fd4bab8f1d8008fe3d6b",
     "semantic_hash": ""
   },
   "src/app/projects/page.tsx": {
-    "mtime": 1790045356.0761776,
-    "seen": 1790045444.26032,
-    "ast_hash": "ec3069314552ac58176f36621fd083fe",
+    "mtime": 1790068360.8695235,
+    "seen": 1790068482.4200258,
+    "ast_hash": "23a578b99af0f76b92435ae757178143",
     "semantic_hash": ""
   },
   "src/app/services/page.tsx": {
-    "mtime": 1790045341.370018,
-    "seen": 1790045444.2603269,
-    "ast_hash": "1eae20637156955f3249f583884d9858",
-    "semantic_hash": ""
-  },
-  "src/components/navigation/BarcwayFooter.tsx": {
-    "mtime": 1790045246.564989,
-    "seen": 1790045444.2603457,
-    "ast_hash": "214e38e260abd4d47976e69d826b6585",
-    "semantic_hash": ""
-  },
-  "src/components/navigation/BarcwayNav.tsx": {
-    "mtime": 1790045243.7469587,
-    "seen": 1790045444.2603467,
-    "ast_hash": "19f586e8e0df4857b820a78d2138abc5",
-    "semantic_hash": ""
-  },
-  "src/data/barcwayData.ts": {
-    "mtime": 1790045224.685752,
-    "seen": 1790045444.2603545,
-    "ast_hash": "61db4e2cf4e599ca0c92baf904953731",
+    "mtime": 1790068454.8962507,
+    "seen": 1790068482.420032,
+    "ast_hash": "823dd1ae69ebb25d88b7baab89f3f350",
     "semantic_hash": ""
   },
   "scripts/generate_logos.py": {
@@ -414,39 +366,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/ModernWwLogo.tsx": {
-    "mtime": 1790044220.18826,
-    "seen": 1790044242.2911472,
-    "ast_hash": "3b4ed45592e061f52e7207bd40051145",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_modern.svg": {
-    "mtime": 1789997909.6632106,
-    "seen": 1789998171.4343777,
-    "ast_hash": "5b7602d2096a43603ae2819eb186b73e",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_modern_opt1.png": {
-    "mtime": 1789997878.0230658,
-    "seen": 1789998171.4343824,
-    "ast_hash": "83d60b3850e7661413b21e91cc661155",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_modern_opt1.svg": {
-    "mtime": 1789997877.1483424,
-    "seen": 1789998171.4343853,
-    "ast_hash": "5b7602d2096a43603ae2819eb186b73e",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_modern_opt2.png": {
-    "mtime": 1789997878.753271,
-    "seen": 1789998171.4343884,
-    "ast_hash": "e750ffae27b869afb6141f42372fc034",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_modern_opt2.svg": {
-    "mtime": 1789997877.1485581,
-    "seen": 1789998171.4343913,
-    "ast_hash": "0f1d9bab9d0eaf08b5c16a2bf39eb41f",
+    "mtime": 1790049254.6993663,
+    "seen": 1790049594.8638213,
+    "ast_hash": "926a704dd0d0c5425ccc283bf0625552",
     "semantic_hash": ""
   },
   "scripts/trace_ig_logo.py": {
@@ -455,34 +377,10 @@
     "ast_hash": "7b33d64b6ea897bfc8fe90e09dbca5cb",
     "semantic_hash": ""
   },
-  "public/images/ww/logo_ig_hq.png": {
-    "mtime": 1789998680.9371905,
-    "seen": 1790002805.5553002,
-    "ast_hash": "460e6ca0aeaad0f54c637a2aac898b86",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_ig_vector.svg": {
-    "mtime": 1789998680.3714027,
-    "seen": 1790002805.5553021,
-    "ast_hash": "943a7a358094bb7b5cbd9489d8a1acbd",
-    "semantic_hash": ""
-  },
-  "src/app/project/page.tsx": {
-    "mtime": 1790042150.1103463,
-    "seen": 1790042288.071022,
-    "ast_hash": "0b0c9ffcfc00d0f0228a45d2663da6fc",
-    "semantic_hash": ""
-  },
   "src/components/ui/FounderSvgPlaceholder.tsx": {
-    "mtime": 1790042084.0125334,
-    "seen": 1790042288.0710864,
-    "ast_hash": "1eb18cd2808dc9300aeb5a064a41fbf1",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_clean_white.png": {
-    "mtime": 1790043657.3502839,
-    "seen": 1790043743.325827,
-    "ast_hash": "0d6048368afdaa38db129acf4f5bf5d4",
+    "mtime": 1790046629.8780077,
+    "seen": 1790047397.7517822,
+    "ast_hash": "c7636f53c894da7483dce81667d63e08",
     "semantic_hash": ""
   },
   "public/images/ww/ww_logo_official.svg": {
@@ -491,46 +389,196 @@
     "ast_hash": "acd84c43e3109b43937120005a097173",
     "semantic_hash": ""
   },
-  "public/images/ww/logo_gold_hq.png": {
-    "mtime": 1790043821.5055928,
-    "seen": 1790043882.7261024,
-    "ast_hash": "f8e956f57d07722929582f696b6bb344",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_hq_clean.png": {
-    "mtime": 1790043810.797503,
-    "seen": 1790043882.7261045,
-    "ast_hash": "a21bac783b62db8e0a7167ec30d4581d",
-    "semantic_hash": ""
-  },
-  "public/images/ww/logo_white_hq.png": {
-    "mtime": 1790043821.5275931,
-    "seen": 1790043882.7261198,
-    "ast_hash": "a21bac783b62db8e0a7167ec30d4581d",
-    "semantic_hash": ""
-  },
   "src/components/layouts/MainLayout.tsx": {
-    "mtime": 1790045299.0435584,
-    "seen": 1790045444.2603412,
-    "ast_hash": "f3b869964625f5d2b12c41be37d38d7d",
+    "mtime": 1790068360.8668633,
+    "seen": 1790068482.4200394,
+    "ast_hash": "ea15e6071cb1601105d3d1f6fbe50145",
     "semantic_hash": ""
   },
   "src/components/navigation/Footer.tsx": {
-    "mtime": 1790045241.3339324,
-    "seen": 1790045444.2603478,
-    "ast_hash": "73c51fa36c152889704d81b37104c6d2",
+    "mtime": 1790046629.8772871,
+    "seen": 1790047397.7517805,
+    "ast_hash": "8f5a970e4996d5849383917f64c52cbb",
     "semantic_hash": ""
   },
   "src/components/navigation/Navbar.tsx": {
-    "mtime": 1790045236.664882,
-    "seen": 1790045444.2603495,
-    "ast_hash": "3a15bfa86bf47eb250c9df3d4d406d57",
+    "mtime": 1790048344.3278143,
+    "seen": 1790048646.1460295,
+    "ast_hash": "b60739070b1bc0ac945639a0899ef335",
     "semantic_hash": ""
   },
   "src/data/siteData.ts": {
-    "mtime": 1790045222.4147274,
-    "seen": 1790045444.2603555,
-    "ast_hash": "f5a548c5e8dfd8b0a609d0bc59f454de",
+    "mtime": 1790048583.9371119,
+    "seen": 1790048646.146032,
+    "ast_hash": "1ddec9f64e00aac1a622e10a2158a66a",
+    "semantic_hash": ""
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1790045485.8007667,
+    "seen": 1790046006.7962952,
+    "ast_hash": "0d4020fdf177fb998fb16285d403f615",
+    "semantic_hash": ""
+  },
+  "scripts/check-contact-integrity.mjs": {
+    "mtime": 1790046465.7462778,
+    "seen": 1790046510.90124,
+    "ast_hash": "ad82ab40c1de919e32593980faa8583e",
+    "semantic_hash": ""
+  },
+  "src/app/about/layout.tsx": {
+    "mtime": 1790046119.2914937,
+    "seen": 1790046510.9012463,
+    "ast_hash": "fc4455790b7bfe6269301415d497e6cc",
+    "semantic_hash": ""
+  },
+  "src/app/contact/layout.tsx": {
+    "mtime": 1790046125.2310653,
+    "seen": 1790046510.9012504,
+    "ast_hash": "299522ab93091d0e7f542caaa4cb342d",
+    "semantic_hash": ""
+  },
+  "src/app/projects/layout.tsx": {
+    "mtime": 1790046123.247987,
+    "seen": 1790046510.9012544,
+    "ast_hash": "b6cd4b006341cdfc30047a2f7d71fffd",
+    "semantic_hash": ""
+  },
+  "src/app/services/layout.tsx": {
+    "mtime": 1790046121.3705163,
+    "seen": 1790046510.9012573,
+    "ast_hash": "b417f5586258093bec7da3987ab2c072",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/01-villa-golden-hour.txt": {
+    "mtime": 1790067112.5175858,
+    "seen": 1790067467.0991683,
+    "ast_hash": "ecba45b5e958f79433766a33ff17f7bc",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/02-concrete-structure.txt": {
+    "mtime": 1790049066.9478161,
+    "seen": 1790049594.8638408,
+    "ast_hash": "2a1f9d25eb99d59b725daf9181ef3495",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/03-material-detail.txt": {
+    "mtime": 1790049072.889854,
+    "seen": 1790049594.8638427,
+    "ast_hash": "13aa11ddde0d08a9b12cb364aab034ea",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/README.md": {
+    "mtime": 1790068175.3262959,
+    "seen": 1790068223.0695229,
+    "ast_hash": "46fd61ef8452bbcbb80a7ad5f8f10eae",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo-512.png": {
+    "mtime": 1790049796.5521412,
+    "seen": 1790049947.7495008,
+    "ast_hash": "ccf86b3fe99a31604a556d0609de12fc",
+    "semantic_hash": ""
+  },
+  "src/app/apple-icon.png": {
+    "mtime": 1790049760.9316173,
+    "seen": 1790049947.7495434,
+    "ast_hash": "110c2480008fdb75c135da1655aa7fd6",
+    "semantic_hash": ""
+  },
+  "src/app/icon.svg": {
+    "mtime": 1790049760.8903804,
+    "seen": 1790049947.749545,
+    "ast_hash": "9d3d165b50816030422c2f3457ef2409",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/04-logo-bumper.txt": {
+    "mtime": 1790051201.5797784,
+    "seen": 1790051405.3570292,
+    "ast_hash": "ce2edc035f8cb2dae0aadc18d67763a5",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/logo-start-frame-square.png": {
+    "mtime": 1790051183.4289482,
+    "seen": 1790051405.357037,
+    "ast_hash": "262395669d8b8359ce8e9c4854d7a11b",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/logo-start-frame.png": {
+    "mtime": 1790051183.3986444,
+    "seen": 1790051405.3570395,
+    "ast_hash": "e604476c3dcb7c4efbc64401e42473ff",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/05-waterfront-villa-dusk.txt": {
+    "mtime": 1790067117.2956424,
+    "seen": 1790067467.0991774,
+    "ast_hash": "d709a6c535f57305ffe04a9613e1238a",
+    "semantic_hash": ""
+  },
+  "docs/hero-video/06-inside-out-atrium.txt": {
+    "mtime": 1790067121.8746965,
+    "seen": 1790067467.09918,
+    "ast_hash": "1685b10c1b98aea680e566b8a27a245b",
+    "semantic_hash": ""
+  },
+  "public/images/projects/hero_poster.jpg": {
+    "mtime": 1790068164.1290796,
+    "seen": 1790068223.0695403,
+    "ast_hash": "e6eb4ad62c239e8dc077e93c967f8733",
+    "semantic_hash": ""
+  },
+  "public/videos/hero.mp4": {
+    "mtime": 1790068146.4159167,
+    "seen": 1790068223.0695977,
+    "ast_hash": "2e81bd76514a486d82c3db26fa32f8f0",
+    "semantic_hash": ""
+  },
+  "src/components/ui/HeroMedia.tsx": {
+    "mtime": 1790068345.0202644,
+    "seen": 1790068482.4200468,
+    "ast_hash": "05eb7af7ab21d7b3b79e4e8eac6af1ba",
+    "semantic_hash": ""
+  },
+  "public/images/projects/concrete-structure_poster.jpg": {
+    "mtime": 1790068300.751549,
+    "seen": 1790068482.4200838,
+    "ast_hash": "ea4edfd9138f90587b18add14e5eba94",
+    "semantic_hash": ""
+  },
+  "public/images/projects/material-detail_poster.jpg": {
+    "mtime": 1790068308.5396686,
+    "seen": 1790068482.420097,
+    "ast_hash": "6a4b0e18ad5078ab595b2c4bfb5948a1",
+    "semantic_hash": ""
+  },
+  "public/images/projects/villa-dusk_poster.jpg": {
+    "mtime": 1790068321.705206,
+    "seen": 1790068482.4201052,
+    "ast_hash": "e9fd8548b9e8376ff99d102db199b118",
+    "semantic_hash": ""
+  },
+  "public/videos/concrete-structure.mp4": {
+    "mtime": 1790068300.5844102,
+    "seen": 1790068482.4201553,
+    "ast_hash": "581178e2f720fb92eb50045d8705ed15",
+    "semantic_hash": ""
+  },
+  "public/videos/material-detail.mp4": {
+    "mtime": 1790068308.3731546,
+    "seen": 1790068482.4201589,
+    "ast_hash": "3eb5f90700102755187bd573b94ae5f6",
+    "semantic_hash": ""
+  },
+  "public/videos/villa-dusk.mp4": {
+    "mtime": 1790068321.52581,
+    "seen": 1790068482.4201608,
+    "ast_hash": "1278598fc3cba776e137ee2f7f128d7f",
+    "semantic_hash": ""
+  },
+  "public/videos/logo.mp4": {
+    "mtime": 1790068485.0407834,
+    "seen": 1790068611.8271806,
+    "ast_hash": "cf26b468c4b3043fec28fe3fc2da7bba",
     "semantic_hash": ""
   }
 }
