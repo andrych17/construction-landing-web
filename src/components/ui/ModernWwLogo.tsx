@@ -8,6 +8,7 @@ interface ModernWwLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   gold?: boolean;
+  videoSrc?: string;
 }
 
 export default function ModernWwLogo({
@@ -15,6 +16,7 @@ export default function ModernWwLogo({
   size = 'md',
   className = '',
   gold = false,
+  videoSrc,
 }: ModernWwLogoProps) {
   const sizeMap = {
     sm: { box: 'w-7 h-7', px: 28, text: 'text-sm', subtext: 'text-[7.5px]' },
@@ -26,18 +28,29 @@ export default function ModernWwLogo({
   const currentSize = sizeMap[size];
   const logoSrc = gold ? '/images/ww/logo_gold_hq.png' : '/images/ww/logo_white_hq.png';
 
-  // The Exact Authentic Instagram Logo Emblem
+  // The Exact Authentic Instagram Logo Emblem (with MP4 Video support)
   const renderLogoMark = () => {
     return (
-      <div className={`relative ${currentSize.box} shrink-0 group flex items-center justify-center`}>
-        <Image
-          src={logoSrc}
-          alt="ww.cons Logo"
-          width={currentSize.px}
-          height={currentSize.px}
-          className="object-contain w-full h-full drop-shadow-md group-hover:brightness-110 transition-all duration-300"
-          priority
-        />
+      <div className={`relative ${currentSize.box} shrink-0 group flex items-center justify-center rounded-lg overflow-hidden`}>
+        {videoSrc ? (
+          <video
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <Image
+            src={logoSrc}
+            alt="ww.cons Logo"
+            width={currentSize.px}
+            height={currentSize.px}
+            className="object-contain w-full h-full drop-shadow-md group-hover:brightness-110 transition-all duration-300"
+            priority
+          />
+        )}
       </div>
     );
   };

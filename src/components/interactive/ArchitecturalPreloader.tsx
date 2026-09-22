@@ -98,21 +98,44 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
 
             {/* Center Logo & Progress */}
             <div className="flex flex-col items-center justify-center my-auto">
-              {/* Official Instagram @ww.cons Logo Emblem Animation */}
+              {/* Video or Monogram Emblem Animation */}
               <motion.div
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-24 h-24 sm:w-28 sm:h-28 mb-6 flex items-center justify-center"
+                className="relative w-28 h-28 sm:w-36 sm:h-36 mb-6 flex items-center justify-center rounded-2xl overflow-hidden"
               >
                 {/* Ambient Breathing Gold Halo */}
                 <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl animate-pulse" />
+                
+                {/* If user drops an MP4 video (e.g., Google Flow generated), it plays smoothly */}
+                <video
+                  src="/videos/logo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover relative z-10 rounded-2xl hidden"
+                  onError={(e) => {
+                    // If /videos/logo.mp4 doesn't exist, hide video and show image
+                    (e.target as HTMLElement).style.display = 'none';
+                    const fallbackImg = document.getElementById('preloader-fallback-logo');
+                    if (fallbackImg) fallbackImg.style.display = 'block';
+                  }}
+                  onLoadedData={(e) => {
+                    (e.target as HTMLElement).style.display = 'block';
+                    const fallbackImg = document.getElementById('preloader-fallback-logo');
+                    if (fallbackImg) fallbackImg.style.display = 'none';
+                  }}
+                />
+
                 <Image
+                  id="preloader-fallback-logo"
                   src="/images/ww/logo_white_hq.png"
                   alt="ww.cons Official Logo"
-                  width={112}
-                  height={112}
-                  className="object-contain w-full h-full relative z-10 drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full relative z-10 drop-shadow-[0_0_25px_rgba(245,158,11,0.65)]"
                   priority
                 />
               </motion.div>

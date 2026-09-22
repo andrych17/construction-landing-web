@@ -259,7 +259,7 @@
       "file_type": "code",
       "norm_label": "modernwwlogo()",
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "package_devdependencies",
@@ -4191,7 +4191,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -4502,5 +4502,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2b6e06339a0eb38dae5666a39b956a9bd0912f26"
+  "built_at_commit": "9f8fa5ce994807b1c329a50fdc35be54611bcfd6"
 }

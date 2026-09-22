@@ -98,17 +98,19 @@ export default function BarcwayLayout() {
         id="hero"
         className="relative min-h-[100dvh] flex items-end justify-center pb-20 pt-24 overflow-hidden border-b border-white/[0.08] w-full"
       >
-        {/* Ambient Dark Atmospheric Background */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/projects/facade_architecture_hq.jpg"
-            alt="ww.cons Architecture & General Contractor Surabaya"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.32] contrast-[1.12]"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-black/75" />
+        {/* Ambient Dark Atmospheric Background (Video & High-Res Poster) */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/projects/facade_architecture_hq.jpg"
+            className="w-full h-full object-cover object-center brightness-[0.28] contrast-[1.15]"
+          >
+            <source src="/videos/construction_timelapse.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-black/80" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,#000000_85%)]" />
         </div>
 
