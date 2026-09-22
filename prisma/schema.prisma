@@ -36,6 +36,8 @@ model Project {
   categoryEn   String?
   location     String
   img          String
+  /// string[] — foto tambahan di modal detail, di luar Foto Utama (img)
+  gallery      Json?
   desc         String
   descEn       String?
   materials    String?

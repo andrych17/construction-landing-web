@@ -144,6 +144,31 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
               />
             </div>
 
+            {/* Photo Gallery */}
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="mb-8">
+                <h3 className="font-mono text-xs tracking-widest text-neutral-400 uppercase font-semibold mb-2">
+                  {t('GALERI DOKUMENTASI', 'PHOTO GALLERY')}
+                </h3>
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                  {project.gallery.map((url, idx) => (
+                    <div
+                      key={idx}
+                      className="relative aspect-square rounded-none overflow-hidden border border-white/10 bg-black"
+                    >
+                      <Image
+                        src={url}
+                        alt={`${project.title} ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="200px"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Description Narrative */}
             <div className="mb-8">
               <h3 className="font-mono text-xs tracking-widest text-neutral-400 uppercase font-semibold mb-2">

@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
-    "mtime": 1790090093.043223,
-    "seen": 1790090206.7011652,
-    "ast_hash": "c59a04ada1acb038e7b7e2fc9ef3b05d",
+    "mtime": 1790099354.21435,
+    "seen": 1790099443.9579308,
+    "ast_hash": "339d91c2c7fd9519cba689eac2d3a0f8",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -408,9 +408,9 @@
     "semantic_hash": ""
   },
   "src/data/siteData.ts": {
-    "mtime": 1790096883.9879112,
-    "seen": 1790097201.1273098,
-    "ast_hash": "d0d6b0bca19d7b7ece340e402dc50a0d",
+    "mtime": 1790099324.9296303,
+    "seen": 1790099443.9579422,
+    "ast_hash": "c86d13a8c4acbce5b8c2a05dab7e1436",
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
@@ -618,9 +618,9 @@
     "semantic_hash": ""
   },
   "src/lib/content.ts": {
-    "mtime": 1790096904.2866936,
-    "seen": 1790097201.1273158,
-    "ast_hash": "f13206fd3b517a6477bc64b0512e894d",
+    "mtime": 1790099329.122414,
+    "seen": 1790099443.9579468,
+    "ast_hash": "a6692704a0e8ad9365a0f7670e363c8d",
     "semantic_hash": ""
   },
   "src/lib/db.ts": {
@@ -738,15 +738,15 @@
     "semantic_hash": ""
   },
   "src/components/admin/JsonField.tsx": {
-    "mtime": 1790090962.8757713,
-    "seen": 1790091005.6703813,
-    "ast_hash": "9d233b422c5009f4ad491fdec0f8864f",
+    "mtime": 1790099175.647951,
+    "seen": 1790099186.0975993,
+    "ast_hash": "7dfad7fa3f581e7d31917d21cebe0004",
     "semantic_hash": ""
   },
   "src/components/admin/ProjectForm.tsx": {
-    "mtime": 1790090992.4348176,
-    "seen": 1790091005.6703825,
-    "ast_hash": "e413ade3d1d10ca9e77f7673ba2201e0",
+    "mtime": 1790099349.9923885,
+    "seen": 1790099443.9579008,
+    "ast_hash": "2fd8739fdc5ce07080507e28b5f2b94e",
     "semantic_hash": ""
   },
   "src/components/admin/ProjectsTable.tsx": {
@@ -774,9 +774,9 @@
     "semantic_hash": ""
   },
   "src/lib/project-schema.ts": {
-    "mtime": 1790090602.5111134,
-    "seen": 1790090714.470407,
-    "ast_hash": "2d2860944790725ed2be205a3214bcda",
+    "mtime": 1790099323.0254524,
+    "seen": 1790099443.9579492,
+    "ast_hash": "3217bfad0d1c53c4c2d4113dc7e144fb",
     "semantic_hash": ""
   },
   "src/lib/slug.ts": {
@@ -939,6 +939,30 @@
     "mtime": 1790098375.5879803,
     "seen": 1790098479.5102189,
     "ast_hash": "7d6f3cd1e500a44488624057fe8ae6c0",
+    "semantic_hash": ""
+  },
+  "src/components/admin/ui/ImageDropzone.tsx": {
+    "mtime": 1790099054.3638012,
+    "seen": 1790099186.0976126,
+    "ast_hash": "966f8e85fc142291e931ee9d2ea15a32",
+    "semantic_hash": ""
+  },
+  "src/components/admin/ui/LangSwitch.tsx": {
+    "mtime": 1790099058.4386408,
+    "seen": 1790099186.0976148,
+    "ast_hash": "254b109a2a94f1bad1910dc9cc1f130e",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260922175027_add_project_gallery/migration.sql": {
+    "mtime": 1790099427.3217342,
+    "seen": 1790099443.9578502,
+    "ast_hash": "80c54378add6de77fe5ffa22ae788afb",
+    "semantic_hash": ""
+  },
+  "src/components/admin/ui/GalleryDropzone.tsx": {
+    "mtime": 1790099341.2327538,
+    "seen": 1790099443.9579144,
+    "ast_hash": "5d5e6ed717966f357e3ec5834f3b530d",
     "semantic_hash": ""
   }
 }

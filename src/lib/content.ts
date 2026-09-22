@@ -64,6 +64,7 @@ function dbProjectToDetail(p: {
   categoryEn: string | null;
   location: string;
   img: string;
+  gallery: unknown;
   desc: string;
   descEn: string | null;
   materials: string | null;
@@ -80,6 +81,7 @@ function dbProjectToDetail(p: {
     categoryEn: p.categoryEn ?? undefined,
     location: p.location,
     img: p.img,
+    gallery: (p.gallery as string[] | null) ?? undefined,
     desc: p.desc,
     descEn: p.descEn ?? undefined,
     materials: p.materials ?? undefined,

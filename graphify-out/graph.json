@@ -17,32 +17,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_components_admin_ui_rowactionmenu_rowactionitem",
-      "label": "RowActionItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "rowactionitem",
-      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_admin_ui_rowactionmenu_rowactionmenuprops",
-      "label": "RowActionMenuProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "rowactionmenuprops",
-      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
       "label": "ArchitecturalPreloaderProps",
       "_callable": true,
@@ -160,17 +134,30 @@
       "source_location": "L90"
     },
     {
+      "id": "src_components_admin_jsonfield_groupedentry",
+      "label": "GroupedEntry",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "groupedentry",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L31"
+    },
+    {
       "id": "src_components_admin_jsonfield_jsonvalue",
       "label": "JsonValue",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "jsonvalue",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L8"
+      "source_location": "L10"
     },
     {
       "id": "src_components_admin_projectform_projectformdata",
@@ -179,11 +166,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "projectformdata",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L12"
+      "source_location": "L14"
     },
     {
       "id": "src_components_admin_ui_button_buttonsize",
@@ -192,7 +179,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "buttonsize",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -205,7 +192,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "buttonvariant",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -218,24 +205,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/admin/ui/FormCard.tsx",
       "source_location": "L6"
-    },
-    {
-      "id": "src_lib_project_schema_projectinput",
-      "label": "ProjectInput",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "ProjectForm.tsx",
-      "file_type": "code",
-      "norm_label": "projectinput",
-      "source_file": "src/lib/project-schema.ts",
-      "source_location": "L32"
     },
     {
       "id": "src_components_admin_ui_stattile_props",
@@ -262,6 +236,32 @@
       "norm_label": "stattilevariant",
       "source_file": "src/components/admin/ui/StatTile.tsx",
       "source_location": "L5"
+    },
+    {
+      "id": "src_components_admin_ui_rowactionmenu_rowactionitem",
+      "label": "RowActionItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "RowActionMenu.tsx",
+      "file_type": "code",
+      "norm_label": "rowactionitem",
+      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_admin_ui_rowactionmenu_rowactionmenuprops",
+      "label": "RowActionMenuProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "RowActionMenu.tsx",
+      "file_type": "code",
+      "norm_label": "rowactionmenuprops",
+      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
+      "source_location": "L14"
     },
     {
       "id": "src_components_admin_ui_searchableselect_props",
@@ -329,97 +329,6 @@
       "source_location": "L8"
     },
     {
-      "id": "src_lib_auth_forbiddenerror",
-      "label": "ForbiddenError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "forbiddenerror",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L76"
-    },
-    {
-      "id": "src_components_admin_adminshell_adminshellprops",
-      "label": "AdminShellProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "adminshellprops",
-      "source_file": "src/components/admin/AdminShell.tsx",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_components_admin_adminshell_navgroup",
-      "label": "NavGroup",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "navgroup",
-      "source_file": "src/components/admin/AdminShell.tsx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_components_admin_adminshell_navitem",
-      "label": "NavItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/admin/AdminShell.tsx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_lib_auth_adminsession",
-      "label": "AdminSession",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "adminsession",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_lib_content_sections_contentsectionkey",
-      "label": "ContentSectionKey",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "contentsectionkey",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_lib_content_sections_heropagekey",
-      "label": "HeroPageKey",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "heropagekey",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L22"
-    },
-    {
       "id": "src_data_sitedata_faqitem",
       "label": "FaqItem",
       "_callable": true,
@@ -430,7 +339,7 @@
       "file_type": "code",
       "norm_label": "faqitem",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L599"
+      "source_location": "L600"
     },
     {
       "id": "src_data_sitedata_founderdetail",
@@ -443,7 +352,7 @@
       "file_type": "code",
       "norm_label": "founderdetail",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L113"
+      "source_location": "L114"
     },
     {
       "id": "src_data_sitedata_heromediavalue",
@@ -511,6 +420,32 @@
       "source_location": "L25"
     },
     {
+      "id": "src_lib_content_sections_contentsectionkey",
+      "label": "ContentSectionKey",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "contentsectionkey",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_lib_content_sections_heropagekey",
+      "label": "HeroPageKey",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "heropagekey",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L22"
+    },
+    {
       "id": "src_lib_content_service",
       "label": "Service",
       "_callable": true,
@@ -534,7 +469,46 @@
       "file_type": "code",
       "norm_label": "sitedata",
       "source_file": "src/lib/content.ts",
-      "source_location": "L109"
+      "source_location": "L111"
+    },
+    {
+      "id": "src_components_admin_adminshell_adminshellprops",
+      "label": "AdminShellProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "adminshellprops",
+      "source_file": "src/components/admin/AdminShell.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_components_admin_adminshell_navgroup",
+      "label": "NavGroup",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "navgroup",
+      "source_file": "src/components/admin/AdminShell.tsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_components_admin_adminshell_navitem",
+      "label": "NavItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "navitem",
+      "source_file": "src/components/admin/AdminShell.tsx",
+      "source_location": "L32"
     },
     {
       "id": "src_components_admin_projectstable_projectrow",
@@ -543,7 +517,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "projectrow",
       "source_file": "src/components/admin/ProjectsTable.tsx",
@@ -556,7 +530,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/admin/ui/ConfirmationModal.tsx",
@@ -569,7 +543,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "columndef",
       "source_file": "src/components/admin/ui/DataTable.tsx",
@@ -582,7 +556,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "datatableprops",
       "source_file": "src/components/admin/ui/DataTable.tsx",
@@ -595,7 +569,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "filterdef",
       "source_file": "src/components/admin/ui/DataTable.tsx",
@@ -608,7 +582,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "filteroption",
       "source_file": "src/components/admin/ui/DataTable.tsx",
@@ -621,7 +595,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "toastctx",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -634,7 +608,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "toastitem",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -647,7 +621,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "toasttype",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -660,7 +634,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "userrow",
       "source_file": "src/components/admin/UsersTable.tsx",
@@ -673,11 +647,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "userstableprops",
       "source_file": "src/components/admin/UsersTable.tsx",
       "source_location": "L27"
+    },
+    {
+      "id": "src_lib_auth_adminsession",
+      "label": "AdminSession",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "adminsession",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_lib_auth_forbiddenerror",
+      "label": "ForbiddenError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "forbiddenerror",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L76"
     },
     {
       "id": "src_lib_auth_unauthorizederror",
@@ -686,11 +686,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "unauthorizederror",
       "source_file": "src/lib/auth.ts",
       "source_location": "L69"
+    },
+    {
+      "id": "src_lib_project_schema_projectinput",
+      "label": "ProjectInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "projectinput",
+      "source_file": "src/lib/project-schema.ts",
+      "source_location": "L33"
     },
     {
       "id": "src_app_about_page_aboutpage",
@@ -799,6 +812,18 @@
       "norm_label": "servicespage()",
       "source_file": "src/app/services/page.tsx",
       "source_location": "L13"
+    },
+    {
+      "id": "src_components_admin_ui_backbutton_backbutton",
+      "label": "BackButton()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "backbutton()",
+      "source_file": "src/components/admin/ui/BackButton.tsx",
+      "source_location": "L4"
     },
     {
       "id": "src_components_admin_ui_dropdown_dropdown",
@@ -981,124 +1006,28 @@
       "source_location": "L25"
     },
     {
-      "id": "middleware_hasvalidsession",
-      "label": "hasValidSession()",
+      "id": "src_components_admin_ui_topprogressbar_progressbar",
+      "label": "ProgressBar()",
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "auth.ts",
+      "community_name": "TopProgressBar.tsx",
       "file_type": "code",
-      "norm_label": "hasvalidsession()",
-      "source_file": "middleware.ts",
-      "source_location": "L8"
+      "norm_label": "progressbar()",
+      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
+      "source_location": "L10"
     },
     {
-      "id": "middleware_middleware",
-      "label": "middleware()",
+      "id": "src_components_admin_ui_topprogressbar_topprogressbar",
+      "label": "TopProgressBar()",
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "auth.ts",
+      "community_name": "TopProgressBar.tsx",
       "file_type": "code",
-      "norm_label": "middleware()",
-      "source_file": "middleware.ts",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_app_api_auth_login_route_post",
-      "label": "POST()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "post()",
-      "source_file": "src/app/api/auth/login/route.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_app_api_auth_logout_route_post",
-      "label": "POST()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "post()",
-      "source_file": "src/app/api/auth/logout/route.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_lib_auth_getsecretkey",
-      "label": "getSecretKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "getsecretkey()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_lib_auth_sessioncookieoptions",
-      "label": "sessionCookieOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "sessioncookieoptions()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L59"
-    },
-    {
-      "id": "src_lib_auth_signsessiontoken",
-      "label": "signSessionToken()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "signsessiontoken()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_auth_verifypassword",
-      "label": "verifyPassword()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "verifypassword()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_lib_auth_verifysessiontoken",
-      "label": "verifySessionToken()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "verifysessiontoken()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L41"
-    },
-    {
-      "id": "src_app_admin_admin_projects_id_page_editprojectpage",
-      "label": "EditProjectPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "ProjectForm.tsx",
-      "file_type": "code",
-      "norm_label": "editprojectpage()",
-      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
-      "source_location": "L8"
+      "norm_label": "topprogressbar()",
+      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
+      "source_location": "L62"
     },
     {
       "id": "src_app_admin_admin_projects_new_page_newprojectpage",
@@ -1106,11 +1035,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "newprojectpage()",
       "source_file": "src/app/(admin)/admin/projects/new/page.tsx",
       "source_location": "L3"
+    },
+    {
+      "id": "src_components_admin_jsonfield_bilingualpairfield",
+      "label": "BilingualPairField()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "bilingualpairfield()",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L61"
     },
     {
       "id": "src_components_admin_jsonfield_emptylike",
@@ -1118,11 +1059,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "emptylike()",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L18"
+      "source_location": "L100"
+    },
+    {
+      "id": "src_components_admin_jsonfield_groupbilingual",
+      "label": "groupBilingual()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "groupbilingual()",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L36"
     },
     {
       "id": "src_components_admin_jsonfield_humanlabel",
@@ -1130,11 +1083,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "humanlabel()",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L10"
+      "source_location": "L12"
+    },
+    {
+      "id": "src_components_admin_jsonfield_isimagefield",
+      "label": "isImageField()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "isimagefield()",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L22"
     },
     {
       "id": "src_components_admin_jsonfield_isobjectarray",
@@ -1142,11 +1107,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "isobjectarray()",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L33"
+      "source_location": "L115"
+    },
+    {
+      "id": "src_components_admin_jsonfield_ispairablevalue",
+      "label": "isPairableValue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "ispairablevalue()",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L26"
     },
     {
       "id": "src_components_admin_jsonfield_isstringarray",
@@ -1154,11 +1131,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "isstringarray()",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L29"
+      "source_location": "L111"
     },
     {
       "id": "src_components_admin_jsonfield_jsonfield",
@@ -1166,11 +1143,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "jsonfield()",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L38"
+      "source_location": "L120"
     },
     {
       "id": "src_components_admin_projectform_projectform",
@@ -1178,11 +1155,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "projectform()",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "src_components_admin_sectioneditor_sectioneditor",
@@ -1190,7 +1167,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "sectioneditor()",
       "source_file": "src/components/admin/SectionEditor.tsx",
@@ -1202,7 +1179,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "button()",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -1214,7 +1191,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "field()",
       "source_file": "src/components/admin/ui/Field.tsx",
@@ -1226,11 +1203,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "formcard()",
       "source_file": "src/components/admin/ui/FormCard.tsx",
       "source_location": "L21"
+    },
+    {
+      "id": "src_components_admin_ui_gallerydropzone_gallerydropzone",
+      "label": "GalleryDropzone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "gallerydropzone()",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_components_admin_ui_gallerydropzone_uploadone",
+      "label": "uploadOne()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "uploadone()",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_admin_ui_imagedropzone_imagedropzone",
+      "label": "ImageDropzone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "imagedropzone()",
+      "source_file": "src/components/admin/ui/ImageDropzone.tsx",
+      "source_location": "L7"
     },
     {
       "id": "src_components_admin_ui_input_input",
@@ -1238,7 +1251,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "input()",
       "source_file": "src/components/admin/ui/Input.tsx",
@@ -1250,11 +1263,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "textarea()",
       "source_file": "src/components/admin/ui/Input.tsx",
       "source_location": "L12"
+    },
+    {
+      "id": "src_components_admin_ui_langswitch_langswitch",
+      "label": "LangSwitch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "langswitch()",
+      "source_file": "src/components/admin/ui/LangSwitch.tsx",
+      "source_location": "L6"
     },
     {
       "id": "src_components_admin_ui_card_card",
@@ -1286,7 +1311,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "RowActionMenu",
+      "community_name": "RowActionMenu.tsx",
       "file_type": "code",
       "norm_label": "rowactionmenu()",
       "source_file": "src/components/admin/ui/RowActionMenu.tsx",
@@ -1298,7 +1323,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "RowActionMenu",
+      "community_name": "RowActionMenu.tsx",
       "file_type": "code",
       "norm_label": "handleclickoutside()",
       "source_file": "src/components/admin/ui/RowActionMenu.tsx",
@@ -1310,59 +1335,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "RowActionMenu",
+      "community_name": "RowActionMenu.tsx",
       "file_type": "code",
       "norm_label": "handlekeydown()",
       "source_file": "src/components/admin/ui/RowActionMenu.tsx",
       "source_location": "L34"
-    },
-    {
-      "id": "src_app_about_layout_aboutlayout",
-      "label": "AboutLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "aboutlayout()",
-      "source_file": "src/app/about/layout.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_app_contact_layout_contactlayout",
-      "label": "ContactLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "contactlayout()",
-      "source_file": "src/app/contact/layout.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_app_projects_layout_projectslayout",
-      "label": "ProjectsLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "projectslayout()",
-      "source_file": "src/app/projects/layout.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_app_robots_robots",
-      "label": "robots()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "robots()",
-      "source_file": "src/app/robots.ts",
-      "source_location": "L8"
     },
     {
       "id": "src_app_services_layout_serviceslayout",
@@ -1370,59 +1347,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "next",
+      "community_name": "services/layout.tsx",
       "file_type": "code",
       "norm_label": "serviceslayout()",
       "source_file": "src/app/services/layout.tsx",
       "source_location": "L10"
-    },
-    {
-      "id": "src_app_sitemap_sitemap",
-      "label": "sitemap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "sitemap()",
-      "source_file": "src/app/sitemap.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_components_admin_ui_backbutton_backbutton",
-      "label": "BackButton()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "backbutton()",
-      "source_file": "src/components/admin/ui/BackButton.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_components_admin_ui_topprogressbar_progressbar",
-      "label": "ProgressBar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "progressbar()",
-      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_components_admin_ui_topprogressbar_topprogressbar",
-      "label": "TopProgressBar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "topprogressbar()",
-      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
-      "source_location": "L62"
     },
     {
       "id": "src_components_admin_ui_searchableselect_searchableselect",
@@ -1557,186 +1486,6 @@
       "source_location": "L47"
     },
     {
-      "id": "src_app_api_admin_users_id_route_delete",
-      "label": "DELETE()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "delete()",
-      "source_file": "src/app/api/admin/users/[id]/route.ts",
-      "source_location": "L94"
-    },
-    {
-      "id": "src_app_api_admin_users_id_route_put",
-      "label": "PUT()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "put()",
-      "source_file": "src/app/api/admin/users/[id]/route.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_app_api_admin_users_route_get",
-      "label": "GET()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "get()",
-      "source_file": "src/app/api/admin/users/route.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_app_api_admin_users_route_post",
-      "label": "POST()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "post()",
-      "source_file": "src/app/api/admin/users/route.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_lib_api_error_handleapierror",
-      "label": "handleApiError()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "handleapierror()",
-      "source_file": "src/lib/api-error.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_lib_auth_forbiddenerror_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L77"
-    },
-    {
-      "id": "src_lib_auth_hashpassword",
-      "label": "hashPassword()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "hashpassword()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_lib_auth_requiresuperadmin",
-      "label": "requireSuperAdmin()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "requiresuperadmin()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L111"
-    },
-    {
-      "id": "src_app_admin_admin_layout_adminlayout",
-      "label": "AdminLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "adminlayout()",
-      "source_file": "src/app/(admin)/admin/layout.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_app_admin_admin_page_admindashboardpage",
-      "label": "AdminDashboardPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "admindashboardpage()",
-      "source_file": "src/app/(admin)/admin/page.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_app_admin_admin_users_page_adminuserspage",
-      "label": "AdminUsersPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "adminuserspage()",
-      "source_file": "src/app/(admin)/admin/users/page.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_components_admin_adminshell_adminshell",
-      "label": "AdminShell()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "adminshell()",
-      "source_file": "src/components/admin/AdminShell.tsx",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_lib_auth_getadminsession",
-      "label": "getAdminSession()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "getadminsession()",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L84"
-    },
-    {
-      "id": "src_app_admin_admin_content_page_contentindexpage",
-      "label": "ContentIndexPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "contentindexpage()",
-      "source_file": "src/app/(admin)/admin/content/page.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_admin_ui_toast_toastprovider",
-      "label": "ToastProvider()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "toastprovider()",
-      "source_file": "src/components/admin/ui/Toast.tsx",
-      "source_location": "L33"
-    },
-    {
       "id": "prisma_seed_main",
       "label": "main()",
       "_callable": true,
@@ -1797,6 +1546,18 @@
       "source_location": "L22"
     },
     {
+      "id": "src_app_admin_admin_content_key_page_contentsectionpage",
+      "label": "ContentSectionPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "contentsectionpage()",
+      "source_file": "src/app/(admin)/admin/content/[key]/page.tsx",
+      "source_location": "L29"
+    },
+    {
       "id": "src_app_admin_admin_hero_page_adminheropage",
       "label": "AdminHeroPage()",
       "_callable": true,
@@ -1809,6 +1570,30 @@
       "source_location": "L13"
     },
     {
+      "id": "src_app_api_admin_content_key_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "src/app/api/admin/content/[key]/route.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_app_api_admin_content_key_route_put",
+      "label": "PUT()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "put()",
+      "source_file": "src/app/api/admin/content/[key]/route.ts",
+      "source_location": "L51"
+    },
+    {
       "id": "src_components_admin_heromediaeditor_heromediaeditor",
       "label": "HeroMediaEditor()",
       "_callable": true,
@@ -1819,6 +1604,18 @@
       "norm_label": "heromediaeditor()",
       "source_file": "src/components/admin/HeroMediaEditor.tsx",
       "source_location": "L601"
+    },
+    {
+      "id": "src_components_admin_heromediaeditor_heromediamanager",
+      "label": "HeroMediaManager()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "heromediamanager()",
+      "source_file": "src/components/admin/HeroMediaEditor.tsx",
+      "source_location": "L35"
     },
     {
       "id": "src_data_sitedata_walink",
@@ -1854,7 +1651,7 @@
       "file_type": "code",
       "norm_label": "getallsitecontent()",
       "source_file": "src/lib/content.ts",
-      "source_location": "L128"
+      "source_location": "L130"
     },
     {
       "id": "src_lib_content_getcontact",
@@ -1986,7 +1783,7 @@
       "file_type": "code",
       "norm_label": "getprojects()",
       "source_file": "src/lib/content.ts",
-      "source_location": "L96"
+      "source_location": "L98"
     },
     {
       "id": "src_lib_content_getrotatingdisciplines",
@@ -2025,28 +1822,40 @@
       "source_location": "L49"
     },
     {
-      "id": "src_app_admin_admin_projects_page_adminprojectspage",
-      "label": "AdminProjectsPage()",
+      "id": "src_lib_content_sections_iscontentsectionkey",
+      "label": "isContentSectionKey()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community": 3,
+      "community_name": "content.ts",
       "file_type": "code",
-      "norm_label": "adminprojectspage()",
-      "source_file": "src/app/(admin)/admin/projects/page.tsx",
-      "source_location": "L7"
+      "norm_label": "iscontentsectionkey()",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L29"
     },
     {
-      "id": "src_components_admin_heromediaeditor_heromediamanager",
-      "label": "HeroMediaManager()",
+      "id": "src_app_admin_admin_content_page_contentindexpage",
+      "label": "ContentIndexPage()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
-      "norm_label": "heromediamanager()",
-      "source_file": "src/components/admin/HeroMediaEditor.tsx",
-      "source_location": "L35"
+      "norm_label": "contentindexpage()",
+      "source_file": "src/app/(admin)/admin/content/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_admin_adminshell_adminshell",
+      "label": "AdminShell()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "adminshell()",
+      "source_file": "src/components/admin/AdminShell.tsx",
+      "source_location": "L45"
     },
     {
       "id": "src_components_admin_projectstable_projectstable",
@@ -2054,7 +1863,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "projectstable()",
       "source_file": "src/components/admin/ProjectsTable.tsx",
@@ -2066,7 +1875,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "confirmationmodal()",
       "source_file": "src/components/admin/ui/ConfirmationModal.tsx",
@@ -2078,11 +1887,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "datatable()",
       "source_file": "src/components/admin/ui/DataTable.tsx",
       "source_location": "L55"
+    },
+    {
+      "id": "src_components_admin_ui_toast_toastprovider",
+      "label": "ToastProvider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "toastprovider()",
+      "source_file": "src/components/admin/ui/Toast.tsx",
+      "source_location": "L33"
     },
     {
       "id": "src_components_admin_ui_toast_usetoast",
@@ -2090,7 +1911,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "usetoast()",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -2102,47 +1923,107 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "userstable()",
       "source_file": "src/components/admin/UsersTable.tsx",
       "source_location": "L32"
     },
     {
-      "id": "src_app_admin_admin_content_key_page_contentsectionpage",
-      "label": "ContentSectionPage()",
+      "id": "middleware_hasvalidsession",
+      "label": "hasValidSession()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
-      "norm_label": "contentsectionpage()",
-      "source_file": "src/app/(admin)/admin/content/[key]/page.tsx",
-      "source_location": "L29"
+      "norm_label": "hasvalidsession()",
+      "source_file": "middleware.ts",
+      "source_location": "L8"
     },
     {
-      "id": "src_app_api_admin_content_key_route_get",
-      "label": "GET()",
+      "id": "middleware_middleware",
+      "label": "middleware()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
-      "norm_label": "get()",
-      "source_file": "src/app/api/admin/content/[key]/route.ts",
-      "source_location": "L37"
+      "norm_label": "middleware()",
+      "source_file": "middleware.ts",
+      "source_location": "L21"
     },
     {
-      "id": "src_app_api_admin_content_key_route_put",
-      "label": "PUT()",
+      "id": "src_app_about_layout_aboutlayout",
+      "label": "AboutLayout()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
-      "norm_label": "put()",
-      "source_file": "src/app/api/admin/content/[key]/route.ts",
-      "source_location": "L51"
+      "norm_label": "aboutlayout()",
+      "source_file": "src/app/about/layout.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_app_admin_admin_layout_adminlayout",
+      "label": "AdminLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "adminlayout()",
+      "source_file": "src/app/(admin)/admin/layout.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_app_admin_admin_page_admindashboardpage",
+      "label": "AdminDashboardPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "admindashboardpage()",
+      "source_file": "src/app/(admin)/admin/page.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_app_admin_admin_projects_id_page_editprojectpage",
+      "label": "EditProjectPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "editprojectpage()",
+      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_app_admin_admin_projects_page_adminprojectspage",
+      "label": "AdminProjectsPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "adminprojectspage()",
+      "source_file": "src/app/(admin)/admin/projects/page.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_app_admin_admin_users_page_adminuserspage",
+      "label": "AdminUsersPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "adminuserspage()",
+      "source_file": "src/app/(admin)/admin/users/page.tsx",
+      "source_location": "L8"
     },
     {
       "id": "src_app_api_admin_projects_id_route_delete",
@@ -2150,7 +2031,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "delete()",
       "source_file": "src/app/api/admin/projects/[id]/route.ts",
@@ -2162,7 +2043,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "get()",
       "source_file": "src/app/api/admin/projects/[id]/route.ts",
@@ -2174,7 +2055,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "put()",
       "source_file": "src/app/api/admin/projects/[id]/route.ts",
@@ -2186,7 +2067,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "get()",
       "source_file": "src/app/api/admin/projects/route.ts",
@@ -2198,7 +2079,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "post()",
       "source_file": "src/app/api/admin/projects/route.ts",
@@ -2210,11 +2091,191 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "uniqueslug()",
       "source_file": "src/app/api/admin/projects/route.ts",
       "source_location": "L19"
+    },
+    {
+      "id": "src_app_api_admin_users_id_route_delete",
+      "label": "DELETE()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "delete()",
+      "source_file": "src/app/api/admin/users/[id]/route.ts",
+      "source_location": "L94"
+    },
+    {
+      "id": "src_app_api_admin_users_id_route_put",
+      "label": "PUT()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "put()",
+      "source_file": "src/app/api/admin/users/[id]/route.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_app_api_admin_users_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "src/app/api/admin/users/route.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_app_api_admin_users_route_post",
+      "label": "POST()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "post()",
+      "source_file": "src/app/api/admin/users/route.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_app_api_auth_login_route_post",
+      "label": "POST()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "post()",
+      "source_file": "src/app/api/auth/login/route.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_app_api_auth_logout_route_post",
+      "label": "POST()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "post()",
+      "source_file": "src/app/api/auth/logout/route.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_app_contact_layout_contactlayout",
+      "label": "ContactLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "contactlayout()",
+      "source_file": "src/app/contact/layout.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_app_projects_layout_projectslayout",
+      "label": "ProjectsLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "projectslayout()",
+      "source_file": "src/app/projects/layout.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_app_robots_robots",
+      "label": "robots()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "robots()",
+      "source_file": "src/app/robots.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_app_sitemap_sitemap",
+      "label": "sitemap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "sitemap()",
+      "source_file": "src/app/sitemap.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_lib_api_error_handleapierror",
+      "label": "handleApiError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "handleapierror()",
+      "source_file": "src/lib/api-error.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_lib_auth_forbiddenerror_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "src_lib_auth_getadminsession",
+      "label": "getAdminSession()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "getadminsession()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L84"
+    },
+    {
+      "id": "src_lib_auth_getsecretkey",
+      "label": "getSecretKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "getsecretkey()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_lib_auth_hashpassword",
+      "label": "hashPassword()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "hashpassword()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L25"
     },
     {
       "id": "src_lib_auth_requireadmin",
@@ -2222,11 +2283,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "requireadmin()",
       "source_file": "src/lib/auth.ts",
       "source_location": "L104"
+    },
+    {
+      "id": "src_lib_auth_requiresuperadmin",
+      "label": "requireSuperAdmin()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "requiresuperadmin()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L111"
+    },
+    {
+      "id": "src_lib_auth_sessioncookieoptions",
+      "label": "sessionCookieOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "sessioncookieoptions()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_lib_auth_signsessiontoken",
+      "label": "signSessionToken()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "signsessiontoken()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L33"
     },
     {
       "id": "src_lib_auth_unauthorizederror_constructor",
@@ -2234,23 +2331,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/lib/auth.ts",
       "source_location": "L70"
     },
     {
-      "id": "src_lib_content_sections_iscontentsectionkey",
-      "label": "isContentSectionKey()",
+      "id": "src_lib_auth_verifypassword",
+      "label": "verifyPassword()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
-      "norm_label": "iscontentsectionkey()",
-      "source_file": "src/lib/content-sections.ts",
+      "norm_label": "verifypassword()",
+      "source_file": "src/lib/auth.ts",
       "source_location": "L29"
+    },
+    {
+      "id": "src_lib_auth_verifysessiontoken",
+      "label": "verifySessionToken()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "verifysessiontoken()",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L41"
     },
     {
       "id": "src_lib_slug_slugify",
@@ -2258,7 +2367,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "slugify()",
       "source_file": "src/lib/slug.ts",
@@ -2749,6 +2858,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_admin_ui_backbutton",
+      "label": "BackButton.tsx",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "backbutton.tsx",
+      "source_file": "src/components/admin/ui/BackButton.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_admin_ui_dropdown",
       "label": "Dropdown.tsx",
       "_origin": "ast",
@@ -2757,17 +2877,6 @@
       "file_type": "code",
       "norm_label": "dropdown.tsx",
       "source_file": "src/components/admin/ui/Dropdown.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_admin_ui_rowactionmenu",
-      "label": "RowActionMenu.tsx",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "rowactionmenu.tsx",
-      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
       "source_location": "L1"
     },
     {
@@ -2970,103 +3079,15 @@
       "source_location": "L248"
     },
     {
-      "id": "middleware",
-      "label": "middleware.ts",
+      "id": "src_components_admin_ui_topprogressbar",
+      "label": "TopProgressBar.tsx",
       "_origin": "ast",
       "community": 11,
-      "community_name": "auth.ts",
+      "community_name": "TopProgressBar.tsx",
       "file_type": "code",
-      "norm_label": "middleware.ts",
-      "source_file": "middleware.ts",
+      "norm_label": "topprogressbar.tsx",
+      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "middleware_config",
-      "label": "config",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "config",
-      "source_file": "middleware.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_app_api_auth_login_route",
-      "label": "login/route.ts",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "login/route.ts",
-      "source_file": "src/app/api/auth/login/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_api_auth_login_route_loginschema",
-      "label": "loginSchema",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "loginschema",
-      "source_file": "src/app/api/auth/login/route.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_app_api_auth_logout_route",
-      "label": "logout/route.ts",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "logout/route.ts",
-      "source_file": "src/app/api/auth/logout/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_auth",
-      "label": "auth.ts",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "auth.ts",
-      "source_file": "src/lib/auth.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_session_cookie",
-      "label": "session-cookie.ts",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "session-cookie.ts",
-      "source_file": "src/lib/session-cookie.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_session_cookie_session_cookie_name",
-      "label": "SESSION_COOKIE_NAME",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "code",
-      "norm_label": "session_cookie_name",
-      "source_file": "src/lib/session-cookie.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "ref_jose",
-      "label": "jose",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "auth.ts",
-      "file_type": "concept",
-      "norm_label": "jose",
-      "source_file": "package.json",
-      "source_location": "L23"
     },
     {
       "id": "prisma_migrations_20260922151240_init_migration",
@@ -3146,33 +3167,11 @@
       "source_location": "L13"
     },
     {
-      "id": "src_app_admin_admin_projects_id_page",
-      "label": "[id]/page.tsx",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "ProjectForm.tsx",
-      "file_type": "code",
-      "norm_label": "[id]/page.tsx",
-      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_admin_admin_projects_id_page_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "ProjectForm.tsx",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
-      "source_location": "L6"
-    },
-    {
       "id": "src_app_admin_admin_projects_new_page",
       "label": "new/page.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "new/page.tsx",
       "source_file": "src/app/(admin)/admin/projects/new/page.tsx",
@@ -3183,7 +3182,7 @@
       "label": "JsonField.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "jsonfield.tsx",
       "source_file": "src/components/admin/JsonField.tsx",
@@ -3194,7 +3193,7 @@
       "label": "ProjectForm.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "projectform.tsx",
       "source_file": "src/components/admin/ProjectForm.tsx",
@@ -3205,18 +3204,18 @@
       "label": "DEFAULT_SPECS",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "default_specs",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L14"
+      "source_location": "L16"
     },
     {
       "id": "src_components_admin_sectioneditor",
       "label": "SectionEditor.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "sectioneditor.tsx",
       "source_file": "src/components/admin/SectionEditor.tsx",
@@ -3227,7 +3226,7 @@
       "label": "Button.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "button.tsx",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -3238,7 +3237,7 @@
       "label": "SIZE_CLASS",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "size_class",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -3249,7 +3248,7 @@
       "label": "VARIANT_CLASS",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "variant_class",
       "source_file": "src/components/admin/ui/Button.tsx",
@@ -3260,7 +3259,7 @@
       "label": "Field.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "field.tsx",
       "source_file": "src/components/admin/ui/Field.tsx",
@@ -3271,10 +3270,32 @@
       "label": "FormCard.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "formcard.tsx",
       "source_file": "src/components/admin/ui/FormCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_admin_ui_gallerydropzone",
+      "label": "GalleryDropzone.tsx",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "gallerydropzone.tsx",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_admin_ui_imagedropzone",
+      "label": "ImageDropzone.tsx",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "imagedropzone.tsx",
+      "source_file": "src/components/admin/ui/ImageDropzone.tsx",
       "source_location": "L1"
     },
     {
@@ -3282,10 +3303,21 @@
       "label": "Input.tsx",
       "_origin": "ast",
       "community": 13,
-      "community_name": "ProjectForm.tsx",
+      "community_name": "JsonField.tsx",
       "file_type": "code",
       "norm_label": "input.tsx",
       "source_file": "src/components/admin/ui/Input.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_admin_ui_langswitch",
+      "label": "LangSwitch.tsx",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "JsonField.tsx",
+      "file_type": "code",
+      "norm_label": "langswitch.tsx",
+      "source_file": "src/components/admin/ui/LangSwitch.tsx",
       "source_location": "L1"
     },
     {
@@ -3320,6 +3352,17 @@
       "norm_label": "variant_styles",
       "source_file": "src/components/admin/ui/StatTile.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "src_components_admin_ui_rowactionmenu",
+      "label": "RowActionMenu.tsx",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "RowActionMenu.tsx",
+      "file_type": "code",
+      "norm_label": "rowactionmenu.tsx",
+      "source_file": "src/components/admin/ui/RowActionMenu.tsx",
+      "source_location": "L1"
     },
     {
       "id": "prisma_migrations_20260922161500_add_admin_role_and_username_migration",
@@ -3680,110 +3723,11 @@
       "source_location": "L66"
     },
     {
-      "id": "next_config",
-      "label": "next.config.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "next.config.ts",
-      "source_file": "next.config.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "next_config_nextconfig",
-      "label": "nextConfig",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "nextconfig",
-      "source_file": "next.config.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_app_about_layout",
-      "label": "about/layout.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "about/layout.tsx",
-      "source_file": "src/app/about/layout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_about_layout_metadata",
-      "label": "metadata",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "metadata",
-      "source_file": "src/app/about/layout.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_app_contact_layout",
-      "label": "contact/layout.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "contact/layout.tsx",
-      "source_file": "src/app/contact/layout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_contact_layout_metadata",
-      "label": "metadata",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "metadata",
-      "source_file": "src/app/contact/layout.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_app_projects_layout",
-      "label": "projects/layout.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "projects/layout.tsx",
-      "source_file": "src/app/projects/layout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_projects_layout_metadata",
-      "label": "metadata",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "metadata",
-      "source_file": "src/app/projects/layout.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_app_robots",
-      "label": "robots.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "robots.ts",
-      "source_file": "src/app/robots.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_app_services_layout",
       "label": "services/layout.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "next",
+      "community_name": "services/layout.tsx",
       "file_type": "code",
       "norm_label": "services/layout.tsx",
       "source_file": "src/app/services/layout.tsx",
@@ -3794,55 +3738,11 @@
       "label": "metadata",
       "_origin": "ast",
       "community": 2,
-      "community_name": "next",
+      "community_name": "services/layout.tsx",
       "file_type": "code",
       "norm_label": "metadata",
       "source_file": "src/app/services/layout.tsx",
       "source_location": "L3"
-    },
-    {
-      "id": "src_app_sitemap",
-      "label": "sitemap.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "sitemap.ts",
-      "source_file": "src/app/sitemap.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_admin_ui_backbutton",
-      "label": "BackButton.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "backbutton.tsx",
-      "source_file": "src/components/admin/ui/BackButton.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_admin_ui_topprogressbar",
-      "label": "TopProgressBar.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "topprogressbar.tsx",
-      "source_file": "src/components/admin/ui/TopProgressBar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_next",
-      "label": "next",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "concept",
-      "norm_label": "next",
-      "source_file": "package.json",
-      "source_location": "L24"
     },
     {
       "id": "scripts_trace_ig_logo",
@@ -4065,180 +3965,15 @@
       "source_location": "L31"
     },
     {
-      "id": "src_app_api_admin_users_id_route",
-      "label": "users/[id]/route.ts",
+      "id": "prisma_migrations_20260922175027_add_project_gallery_migration",
+      "label": "20260922175027_add_project_gallery/migration.sql",
       "_origin": "ast",
       "community": 26,
-      "community_name": "handleApiError",
+      "community_name": "20260922175027_add_project_gallery/migration.sql",
       "file_type": "code",
-      "norm_label": "users/[id]/route.ts",
-      "source_file": "src/app/api/admin/users/[id]/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_api_admin_users_id_route_updateuserschema",
-      "label": "updateUserSchema",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "updateuserschema",
-      "source_file": "src/app/api/admin/users/[id]/route.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_app_api_admin_users_route",
-      "label": "users/route.ts",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "users/route.ts",
-      "source_file": "src/app/api/admin/users/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_api_admin_users_route_createuserschema",
-      "label": "createUserSchema",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "createuserschema",
-      "source_file": "src/app/api/admin/users/route.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_lib_api_error",
-      "label": "api-error.ts",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "code",
-      "norm_label": "api-error.ts",
-      "source_file": "src/lib/api-error.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "handleApiError",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_app_admin_admin_layout",
-      "label": "admin/layout.tsx",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "admin/layout.tsx",
-      "source_file": "src/app/(admin)/admin/layout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_admin_admin_layout_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/(admin)/admin/layout.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_app_admin_admin_layout_metadata",
-      "label": "metadata",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "metadata",
-      "source_file": "src/app/(admin)/admin/layout.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_app_admin_admin_page",
-      "label": "admin/page.tsx",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "admin/page.tsx",
-      "source_file": "src/app/(admin)/admin/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_admin_admin_page_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/(admin)/admin/page.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_app_admin_admin_users_page",
-      "label": "users/page.tsx",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "users/page.tsx",
-      "source_file": "src/app/(admin)/admin/users/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_app_admin_admin_users_page_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/(admin)/admin/users/page.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_lib_db",
-      "label": "db.ts",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "db.ts",
-      "source_file": "src/lib/db.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_db_db",
-      "label": "db",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "db",
-      "source_file": "src/lib/db.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_lib_db_globalforprisma",
-      "label": "globalForPrisma",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "db.ts",
-      "file_type": "code",
-      "norm_label": "globalforprisma",
-      "source_file": "src/lib/db.ts",
-      "source_location": "L3"
+      "norm_label": "20260922175027_add_project_gallery/migration.sql",
+      "source_file": "prisma/migrations/20260922175027_add_project_gallery/migration.sql",
+      "source_location": null
     },
     {
       "id": "package_devdependencies",
@@ -4395,72 +4130,6 @@
       "source_location": "L47"
     },
     {
-      "id": "src_app_admin_admin_content_page",
-      "label": "content/page.tsx",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "content/page.tsx",
-      "source_file": "src/app/(admin)/admin/content/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_admin_adminshell",
-      "label": "AdminShell.tsx",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "adminshell.tsx",
-      "source_file": "src/components/admin/AdminShell.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_content_sections",
-      "label": "content-sections.ts",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "content-sections.ts",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_content_sections_content_section_keys",
-      "label": "CONTENT_SECTION_KEYS",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "content_section_keys",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_content_sections_content_sections",
-      "label": "CONTENT_SECTIONS",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "content_sections",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L2"
-    },
-    {
-      "id": "src_lib_content_sections_hero_pages",
-      "label": "HERO_PAGES",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "AdminShell.tsx",
-      "file_type": "code",
-      "norm_label": "hero_pages",
-      "source_file": "src/lib/content-sections.ts",
-      "source_location": "L13"
-    },
-    {
       "id": "prisma_seed",
       "label": "seed.ts",
       "_origin": "ast",
@@ -4612,7 +4281,7 @@
       "file_type": "code",
       "norm_label": "centra_services",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L200"
+      "source_location": "L201"
     },
     {
       "id": "src_data_sitedata_default_hero_about",
@@ -4678,7 +4347,7 @@
       "file_type": "code",
       "norm_label": "master_methodology",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L270"
+      "source_location": "L271"
     },
     {
       "id": "src_data_sitedata_rotating_disciplines",
@@ -4689,7 +4358,7 @@
       "file_type": "code",
       "norm_label": "rotating_disciplines",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L129"
+      "source_location": "L130"
     },
     {
       "id": "src_data_sitedata_rotating_disciplines_en",
@@ -4700,7 +4369,7 @@
       "file_type": "code",
       "norm_label": "rotating_disciplines_en",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L130"
+      "source_location": "L131"
     },
     {
       "id": "src_data_sitedata_site_contact",
@@ -4722,7 +4391,7 @@
       "file_type": "code",
       "norm_label": "ww_faqs",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L609"
+      "source_location": "L610"
     },
     {
       "id": "src_data_sitedata_ww_founders",
@@ -4733,7 +4402,7 @@
       "file_type": "code",
       "norm_label": "ww_founders",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L182"
+      "source_location": "L183"
     },
     {
       "id": "src_data_sitedata_ww_philosophies",
@@ -4744,7 +4413,7 @@
       "file_type": "code",
       "norm_label": "ww_philosophies",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L132"
+      "source_location": "L133"
     },
     {
       "id": "src_data_sitedata_ww_projects",
@@ -4755,7 +4424,7 @@
       "file_type": "code",
       "norm_label": "ww_projects",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L384"
+      "source_location": "L385"
     },
     {
       "id": "src_lib_content",
@@ -4769,6 +4438,39 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_content_sections",
+      "label": "content-sections.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "content-sections.ts",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_content_sections_content_section_keys",
+      "label": "CONTENT_SECTION_KEYS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "content_section_keys",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_lib_content_sections_hero_pages",
+      "label": "HERO_PAGES",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "content.ts",
+      "file_type": "code",
+      "norm_label": "hero_pages",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L13"
+    },
+    {
       "id": "src_data_sitedata_rationale_20",
       "label": "TODO: ganti seluruh nilai di bawah dengan data ww.cons asli.",
       "_origin": "ast",
@@ -4780,33 +4482,33 @@
       "source_location": "L20"
     },
     {
-      "id": "src_app_admin_admin_projects_page",
-      "label": "admin/projects/page.tsx",
+      "id": "src_app_admin_admin_content_page",
+      "label": "content/page.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
-      "norm_label": "admin/projects/page.tsx",
-      "source_file": "src/app/(admin)/admin/projects/page.tsx",
+      "norm_label": "content/page.tsx",
+      "source_file": "src/app/(admin)/admin/content/page.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_app_admin_admin_projects_page_dynamic",
-      "label": "dynamic",
+      "id": "src_components_admin_adminshell",
+      "label": "AdminShell.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/(admin)/admin/projects/page.tsx",
-      "source_location": "L5"
+      "norm_label": "adminshell.tsx",
+      "source_file": "src/components/admin/AdminShell.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_admin_projectstable",
       "label": "ProjectsTable.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "projectstable.tsx",
       "source_file": "src/components/admin/ProjectsTable.tsx",
@@ -4817,7 +4519,7 @@
       "label": "ConfirmationModal.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "confirmationmodal.tsx",
       "source_file": "src/components/admin/ui/ConfirmationModal.tsx",
@@ -4828,7 +4530,7 @@
       "label": "DataTable.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "datatable.tsx",
       "source_file": "src/components/admin/ui/DataTable.tsx",
@@ -4839,7 +4541,7 @@
       "label": "Toast.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "toast.tsx",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -4850,7 +4552,7 @@
       "label": "STYLE_CLASS",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "style_class",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -4861,7 +4563,7 @@
       "label": "ToastContext",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "toastcontext",
       "source_file": "src/components/admin/ui/Toast.tsx",
@@ -4872,18 +4574,216 @@
       "label": "UsersTable.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "UsersTable.tsx",
+      "community_name": "AdminShell.tsx",
       "file_type": "code",
       "norm_label": "userstable.tsx",
       "source_file": "src/components/admin/UsersTable.tsx",
       "source_location": "L1"
     },
     {
+      "id": "src_lib_content_sections_content_sections",
+      "label": "CONTENT_SECTIONS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "AdminShell.tsx",
+      "file_type": "code",
+      "norm_label": "content_sections",
+      "source_file": "src/lib/content-sections.ts",
+      "source_location": "L2"
+    },
+    {
+      "id": "middleware",
+      "label": "middleware.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "middleware.ts",
+      "source_file": "middleware.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "middleware_config",
+      "label": "config",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "config",
+      "source_file": "middleware.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "next_config",
+      "label": "next.config.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "next.config.ts",
+      "source_file": "next.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "next_config_nextconfig",
+      "label": "nextConfig",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "nextconfig",
+      "source_file": "next.config.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_app_about_layout",
+      "label": "about/layout.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "about/layout.tsx",
+      "source_file": "src/app/about/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_about_layout_metadata",
+      "label": "metadata",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "metadata",
+      "source_file": "src/app/about/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_app_admin_admin_layout",
+      "label": "admin/layout.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "admin/layout.tsx",
+      "source_file": "src/app/(admin)/admin/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_admin_admin_layout_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "src/app/(admin)/admin/layout.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_app_admin_admin_layout_metadata",
+      "label": "metadata",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "metadata",
+      "source_file": "src/app/(admin)/admin/layout.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_app_admin_admin_page",
+      "label": "admin/page.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "admin/page.tsx",
+      "source_file": "src/app/(admin)/admin/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_admin_admin_page_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "src/app/(admin)/admin/page.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_app_admin_admin_projects_id_page",
+      "label": "[id]/page.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "[id]/page.tsx",
+      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_admin_admin_projects_id_page_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "src/app/(admin)/admin/projects/[id]/page.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_app_admin_admin_projects_page",
+      "label": "admin/projects/page.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "admin/projects/page.tsx",
+      "source_file": "src/app/(admin)/admin/projects/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_admin_admin_projects_page_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "src/app/(admin)/admin/projects/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_app_admin_admin_users_page",
+      "label": "users/page.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "users/page.tsx",
+      "source_file": "src/app/(admin)/admin/users/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_admin_admin_users_page_dynamic",
+      "label": "dynamic",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "dynamic",
+      "source_file": "src/app/(admin)/admin/users/page.tsx",
+      "source_location": "L6"
+    },
+    {
       "id": "src_app_api_admin_projects_id_route",
       "label": "projects/[id]/route.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "projects/[id]/route.ts",
       "source_file": "src/app/api/admin/projects/[id]/route.ts",
@@ -4894,18 +4794,216 @@
       "label": "projects/route.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "projects/route.ts",
       "source_file": "src/app/api/admin/projects/route.ts",
       "source_location": "L1"
     },
     {
+      "id": "src_app_api_admin_users_id_route",
+      "label": "users/[id]/route.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "users/[id]/route.ts",
+      "source_file": "src/app/api/admin/users/[id]/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_api_admin_users_id_route_updateuserschema",
+      "label": "updateUserSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "updateuserschema",
+      "source_file": "src/app/api/admin/users/[id]/route.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_app_api_admin_users_route",
+      "label": "users/route.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "users/route.ts",
+      "source_file": "src/app/api/admin/users/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_api_admin_users_route_createuserschema",
+      "label": "createUserSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "createuserschema",
+      "source_file": "src/app/api/admin/users/route.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_app_api_auth_login_route",
+      "label": "login/route.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "login/route.ts",
+      "source_file": "src/app/api/auth/login/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_api_auth_login_route_loginschema",
+      "label": "loginSchema",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "loginschema",
+      "source_file": "src/app/api/auth/login/route.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_app_api_auth_logout_route",
+      "label": "logout/route.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "logout/route.ts",
+      "source_file": "src/app/api/auth/logout/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_contact_layout",
+      "label": "contact/layout.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "contact/layout.tsx",
+      "source_file": "src/app/contact/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_contact_layout_metadata",
+      "label": "metadata",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "metadata",
+      "source_file": "src/app/contact/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_app_projects_layout",
+      "label": "projects/layout.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "projects/layout.tsx",
+      "source_file": "src/app/projects/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_projects_layout_metadata",
+      "label": "metadata",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "metadata",
+      "source_file": "src/app/projects/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_app_robots",
+      "label": "robots.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "robots.ts",
+      "source_file": "src/app/robots.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_sitemap",
+      "label": "sitemap.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "sitemap.ts",
+      "source_file": "src/app/sitemap.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_api_error",
+      "label": "api-error.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "api-error.ts",
+      "source_file": "src/lib/api-error.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_auth",
+      "label": "auth.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "auth.ts",
+      "source_file": "src/lib/auth.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_db",
+      "label": "db.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "db.ts",
+      "source_file": "src/lib/db.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_db_db",
+      "label": "db",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "db",
+      "source_file": "src/lib/db.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_lib_db_globalforprisma",
+      "label": "globalForPrisma",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "globalforprisma",
+      "source_file": "src/lib/db.ts",
+      "source_location": "L3"
+    },
+    {
       "id": "src_lib_project_schema",
       "label": "project-schema.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "project-schema.ts",
       "source_file": "src/lib/project-schema.ts",
@@ -4916,7 +5014,7 @@
       "label": "projectInputSchema",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "projectinputschema",
       "source_file": "src/lib/project-schema.ts",
@@ -4927,10 +5025,32 @@
       "label": "specLine",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "specline",
       "source_file": "src/lib/project-schema.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_lib_session_cookie",
+      "label": "session-cookie.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "session-cookie.ts",
+      "source_file": "src/lib/session-cookie.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_session_cookie_session_cookie_name",
+      "label": "SESSION_COOKIE_NAME",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "code",
+      "norm_label": "session_cookie_name",
+      "source_file": "src/lib/session-cookie.ts",
       "source_location": "L3"
     },
     {
@@ -4938,11 +5058,44 @@
       "label": "slug.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "requireAdmin",
+      "community_name": "next",
       "file_type": "code",
       "norm_label": "slug.ts",
       "source_file": "src/lib/slug.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_jose",
+      "label": "jose",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "concept",
+      "norm_label": "jose",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ref_next",
+      "label": "next",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "concept",
+      "norm_label": "next",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "next",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L32"
     },
     {
       "id": "eslint_config",
@@ -5625,18 +5778,6 @@
       "type": "external"
     },
     {
-      "id": "src_lib_auth_session_cookie_name",
-      "label": "src_lib_auth_session_cookie_name",
-      "_origin": "semantic",
-      "community": 11,
-      "community_name": "auth.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_lib_auth_session_cookie_name",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "os",
       "label": "os",
       "_origin": "semantic",
@@ -5717,6 +5858,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_lib_content_heromediavalue",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_lib_auth_session_cookie_name",
+      "label": "src_lib_auth_session_cookie_name",
+      "_origin": "semantic",
+      "community": 5,
+      "community_name": "next",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_lib_auth_session_cookie_name",
       "source_file": "",
       "type": "external"
     }
@@ -6443,6 +6596,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_jsonfield_bilingualpairfield",
+      "target": "src_components_admin_jsonfield_humanlabel",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_jsonfield_emptylike",
       "target": "src_components_admin_jsonfield_emptylike",
       "relation": "calls",
@@ -6451,19 +6616,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L24",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
-      "source": "src_components_admin_jsonfield_jsonfield",
-      "target": "src_components_admin_jsonfield_emptylike",
+      "source": "src_components_admin_jsonfield_groupbilingual",
+      "target": "src_components_admin_jsonfield_isimagefield",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L136",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield_groupbilingual",
+      "target": "src_components_admin_jsonfield_ispairablevalue",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -6475,7 +6652,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L47",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield_jsonfield",
+      "target": "src_components_admin_jsonfield_isimagefield",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -6487,7 +6676,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L85",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -6499,7 +6688,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L97",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield_jsonfield",
+      "target": "src_components_admin_jsonfield_groupbilingual",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield_jsonfield",
+      "target": "src_components_admin_jsonfield_emptylike",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -6552,18 +6765,6 @@
     },
     {
       "source": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
-      "target": "src_data_sitedata_walink",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
-      "source_location": "L182",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
       "target": "src_context_sitecontentcontext_usesitecontent",
       "relation": "calls",
       "_origin": "ast",
@@ -6572,6 +6773,18 @@
       "context": "call",
       "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
       "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
+      "target": "src_data_sitedata_walink",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -6763,7 +6976,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L144",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -6775,7 +6988,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L145",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -6787,7 +7000,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L146",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -6799,7 +7012,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L147",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -6811,7 +7024,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L148",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -6823,7 +7036,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L149",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -6835,7 +7048,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L150",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -6847,7 +7060,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L151",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -6859,7 +7072,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L152",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -6871,7 +7084,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L153",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -6883,7 +7096,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L154",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -6895,7 +7108,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L155",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -6907,7 +7120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/content.ts",
-      "source_location": "L156",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -8940,8 +9153,32 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_ui_imagedropzone_imagedropzone",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_ui_langswitch_langswitch",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_projectform",
-      "target": "src_lib_project_schema_projectinput",
+      "target": "src_components_admin_ui_gallerydropzone_gallerydropzone",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8953,6 +9190,30 @@
     },
     {
       "source": "src_components_admin_projectform",
+      "target": "src_components_admin_ui_langswitch_langswitch",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
+      "target": "src_lib_project_schema_projectinput",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
       "target": "src_components_admin_jsonfield_jsonfield",
       "relation": "imports",
       "_origin": "ast",
@@ -8960,7 +9221,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -8972,7 +9233,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -8984,7 +9245,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -8996,7 +9257,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -9008,12 +9269,24 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_components_admin_projectform",
       "target": "src_components_admin_ui_button_button",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
+      "target": "src_components_admin_ui_imagedropzone_imagedropzone",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11615,6 +11888,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_ui_imagedropzone",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_ui_langswitch",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
+      "target": "src_components_admin_ui_gallerydropzone",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
+      "target": "src_components_admin_ui_langswitch",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_projectform",
       "target": "src_lib_project_schema",
       "relation": "imports_from",
@@ -11623,7 +11944,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "type_only": true,
       "weight": 1.0
     },
@@ -11648,7 +11969,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -11660,7 +11981,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -11672,7 +11993,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -11684,12 +12005,24 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_components_admin_projectform",
       "target": "src_components_admin_ui_button",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ProjectForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_projectform",
+      "target": "src_components_admin_ui_imagedropzone",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11976,6 +12309,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_ui_gallerydropzone",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_gallerydropzone",
+      "target": "ref_react_icons",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_imagedropzone",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ui/ImageDropzone.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_imagedropzone",
+      "target": "ref_react_icons",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ui/ImageDropzone.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_ui_input",
       "target": "ref_react",
       "relation": "imports_from",
@@ -11985,6 +12366,18 @@
       "context": "import",
       "source_file": "src/components/admin/ui/Input.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_langswitch",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/admin/ui/LangSwitch.tsx",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -14941,7 +15334,7 @@
     },
     {
       "source": "src_components_admin_jsonfield",
-      "target": "src_components_admin_jsonfield_humanlabel",
+      "target": "src_components_admin_jsonfield_jsonvalue",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14958,7 +15351,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L18",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -14969,7 +15362,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L29",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -14980,7 +15373,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L33",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_jsonfield_humanlabel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -14991,18 +15395,62 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L38",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
       "source": "src_components_admin_jsonfield",
-      "target": "src_components_admin_jsonfield_jsonvalue",
+      "target": "src_components_admin_jsonfield_isimagefield",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/JsonField.tsx",
-      "source_location": "L8",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_jsonfield_ispairablevalue",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_jsonfield_groupedentry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_jsonfield_groupbilingual",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_jsonfield",
+      "target": "src_components_admin_jsonfield_bilingualpairfield",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/JsonField.tsx",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -15013,7 +15461,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -15024,7 +15472,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -15035,7 +15483,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/admin/ProjectForm.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -15281,6 +15729,39 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_ui_gallerydropzone",
+      "target": "src_components_admin_ui_gallerydropzone_gallerydropzone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_gallerydropzone",
+      "target": "src_components_admin_ui_gallerydropzone_uploadone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_imagedropzone",
+      "target": "src_components_admin_ui_imagedropzone_imagedropzone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/ui/ImageDropzone.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_ui_input",
       "target": "src_components_admin_ui_input_textarea",
       "relation": "contains",
@@ -15300,6 +15781,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/admin/ui/Input.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_admin_ui_langswitch",
+      "target": "src_components_admin_ui_langswitch_langswitch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/admin/ui/LangSwitch.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -15948,7 +16440,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L113",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -15959,7 +16451,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -15970,7 +16462,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -15981,7 +16473,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -15992,7 +16484,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L182",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -16003,7 +16495,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L200",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -16025,7 +16517,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L270",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -16036,7 +16528,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L384",
+      "source_location": "L385",
       "weight": 1.0
     },
     {
@@ -16080,18 +16572,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L599",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_sitedata",
-      "target": "src_data_sitedata_ww_faqs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/siteData.ts",
-      "source_location": "L609",
+      "source_location": "L600",
       "weight": 1.0
     },
     {
@@ -16103,6 +16584,17 @@
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
       "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_sitedata",
+      "target": "src_data_sitedata_ww_faqs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/siteData.ts",
+      "source_location": "L610",
       "weight": 1.0
     },
     {
@@ -16300,7 +16792,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/content.ts",
-      "source_location": "L109",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -16311,7 +16803,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/content.ts",
-      "source_location": "L128",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -16531,7 +17023,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/content.ts",
-      "source_location": "L96",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -16641,7 +17133,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/project-schema.ts",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -16951,6 +17443,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_admin_ui_gallerydropzone_gallerydropzone",
+      "target": "src_components_admin_ui_gallerydropzone_uploadone",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/components/admin/ui/GalleryDropzone.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_admin_ui_rowactionmenu_rowactionmenu",
       "target": "src_components_admin_ui_rowactionmenu_rowactionmenu_handleclickoutside",
       "relation": "indirect_call",
@@ -16995,7 +17499,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/content.ts",
-      "source_location": "L103",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -17240,5 +17744,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ea27b1dabf226d6f89fc059e8491219c8b178fe3"
+  "built_at_commit": "4275b91c3644853045fa552a4ccd6da7ba9df19a"
 }

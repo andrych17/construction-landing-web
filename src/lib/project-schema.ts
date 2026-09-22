@@ -8,6 +8,7 @@ export const projectInputSchema = z.object({
   categoryEn: z.string().optional().nullable(),
   location: z.string().min(1),
   img: z.string().min(1),
+  gallery: z.array(z.string()).optional(),
   desc: z.string().min(1),
   descEn: z.string().optional().nullable(),
   materials: z.string().optional().nullable(),

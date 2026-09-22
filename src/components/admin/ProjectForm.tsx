@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { JsonField, type JsonValue } from '@/components/admin/JsonField';
 import { Field } from '@/components/admin/ui/Field';
 import { Input, Textarea } from '@/components/admin/ui/Input';
 import { Button } from '@/components/admin/ui/Button';
+import { ImageDropzone } from '@/components/admin/ui/ImageDropzone';
+import { GalleryDropzone } from '@/components/admin/ui/GalleryDropzone';
+import { LangSwitch } from '@/components/admin/ui/LangSwitch';
 import type { ProjectInput } from '@/lib/project-schema';
 
 type ProjectFormData = ProjectInput;
@@ -29,6 +31,7 @@ export function ProjectForm({
     categoryEn: initialData?.categoryEn ?? '',
     location: initialData?.location ?? '',
     img: initialData?.img ?? '',
+    gallery: initialData?.gallery ?? [],
     desc: initialData?.desc ?? '',
     descEn: initialData?.descEn ?? '',
     materials: initialData?.materials ?? '',
@@ -40,32 +43,12 @@ export function ProjectForm({
     specsTableEn: initialData?.specsTableEn ?? [],
     published: initialData?.published ?? true,
   });
-  const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [lang, setLang] = useState<'id' | 'en'>('id');
 
   const set = <K extends keyof ProjectFormData>(key: K, value: ProjectFormData[K]) =>
     setData((prev) => ({ ...prev, [key]: value }));
-
-  const handleUpload = async (file: File) => {
-    setUploading(true);
-    setError(null);
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const res = await fetch('/api/admin/upload', { method: 'POST', body: formData });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error ?? 'Upload gagal.');
-      }
-      const body = await res.json();
-      set('img', body.url);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Upload gagal.');
-    } finally {
-      setUploading(false);
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,56 +103,65 @@ export function ProjectForm({
         <Field label="Lokasi">
           <Input required value={data.location} onChange={(e) => set('location', e.target.value)} />
         </Field>
-        <Field label="Kategori (ID)">
-          <Input required value={data.category} onChange={(e) => set('category', e.target.value)} />
-        </Field>
-        <Field label="Kategori (EN)">
-          <Input value={data.categoryEn ?? ''} onChange={(e) => set('categoryEn', e.target.value)} />
-        </Field>
       </div>
 
       <div>
         <span className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Foto Utama</span>
-        <div className="flex items-start gap-4">
-          {data.img && (
-            <div className="relative w-32 h-24 rounded-md overflow-hidden border border-slate-200 shrink-0 bg-slate-100">
-              <Image src={data.img} alt="" fill className="object-cover" />
-            </div>
-          )}
-          <div className="space-y-2">
-            <input
-              type="file"
-              accept="image/jpeg,image/png,image/webp,image/avif"
-              onChange={(e) => e.target.files?.[0] && handleUpload(e.target.files[0])}
-              disabled={uploading}
-              className="text-xs text-slate-500 file:mr-3 file:px-3 file:py-2 file:rounded-md file:border-0 file:bg-slate-100 file:text-xs file:font-semibold hover:file:bg-slate-200"
-            />
-            {uploading && <p className="text-xs text-slate-400">Mengunggah…</p>}
-            <Input placeholder="/images/projects/nama-file.jpg" value={data.img} onChange={(e) => set('img', e.target.value)} />
-          </div>
-        </div>
+        <ImageDropzone value={data.img} onChange={(url) => set('img', url)} />
+      </div>
+
+      <div>
+        <span className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">
+          Galeri Foto <span className="normal-case font-normal text-slate-400">(tampil di modal detail proyek)</span>
+        </span>
+        <GalleryDropzone value={data.gallery ?? []} onChange={(urls) => set('gallery', urls)} />
+      </div>
+
+      <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Konten Bilingual</span>
+        <LangSwitch value={lang} onChange={setLang} idLabel="Bahasa Indonesia" enLabel="English" />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Field label="Deskripsi (ID)">
-          <Textarea required value={data.desc} onChange={(e) => set('desc', e.target.value)} />
+        <Field label={`Kategori (${lang.toUpperCase()})`}>
+          {lang === 'id' ? (
+            <Input required value={data.category} onChange={(e) => set('category', e.target.value)} />
+          ) : (
+            <Input value={data.categoryEn ?? ''} onChange={(e) => set('categoryEn', e.target.value)} />
+          )}
         </Field>
-        <Field label="Deskripsi (EN)">
-          <Textarea value={data.descEn ?? ''} onChange={(e) => set('descEn', e.target.value)} />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Field label={`Deskripsi (${lang.toUpperCase()})`}>
+          {lang === 'id' ? (
+            <Textarea required value={data.desc} onChange={(e) => set('desc', e.target.value)} />
+          ) : (
+            <Textarea value={data.descEn ?? ''} onChange={(e) => set('descEn', e.target.value)} />
+          )}
         </Field>
-        <Field label="Material (ID)">
-          <Textarea value={data.materials ?? ''} onChange={(e) => set('materials', e.target.value)} />
-        </Field>
-        <Field label="Material (EN)">
-          <Textarea value={data.materialsEn ?? ''} onChange={(e) => set('materialsEn', e.target.value)} />
+        <Field label={`Material (${lang.toUpperCase()})`}>
+          {lang === 'id' ? (
+            <Textarea value={data.materials ?? ''} onChange={(e) => set('materials', e.target.value)} />
+          ) : (
+            <Textarea value={data.materialsEn ?? ''} onChange={(e) => set('materialsEn', e.target.value)} />
+          )}
         </Field>
       </div>
 
       <JsonField fieldKey="Spesifikasi" value={(data.specs ?? DEFAULT_SPECS) as JsonValue} onChange={(v) => set('specs', v as ProjectFormData['specs'])} />
-      <JsonField fieldKey="Fitur (ID)" value={(data.features ?? []) as JsonValue} onChange={(v) => set('features', v as string[])} />
-      <JsonField fieldKey="Fitur (EN)" value={(data.featuresEn ?? []) as JsonValue} onChange={(v) => set('featuresEn', v as string[])} />
-      <JsonField fieldKey="Tabel Spesifikasi (ID)" value={(data.specsTable ?? []) as JsonValue} onChange={(v) => set('specsTable', v as ProjectFormData['specsTable'])} />
-      <JsonField fieldKey="Tabel Spesifikasi (EN)" value={(data.specsTableEn ?? []) as JsonValue} onChange={(v) => set('specsTableEn', v as ProjectFormData['specsTableEn'])} />
+
+      {lang === 'id' ? (
+        <JsonField fieldKey="Fitur (ID)" value={(data.features ?? []) as JsonValue} onChange={(v) => set('features', v as string[])} />
+      ) : (
+        <JsonField fieldKey="Fitur (EN)" value={(data.featuresEn ?? []) as JsonValue} onChange={(v) => set('featuresEn', v as string[])} />
+      )}
+
+      {lang === 'id' ? (
+        <JsonField fieldKey="Tabel Spesifikasi (ID)" value={(data.specsTable ?? []) as JsonValue} onChange={(v) => set('specsTable', v as ProjectFormData['specsTable'])} />
+      ) : (
+        <JsonField fieldKey="Tabel Spesifikasi (EN)" value={(data.specsTableEn ?? []) as JsonValue} onChange={(v) => set('specsTableEn', v as ProjectFormData['specsTableEn'])} />
+      )}
     </form>
   );
 }

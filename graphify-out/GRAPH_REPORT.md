@@ -1,37 +1,36 @@
 # Graph Report - construction-landing-web  (2026-09-23)
 
 ## Corpus Check
-- 93 files · ~276,890 words
+- 97 files · ~278,293 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
 ## Summary
-- 493 nodes · 989 edges · 30 communities (24 shown, 6 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 24 edges (avg confidence: 0.85)
+- 506 nodes · 1019 edges · 28 communities (20 shown, 8 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ea27b1da`
+- Built from commit: `4275b91c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - dependencies
 - compilerOptions
-- next
+- services/layout.tsx
 - content.ts
-- UsersTable.tsx
-- requireAdmin
+- AdminShell.tsx
+- next
 - package.json
 - postcss.config.mjs
 - WW Construction Website
 - WW Construction Portfolio Website
 - react
-- auth.ts
 - migration.sql
-- ProjectForm.tsx
+- JsonField.tsx
 - StatTile.tsx
-- RowActionMenu
+- RowActionMenu.tsx
 - generate_logos.py
 - DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO
 - Hero Video — Panduan & Koleksi Prompt Google Flow (Veo 3.1)
@@ -41,15 +40,12 @@
 - Modal.tsx
 - ListState.tsx
 - upload/route.ts
-- handleApiError
-- db.ts
 - devDependencies
-- AdminShell.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `next` - 47 edges
-2. `react` - 39 edges
-3. `react-icons` - 22 edges
+2. `react` - 42 edges
+3. `react-icons` - 24 edges
 4. `useLanguage()` - 19 edges
 5. `useSiteContent()` - 19 edges
 6. `handleApiError()` - 19 edges
@@ -73,7 +69,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (30 total, 6 thin omitted)
+## Communities (28 total, 8 thin omitted)
 
 ### Community 0 - "dependencies"
 Cohesion: 0.13
@@ -83,21 +79,17 @@ Nodes (15): dependencies, bcryptjs, framer-motion, jose, next, prisma, @prisma/c
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
-### Community 2 - "next"
-Cohesion: 0.08
-Nodes (6): nextConfig, next, metadata, metadata, metadata, metadata
-
 ### Community 3 - "content.ts"
-Cohesion: 0.08
-Nodes (55): db, main(), seedAdmin(), seedContent(), seedProjects(), slugify(), dynamic, HERO_KEYS (+47 more)
+Cohesion: 0.07
+Nodes (64): db, main(), seedAdmin(), seedContent(), seedProjects(), slugify(), ContentSectionPage(), dynamic (+56 more)
 
-### Community 4 - "UsersTable.tsx"
-Cohesion: 0.12
-Nodes (20): dynamic, HeroMediaManager(), ProjectRow, ProjectsTable(), ConfirmationModal(), Props, ColumnDef, DataTable() (+12 more)
+### Community 4 - "AdminShell.tsx"
+Cohesion: 0.09
+Nodes (25): AdminShell(), AdminShellProps, NavGroup, NavItem, ProjectRow, ProjectsTable(), ConfirmationModal(), Props (+17 more)
 
-### Community 5 - "requireAdmin"
-Cohesion: 0.16
-Nodes (15): ContentSectionPage(), GET(), PUT(), DELETE(), GET(), PUT(), GET(), POST() (+7 more)
+### Community 5 - "next"
+Cohesion: 0.05
+Nodes (53): config, hasValidSession(), middleware(), nextConfig, jose, next, zod, metadata (+45 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.06
@@ -113,23 +105,23 @@ Nodes (6): Description, Development Server, Features Implemented, Project Status
 
 ### Community 10 - "react"
 Cohesion: 0.09
-Nodes (44): 7. Implementation Roadmap & Milestones, framer-motion, react, react-icons, AboutPage(), ContactPage(), src_app_globals, buildStructuredSchema() (+36 more)
-
-### Community 11 - "auth.ts"
-Cohesion: 0.19
-Nodes (13): config, hasValidSession(), middleware(), jose, loginSchema, POST(), getSecretKey(), src_lib_auth_session_cookie_name (+5 more)
+Nodes (42): 7. Implementation Roadmap & Milestones, framer-motion, react, react-icons, AboutPage(), ContactPage(), src_app_globals, buildStructuredSchema() (+34 more)
 
 ### Community 12 - "migration.sql"
 Cohesion: 0.43
 Nodes (6): "AdminUser", AdminUser_email_key, "Project", Project_published_order_idx, Project_slug_key, "SiteContent"
 
-### Community 13 - "ProjectForm.tsx"
-Cohesion: 0.11
-Nodes (21): dynamic, emptyLike(), humanLabel(), isObjectArray(), isStringArray(), JsonField(), JsonValue, DEFAULT_SPECS (+13 more)
+### Community 13 - "JsonField.tsx"
+Cohesion: 0.09
+Nodes (28): BilingualPairField(), emptyLike(), groupBilingual(), GroupedEntry, humanLabel(), isImageField(), isObjectArray(), isPairableValue() (+20 more)
 
 ### Community 14 - "StatTile.tsx"
 Cohesion: 0.33
 Nodes (4): Card(), Props, StatTileVariant, VARIANT_STYLES
+
+### Community 15 - "RowActionMenu.tsx"
+Cohesion: 0.33
+Nodes (3): RowActionItem, RowActionMenu(), RowActionMenuProps
 
 ### Community 18 - "DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO"
 Cohesion: 0.11
@@ -155,41 +147,29 @@ Nodes (3): ModalSize, Props, SIZE_CLASS
 Cohesion: 0.13
 Nodes (15): ref_node_crypto, ref_node_fs, ref_node_path, sharp, ALLOWLIST, data, FOREIGN, walk() (+7 more)
 
-### Community 26 - "handleApiError"
-Cohesion: 0.30
-Nodes (11): zod, DELETE(), PUT(), updateUserSchema, createUserSchema, GET(), POST(), handleApiError() (+3 more)
-
-### Community 27 - "db.ts"
-Cohesion: 0.19
-Nodes (11): AdminLayout(), dynamic, metadata, AdminDashboardPage(), dynamic, AdminUsersPage(), dynamic, AdminShell() (+3 more)
-
 ### Community 28 - "devDependencies"
 Cohesion: 0.14
 Nodes (14): devDependencies, autoprefixer, babel-plugin-react-compiler, eslint, eslint-config-next, postcss, tailwindcss, @tailwindcss/postcss (+6 more)
 
-### Community 29 - "AdminShell.tsx"
-Cohesion: 0.18
-Nodes (10): AdminShellProps, NavGroup, NavItem, ToastProvider(), AdminSession, CONTENT_SECTION_KEYS, CONTENT_SECTIONS, ContentSectionKey (+2 more)
-
 ## Knowledge Gaps
-- **191 isolated node(s):** `eslintConfig`, `config`, `nextConfig`, `name`, `version` (+186 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 235 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **192 isolated node(s):** `eslintConfig`, `config`, `nextConfig`, `name`, `version` (+187 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 237 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `next` connect `next` to `content.ts`, `UsersTable.tsx`, `requireAdmin`, `package.json`, `react`, `auth.ts`, `ProjectForm.tsx`, `StatTile.tsx`, `upload/route.ts`, `handleApiError`, `db.ts`, `AdminShell.tsx`?**
-  _High betweenness centrality (0.296) - this node is a cross-community bridge._
-- **Why does `react` connect `react` to `next`, `content.ts`, `UsersTable.tsx`, `package.json`, `ProjectForm.tsx`, `StatTile.tsx`, `SearchableSelect.tsx`, `Modal.tsx`, `ListState.tsx`, `AdminShell.tsx`?**
-  _High betweenness centrality (0.158) - this node is a cross-community bridge._
+- **Why does `next` connect `next` to `services/layout.tsx`, `content.ts`, `AdminShell.tsx`, `package.json`, `react`, `TopProgressBar.tsx`, `JsonField.tsx`, `StatTile.tsx`, `upload/route.ts`?**
+  _High betweenness centrality (0.290) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `content.ts`, `AdminShell.tsx`, `package.json`, `TopProgressBar.tsx`, `JsonField.tsx`, `StatTile.tsx`, `RowActionMenu.tsx`, `SearchableSelect.tsx`, `Modal.tsx`, `ListState.tsx`?**
+  _High betweenness centrality (0.169) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `config`, `nextConfig` to the rest of the system?**
-  _191 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _192 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `next` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0819252432155658 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0684931506849315 - nodes in this community are weakly interconnected._
+- **Should `AdminShell.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._

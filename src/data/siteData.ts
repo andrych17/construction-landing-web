@@ -93,6 +93,7 @@ export interface ProjectDetail {
   categoryEn?: string;
   location: string;
   img: string;
+  gallery?: string[];
   desc: string;
   descEn?: string;
   materials?: string;
