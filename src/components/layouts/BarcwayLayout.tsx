@@ -21,277 +21,21 @@ import ProjectInspectionModal, { ProjectDetail } from '@/components/interactive/
 import BarcwayNav from '@/components/navigation/BarcwayNav';
 import BarcwayFooter from '@/components/navigation/BarcwayFooter';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
+import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 
 // Design Read:
 // Luxury Architectural Studio & High-End General Contractor landing page for discerning residential & commercial patrons in Surabaya.
 // Monolithic dark aesthetic, Baskervville serif typography, full-width expansive framing, anti-slop restraint, and tactile feedback.
 // Dials: DESIGN_VARIANCE: 8 | MOTION_INTENSITY: 6 | VISUAL_DENSITY: 3
 
-const ROTATING_DISCIPLINES = ['Architecture', 'Interior', 'Planning', 'General Contracting'];
-
-export const BARCWAY_FOUNDERS = [
-  {
-    name: 'Edward Matthew',
-    role: 'Principal',
-    image: '/images/founders/edward_matthew.jpg',
-    focus: 'Architectural Vision & Spatial Master Planning',
-    bio: 'Directing architectural innovation, monumental form exploration, and seamless spatial dialogues between private sanctuaries and their natural context.',
-  },
-  {
-    name: 'Jefferson D. Halim',
-    role: 'Principal',
-    image: '/images/founders/jefferson_halim.jpg',
-    focus: 'Interior Architecture & Material Harmony',
-    bio: 'Orchestrating bespoke interior narratives, textural tension between raw and refined surfaces, and structural finishing fidelity across Surabaya commissions.',
-  },
-];
-
-export const CENTRA_SERVICES = [
-  {
-    category: 'RESIDENTIAL BUILDING',
-    subtitle: 'Your dream home, built with care and precision.',
-    desc: 'Bespoke high-end private residences engineered for optimal tropical comfort, abundant natural light, and structural resilience.',
-    types: [
-      'Minimalist House',
-      'Classic Minimalist House',
-      'Industrial Minimalist House',
-      'Modern Minimalist House',
-    ],
-    features: [
-      'Double-height void thermal ventilation & cross airflow',
-      'Structural grade SNI K-350 reinforced concrete framework',
-      'Laser 90° deviance < 1mm interior marble & timber joinery',
-    ],
-    image: '/images/projects/luxury_residence_hq.jpg',
-  },
-  {
-    category: 'COMMERCIAL BUILDING',
-    subtitle: 'Functional, attractive spaces for thriving businesses.',
-    desc: 'Prestigious commercial venues engineered for workflow efficiency, commanding street presence, and high-traffic durability.',
-    types: [
-      'Offices & Workspaces',
-      'Retail & Restaurants',
-      'Clinics & Service Facilities',
-    ],
-    features: [
-      'Acoustic zoning, ergonomic lighting & commercial HVAC planning',
-      'Industrial steel, architectural glass & fire-rated partitions',
-      'Strict milestone compliance & zero overhead delay handovers',
-    ],
-    image: '/images/projects/jotun_showroom_hq.jpg',
-  },
-];
-
-export const MASTER_METHODOLOGY = [
-  {
-    step: '01',
-    title: 'Discovery & Vision Alignment',
-    idDesc: 'Pertemuan perdana yang didedikasikan untuk menyelaraskan visi desain, kebutuhan ruang, dan standar operasional cal.idn.',
-  },
-  {
-    step: '02',
-    title: 'Aerial Drone & Site Survey',
-    idDesc: 'Analisis lokasi komprehensif memanfaatkan teknologi aerial drone imaging untuk menangkap perspektif lingkungan dan kontur tapak.',
-  },
-  {
-    step: '03',
-    title: 'Bespoke Financial Engineering (RAB)',
-    idDesc: 'Penyusunan Rencana Anggaran Biaya akurat dengan Proprietary AHS (Analisa Harga Satuan) internal cal.idn tanpa hidden cost.',
-  },
-  {
-    step: '04',
-    title: 'Collaborative Commitment (SPK)',
-    idDesc: 'Penandatanganan kontrak kerja transparan dengan pemaparan spesifikasi teknis material dan time schedule (TS) resmi.',
-  },
-  {
-    step: '05',
-    title: 'Systematic Milestone Dispatch',
-    idDesc: 'Pengawasan harian dan mingguan yang dilaporkan secara sistematis dan real-time oleh Project Manager dan PIC lapangan.',
-  },
-  {
-    step: '06',
-    title: 'Rigorous Material Approval',
-    idDesc: 'Setiap material masuk melewati uji slump on-site dan approval berkala Site Engineer untuk sinkronisasi gambar kerja.',
-  },
-  {
-    step: '07',
-    title: 'Principal Quality Supervision',
-    idDesc: 'Pengawasan langsung oleh tim insinyur sipil berpengalaman 35 tahun menjamin standar mutu tertinggi pada setiap sudut.',
-  },
-  {
-    step: '08',
-    title: 'Collaborative Handover & Routine Warranty',
-    idDesc: 'Final check bersama arsitek sebelum penandatanganan BAST, dilengkapi masa garansi dan inspeksi rutin 2x setahun.',
-  },
-];
-
-const BARCWAY_PHILOSOPHIES = [
-  {
-    num: '01',
-    title: 'INSIDE OUT',
-    tagline: 'Mereduksi Batas Ruang Dalam & Luar',
-    desc: 'Blurring the boundaries between indoor and outdoor through open layouts and flowing natural materials — creating spaces deeply connected to nature.',
-    execution: 'Rekayasa bukaan void ganda tinggi dengan kisi fasad aluminium penahan tampias iklim tropis maritim Surabaya, memaksimalkan sirkulasi silang pasif dan pencahayaan alami tanpa radiasi panas berlebih.',
-    img: '/images/projects/tropical_facade_hq.jpg',
-    material: 'Double-Glazed Low-E Glass, Coastal Aluminium Louvers, Teak Pergola',
-  },
-  {
-    num: '02',
-    title: 'BALANCED CONTRAST',
-    tagline: 'Harmoni Tekstur Kasar & Halus',
-    desc: 'Creating bold yet balanced designs rich in texture and scale. Combining rough and smooth, raw and refined, grand and intimate — achieving harmony through contrast.',
-    execution: 'Menyatukan ketangguhan mentah beton ekspos K-350 dan baja struktural hitam dengan keanggunan marmer alam bookmatched Italia, serta lantai kayu solid jati Jawa dengan nat laser deviasi < 1mm.',
-    img: '/images/projects/interior_craftsmanship_hq.jpg',
-    material: 'Statuario Natural Marble, Exposed Monolithic Concrete, Solid Teakwood',
-  },
-  {
-    num: '03',
-    title: 'NARRATIVE SPACE',
-    tagline: 'Ruang Spasial yang Mengalir & Bercerita',
-    desc: 'Spaces shaped by purpose and context, unfolding through sequence, scale, and form to tell a meaningful story of living.',
-    execution: 'Alur sirkulasi ruang terhitung presisi. Seluruh instalasi utilitas MEP (pemipaan air bersih & conduit kelistrikan) ditanam rapi sebelum pengecoran struktur plat dak, menjamin 0% resiko bobok ulang pasca finishing.',
-    img: '/images/projects/modern_villa_hq.jpg',
-    material: 'Pre-Cast Embedded Conduit MEP, 90° Digital Corner Bevel, Acoustic Drywall',
-  },
-];
-
-const BARCWAY_PROJECTS: ProjectDetail[] = [
-  {
-    title: 'DG House',
-    category: 'PRIVATE RESIDENCE',
-    location: 'Surabaya Timur, Jawa Timur',
-    img: '/images/projects/luxury_residence_hq.jpg',
-    materials: 'Natural Italian Marble, Tropical Solid Wood, Precision Cantilever Concrete',
-    desc: 'Hunian privat dengan penataan spasial mengalir bebas. Menghadirkan void ganda tinggi dan batas kaca masif yang menyatukan taman dalam ruang dengan kenyamanan interior berhawa sejuk.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Bespoke Custom Luxury Residence' },
-      { label: 'Struktur Bangunan', value: 'Beton Bertulang K-350 SNI Tahan Gempa' },
-      { label: 'Finishing Utama', value: 'Slab Marmer Statuario & Kisi Ulin Asli' },
-      { label: 'Sistem Pencahayaan', value: 'Architectural Warm 2700K Recessed Spotlight' },
-      { label: 'Kontraktor Pelaksana', value: 'ww.cons (Wonderful Works Studio)' },
-    ],
-  },
-  {
-    title: 'MJ House',
-    category: 'TROPICAL MODERN ESTATE',
-    location: 'Surabaya Barat',
-    img: '/images/projects/modern_villa_hq.jpg',
-    materials: 'Monolithic Basalt, Powder-Coated Dark Metal, Water Mirror Pool',
-    desc: 'Komposisi arsitektur monolitik yang berani namun tenang. Menggunakan kolam cermin air dan kanopi kantilever untuk meredam suhu iklim maritim Surabaya.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Tropical Architectural Sanctuary' },
-      { label: 'Struktur Lantai', value: 'Sistem Plat Dua Arah Presisi Tanpa Lendutan' },
-      { label: 'Toleransi Konstruksi', value: 'Akurasi Siku 90° Digital (Deviasi < 1mm)' },
-      { label: 'Waterproofing', value: 'Waterproofing Membran Bakar Dual-Layer' },
-    ],
-  },
-  {
-    title: 'M House',
-    category: 'MINIMALIST RESIDENCE',
-    location: 'Dharmahusada Indah, Surabaya',
-    img: '/images/projects/facade_architecture_hq.jpg',
-    materials: 'Off-White Architectural Stucco, Custom Pivot Door, Slate Stone',
-    desc: 'Hunian minimalis dengan geometri bersih dan pintu masuk pivot raksasa setinggi 4 meter. Mengedepankan ketenangan visual serta privasi total dari jalan utama.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Contemporary Private Home' },
-      { label: 'Tinggi Plafon', value: 'High Ceiling 4.2 Meter Void' },
-      { label: 'Pondasi Struktur', value: 'Strauß Pile & Pile Cap Beton K-350' },
-      { label: 'Ketahanan Cuaca', value: 'Cat Fasad Elastomeric Anti-Retak Rambut' },
-    ],
-  },
-  {
-    title: 'AW House',
-    category: 'COURTYARD ESTATE',
-    location: 'Kertajaya Indah, Surabaya',
-    img: '/images/projects/tropical_facade_hq.jpg',
-    materials: 'Granite Big Slab, Aluminium Louvers, Courtyard Greenery',
-    desc: 'Arsitektur pekarangan dalam (inner courtyard) yang memberikan privasi absolut bagi pemilik di tengah dinamika pusat kota metropolitan.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Urban Courtyard Living' },
-      { label: 'Drainase Lapangan', value: 'Sistem Pompa Resapan Sump-Pit Otomatis' },
-      { label: 'Keamanan Struktur', value: 'Besi Ulir Penuh SNI dengan Pengawasan Insinyur' },
-    ],
-  },
-  {
-    title: 'W Office',
-    category: 'COMMERCIAL HEADQUARTERS',
-    location: 'Voza Premium Tower, Surabaya',
-    img: '/images/projects/jotun_showroom_hq.jpg',
-    materials: 'Acoustic Wall Panels, Low-Iron Glass Partitions, Bespoke Joinery',
-    desc: 'Ruang kerja korporat dan ruang pamer flagship berstandar internasional. Menggabungkan efisiensi operasional dengan atmosfer galeri seni kontemporer.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Executive Commercial Fit-Out' },
-      { label: 'Plafon & Akustik', value: 'Plafon Akustik Peredam Suara NRC 0.85' },
-      { label: 'Instalasi MEP', value: 'Smart Integrated HVAC & Cable Trunking' },
-      { label: 'Standar Serah Terima', value: '100% Zero-Defect Handover Milestone' },
-    ],
-  },
-  {
-    title: 'O House',
-    category: 'PRIVATE RESIDENTIAL ESTATE',
-    location: 'Citraland, Surabaya Barat',
-    img: '/images/projects/construction_crane_hq.jpg',
-    materials: 'Reinforced Concrete Columns, Heavy Steel I-Beams, Glass Facade',
-    desc: 'Kediaman eksklusif dengan rekayasa bentang struktur lebar di kontur bukit Citraland, dibangun dengan pengawasan geoteknik ketat dan fondasi terukur.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Hillside Modern Villa' },
-      { label: 'Pondasi Lereng', value: 'Dinding Penahan Tanah (Retaining Wall) Terhitung' },
-      { label: 'Baja Profil', value: 'Baja WF Krakatau Steel SNI Full' },
-    ],
-  },
-  {
-    title: 'A House',
-    category: 'PAVILION VILLA',
-    location: 'Graha Famili, Surabaya Barat',
-    img: '/images/projects/interior_craftsmanship_hq.jpg',
-    materials: 'Teak Millwork, Honed Travertine, Fluted Glass',
-    desc: 'Paviliun santai keluarga dengan interior kustom mewah. Setiap panel kayu dan nat batu dipasang secara manual oleh pengrajin ahli dengan presisi tinggi.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Private Pavilion Retreat' },
-      { label: 'Pertukangan Interior', value: 'Custom Teak Cabinetry Finishing Melamic Natural' },
-      { label: 'Lantai', value: 'Travertine Honed Sealer Kedap Noda' },
-    ],
-  },
-  {
-    title: 'NE House',
-    category: 'MINIMALIST LUXURY',
-    location: 'Pakuwon City, Surabaya Timur',
-    img: '/images/projects/site_engineer_hq.jpg',
-    materials: 'Curtain Wall Glass, Architectural Iron, Textured Concrete',
-    desc: 'Hunian kontemporer 3 lantai berorientasi angin laut pesisir. Menghadirkan kesejukan pasif dan ketahanan material terhadap kelembapan udara asin.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Coastal Urban Residence' },
-      { label: 'Ketahanan Korosi', value: 'Stainless Steel Grade 316 untuk Hardware Eksterior' },
-      { label: 'Sistem Kaca', value: 'Tempered 10mm Laminated Glass Tahan Angin Kencang' },
-    ],
-  },
-  {
-    title: 'RS House',
-    category: 'MONOLITHIC RESIDENCE',
-    location: 'Malang Highlands, Jawa Timur',
-    img: '/images/projects/facade_architecture_hq.jpg',
-    materials: 'Exposed Aggregate Concrete, Teak Louvre, Double Glazing',
-    desc: 'Dinding beton bertekstur tebal yang membingkai pemandangan perbukitan. Didesain untuk menciptakan kehangatan alami di tengah udara dataran tinggi yang dingin.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Highland Luxury Retreat' },
-      { label: 'Ketahanan Termal', value: 'Double-Skin Facade dengan Rongga Udara' },
-      { label: 'Kaca Jendela', value: 'Double Glazed Low-E Glass Soundproof' },
-    ],
-  },
-  {
-    title: 'Z House',
-    category: 'CANTILEVER RESIDENCE',
-    location: 'Surabaya & Sidoarjo',
-    img: '/images/projects/concrete_rebar_hq.jpg',
-    materials: 'Engineered Steel Rebar, Structural Concrete K-350, Floating Staircase',
-    desc: 'Eksplorasi struktural kantilever melayang tanpa tiang penyangga tengah. Menuntut perhitungan momen lentur yang luar biasa presisi.',
-    specsTable: [
-      { label: 'Tipe Proyek', value: 'Structural Cantilever Villa' },
-      { label: 'Mutu Beton', value: 'ReadyMix K-350 Admixture Plastiment' },
-      { label: 'Tangga Melayang', value: 'Monolithic Cantilever Steel-Embedded Stairs' },
-    ],
-  },
-];
+import {
+  ROTATING_DISCIPLINES,
+  BARCWAY_PHILOSOPHIES,
+  BARCWAY_FOUNDERS,
+  CENTRA_SERVICES,
+  MASTER_METHODOLOGY,
+  BARCWAY_PROJECTS,
+} from '@/data/barcwayData';
 
 export default function BarcwayLayout() {
   const [currentDisciplineIndex, setCurrentDisciplineIndex] = useState(0);
@@ -596,8 +340,8 @@ export default function BarcwayLayout() {
         </div>
       </section>
 
-      {/* 7. THE FOUNDERS (BARCWAY VISIONARIES & PRINCIPALS) */}
-      <section id="founders" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
+      {/* 7. THE FOUNDER (BARCWAY VISIONARY & PRINCIPAL) */}
+      <section id="founder" className="py-28 md:py-36 border-b border-white/[0.08] bg-[#030303] scroll-mt-20 w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Header Column */}
@@ -606,25 +350,25 @@ export default function BarcwayLayout() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-4 lg:sticky lg:top-32"
+              className="lg:col-span-5 lg:sticky lg:top-32"
             >
               <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-                THE VISIONARIES
+                LEADERSHIP & PROVENANCE
               </span>
               <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[0.95] mb-6">
-                The<br />Founders
+                The<br />Founder
               </h2>
               <div className="w-16 h-[1.5px] bg-amber-400 mb-6" />
               <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
-                Dedicated to shaping evocative architectural landmarks and bespoke private sanctuaries that harmonize bold form exploration with physical structural mastery.
+                Dedicated to shaping evocative architectural landmarks and bespoke private sanctuaries that harmonize bold form exploration with physical structural mastery and transparent financial stewardship.
               </p>
               <div className="hidden lg:block font-mono text-xs text-neutral-500 tracking-widest uppercase">
-                PRINCIPALS · STUDIO VOZA SURABAYA
+                PRINCIPAL · STUDIO VOZA TOWER SURABAYA
               </div>
             </motion.div>
 
-            {/* Right Founders Cards Grid */}
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+            {/* Right Founder Card Showcase with SVG Placeholder */}
+            <div className="lg:col-span-7">
               {BARCWAY_FOUNDERS.map((founder, fIdx) => (
                 <motion.div
                   key={founder.name}
@@ -632,34 +376,52 @@ export default function BarcwayLayout() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.75, delay: fIdx * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="group rounded-2xl bg-[#090909] border border-white/10 hover:border-amber-400/60 p-6 transition-all duration-500 flex flex-col justify-between"
+                  className="group rounded-2xl bg-[#080808] border border-white/10 hover:border-amber-400/60 p-6 sm:p-10 transition-all duration-500 shadow-2xl"
                 >
-                  <div>
-                    {/* Portrait Frame */}
-                    <div className="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 group-hover:border-white/20 transition-colors">
-                      <Image
-                        src={founder.image}
-                        alt={`${founder.name} - ${founder.role}`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.9] group-hover:brightness-100"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
-                        {founder.role}
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
+                    {/* Vector Silhouette Portrait Box */}
+                    <div className="md:col-span-6">
+                      <div className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-white/15 bg-black shadow-inner">
+                        {founder.image ? (
+                          <Image
+                            src={founder.image}
+                            alt={`${founder.name} - ${founder.role}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.9] group-hover:brightness-100"
+                            sizes="(max-width: 768px) 100vw, 400px"
+                          />
+                        ) : (
+                          <FounderSvgPlaceholder
+                            title="LEAD MASTER BUILDER"
+                            subtitle={founder.name}
+                          />
+                        )}
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
+                          {founder.role}
+                        </div>
                       </div>
                     </div>
 
                     {/* Information */}
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors mb-1">
-                      {founder.name}
-                    </h3>
-                    <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase mb-4">
-                      {founder.role} — {founder.focus}
+                    <div className="md:col-span-6 space-y-4">
+                      <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
+                        {founder.role} — {founder.focus}
+                      </div>
+                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                        {founder.name}
+                      </h3>
+                      <div className="font-mono text-[11px] text-neutral-400">
+                        {founder.credentials}
+                      </div>
+                      <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
+                        {founder.bio}
+                      </p>
+                      {founder.quote && (
+                        <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
+                          &ldquo;{founder.quote}&rdquo;
+                        </blockquote>
+                      )}
                     </div>
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light font-sans mb-6">
-                      {founder.bio}
-                    </p>
                   </div>
 
                   <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-500">
@@ -782,39 +544,43 @@ export default function BarcwayLayout() {
               className="max-w-2xl mb-12"
             >
               <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-2 font-bold">
-                CAL.IDN CONSTRUCTION METHODOLOGY
+                CAL.IDN CONSTRUCTION WORKFLOW
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white tracking-tight mb-3">
-                8 Pillars of Execution Discipline
+                10 Pillars of Execution Discipline
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed font-sans">
                 Dari penelusuran visi perdana hingga inspeksi rutin purna serah terima, setiap tahapan diawasi langsung oleh tim insinyur sipil profesional.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
               {MASTER_METHODOLOGY.map((step, mIdx) => (
                 <motion.div
                   key={step.step}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.6, delay: (mIdx % 4) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.6, delay: (mIdx % 5) * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="p-6 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/50 transition-colors flex flex-col justify-between"
                 >
                   <div>
-                    <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">
+                    <span className="font-mono text-2xl font-bold text-amber-400 block mb-2">
                       {step.step}
                     </span>
-                    <h4 className="font-serif text-lg font-bold text-white mb-2">
+                    <h4 className="font-serif text-base font-bold text-white mb-1">
                       {step.title}
                     </h4>
+                    <div className="font-mono text-[9.5px] text-amber-400/80 mb-2 uppercase">
+                      {step.subtitle}
+                    </div>
                     <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
                       {step.idDesc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-3 border-t border-white/5 font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
-                    VERIFIED PROCESS
+                  <div className="mt-4 pt-3 border-t border-white/5 font-mono text-[9px] text-neutral-400">
+                    <span className="text-amber-400 block font-bold">OUTPUT:</span>
+                    <span className="text-neutral-300">{step.deliverable}</span>
                   </div>
                 </motion.div>
               ))}
@@ -825,7 +591,7 @@ export default function BarcwayLayout() {
                 href="/services"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 hover:border-amber-400 bg-white/5 hover:bg-white/10 text-neutral-200 hover:text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 min-h-[44px]"
               >
-                <span>Explore Full Services & 8-Stage Methodology</span>
+                <span>Explore Full Services & 10-Stage Methodology</span>
                 <LuArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
               </Link>
             </div>

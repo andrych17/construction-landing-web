@@ -504,9 +504,9 @@
     "semantic_hash": ""
   },
   "src/components/layouts/BarcwayLayout.tsx": {
-    "mtime": 1790041725.7880843,
-    "seen": 1790041871.695203,
-    "ast_hash": "f2b7f36cf6f5f9299d553ea4ced67c69",
+    "mtime": 1790042264.439748,
+    "seen": 1790042288.071067,
+    "ast_hash": "fd6445dc0df7dc05bb32b295ff2ed3ff",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -540,9 +540,9 @@
     "semantic_hash": ""
   },
   "src/app/about/page.tsx": {
-    "mtime": 1790041633.8218484,
-    "seen": 1790041871.6951094,
-    "ast_hash": "2e3e5ba2c24105aab9caf6fe520be981",
+    "mtime": 1790042122.014001,
+    "seen": 1790042288.071013,
+    "ast_hash": "9a343adbee0b6ebdc15609e0eacf8eb0",
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
@@ -558,9 +558,9 @@
     "semantic_hash": ""
   },
   "src/app/services/page.tsx": {
-    "mtime": 1790041669.0943708,
-    "seen": 1790041871.6951342,
-    "ast_hash": "b573ac1e2f6b754d79873d9a1f54b5c0",
+    "mtime": 1790042141.7662437,
+    "seen": 1790042288.0710294,
+    "ast_hash": "0c95bfa898ab728b124b907900ec0b65",
     "semantic_hash": ""
   },
   "src/components/navigation/BarcwayFooter.tsx": {
@@ -576,9 +576,9 @@
     "semantic_hash": ""
   },
   "src/data/barcwayData.ts": {
-    "mtime": 1789997666.0434828,
-    "seen": 1789998171.4342976,
-    "ast_hash": "19908dfe011b44994cc0b37567d3c8d8",
+    "mtime": 1790042105.253795,
+    "seen": 1790042288.0710928,
+    "ast_hash": "400ba1b79c3d2cee3f470fe53bb0ad82",
     "semantic_hash": ""
   },
   "scripts/generate_logos.py": {
@@ -639,6 +639,18 @@
     "mtime": 1789998680.3714027,
     "seen": 1790002805.5553021,
     "ast_hash": "943a7a358094bb7b5cbd9489d8a1acbd",
+    "semantic_hash": ""
+  },
+  "src/app/project/page.tsx": {
+    "mtime": 1790042150.1103463,
+    "seen": 1790042288.071022,
+    "ast_hash": "0b0c9ffcfc00d0f0228a45d2663da6fc",
+    "semantic_hash": ""
+  },
+  "src/components/ui/FounderSvgPlaceholder.tsx": {
+    "mtime": 1790042084.0125334,
+    "seen": 1790042288.0710864,
+    "ast_hash": "1eb18cd2808dc9300aeb5a064a41fbf1",
     "semantic_hash": ""
   }
 }

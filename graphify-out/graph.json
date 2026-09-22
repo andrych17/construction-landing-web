@@ -69,6 +69,32 @@
       "source_location": "L75"
     },
     {
+      "id": "src_components_interactive_architecturalmegamenu_architecturalmegamenuprops",
+      "label": "ArchitecturalMegaMenuProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalmegamenuprops",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_components_interactive_architecturalmegamenu_navitem",
+      "label": "NavItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "navitem",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L11"
+    },
+    {
       "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
       "label": "ArchitecturalPreloaderProps",
       "_callable": true,
@@ -80,6 +106,32 @@
       "norm_label": "architecturalpreloaderprops",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodalprops",
+      "label": "ProjectInspectionModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "projectinspectionmodalprops",
+      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_ui_foundersvgplaceholder_foundersvgplaceholderprops",
+      "label": "FounderSvgPlaceholderProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "foundersvgplaceholderprops",
+      "source_file": "src/components/ui/FounderSvgPlaceholder.tsx",
+      "source_location": "L5"
     },
     {
       "id": "src_components_ui_modernwwlogo_modernwwlogoprops",
@@ -95,30 +147,30 @@
       "source_location": "L6"
     },
     {
-      "id": "src_components_interactive_architecturalmegamenu_architecturalmegamenuprops",
-      "label": "ArchitecturalMegaMenuProps",
+      "id": "src_data_barcwaydata_founderdetail",
+      "label": "FounderDetail",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
-      "norm_label": "architecturalmegamenuprops",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L66"
+      "norm_label": "founderdetail",
+      "source_file": "src/data/barcwayData.ts",
+      "source_location": "L19"
     },
     {
-      "id": "src_components_interactive_architecturalmegamenu_navitem",
-      "label": "NavItem",
+      "id": "src_data_barcwaydata_projectdetail",
+      "label": "ProjectDetail",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
-      "norm_label": "navitem",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L11"
+      "norm_label": "projectdetail",
+      "source_file": "src/data/barcwayData.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_components_interactive_herocinematicstage_slide",
@@ -134,19 +186,6 @@
       "source_location": "L8"
     },
     {
-      "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodalprops",
-      "label": "ProjectInspectionModalProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "projectinspectionmodalprops",
-      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
-      "source_location": "L10"
-    },
-    {
       "id": "src_components_interactive_sectionrailindicator_sectiontarget",
       "label": "SectionTarget",
       "_callable": true,
@@ -158,19 +197,6 @@
       "norm_label": "sectiontarget",
       "source_file": "src/components/interactive/SectionRailIndicator.tsx",
       "source_location": "L6"
-    },
-    {
-      "id": "src_data_barcwaydata_projectdetail",
-      "label": "ProjectDetail",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "projectdetail",
-      "source_file": "src/data/barcwayData.ts",
-      "source_location": "L1"
     },
     {
       "id": "src_context_themecontext_themeconfig",
@@ -257,7 +283,7 @@
       "file_type": "code",
       "norm_label": "barcwaylayout()",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L296"
+      "source_location": "L40"
     },
     {
       "id": "src_components_layouts_blueprintlayout_blueprintlayout",
@@ -461,7 +487,7 @@
       "file_type": "code",
       "norm_label": "aboutpage()",
       "source_file": "src/app/about/page.tsx",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "src_app_contact_page_contactpage",
@@ -500,6 +526,18 @@
       "source_location": "L13"
     },
     {
+      "id": "src_components_interactive_architecturalmegamenu_architecturalmegamenu",
+      "label": "ArchitecturalMegaMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalmegamenu()",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L71"
+    },
+    {
       "id": "src_components_interactive_architecturalpreloader_architecturalpreloader",
       "label": "ArchitecturalPreloader()",
       "_callable": true,
@@ -510,6 +548,30 @@
       "norm_label": "architecturalpreloader()",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
       "source_location": "L19"
+    },
+    {
+      "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
+      "label": "ProjectInspectionModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "projectinspectionmodal()",
+      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_components_layouts_centrabarcwaylayout_centrabarcwaylayout",
+      "label": "CentraBarcwayLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "centrabarcwaylayout()",
+      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
+      "source_location": "L137"
     },
     {
       "id": "src_components_navigation_barcwayfooter_barcwayfooter",
@@ -534,6 +596,18 @@
       "norm_label": "barcwaynav()",
       "source_file": "src/components/navigation/BarcwayNav.tsx",
       "source_location": "L18"
+    },
+    {
+      "id": "src_components_ui_foundersvgplaceholder_foundersvgplaceholder",
+      "label": "FounderSvgPlaceholder()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "foundersvgplaceholder()",
+      "source_file": "src/components/ui/FounderSvgPlaceholder.tsx",
+      "source_location": "L11"
     },
     {
       "id": "src_components_ui_modernwwlogo_modernwwlogo",
@@ -692,18 +766,6 @@
       "source_location": "L61"
     },
     {
-      "id": "src_components_interactive_architecturalmegamenu_architecturalmegamenu",
-      "label": "ArchitecturalMegaMenu()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalmegamenu()",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L71"
-    },
-    {
       "id": "src_components_interactive_herocinematicstage_herocinematicstage",
       "label": "HeroCinematicStage()",
       "_callable": true,
@@ -716,18 +778,6 @@
       "source_location": "L53"
     },
     {
-      "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
-      "label": "ProjectInspectionModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "projectinspectionmodal()",
-      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
-      "source_location": "L15"
-    },
-    {
       "id": "src_components_interactive_sectionrailindicator_sectionrailindicator",
       "label": "SectionRailIndicator()",
       "_callable": true,
@@ -738,18 +788,6 @@
       "norm_label": "sectionrailindicator()",
       "source_file": "src/components/interactive/SectionRailIndicator.tsx",
       "source_location": "L21"
-    },
-    {
-      "id": "src_components_layouts_centrabarcwaylayout_centrabarcwaylayout",
-      "label": "CentraBarcwayLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "centrabarcwaylayout()",
-      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
-      "source_location": "L137"
     },
     {
       "id": "src_components_layouts_luxurylayout_luxurylayout",
@@ -2430,6 +2468,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_app_project_page",
+      "label": "project/page.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "project/page.tsx",
+      "source_file": "src/app/project/page.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_app_projects_page",
       "label": "projects/page.tsx",
       "_origin": "ast",
@@ -2450,6 +2499,39 @@
       "norm_label": "services/page.tsx",
       "source_file": "src/app/services/page.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_interactive_architecturalmegamenu",
+      "label": "ArchitecturalMegaMenu.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalmegamenu.tsx",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_interactive_architecturalmegamenu_disciplines",
+      "label": "DISCIPLINES",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "disciplines",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_components_interactive_architecturalmegamenu_standards",
+      "label": "STANDARDS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "standards",
+      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
+      "source_location": "L45"
     },
     {
       "id": "src_components_interactive_architecturalpreloader",
@@ -2474,6 +2556,17 @@
       "source_location": "L11"
     },
     {
+      "id": "src_components_interactive_projectinspectionmodal",
+      "label": "ProjectInspectionModal.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "projectinspectionmodal.tsx",
+      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_layouts_barcwaylayout",
       "label": "BarcwayLayout.tsx",
       "_origin": "ast",
@@ -2485,70 +2578,48 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_layouts_barcwaylayout_barcway_founders",
-      "label": "BARCWAY_FOUNDERS",
+      "id": "src_components_layouts_centrabarcwaylayout",
+      "label": "CentraBarcwayLayout.tsx",
       "_origin": "ast",
       "community": 3,
       "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
-      "norm_label": "barcway_founders",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L32"
+      "norm_label": "centrabarcwaylayout.tsx",
+      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
+      "source_location": "L1"
     },
     {
-      "id": "src_components_layouts_barcwaylayout_barcway_philosophies",
-      "label": "BARCWAY_PHILOSOPHIES",
+      "id": "src_components_layouts_centrabarcwaylayout_fusion_philosophies",
+      "label": "FUSION_PHILOSOPHIES",
       "_origin": "ast",
       "community": 3,
       "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
-      "norm_label": "barcway_philosophies",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L128"
+      "norm_label": "fusion_philosophies",
+      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
+      "source_location": "L22"
     },
     {
-      "id": "src_components_layouts_barcwaylayout_barcway_projects",
-      "label": "BARCWAY_PROJECTS",
+      "id": "src_components_layouts_centrabarcwaylayout_fusion_projects",
+      "label": "FUSION_PROJECTS",
       "_origin": "ast",
       "community": 3,
       "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
-      "norm_label": "barcway_projects",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L158"
+      "norm_label": "fusion_projects",
+      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
+      "source_location": "L52"
     },
     {
-      "id": "src_components_layouts_barcwaylayout_centra_services",
-      "label": "CENTRA_SERVICES",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "BarcwayLayout.tsx",
-      "file_type": "code",
-      "norm_label": "centra_services",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_components_layouts_barcwaylayout_master_methodology",
-      "label": "MASTER_METHODOLOGY",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "BarcwayLayout.tsx",
-      "file_type": "code",
-      "norm_label": "master_methodology",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L85"
-    },
-    {
-      "id": "src_components_layouts_barcwaylayout_rotating_disciplines",
+      "id": "src_components_layouts_centrabarcwaylayout_rotating_disciplines",
       "label": "ROTATING_DISCIPLINES",
       "_origin": "ast",
       "community": 3,
       "community_name": "BarcwayLayout.tsx",
       "file_type": "code",
       "norm_label": "rotating_disciplines",
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30"
+      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
+      "source_location": "L20"
     },
     {
       "id": "src_components_navigation_barcwayfooter",
@@ -2584,6 +2655,17 @@
       "source_location": "L10"
     },
     {
+      "id": "src_components_ui_foundersvgplaceholder",
+      "label": "FounderSvgPlaceholder.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "foundersvgplaceholder.tsx",
+      "source_file": "src/components/ui/FounderSvgPlaceholder.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_ui_modernwwlogo",
       "label": "ModernWwLogo.tsx",
       "_origin": "ast",
@@ -2614,7 +2696,7 @@
       "file_type": "code",
       "norm_label": "barcway_founders",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L51"
+      "source_location": "L63"
     },
     {
       "id": "src_data_barcwaydata_barcway_philosophies",
@@ -2625,7 +2707,7 @@
       "file_type": "code",
       "norm_label": "barcway_philosophies",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L21"
+      "source_location": "L32"
     },
     {
       "id": "src_data_barcwaydata_barcway_projects",
@@ -2636,7 +2718,7 @@
       "file_type": "code",
       "norm_label": "barcway_projects",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L147"
+      "source_location": "L196"
     },
     {
       "id": "src_data_barcwaydata_centra_services",
@@ -2647,7 +2729,7 @@
       "file_type": "code",
       "norm_label": "centra_services",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L68"
+      "source_location": "L82"
     },
     {
       "id": "src_data_barcwaydata_master_methodology",
@@ -2658,7 +2740,7 @@
       "file_type": "code",
       "norm_label": "master_methodology",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L104"
+      "source_location": "L122"
     },
     {
       "id": "src_data_barcwaydata_rotating_disciplines",
@@ -2669,7 +2751,7 @@
       "file_type": "code",
       "norm_label": "rotating_disciplines",
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L19"
+      "source_location": "L30"
     },
     {
       "id": "src_components_about",
@@ -2892,39 +2974,6 @@
       "source_location": "L7"
     },
     {
-      "id": "src_components_interactive_architecturalmegamenu",
-      "label": "ArchitecturalMegaMenu.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalmegamenu.tsx",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_interactive_architecturalmegamenu_disciplines",
-      "label": "DISCIPLINES",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "disciplines",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_components_interactive_architecturalmegamenu_standards",
-      "label": "STANDARDS",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "standards",
-      "source_file": "src/components/interactive/ArchitecturalMegaMenu.tsx",
-      "source_location": "L45"
-    },
-    {
       "id": "src_components_interactive_herocinematicstage",
       "label": "HeroCinematicStage.tsx",
       "_origin": "ast",
@@ -2947,17 +2996,6 @@
       "source_location": "L18"
     },
     {
-      "id": "src_components_interactive_projectinspectionmodal",
-      "label": "ProjectInspectionModal.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "projectinspectionmodal.tsx",
-      "source_file": "src/components/interactive/ProjectInspectionModal.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_interactive_sectionrailindicator",
       "label": "SectionRailIndicator.tsx",
       "_origin": "ast",
@@ -2978,50 +3016,6 @@
       "norm_label": "sections",
       "source_file": "src/components/interactive/SectionRailIndicator.tsx",
       "source_location": "L12"
-    },
-    {
-      "id": "src_components_layouts_centrabarcwaylayout",
-      "label": "CentraBarcwayLayout.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "centrabarcwaylayout.tsx",
-      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layouts_centrabarcwaylayout_fusion_philosophies",
-      "label": "FUSION_PHILOSOPHIES",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "fusion_philosophies",
-      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_components_layouts_centrabarcwaylayout_fusion_projects",
-      "label": "FUSION_PROJECTS",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "fusion_projects",
-      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
-      "source_location": "L52"
-    },
-    {
-      "id": "src_components_layouts_centrabarcwaylayout_rotating_disciplines",
-      "label": "ROTATING_DISCIPLINES",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "LuxuryLayout.tsx",
-      "file_type": "code",
-      "norm_label": "rotating_disciplines",
-      "source_file": "src/components/layouts/CentraBarcwayLayout.tsx",
-      "source_location": "L20"
     },
     {
       "id": "src_components_layouts_luxurylayout",
@@ -3411,6 +3405,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_app_project_page",
+      "target": "src_app_projects_page",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/app/project/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_interactive_projectinspectionmodal",
       "target": "src_data_barcwaydata",
       "relation": "re_exports",
@@ -3785,7 +3791,7 @@
     },
     {
       "source": "src_app_about_page",
-      "target": "src_data_barcwaydata_barcway_founders",
+      "target": "src_components_ui_foundersvgplaceholder_foundersvgplaceholder",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3797,6 +3803,18 @@
     },
     {
       "source": "src_app_about_page",
+      "target": "src_data_barcwaydata_barcway_founders",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/about/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_about_page",
       "target": "src_data_barcwaydata_barcway_philosophies",
       "relation": "imports",
       "_origin": "ast",
@@ -3804,7 +3822,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/app/about/page.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -4261,6 +4279,90 @@
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
       "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_components_ui_foundersvgplaceholder_foundersvgplaceholder",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_barcway_founders",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_barcway_philosophies",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_barcway_projects",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_centra_services",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_master_methodology",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata_rotating_disciplines",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -4733,7 +4835,7 @@
     },
     {
       "source": "src_app_about_page",
-      "target": "src_data_barcwaydata",
+      "target": "src_components_ui_foundersvgplaceholder",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4741,6 +4843,18 @@
       "context": "import",
       "source_file": "src/app/about/page.tsx",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_about_page",
+      "target": "src_data_barcwaydata",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/about/page.tsx",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -5149,6 +5263,30 @@
       "context": "import",
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
       "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_components_ui_foundersvgplaceholder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layouts_barcwaylayout",
+      "target": "src_data_barcwaydata",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layouts/BarcwayLayout.tsx",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -6304,7 +6442,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/about/page.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -6771,79 +6909,13 @@
     },
     {
       "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_barcway_philosophies",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_barcway_projects",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L158",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
       "target": "src_components_layouts_barcwaylayout_barcwaylayout",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L296",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_rotating_disciplines",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_barcway_founders",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_centra_services",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_layouts_barcwaylayout",
-      "target": "src_components_layouts_barcwaylayout_master_methodology",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/layouts/BarcwayLayout.tsx",
-      "source_location": "L85",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -7309,6 +7381,28 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_foundersvgplaceholder",
+      "target": "src_components_ui_foundersvgplaceholder_foundersvgplaceholder",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/FounderSvgPlaceholder.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_foundersvgplaceholder",
+      "target": "src_components_ui_foundersvgplaceholder_foundersvgplaceholderprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/FounderSvgPlaceholder.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_modernwwlogo",
       "target": "src_components_ui_modernwwlogo_modernwwlogo",
       "relation": "contains",
@@ -7569,23 +7663,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L104",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
       "source": "src_data_barcwaydata",
-      "target": "src_data_barcwaydata_barcway_projects",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/barcwayData.ts",
-      "source_location": "L147",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_barcwaydata",
-      "target": "src_data_barcwaydata_rotating_disciplines",
+      "target": "src_data_barcwaydata_founderdetail",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7596,13 +7679,35 @@
     },
     {
       "source": "src_data_barcwaydata",
+      "target": "src_data_barcwaydata_barcway_projects",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/barcwayData.ts",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_barcwaydata",
+      "target": "src_data_barcwaydata_rotating_disciplines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/barcwayData.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_barcwaydata",
       "target": "src_data_barcwaydata_barcway_philosophies",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L21",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -7613,7 +7718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L51",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -7624,7 +7729,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/barcwayData.ts",
-      "source_location": "L68",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -7941,5 +8046,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f5e17f2940aad221d4a65b3bcd1a42a4248e9c1e"
+  "built_at_commit": "b20dffcab1141e6275adfdfab5df033eea40c260"
 }

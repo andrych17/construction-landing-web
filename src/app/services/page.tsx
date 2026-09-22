@@ -85,7 +85,7 @@ export default function ServicesPage() {
             <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
               Building Typologies
             </h2>
-            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
               Dari vila privat mewah hingga kantor korporat dan fasilitas komersial, setiap proyek dikerjakan dengan presisi terukur.
             </p>
           </motion.div>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 4. CAL.IDN 8-STAGE METHODOLOGY */}
+      {/* 4. CENTRA ARYA LOKA 10-STEP WORKFLOW METHODOLOGY */}
       <section className="py-28 md:py-36 border-b border-white/[0.08] bg-[#020202] w-full">
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1700px] mx-auto">
           <motion.div
@@ -179,40 +179,48 @@ export default function ServicesPage() {
             className="max-w-3xl mb-16"
           >
             <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
-              CAL.IDN CONSTRUCTION METHODOLOGY
+              CAL.IDN CONSTRUCTION WORKFLOW
             </span>
             <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
-              8 Pillars of Execution Discipline
+              10 Pillars of Execution Discipline
             </h2>
-            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed">
-              Setiap langkah dari perjumpaan pertama hingga masa garansi purna serah terima dikelola secara sistematis dengan akurasi tinggi dan laporan transparan.
+            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
+              Setiap langkah dari perjumpaan perdana hingga garansi purna serah terima dikelola secara transparan dengan supervisi langsung insinyur sipil.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {MASTER_METHODOLOGY.map((step, mIdx) => (
               <motion.div
                 key={step.step}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.6, delay: (mIdx % 4) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="p-8 rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between group"
+                transition={{ duration: 0.6, delay: (mIdx % 5) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between group shadow-lg"
               >
                 <div>
-                  <span className="font-mono text-3xl font-bold text-amber-400 block mb-4 group-hover:scale-105 transition-transform">
-                    {step.step}
-                  </span>
-                  <h4 className="font-serif text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-3xl font-bold text-amber-400 group-hover:scale-105 transition-transform">
+                      {step.step}
+                    </span>
+                    <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
+                      PHASE
+                    </span>
+                  </div>
+                  <h4 className="font-serif text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">
                     {step.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light font-sans">
+                  <div className="font-mono text-[10px] text-amber-400/80 mb-3 tracking-wider uppercase">
+                    {step.subtitle}
+                  </div>
+                  <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans mb-4">
                     {step.idDesc}
                   </p>
                 </div>
-                <div className="mt-8 pt-4 border-t border-white/5 font-mono text-[10px] text-neutral-500 uppercase tracking-widest flex items-center justify-between">
-                  <span>CENTRA ARYA LOKA</span>
-                  <span className="text-amber-400/70">VERIFIED</span>
+                <div className="pt-3 border-t border-white/10 font-mono text-[10px] text-neutral-400">
+                  <span className="text-amber-400 block font-bold mb-0.5">OUTPUT:</span>
+                  <span className="text-neutral-300">{step.deliverable}</span>
                 </div>
               </motion.div>
             ))}
@@ -228,21 +236,21 @@ export default function ServicesPage() {
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">01</span>
               <h3 className="font-serif text-2xl font-bold text-white mb-2">SNI K-350 Concrete</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
-                Uji slump independen untuk setiap truk molen cor ready-mix. Rangka pembesian ganda tahan guncangan seismik.
+                Uji slump independen untuk setiap truk molen cor ready-mix. Rangka pembesian ganda tahan guncangan seismik pesisir Surabaya.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">02</span>
               <h3 className="font-serif text-2xl font-bold text-white mb-2">Laser 90° Siku Presisi</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
-                Kalibrasi optik laser digital memastikan pertemuan dinding 90° tegak lurus sempurna dengan deviasi nat &lt; 1mm.
+                Kalibrasi optik laser digital memastikan pertemuan dinding 90° tegak lurus sempurna dengan deviasi nat marmer &lt; 1mm.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-[#0d0d0d] border border-white/10">
               <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">03</span>
               <h3 className="font-serif text-2xl font-bold text-white mb-2">Garansi Retensi 100 Hari</h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
-                Komitmen purna jual resmi tertulis dalam SPK, ditambah inspeksi rutin dua kali setahun untuk menjamin kenyamanan Anda.
+                Komitmen purna jual resmi tertulis dalam SPK berkekuatan hukum, ditambah inspeksi berkala 2x setahun untuk merawat kenyamanan Anda.
               </p>
             </div>
           </div>
@@ -255,20 +263,20 @@ export default function ServicesPage() {
           <h3 className="font-serif text-3xl sm:text-4xl font-normal text-white mb-4">
             Ready to Build Your Architectural Commission?
           </h3>
-          <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto">
-            Hubungi tim estimator dan project manager kami untuk konsultasi teknis dan penyusunan RAB transparan.
+          <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">
+            Hubungi tim estimator dan project manager kami untuk konsultasi teknis dan penyusunan RAB transparan zero hidden cost.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-full bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2"
+              className="px-8 py-4 rounded-full bg-white text-black hover:bg-amber-400 font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 min-h-[44px]"
             >
               <span>Konsultasi Proyek</span>
               <LuArrowUpRight className="w-4 h-4" />
             </Link>
             <Link
               href="/projects"
-              className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors"
+              className="px-8 py-4 rounded-full border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest transition-colors min-h-[44px]"
             >
               Lihat Hasil Karya
             </Link>
