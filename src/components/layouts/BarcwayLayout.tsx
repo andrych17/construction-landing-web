@@ -91,7 +91,7 @@ export default function BarcwayLayout() {
         id="hero"
         className="relative min-h-[100dvh] flex items-end justify-center pb-20 pt-28 sm:pt-36 overflow-hidden border-b border-white/[0.08] w-full"
       >
-        {/* Ambient Dark Atmospheric Background (Video & High-Res Poster) */}
+        {/* Ambient Luminous Cinematic Background (Video & High-Res Poster) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             autoPlay
@@ -99,12 +99,16 @@ export default function BarcwayLayout() {
             muted
             playsInline
             poster="/images/projects/facade_architecture_hq.jpg"
-            className="w-full h-full object-cover object-center brightness-[0.28] contrast-[1.15]"
+            className="w-full h-full object-cover object-center brightness-[0.72] contrast-[1.08] scale-105"
           >
             <source src="/videos/construction_timelapse.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-black/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,#000000_85%)]" />
+          {/* Top navigation contrast gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+          {/* Bottom text legibility & grounding gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
+          {/* Subtle cinematic vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(3,3,3,0.75)_100%)]" />
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 md:px-16 lg:px-24 text-center max-w-[1400px] mx-auto">
@@ -113,7 +117,7 @@ export default function BarcwayLayout() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-normal text-white tracking-tight leading-[0.98] mb-3 lowercase"
+            className="font-serif text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] font-normal text-white tracking-tight leading-[0.95] mb-4 lowercase drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)]"
           >
             ww.cons
           </motion.h1>
@@ -127,7 +131,7 @@ export default function BarcwayLayout() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 30, opacity: 0 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-neutral-300 tracking-wide leading-[1.1] pb-1"
+                className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-amber-300/95 tracking-wide leading-[1.1] pb-1 drop-shadow-md"
               >
                 {ROTATING_DISCIPLINES[currentDisciplineIndex]}
               </motion.div>
@@ -392,16 +396,16 @@ export default function BarcwayLayout() {
                 onClick={() => setSelectedProject(proj)}
                 className="w-[340px] sm:w-[440px] md:w-[500px] lg:w-[540px] shrink-0 group cursor-pointer"
               >
-                <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-950 mb-4 border border-white/10 group-hover:border-amber-400/60 transition-colors">
+                <div className="relative h-[380px] sm:h-[460px] md:h-[520px] w-full rounded-2xl overflow-hidden bg-neutral-900 mb-4 border border-white/10 group-hover:border-amber-400/80 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
                   <Image
                     src={proj.img}
                     alt={proj.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
                     sizes="(max-width: 768px) 440px, 540px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
+                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
                     {proj.category}
                   </div>
                 </div>
@@ -446,7 +450,7 @@ export default function BarcwayLayout() {
             <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight mb-4">
               Master Builders
             </h2>
-            <p className="text-base sm:text-lg text-neutral-400 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
               Explore our services tailored to meet your construction needs. Backed by 35 years of physical engineering discipline in Surabaya, we build your dream spaces with unyielding care, structural rigor, and material artistry.
             </p>
           </motion.div>
@@ -460,7 +464,7 @@ export default function BarcwayLayout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.75, delay: sIdx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 overflow-hidden transition-all duration-500 flex flex-col justify-between"
+                className="group rounded-2xl bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)]"
               >
                 <div>
                   <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black">
@@ -468,11 +472,11 @@ export default function BarcwayLayout() {
                       src={srv.image}
                       alt={srv.category}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] group-hover:brightness-95"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
                       {srv.category}
                     </div>
                   </div>
@@ -484,7 +488,7 @@ export default function BarcwayLayout() {
                     <p className="font-serif text-base text-amber-400/90 italic mb-4">
                       &ldquo;{srv.subtitle}&rdquo;
                     </p>
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light mb-8">
+                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-8">
                       {srv.desc}
                     </p>
 
@@ -496,7 +500,7 @@ export default function BarcwayLayout() {
                         {srv.types.map((type) => (
                           <span
                             key={type}
-                            className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-neutral-300"
+                            className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
                           >
                             {type}
                           </span>
@@ -504,7 +508,7 @@ export default function BarcwayLayout() {
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-white/10 space-y-2.5 font-mono text-xs text-neutral-400">
+                    <div className="pt-6 border-t border-white/10 space-y-2.5 font-mono text-xs text-neutral-300">
                       {srv.features.map((feat) => (
                         <div key={feat} className="flex items-center gap-2">
                           <LuCircleCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />

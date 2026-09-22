@@ -50,16 +50,17 @@ export default function ProjectsPage() {
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/projects/luxury_residence_hq.jpg"
             alt="ww.cons Portfolio"
             fill
             priority
-            className="object-cover object-center brightness-50 contrast-125"
+            className="object-cover object-center brightness-[0.7] contrast-[1.08] scale-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto text-center">
@@ -121,19 +122,19 @@ export default function ProjectsPage() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.65, delay: (pIdx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => setSelectedProject(proj)}
-                className="group rounded-2xl bg-[#080808] border border-white/10 hover:border-amber-400/60 p-5 transition-all duration-500 cursor-pointer flex flex-col justify-between shadow-2xl hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)]"
+                className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)]"
               >
                 <div>
-                  <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/5">
+                  <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/10">
                     <Image
                       src={proj.img}
                       alt={proj.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85] group-hover:brightness-100"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9px] tracking-widest text-amber-400 uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9px] tracking-widest text-amber-400 uppercase shadow-md">
                       {proj.category}
                     </div>
                   </div>

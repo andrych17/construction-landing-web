@@ -22,16 +22,17 @@ export default function AboutPage() {
 
       {/* 1. MONUMENTAL PAGE HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/projects/tropical_facade_hq.jpg"
             alt="ww.cons Studio Surabaya"
             fill
             priority
-            className="object-cover object-center brightness-50 contrast-125"
+            className="object-cover object-center brightness-[0.7] contrast-[1.08] scale-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto text-center">

@@ -18,16 +18,17 @@ export default function ServicesPage() {
 
       {/* 1. MONUMENTAL SERVICES HERO */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/projects/concrete_rebar_hq.jpg"
             alt="Centra Arya Loka Master Builders"
             fill
             priority
-            className="object-cover object-center brightness-50 contrast-125"
+            className="object-cover object-center brightness-[0.7] contrast-[1.08] scale-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/70 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-[1600px] mx-auto text-center">
@@ -85,7 +86,7 @@ export default function ServicesPage() {
             <h2 className="font-serif text-4xl sm:text-6xl font-normal text-white tracking-tight mb-4">
               Building Typologies
             </h2>
-            <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed font-sans">
               Dari vila privat mewah hingga kantor korporat dan fasilitas komersial, setiap proyek dikerjakan dengan presisi terukur.
             </p>
           </motion.div>
@@ -98,7 +99,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.75, delay: sIdx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-2xl"
+                className="group rounded-2xl bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)]"
               >
                 <div>
                   <div className="relative h-[300px] sm:h-[360px] w-full overflow-hidden bg-black">
@@ -106,11 +107,11 @@ export default function ServicesPage() {
                       src={srv.image}
                       alt={srv.category}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] group-hover:brightness-95"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-100 contrast-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent" />
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[9.5px] tracking-widest text-amber-400 uppercase shadow-lg">
                       {srv.category}
                     </div>
                   </div>
