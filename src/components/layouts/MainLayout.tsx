@@ -98,14 +98,6 @@ export default function MainLayout() {
         <HeroMedia src={hero.home.video || undefined} poster={hero.home.poster} alt={t(hero.home.alt, hero.home.altEn)} priority />
 
         <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
-          {/* Top Badge from reference pictures */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-none bg-black/60 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-wider text-neutral-300 uppercase mb-6 reveal-load">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            <span>CV. WW KONSTRUKSI INDONESIA</span>
-            <span className="text-white/30">|</span>
-            <span className="text-amber-400">SURABAYA GENERAL CONTRACTOR</span>
-          </div>
-
           {/* Monumental Headline from preview_desktop.png */}
           <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.02] mb-6 drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load break-words">
             {t('PRESISI STRUKTUR.', 'STRUCTURAL PRECISION.')}<br />

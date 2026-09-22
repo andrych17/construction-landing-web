@@ -9,17 +9,11 @@ export default async function AdminProjectsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">Proyek</h1>
-          <p className="text-sm text-slate-500">{projects.length} proyek.</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Proyek</h1>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">{projects.length} portofolio proyek terdaftar.</p>
         </div>
-        <Link
-          href="/admin/projects/new"
-          className="px-4 py-2.5 min-h-[44px] rounded-md bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold transition-colors"
-        >
-          + Proyek Baru
-        </Link>
       </div>
 
       <ProjectsTable

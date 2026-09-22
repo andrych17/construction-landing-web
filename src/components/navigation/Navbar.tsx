@@ -109,11 +109,11 @@ export default function Navbar() {
 
             {/* Right: Language Switcher, Sleek WhatsApp Dispatch & Minimalist Hamburger Button */}
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
-              {/* Language Switcher ID / EN */}
+              {/* Language Switcher ID / EN (Desktop & Tablet only; on mobile it is housed cleanly in the drawer menu) */}
               <div
                 role="group"
                 aria-label="Language selector"
-                className="flex items-center border border-white/20 bg-black/40 px-2.5 py-1.5 font-mono text-xs tracking-wider"
+                className="hidden sm:flex items-center border border-white/20 bg-black/40 px-2.5 py-1.5 font-mono text-xs tracking-wider"
               >
                 <button
                   type="button"
@@ -184,17 +184,17 @@ export default function Navbar() {
             className="fixed inset-0 z-50 bg-[#030303]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 md:p-16 overflow-y-auto"
           >
             {/* Top Bar */}
-            <div className="flex items-center justify-between w-full max-w-frame mx-auto border-b border-white/10 pb-6">
-              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+            <div className="flex items-center justify-between w-full max-w-frame mx-auto border-b border-white/10 pb-6 gap-2">
+              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <ModernWwLogo variant="mark" size="md" />
-                <span className="font-display text-xl sm:text-2xl font-bold text-white uppercase tracking-tight">
+                <span className="font-display text-base sm:text-2xl font-bold text-white uppercase tracking-tight truncate">
                   Wonderful Works
                 </span>
               </Link>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
                 {/* Language Switcher in Mobile Drawer */}
-                <div className="flex items-center border border-white/20 bg-white/5 px-2.5 py-1 font-mono text-xs tracking-wider">
+                <div className="flex items-center border border-white/20 bg-white/5 px-2 py-1 sm:px-2.5 sm:py-1 font-mono text-xs tracking-wider">
                   <button
                     type="button"
                     onClick={() => setLang('id')}
@@ -219,19 +219,19 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-none border border-white/20 hover:border-amber-400 text-white hover:text-amber-400 transition-colors font-mono text-xs tracking-widest cursor-pointer active:scale-[0.98]"
+                  className="group flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-none border border-white/20 hover:border-amber-400 text-white hover:text-amber-400 transition-colors font-mono text-xs tracking-widest cursor-pointer active:scale-[0.98]"
                   aria-label="Close Navigation Menu"
                 >
                   <LuX className="w-4 h-4 transition-transform group-hover:rotate-90" />
-                  <span>{t('TUTUP', 'CLOSE')}</span>
+                  <span className="hidden xs:inline sm:inline">{t('TUTUP', 'CLOSE')}</span>
                 </button>
               </div>
             </div>
 
             {/* Menu Links in Monumental Architectural Font */}
-            <div className="w-full max-w-frame mx-auto my-auto py-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-8 space-y-4 sm:space-y-6">
+            <div className="w-full max-w-frame mx-auto my-auto py-6 sm:py-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-8 space-y-3 sm:space-y-5 md:space-y-6">
                   {navLinks.map((link, idx) => {
                     const isActive = pathname === link.href;
                     return (
@@ -244,13 +244,13 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="group flex items-baseline gap-4 sm:gap-6 py-2 transition-transform duration-300 ease-expo hover:translate-x-4"
+                          className="group flex items-baseline gap-3.5 sm:gap-6 py-1.5 sm:py-2 transition-transform duration-300 ease-expo hover:translate-x-2 sm:hover:translate-x-4"
                         >
-                          <span className="font-mono text-xs sm:text-sm text-amber-400 tracking-widest">
+                          <span className="font-mono text-[11px] sm:text-xs text-amber-400 tracking-widest font-semibold">
                             {link.num}
                           </span>
                           <span
-                            className={`font-display text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight transition-colors ${
+                            className={`font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight transition-colors ${
                               isActive
                                 ? 'text-amber-400'
                                 : 'text-white group-hover:text-amber-400'
