@@ -4,6 +4,19 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
+      "label": "ArchitecturalPreloaderProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalpreloaderprops",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L7"
+    },
+    {
       "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodalprops",
       "label": "ProjectInspectionModalProps",
       "_callable": true,
@@ -40,7 +53,7 @@
       "file_type": "code",
       "norm_label": "modernwwlogoprops",
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "src_data_barcwaydata_founderdetail",
@@ -67,19 +80,6 @@
       "norm_label": "projectdetail",
       "source_file": "src/data/barcwayData.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
-      "label": "ArchitecturalPreloaderProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalpreloaderprops",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L17"
     },
     {
       "id": "src_app_robots_robots",
@@ -187,7 +187,7 @@
       "file_type": "code",
       "norm_label": "architecturalpreloader()",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L21"
+      "source_location": "L11"
     },
     {
       "id": "src_components_interactive_projectinspectionmodal_projectinspectionmodal",
@@ -259,19 +259,7 @@
       "file_type": "code",
       "norm_label": "modernwwlogo()",
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_components_remotion_wwlogoanimation_wwlogoanimation",
-      "label": "WwLogoAnimation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "wwlogoanimation()",
-      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L7"
+      "source_location": "L13"
     },
     {
       "id": "package_devdependencies",
@@ -1405,6 +1393,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_interactive_architecturalpreloader",
+      "label": "ArchitecturalPreloader.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "BarcwayLayout.tsx",
+      "file_type": "code",
+      "norm_label": "architecturalpreloader.tsx",
+      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_interactive_projectinspectionmodal",
       "label": "ProjectInspectionModal.tsx",
       "_origin": "ast",
@@ -1667,61 +1666,6 @@
       "norm_label": "**/*.tsx",
       "source_file": "tsconfig.json",
       "source_location": "L25"
-    },
-    {
-      "id": "player",
-      "label": "@remotion/player",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "@remotion/player",
-      "source_file": "@remotion/player"
-    },
-    {
-      "id": "src_components_interactive_architecturalpreloader",
-      "label": "ArchitecturalPreloader.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "architecturalpreloader.tsx",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_interactive_architecturalpreloader_player",
-      "label": "Player",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "player",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_remotion_wwlogoanimation",
-      "label": "WwLogoAnimation.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "wwlogoanimation.tsx",
-      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_modernwwlogo_official_ww_logo_path",
-      "label": "OFFICIAL_WW_LOGO_PATH",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "ArchitecturalPreloader.tsx",
-      "file_type": "code",
-      "norm_label": "official_ww_logo_path",
-      "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L13"
     },
     {
       "id": "package",
@@ -2711,18 +2655,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_interactive_architecturalpreloader",
-      "target": "src_components_remotion_wwlogoanimation_wwlogoanimation",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_interactive_projectinspectionmodal",
       "target": "src_data_barcwaydata_projectdetail",
       "relation": "imports",
@@ -2912,18 +2844,6 @@
       "context": "import",
       "source_file": "src/components/navigation/BarcwayNav.tsx",
       "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_remotion_wwlogoanimation",
-      "target": "src_components_ui_modernwwlogo_official_ww_logo_path",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3155,18 +3075,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_interactive_architecturalpreloader",
-      "target": "src_components_remotion_wwlogoanimation",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_layouts_barcwaylayout",
       "target": "src_components_interactive_architecturalpreloader",
       "relation": "imports_from",
@@ -3272,18 +3180,6 @@
       "context": "import",
       "source_file": "src/components/navigation/BarcwayNav.tsx",
       "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_remotion_wwlogoanimation",
-      "target": "src_components_ui_modernwwlogo",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4179,35 +4075,24 @@
     },
     {
       "source": "src_components_interactive_architecturalpreloader",
-      "target": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_interactive_architecturalpreloader",
       "target": "src_components_interactive_architecturalpreloader_architecturalpreloader",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L21",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
       "source": "src_components_interactive_architecturalpreloader",
-      "target": "src_components_interactive_architecturalpreloader_player",
+      "target": "src_components_interactive_architecturalpreloader_architecturalpreloaderprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L9",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -4277,17 +4162,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_remotion_wwlogoanimation",
-      "target": "src_components_remotion_wwlogoanimation_wwlogoanimation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/remotion/WwLogoAnimation.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_ui_foundersvgplaceholder",
       "target": "src_components_ui_foundersvgplaceholder_foundersvgplaceholder",
       "relation": "contains",
@@ -4311,7 +4185,7 @@
     },
     {
       "source": "src_components_ui_modernwwlogo",
-      "target": "src_components_ui_modernwwlogo_official_ww_logo_path",
+      "target": "src_components_ui_modernwwlogo_modernwwlogo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4322,24 +4196,13 @@
     },
     {
       "source": "src_components_ui_modernwwlogo",
-      "target": "src_components_ui_modernwwlogo_modernwwlogo",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_modernwwlogo",
       "target": "src_components_ui_modernwwlogo_modernwwlogoprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/ModernWwLogo.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -4636,17 +4499,8 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "postcss.config.mjs"
-    },
-    {
-      "source": "src_components_interactive_architecturalpreloader",
-      "target": "player",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/interactive/ArchitecturalPreloader.tsx"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7123e97853554473246496c00a6c67cd815d339c"
+  "built_at_commit": "2b6e06339a0eb38dae5666a39b956a9bd0912f26"
 }

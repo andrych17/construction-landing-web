@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790043508.0639305,
-    "seen": 1790043554.0183115,
-    "ast_hash": "1a177039dde848e882b3a7764eb2f465",
+    "mtime": 1790043836.7897222,
+    "seen": 1790043882.7260551,
+    "ast_hash": "7749cd2f172500cb399a41d6f88709ba",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/ModernWwLogo.tsx": {
-    "mtime": 1790043698.0915937,
-    "seen": 1790043743.325793,
-    "ast_hash": "4542a73fd2aff7b41b0216abd4bbd13d",
+    "mtime": 1790043826.948639,
+    "seen": 1790043882.7260654,
+    "ast_hash": "fb23ffeb06ff6104a4de6d733bf264ce",
     "semantic_hash": ""
   },
   "public/images/ww/logo_modern.svg": {
@@ -479,12 +479,6 @@
     "ast_hash": "1eb18cd2808dc9300aeb5a064a41fbf1",
     "semantic_hash": ""
   },
-  "src/components/remotion/WwLogoAnimation.tsx": {
-    "mtime": 1790043717.0977418,
-    "seen": 1790043743.3257875,
-    "ast_hash": "a2b2764ca25c88dcab4f6dfa9d81d0c2",
-    "semantic_hash": ""
-  },
   "public/images/ww/logo_clean_white.png": {
     "mtime": 1790043657.3502839,
     "seen": 1790043743.325827,
@@ -495,6 +489,24 @@
     "mtime": 1790043670.4090044,
     "seen": 1790043743.3258762,
     "ast_hash": "acd84c43e3109b43937120005a097173",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo_gold_hq.png": {
+    "mtime": 1790043821.5055928,
+    "seen": 1790043882.7261024,
+    "ast_hash": "f8e956f57d07722929582f696b6bb344",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo_hq_clean.png": {
+    "mtime": 1790043810.797503,
+    "seen": 1790043882.7261045,
+    "ast_hash": "a21bac783b62db8e0a7167ec30d4581d",
+    "semantic_hash": ""
+  },
+  "public/images/ww/logo_white_hq.png": {
+    "mtime": 1790043821.5275931,
+    "seen": 1790043882.7261198,
+    "ast_hash": "a21bac783b62db8e0a7167ec30d4581d",
     "semantic_hash": ""
   }
 }
