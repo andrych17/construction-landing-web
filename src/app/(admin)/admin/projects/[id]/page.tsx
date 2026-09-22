@@ -3,6 +3,8 @@ import { db } from '@/lib/db';
 import { ProjectForm } from '@/components/admin/ProjectForm';
 import type { ProjectInput } from '@/lib/project-schema';
 
+export const dynamic = 'force-dynamic';
+
 export default async function EditProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const project = await db.project.findUnique({ where: { id } });

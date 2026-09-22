@@ -22,6 +22,8 @@ const SECTION_FETCHERS: Record<string, () => Promise<unknown>> = {
   faqs: getFaqs,
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function ContentSectionPage({ params }: { params: Promise<{ key: string }> }) {
   const { key } = await params;
   if (!isContentSectionKey(key)) notFound();

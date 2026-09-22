@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { db } from '@/lib/db';
 import { CONTENT_SECTIONS } from '@/lib/content-sections';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   const [projectCount, publishedCount] = await Promise.all([
     db.project.count(),
