@@ -14,6 +14,8 @@ const HOLD_MS = 200; // jeda singkat sebelum tirai terangkat
 const CURTAIN_MS = 850; // durasi animasi tirai halus
 const TOTAL_MS = COUNT_MS + HOLD_MS + CURTAIN_MS;
 
+const STORAGE_KEY = 'ww_preloaded';
+
 export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPreloaderProps) {
   const pathname = usePathname();
   const isAdminRoute = pathname === '/login' || pathname.startsWith('/admin');
@@ -22,16 +24,17 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
-    const reduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (typeof window !== 'undefined') {
+      const alreadyLoaded = !!localStorage.getItem(STORAGE_KEY);
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (reduced) {
-      const skipTimer = setTimeout(() => {
+      if (alreadyLoaded || reduced) {
         setUnmounted(true);
         if (onComplete) onComplete();
-      }, 0);
-      return () => clearTimeout(skipTimer);
+        return;
+      }
+
+      localStorage.setItem(STORAGE_KEY, '1');
     }
 
     const finishTimer = setTimeout(() => {
@@ -43,14 +46,6 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
       if (onComplete) onComplete();
     }, TOTAL_MS);
 
-    return () => {
-      clearTimeout(finishTimer);
-      clearTimeout(unmountTimer);
-    };
-  }, [onComplete]);
-
-  // Failsafe cadangan bila browser lambat me-render
-  useEffect(() => {
     const safety = setTimeout(() => {
       setIsDone(true);
       setTimeout(() => {
@@ -59,7 +54,11 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
       }, CURTAIN_MS);
     }, TOTAL_MS + 600);
 
-    return () => clearTimeout(safety);
+    return () => {
+      clearTimeout(finishTimer);
+      clearTimeout(unmountTimer);
+      clearTimeout(safety);
+    };
   }, [onComplete]);
 
   if (unmounted || isAdminRoute) return null;
