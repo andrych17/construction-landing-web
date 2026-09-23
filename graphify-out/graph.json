@@ -1388,7 +1388,7 @@
       "file_type": "code",
       "norm_label": "buildstructuredschema()",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L105"
+      "source_location": "L107"
     },
     {
       "id": "src_app_layout_rootlayout",
@@ -1400,7 +1400,7 @@
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L216"
+      "source_location": "L218"
     },
     {
       "id": "src_components_interactive_architecturalpreloader_architecturalpreloader",
@@ -1412,7 +1412,7 @@
       "file_type": "code",
       "norm_label": "architecturalpreloader()",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L17"
+      "source_location": "L19"
     },
     {
       "id": "src_components_ui_modernwwlogo_wwlogomark",
@@ -8685,7 +8685,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L221",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -8697,7 +8697,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L222",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -21173,7 +21173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/layout.tsx",
-      "source_location": "L105",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -21195,7 +21195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/layout.tsx",
-      "source_location": "L216",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -22570,7 +22570,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -25009,5 +25009,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cbff8149f4bd6ac6b5979e43cf910791c083d8bd"
+  "built_at_commit": "8460eab45ae7a6bd75679a92fb18ac716de55d5d"
 }

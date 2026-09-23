@@ -30,9 +30,9 @@
     "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790093170.2401175,
-    "seen": 1790094605.6375067,
-    "ast_hash": "dde0018a6e357d3ad54b17aecf3c8ddd",
+    "mtime": 1790180198.9801931,
+    "seen": 1790180231.652963,
+    "ast_hash": "10a5a4d21c71cc6ef74b40f522d69098",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -300,9 +300,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790090496.8465657,
-    "seen": 1790090714.4703815,
-    "ast_hash": "ed85738e37278a09a4c04700fe5e8748",
+    "mtime": 1790180190.644066,
+    "seen": 1790180231.6530418,
+    "ast_hash": "949a16467b47d4861d4856ecba89ca7d",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
@@ -1131,6 +1131,12 @@
     "mtime": 1790138807.5572093,
     "seen": 1790138878.2342246,
     "ast_hash": "50daeb536e4a894c2c04eeda8f38c7ae",
+    "semantic_hash": ""
+  },
+  "public/images/og-image.jpg": {
+    "mtime": 1790148043.7849061,
+    "seen": 1790148080.859306,
+    "ast_hash": "58515b741922af08f2f3536d3e77bcfd",
     "semantic_hash": ""
   }
 }

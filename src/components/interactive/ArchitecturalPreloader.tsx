@@ -25,33 +25,36 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const alreadyLoaded = !!localStorage.getItem(STORAGE_KEY);
+      const isAlreadyPreloaded =
+        document.documentElement.classList.contains('ww-preloaded') ||
+        !!sessionStorage.getItem(STORAGE_KEY);
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (alreadyLoaded || reduced) {
+      if (isAlreadyPreloaded || reduced) {
         setUnmounted(true);
         if (onComplete) onComplete();
         return;
       }
-
-      localStorage.setItem(STORAGE_KEY, '1');
     }
 
     const finishTimer = setTimeout(() => {
       setIsDone(true);
     }, COUNT_MS + HOLD_MS);
 
-    const unmountTimer = setTimeout(() => {
+    const markComplete = () => {
       setUnmounted(true);
+      try {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+        document.documentElement.classList.add('ww-preloaded');
+      } catch (e) {}
       if (onComplete) onComplete();
-    }, TOTAL_MS);
+    };
+
+    const unmountTimer = setTimeout(markComplete, TOTAL_MS);
 
     const safety = setTimeout(() => {
       setIsDone(true);
-      setTimeout(() => {
-        setUnmounted(true);
-        if (onComplete) onComplete();
-      }, CURTAIN_MS);
+      setTimeout(markComplete, CURTAIN_MS);
     }, TOTAL_MS + 600);
 
     return () => {
@@ -65,6 +68,7 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
 
   return (
     <motion.div
+      id="ww-architectural-preloader"
       className={`fixed inset-0 z-[9999] bg-[#030303] overflow-hidden ${
         isDone ? 'pointer-events-none' : 'pointer-events-auto'
       }`}

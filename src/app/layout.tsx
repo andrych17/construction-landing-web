@@ -58,9 +58,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/projects/hero_poster.jpg",
+        url: "https://wwconstruction.id/images/og-image.jpg",
+        secureUrl: "https://wwconstruction.id/images/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Wonderful Works Construction - Architecture & General Contractor Surabaya",
       },
     ],
@@ -70,7 +72,7 @@ export const metadata: Metadata = {
     title: "Wonderful Works Construction (@ww.cons)",
     description:
       "Bringing Your Vision to Life with Expert Craftmanship. Architecture, Interior, and General Contracting in Surabaya by Wonderful Works Construction.",
-    images: ["/images/projects/hero_poster.jpg"],
+    images: ["https://wwconstruction.id/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -224,6 +226,20 @@ export default async function RootLayout({
   return (
     <html lang="id" className="dark bg-[#030303]" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+              try {
+                var isPreloaded = sessionStorage.getItem('ww_preloaded') === '1';
+                var isExcluded = window.location.pathname.startsWith('/admin') || window.location.pathname === '/login';
+                var isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (isPreloaded || isExcluded || isReducedMotion) {
+                  document.documentElement.classList.add('ww-preloaded');
+                }
+              } catch(e) {}
+            })();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredSchema) }}

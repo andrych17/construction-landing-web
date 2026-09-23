@@ -1,7 +1,7 @@
 # Graph Report - construction-landing-web  (2026-09-23)
 
 ## Corpus Check
-- 125 files · ~285,759 words
+- 125 files · ~292,260 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cbff8149`
+- Built from commit: `8460eab4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

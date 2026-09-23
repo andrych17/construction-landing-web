@@ -174,10 +174,6 @@ body {
   height: 6px;
 }
 
-::-webkit-scrollbar-track {
-  background: #050505;
-}
-
 ::-webkit-scrollbar-thumb {
   background: #262626;
   border-radius: 9999px;
@@ -185,4 +181,9 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #404040;
+}
+
+/* Zero-flash preloader hide when already preloaded or excluded */
+html.ww-preloaded #ww-architectural-preloader {
+  display: none !important;
 }
