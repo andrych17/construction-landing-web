@@ -1,5 +1,21 @@
 import 'server-only';
+import { Prisma } from '@prisma/client';
 import { db } from '@/lib/db';
+import {
+  defaultPageLayout,
+  HISTORY_LIMIT,
+  historyStorageKey,
+  HOME_LAYOUT_PREVIOUS_KEY,
+  isPageId,
+  layoutStorageKey,
+  layoutsEqual,
+  sanitizeHistory,
+  sanitizePageLayout,
+  type HomeLayoutData,
+  type HistorySummary,
+  type LayoutRevision,
+  type PageId,
+} from '@/lib/home-layout';
 import {
   SITE_CONTACT,
   ROTATING_DISCIPLINES,
@@ -57,6 +73,114 @@ export const getHeroAbout = () => getSection<HeroMediaValue>('heroAbout', DEFAUL
 export const getHeroServices = () => getSection<HeroMediaValue>('heroServices', DEFAULT_HERO_SERVICES);
 export const getHeroProjects = () => getSection<HeroMediaValue>('heroProjects', DEFAULT_HERO_PROJECTS);
 export const getHeroContact = () => getSection<HeroMediaValue>('heroContact', DEFAULT_HERO_CONTACT);
+
+function asJson(data: unknown): Prisma.InputJsonValue {
+  return data as Prisma.InputJsonValue;
+}
+
+async function readStoredLayout(page: PageId): Promise<HomeLayoutData | null> {
+  const row = await db.siteContent.findUnique({ where: { key: layoutStorageKey(page) } });
+  if (!row) return null;
+  const parsed = sanitizePageLayout(page, row.value);
+  if (!parsed || parsed.content.length === 0) return null;
+  return parsed;
+}
+
+async function readHistory(page: PageId): Promise<LayoutRevision[]> {
+  const row = await db.siteContent.findUnique({ where: { key: historyStorageKey(page) } });
+  const stored = row ? sanitizeHistory(page, row.value) : [];
+  if (stored.length > 0 || page !== 'home') return stored;
+  const legacy = await db.siteContent.findUnique({ where: { key: HOME_LAYOUT_PREVIOUS_KEY } });
+  if (!legacy) return [];
+  const legacyLayout = sanitizePageLayout('home', legacy.value);
+  if (!legacyLayout || legacyLayout.content.length === 0) return [];
+  return [{ at: legacy.updatedAt.toISOString(), data: legacyLayout }];
+}
+
+function summarize(history: LayoutRevision[]): HistorySummary[] {
+  return history.map((revision) => ({
+    at: revision.at,
+    blocks: revision.data.content.map((block) => block.type),
+  }));
+}
+
+export async function getPageLayout(page: PageId): Promise<HomeLayoutData> {
+  try {
+    return (await readStoredLayout(page)) ?? defaultPageLayout(page);
+  } catch {
+    return defaultPageLayout(page);
+  }
+}
+
+export async function getPageHistory(page: PageId): Promise<HistorySummary[]> {
+  try {
+    return summarize(await readHistory(page));
+  } catch {
+    return [];
+  }
+}
+
+export async function getHomeLayout(): Promise<HomeLayoutData> {
+  return getPageLayout('home');
+}
+
+export async function savePageLayout(page: PageId, next: HomeLayoutData): Promise<{ history: HistorySummary[] }> {
+  const current = await readStoredLayout(page);
+  let history = await readHistory(page);
+  if (current && !layoutsEqual(current, next)) {
+    history = [{ at: new Date().toISOString(), data: current }, ...history.filter((item) => !layoutsEqual(item.data, current))].slice(0, HISTORY_LIMIT);
+  }
+  const writes = [
+    db.siteContent.upsert({
+      where: { key: layoutStorageKey(page) },
+      create: { key: layoutStorageKey(page), value: asJson(next) },
+      update: { value: asJson(next) },
+    }),
+    db.siteContent.upsert({
+      where: { key: historyStorageKey(page) },
+      create: { key: historyStorageKey(page), value: asJson(history) },
+      update: { value: asJson(history) },
+    }),
+  ];
+  await db.$transaction(writes);
+  if (page === 'home') {
+    await db.siteContent.deleteMany({ where: { key: HOME_LAYOUT_PREVIOUS_KEY } });
+  }
+  return { history: summarize(history) };
+}
+
+export async function restorePageRevision(
+  page: PageId,
+  index: number,
+): Promise<{ value: HomeLayoutData; history: HistorySummary[] } | null> {
+  const history = await readHistory(page);
+  const picked = history[index];
+  if (!picked) return null;
+  const current = (await readStoredLayout(page)) ?? defaultPageLayout(page);
+  const nextHistory = layoutsEqual(current, picked.data)
+    ? history
+    : [{ at: new Date().toISOString(), data: current }, ...history.filter((_, itemIndex) => itemIndex !== index)].slice(0, HISTORY_LIMIT);
+  await db.$transaction([
+    db.siteContent.upsert({
+      where: { key: layoutStorageKey(page) },
+      create: { key: layoutStorageKey(page), value: asJson(picked.data) },
+      update: { value: asJson(picked.data) },
+    }),
+    db.siteContent.upsert({
+      where: { key: historyStorageKey(page) },
+      create: { key: historyStorageKey(page), value: asJson(nextHistory) },
+      update: { value: asJson(nextHistory) },
+    }),
+  ]);
+  if (page === 'home') {
+    await db.siteContent.deleteMany({ where: { key: HOME_LAYOUT_PREVIOUS_KEY } });
+  }
+  return { value: picked.data, history: summarize(nextHistory) };
+}
+
+export function parsePageId(value: string): PageId | null {
+  return isPageId(value) ? value : null;
+}
 
 function dbProjectToDetail(p: {
   title: string;

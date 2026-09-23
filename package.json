@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:cms": "node --import tsx scripts/check-cms.ts",
+    "test:cms:api": "node scripts/smoke-cms-api.mjs",
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
@@ -17,6 +19,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "@puckeditor/core": "^0.23.0",
     "@remotion/player": "^4.0.526",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.23.26",

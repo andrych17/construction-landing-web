@@ -10,7 +10,7 @@ import ModernWwLogo from '@/components/ui/ModernWwLogo';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 
-export default function Navbar() {
+export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 'absolute' }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-expo ${
+        className={`${placement} top-0 left-0 right-0 z-40 transition-all duration-500 ease-expo ${
           scrolled
             ? 'bg-[#030303]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4'
             : 'bg-transparent border-b border-white/[0.04] py-6 sm:py-8'

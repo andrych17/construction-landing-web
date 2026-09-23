@@ -7,7 +7,7 @@ export const metadata = { robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getAdminSession();
-  if (!session) redirect('/login');
+  if (!session) redirect('/admin/login');
 
   return <AdminShell session={session}>{children}</AdminShell>;
 }

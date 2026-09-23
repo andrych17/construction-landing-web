@@ -52,12 +52,13 @@ export function AdminShell({ session, children }: AdminShellProps) {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
     } finally {
-      router.push('/login');
+      router.push('/admin/login');
       router.refresh();
     }
   };
 
   const isSuperadmin = session.role === 'SUPERADMIN';
+  const isComposer = pathname.startsWith('/admin/compose');
 
   const navGroups: NavGroup[] = [
     {
@@ -99,6 +100,10 @@ export function AdminShell({ session, children }: AdminShellProps) {
         ]
       : []),
   ];
+
+  if (isComposer) {
+    return <div className="fixed inset-0 z-[60] bg-white">{children}</div>;
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 flex font-sans">

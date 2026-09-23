@@ -64,12 +64,20 @@ export async function POST(request: Request) {
       );
     }
 
-    await mkdir(UPLOAD_DIR, { recursive: true });
-    const filename = `${randomUUID()}.${ext}`;
     let buffer: Buffer = Buffer.from(await file.arrayBuffer());
 
     if (IMAGE_EXT_SET.has(ext)) {
+      try {
+        await sharp(buffer).stats();
+      } catch {
+        return NextResponse.json({ error: 'File gambar tidak valid.' }, { status: 422 });
+      }
       buffer = await compressImage(buffer, ext);
+    } else if (
+      (ext === 'mp4' && (buffer.length < 12 || buffer.toString('ascii', 4, 8) !== 'ftyp')) ||
+      (ext === 'webm' && !buffer.subarray(0, 4).equals(Buffer.from([0x1a, 0x45, 0xdf, 0xa3])))
+    ) {
+      return NextResponse.json({ error: 'File video tidak valid.' }, { status: 422 });
     }
     // ponytail: video is stored as-is, no server-side transcoding. Real
     // compression needs ffmpeg on the server and adds real processing time;
@@ -77,6 +85,8 @@ export async function POST(request: Request) {
     // in docs/hero-video/README.md. Wire up fluent-ffmpeg + ffmpeg-static here
     // if/when server-side video compression is actually needed.
 
+    await mkdir(UPLOAD_DIR, { recursive: true });
+    const filename = `${randomUUID()}.${ext}`;
     await writeFile(path.join(UPLOAD_DIR, filename), buffer);
 
     return NextResponse.json({ url: `/uploads/${filename}` }, { status: 201 });

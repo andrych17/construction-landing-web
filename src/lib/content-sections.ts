@@ -1,12 +1,12 @@
 /** Daftar section SiteContent untuk teks CMS yang boleh diedit admin di submenu CMS Konten Teks */
 export const CONTENT_SECTIONS = [
-  { key: 'contact', label: 'Kontak & Alamat' },
-  { key: 'rotatingDisciplines', label: 'Disiplin Studio (Hero)' },
-  { key: 'philosophies', label: 'Filosofi Desain' },
-  { key: 'founders', label: 'Founder' },
-  { key: 'services', label: 'Layanan' },
-  { key: 'methodology', label: 'Alur Kerja 10 Tahap' },
-  { key: 'faqs', label: 'FAQ' },
+  { key: 'contact', label: 'Kontak & Alamat', preview: '/contact#contact' },
+  { key: 'rotatingDisciplines', label: 'Disiplin Studio (Hero)', preview: '/#hero', previewNote: 'Daftar ini belum tampil di hero publik.' },
+  { key: 'philosophies', label: 'Filosofi Desain', preview: '/about#philosophy' },
+  { key: 'founders', label: 'Founder', preview: '/about#founder' },
+  { key: 'services', label: 'Layanan', preview: '/services#pillars' },
+  { key: 'methodology', label: 'Alur Kerja 10 Tahap', preview: '/services#method' },
+  { key: 'faqs', label: 'FAQ', preview: '/services#faqs' },
 ] as const;
 
 /** Daftar Hero media untuk 5 halaman publik */

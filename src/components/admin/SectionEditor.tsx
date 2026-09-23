@@ -2,7 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ContactEditor } from '@/components/admin/ContactEditor';
+import { DisciplinesEditor } from '@/components/admin/DisciplinesEditor';
+import { markPreviewSaved, PagePreview } from '@/components/admin/PagePreview';
 import { JsonField, type JsonValue } from '@/components/admin/JsonField';
+import { CONTENT_SECTIONS } from '@/lib/content-sections';
 import { Button } from '@/components/admin/ui/Button';
 
 export function SectionEditor({
@@ -21,6 +25,9 @@ export function SectionEditor({
   const [status, setStatus] = useState<'idle' | 'saved' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [previewKey, setPreviewKey] = useState(0);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const preview = CONTENT_SECTIONS.find((section) => section.key === sectionKey);
 
   const isDirty = JSON.stringify(value) !== JSON.stringify(savedValue);
 
@@ -60,6 +67,10 @@ export function SectionEditor({
       }
       setSavedValue(value);
       setStatus('saved');
+      if (preview) {
+        setPreviewKey(markPreviewSaved(preview.preview));
+        setPreviewOpen(true);
+      }
       router.refresh();
     } catch (error) {
       setStatus('error');
@@ -73,29 +84,46 @@ export function SectionEditor({
 
   return (
     <div className="space-y-6 pb-28">
-      <div>
-        <h1 className="text-lg font-bold text-slate-900">{label}</h1>
-        {status === 'saved' && <p className="text-xs text-emerald-600 font-medium">Tersimpan.</p>}
-        {status === 'error' && <p className="text-xs text-red-600 font-medium">{errorMessage}</p>}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="text-lg font-bold text-slate-900">{label}</h1>
+          {status === 'saved' && <p className="text-xs text-emerald-600 font-medium">Tersimpan.</p>}
+          {status === 'error' && <p className="text-xs text-red-600 font-medium">{errorMessage}</p>}
+        </div>
+        {preview && (
+          <PagePreview
+            path={preview.preview}
+            note={'previewNote' in preview ? preview.previewNote : undefined}
+            frameKey={previewKey}
+            open={previewOpen}
+            onOpenChange={setPreviewOpen}
+          />
+        )}
       </div>
 
-      {isArray ? (
-        <JsonField fieldKey={label} value={value} onChange={setValue} />
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {value && typeof value === 'object' && !Array.isArray(value)
-            ? Object.entries(value).map(([k, v]) => (
-                <div key={k} className={Array.isArray(v) || (v && typeof v === 'object') ? 'sm:col-span-2' : ''}>
-                  <JsonField
-                    fieldKey={k}
-                    value={v}
-                    onChange={(next) => setValue({ ...(value as Record<string, JsonValue>), [k]: next })}
-                  />
-                </div>
-              ))
-            : null}
-        </div>
-      )}
+      <div>
+          {sectionKey === 'contact' && value && typeof value === 'object' && !Array.isArray(value) ? (
+            <ContactEditor value={value} onChange={setValue} />
+          ) : sectionKey === 'rotatingDisciplines' && value && typeof value === 'object' && !Array.isArray(value) ? (
+            <DisciplinesEditor value={value} onChange={setValue} />
+          ) : isArray ? (
+            <JsonField fieldKey={label} value={value} onChange={setValue} />
+          ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {value && typeof value === 'object' && !Array.isArray(value)
+                ? Object.entries(value).map(([k, v]) => (
+                    <div key={k} className={Array.isArray(v) || (v && typeof v === 'object') ? 'sm:col-span-2' : ''}>
+                      <JsonField
+                        fieldKey={k}
+                        value={v}
+                        onChange={(next) => setValue({ ...(value as Record<string, JsonValue>), [k]: next })}
+                      />
+                    </div>
+                  ))
+                : null}
+            </div>
+          )}
+      </div>
 
       {/* Floating bottom save bar — stays clear of AdminShell's own sticky top header. */}
       <div

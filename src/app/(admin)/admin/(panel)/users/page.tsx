@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function AdminUsersPage() {
   const session = await getAdminSession();
-  if (!session) redirect('/login');
+  if (!session) redirect('/admin/login');
 
   // Hanya SUPERADMIN yang bisa mengakses halaman ini
   if (session.role !== 'SUPERADMIN') {

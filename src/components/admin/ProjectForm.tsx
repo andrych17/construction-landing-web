@@ -9,6 +9,7 @@ import { Button } from '@/components/admin/ui/Button';
 import { ImageDropzone } from '@/components/admin/ui/ImageDropzone';
 import { GalleryDropzone } from '@/components/admin/ui/GalleryDropzone';
 import { LangSwitch } from '@/components/admin/ui/LangSwitch';
+import { markPreviewSaved, PagePreview } from '@/components/admin/PagePreview';
 import type { ProjectInput } from '@/lib/project-schema';
 
 type ProjectFormData = ProjectInput;
@@ -65,6 +66,7 @@ export function ProjectForm({
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error ?? 'Gagal menyimpan proyek.');
       }
+      markPreviewSaved('/projects');
       router.push('/admin/projects');
       router.refresh();
     } catch (err) {
@@ -76,8 +78,10 @@ export function ProjectForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 pb-28">
-      <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
         <h1 className="text-lg font-bold text-slate-900">{mode === 'create' ? 'Proyek Baru' : 'Edit Proyek'}</h1>
+        <div className="flex items-center gap-3">
+        <PagePreview path="/projects#catalog" />
         <label className="flex items-center gap-2 text-xs font-semibold text-slate-600">
           <input
             type="checkbox"
@@ -87,6 +91,7 @@ export function ProjectForm({
           />
           Terbit
         </label>
+        </div>
       </div>
 
       {error && <p className="text-sm font-medium text-red-600">{error}</p>}

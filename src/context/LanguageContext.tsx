@@ -24,6 +24,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     // Sinkronisasi dengan localStorage bila pengunjung pernah memilih bahasa
     const saved = localStorage.getItem('ww_cons_lang') as Language | null;
     if (saved === 'id' || saved === 'en') {
+      // Browser preference is only available after hydration.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLangState(saved);
       document.documentElement.lang = saved;
     } else {
