@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Hubungi Wonderful Works Construction untuk konsultasi perancangan dan konstruksi hunian mewah maupun bangunan komersial di Surabaya.',
+    'Hubungi Wonderful Works Construction untuk konsultasi desain dan konstruksi rumah tinggal atau bangunan komersial di Surabaya, Sidoarjo, dan Gresik.',
   alternates: { canonical: '/contact' },
 };
 

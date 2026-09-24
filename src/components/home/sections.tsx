@@ -110,14 +110,14 @@ export function HeroSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left pt-8 border-t border-white/10 reveal-load reveal-delay-3">
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-3xl font-extrabold text-white">100%</span>
+              <span className="font-mono text-3xl font-extrabold text-white">K-350</span>
               <LuShieldCheck className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Presisi Struktur & K3', 'Structural Precision & HSE')}
+              {t('Mutu Beton Struktur', 'Structural Concrete')}
             </div>
             <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('Kepatuhan standar teknis rekayasa sipil SNI K-350', 'Strict compliance with SNI K-350 engineering standards')}
+              {t('ReadyMix SNI, diuji slump tiap truk', 'SNI ReadyMix, slump-tested per truck')}
             </div>
           </div>
 
@@ -127,23 +127,23 @@ export function HeroSection({
               <LuScale className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Biaya Tersembunyi', 'Zero Hidden Cost')}
+              {t('Biaya Tersembunyi', 'Hidden Costs')}
             </div>
             <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('Rencana Anggaran Biaya (RAB) akurat & transparan', 'Itemized BOQ with 100% transparent pricing')}
+              {t('RAB dirinci per item sejak awal', 'Budget itemized from day one')}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-2xl font-extrabold text-white">Tepat Waktu</span>
+              <span className="font-mono text-2xl font-extrabold text-white">{t('Tepat Waktu', 'On Time')}</span>
               <LuClock className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Disiplin Timeline', 'Disciplined Timeline')}
+              {t('Jadwal Terukur', 'Tracked Schedule')}
             </div>
             <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('Manajemen proyek Kurva-S ketat bebas molor', 'Strict Kurva-S project milestones management')}
+              {t('Progres dipantau mingguan dengan Kurva-S', 'Weekly progress tracked on an S-curve')}
             </div>
           </div>
 
@@ -177,15 +177,15 @@ export function AboutSection({ anchorId = 'about' }: { anchorId?: string }) {
 
         <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-neutral-100 leading-[1.5] font-normal mb-8">
           {t(
-            'Wonderful Works Construction adalah studio arsitektur, desain interior spasial, dan kontraktor umum terkemuka di Surabaya yang berspesialisasi pada hunian mewah dan ruang komersial prestisius. Kami menciptakan lingkungan luar biasa yang memadukan kemewahan, inovasi material, dan seni keteknikan tingkat tinggi.',
-            'Wonderful Works Construction is a leading architecture, interior design, and general contracting firm specializing in high-end residential and commercial spaces. We create extraordinary environments that blend luxury, innovation, and artistry, crafting unique designs that elevate lifestyles and reflect individuality.'
+            'Wonderful Works Construction adalah studio rancang bangun di Surabaya. Kami mendesain dan membangun rumah tinggal serta bangunan komersial, dari gambar pertama sampai serah terima kunci.',
+            'Wonderful Works Construction is a design-build studio in Surabaya. We design and build homes and commercial buildings, from the first sketch to the handover of keys.'
           )}
         </p>
 
         <p className="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-light mb-12 font-sans">
           {t(
-            'Pendekatan kami melampaui sekadar estetika visual — kami merancang ruang yang menginspirasi kenyamanan, mempererat koneksi, dan mendukung gaya hidup berkualitas. Dengan memadukan gagasan berani, detail cermat, dan material pilihan berstandar SNI, kami menghadirkan hasil karya yang fungsional sekaligus menakjubkan.',
-            'Our approach goes beyond aesthetics—we design spaces that inspire well-being, foster connections, and support fulfilling lifestyles. By combining bold ideas, thoughtful details, and innovative materials, we deliver designs that are both functional and breathtaking. At Wonderful Works Construction, every project is a collaboration to create spaces that feel personal, timeless, and truly extraordinary.'
+            'Desain dan pelaksanaan dipegang tim yang sama, jadi yang digambar itulah yang dibangun. Anggaran dirinci per item sejak awal, material dicek sebelum dipasang, dan progres dilaporkan setiap hari.',
+            'The same team handles design and construction, so what gets drawn is what gets built. Budgets are itemized from the start, materials are checked before installation, and progress is reported daily.'
           )}
         </p>
 
@@ -215,8 +215,8 @@ export function PhilosophySection({ anchorId = 'philosophy' }: { anchorId?: stri
             </h2>
             <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
               {t(
-                'Setiap proyek dimulai dari tujuan ruang dan kejujuran material.',
-                'Every project begins with spatial purpose and the honesty of materials.'
+                'Setiap proyek dimulai dari cara ruang itu akan dipakai dan material yang cocok untuknya.',
+                'Every project starts with how the space will be used and which materials suit it.'
               )}
             </p>
           </div>
@@ -258,7 +258,7 @@ export function PhilosophySection({ anchorId = 'philosophy' }: { anchorId?: stri
                     </p>
                     <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
                       <span className="text-neutral-300 block mb-1">
-                        {t('REALISASI MATERIAL & STRUKTUR:', 'MATERIAL & STRUCTURAL REALIZATION:')}
+                        {t('MATERIAL:', 'MATERIALS:')}
                       </span>
                       <span className="text-neutral-300">
                         {lang === 'en' && p.materialEn ? p.materialEn : p.material}
@@ -288,7 +288,7 @@ export function PhilosophySection({ anchorId = 'philosophy' }: { anchorId?: stri
 }
 
 export function FounderSection({ anchorId = 'founder' }: { anchorId?: string }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const { founders } = useSiteContent();
 
   return (
@@ -324,35 +324,35 @@ export function FounderSection({ anchorId = 'founder' }: { anchorId?: string }) 
                         />
                       ) : (
                         <FounderSvgPlaceholder
-                          title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
+                          title={t(founder.role, founder.roleEn ?? founder.role)}
                           subtitle={founder.name}
                         />
                       )}
                       <div className="absolute top-3 left-3 px-3 py-1 rounded-none bg-black/80 backdrop-blur-md border border-white/10 font-mono text-[11px] tracking-widest text-neutral-400 uppercase">
-                        {t('MASTER BUILDER & DIREKTUR', founder.role)}
+                        {t(founder.role, founder.roleEn ?? founder.role)}
                       </div>
                     </div>
                   </div>
 
                   <div className="md:col-span-6 space-y-4">
                     <div className="font-mono text-xs text-amber-400/90 tracking-widest uppercase">
-                      {t('Master Builder & Direktur', founder.role)} — {t('Disiplin Struktural & Kejujuran Material', founder.focus)}
+                      {t(founder.role, founder.roleEn ?? founder.role)} · {t(founder.focus, founder.focusEn ?? founder.focus)}
                     </div>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors uppercase">
                       {founder.name}
                     </h3>
                     <div className="font-mono text-[11px] text-neutral-400">
-                      {Array.isArray(founder.credentials) ? founder.credentials.join(' · ') : founder.credentials}
+                      {(lang === 'en' && founder.credentialsEn?.length ? founder.credentialsEn : founder.credentials)?.join(' · ')}
                     </div>
                     <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
                       {t(
-                        'Mengawasi langsung integrasi antara desain arsitektur dan eksekusi lapangan. Memastikan presisi toleransi milimeter dan efisiensi struktural di setiap tahap pembangunan.',
-                        founder.bio
+                        founder.bio,
+                        founder.bioEn ?? founder.bio
                       )}
                     </p>
                     {founder.quote && (
                       <blockquote className="border-l-2 border-amber-400 pl-3 py-1 text-xs text-neutral-400 italic">
-                        &ldquo;{t('Bentuk mengikuti tujuan, dan kemewahan sejati lahir dari presisi eksekusi, bukan ornamen berlebihan.', founder.quote)}&rdquo;
+                        &ldquo;{t(founder.quote, founder.quoteEn || founder.quote)}&rdquo;
                       </blockquote>
                     )}
                   </div>
@@ -645,8 +645,8 @@ export function ContactSection({ anchorId = 'contact' }: { anchorId?: string }) 
             <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
             <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-md">
               {t(
-                'Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.',
-                'For bespoke residences, commercial developments, and general contracting across Surabaya and East Java.'
+                'Untuk rumah tinggal, bangunan komersial, dan pekerjaan general contracting di Surabaya, Sidoarjo, dan Gresik.',
+                'For homes, commercial buildings, and general contracting in Surabaya, Sidoarjo, and Gresik.'
               )}
             </p>
           </div>

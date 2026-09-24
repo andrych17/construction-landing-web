@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Wonderful Works Construction",
   },
   description:
-    "Wonderful Works Construction is a visionary architecture, interior design, and general contracting firm in Surabaya. Specializing in luxury residences, commercial landmarks, and high-precision civil engineering.",
+    "Kontraktor rancang bangun di Surabaya, Sidoarjo, dan Gresik untuk rumah tinggal dan bangunan komersial. Desain arsitektur, interior, dan konstruksi dengan RAB terbuka dan laporan progres harian.",
   keywords: [
     "Wonderful Works Construction",
     "Wonderful Works",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wonderful Works Construction | Architecture & General Contractor Surabaya",
     description:
-      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, interior design, and precision general contracting in Surabaya and East Java.",
+      "Bringing Your Vision to Life with Expert Craftsmanship. Architecture, interiors, and general contracting in Surabaya, Sidoarjo, and Gresik.",
     url: "https://wwconstruction.id",
     siteName: "Wonderful Works Construction",
     locale: "id_ID",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wonderful Works Construction (@ww.cons)",
     description:
-      "Bringing Your Vision to Life with Expert Craftmanship. Architecture, Interior, and General Contracting in Surabaya by Wonderful Works Construction.",
+      "Bringing Your Vision to Life with Expert Craftsmanship. Architecture, interiors, and general contracting in Surabaya by Wonderful Works Construction.",
     images: ["https://wwconstruction.id/images/og-image.jpg"],
   },
   robots: {
@@ -125,7 +125,7 @@ function buildStructuredSchema(siteData: Awaited<ReturnType<typeof getAllSiteCon
         "logo": "https://wwconstruction.id/images/ww/logo-512.png",
         "image": "https://wwconstruction.id/images/projects/hero_poster.jpg",
         "description":
-          "Wonderful Works Construction adalah studio arsitektur dan kontraktor umum terkemuka di Surabaya. Menghadirkan kemewahan monolitik, eksplorasi material jujur, dan presisi rekayasa sipil berstandar SNI K-350.",
+          "Wonderful Works Construction adalah kontraktor rancang bangun di Surabaya untuk rumah tinggal dan bangunan komersial, dengan struktur beton ReadyMix K-350 sesuai SNI dan RAB terbuka.",
         "telephone": `+${contact.whatsapp}`,
         "email": "hello@wwconstruction.id",
         "address": {
@@ -152,26 +152,22 @@ function buildStructuredSchema(siteData: Awaited<ReturnType<typeof getAllSiteCon
               "Friday",
               "Saturday",
             ],
-            "opens": "08:00",
-            "closes": "18:00",
+            "opens": "08:30",
+            "closes": "17:30",
           },
         ],
         "areaServed": [
           { "@type": "City", "name": "Surabaya" },
           { "@type": "City", "name": "Sidoarjo" },
           { "@type": "City", "name": "Gresik" },
-          { "@type": "City", "name": "Malang" },
-          { "@type": "City", "name": "Denpasar" },
-          { "@type": "City", "name": "Jakarta" },
-          { "@type": "AdministrativeArea", "name": "Jawa Timur" },
         ],
         "knowsAbout": [
-          "Luxury Residential Architecture",
+          "Residential Architecture",
           "Civil Engineering & General Contracting",
           "ReadyMix SNI K-350 Structural Quality",
           "Laser 90° Corner Alignment Tolerances",
           "Pre-Cast Embedded MEP Systems",
-          "Commercial Flagship Showrooms & Fit-Out",
+          "Commercial Showrooms & Fit-Out",
           "PBG & SLF Permitting Compliance",
         ],
         "hasOfferCatalog": {
@@ -187,7 +183,7 @@ function buildStructuredSchema(siteData: Awaited<ReturnType<typeof getAllSiteCon
           })),
         },
         "sameAs": [contact.instagram],
-        "slogan": "Bringing Your Vision to Life with Expert Craftmanship",
+        "slogan": "Bringing Your Vision to Life with Expert Craftsmanship",
         "priceRange": "$$$$",
       },
       {

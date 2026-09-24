@@ -1,12 +1,12 @@
 export const HOME_HERO_COPY = {
-  line1Id: 'PRESISI STRUKTUR.',
-  line1En: 'STRUCTURAL PRECISION.',
-  line2Id: 'KUALITAS TANPA',
-  line2En: 'UNCOMPROMISING',
-  line3Id: 'KOMPROMI.',
-  line3En: 'EXCELLENCE.',
+  line1Id: 'DIRANCANG,',
+  line1En: 'DESIGNED,',
+  line2Id: 'DIBANGUN, DAN',
+  line2En: 'BUILT, AND',
+  line3Id: 'DIAWASI SENDIRI.',
+  line3En: 'SUPERVISED IN-HOUSE.',
   introId:
-    'General contractor terpercaya di Surabaya dengan komitmen "Quality is our priority". Menghadirkan ketepatan struktural, transparansi anggaran, dan keunggulan eksekusi arsitektural.',
+    'Kontraktor rancang bangun di Surabaya dengan prinsip "Quality is our priority". Anggaran dirinci per item, pekerjaan struktur diawasi langsung, dan progres dilaporkan setiap hari.',
   introEn:
-    'Trusted general contractor in Surabaya with "Quality is our priority" commitment. Delivering structural precision, transparent cost engineering, and architectural execution excellence.',
+    'A design-build contractor in Surabaya committed to "Quality is our priority". Budgets are itemized, structural work is supervised directly, and progress is reported daily.',
 } as const;

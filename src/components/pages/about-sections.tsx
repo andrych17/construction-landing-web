@@ -32,8 +32,8 @@ export function AboutHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, 
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
             {t(
-              filled(ledeId, 'Mendefinisikan ulang kemewahan ruang melalui kejujuran material, ketegasan bentuk, dan penguasaan teknik struktur.'),
-              filled(ledeEn, 'Redefining luxury living through spatial honesty, bold forms, and physical structural mastery.')
+              filled(ledeId, 'Studio rancang bangun di Surabaya yang mendesain, menghitung struktur, dan membangun dalam satu tim.'),
+              filled(ledeEn, 'A Surabaya design-build studio that designs, engineers, and builds with one team.')
             )}
           </p>
         </div>
@@ -50,15 +50,15 @@ export function AboutNarrativeSection({ anchorId = 'narrative' }: Copy) {
         <div className="space-y-8 reveal">
           <p className="font-sans text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
             {t(
-              'Wonderful Works Construction adalah biro rancang bangun, arsitektur, dan interior yang berfokus pada hunian privat mewah dan ruang komersial prestisius di Surabaya dan Jawa Timur.',
-              'Wonderful Works Construction is an architecture, interior design, and general contracting atelier specializing in high-end residential estates and flagship commercial spaces in Surabaya and across East Java.'
+              'Wonderful Works Construction adalah studio rancang bangun untuk rumah tinggal dan bangunan komersial di Surabaya, Sidoarjo, dan Gresik.',
+              'Wonderful Works Construction is a design-build studio for homes and commercial buildings in Surabaya, Sidoarjo, and Gresik.'
             )}
           </p>
           <div className="w-12 h-[1px] bg-white/20 mx-auto" />
           <p className="text-sm sm:text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-3xl mx-auto font-sans">
             {t(
-              'Pendekatan kami melampaui estetika visual — kami merancang ruang yang memberi ketenangan batin, membangun interaksi bermakna, dan bertahan lintas generasi. Dengan memadukan visi desain kontemporer, ketelitian pengerjaan tangan, dan kalkulasi teknik sipil bersertifikasi, setiap karya lahir dengan integritas struktural tertinggi.',
-              'Our approach goes beyond surface aesthetics — we design environments that foster well-being, encourage meaningful connection, and endure through generations. By combining progressive architectural concepts, meticulous artisanal craft, and certified civil structural calculations, every commission is executed with absolute structural integrity.'
+              'Desain arsitektur, interior, dan konstruksi dikerjakan oleh satu tim. Perhitungan struktur dibuat insinyur sipil, material dicek sebelum dipasang, dan setiap tahap dilaporkan ke pemilik.',
+              'Architecture, interiors, and construction are handled by one team. Structural calculations are done by civil engineers, materials are checked before installation, and every stage is reported to the owner.'
             )}
           </p>
         </div>
@@ -82,8 +82,8 @@ export function AboutPhilosophySection({ anchorId = 'philosophy' }: Copy) {
             <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
             <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
               {t(
-                'Tiga pilar fundamental yang memandu setiap goresan garis, pemilihan material, dan kalkulasi struktur di studio kami.',
-                'Three foundational pillars dictate every line drawn, material selected, and structural calculation performed at our studio.'
+                'Tiga prinsip yang kami pakai saat menggambar, memilih material, dan menghitung struktur.',
+                'Three principles we apply when drawing, choosing materials, and calculating structure.'
               )}
             </p>
           </div>
@@ -128,7 +128,7 @@ export function AboutPhilosophySection({ anchorId = 'philosophy' }: Copy) {
                     </p>
                     <div className="pt-4 border-t border-white/10 font-mono text-[11px] text-neutral-400">
                       <span className="text-neutral-300 block mb-1">
-                        {t('REALISASI MATERIAL & STRUKTUR:', 'MATERIAL & STRUCTURAL REALIZATION:')}
+                        {t('MATERIAL:', 'MATERIALS:')}
                       </span>
                       <span className="text-neutral-300">
                         {lang === 'en' && p.materialEn ? p.materialEn : p.material}
@@ -156,7 +156,7 @@ export function AboutPhilosophySection({ anchorId = 'philosophy' }: Copy) {
 }
 
 export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const { founders, contact } = useSiteContent();
   const founder = founders[0];
   if (!founder) return null;
@@ -172,15 +172,15 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
             <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
             <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
               {t(
-                'Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima dengan standar teknik sipil tertinggi.',
-                'Leading architectural design and construction execution, from feasibility studies to handover with rigorous civil engineering standards.'
+                'Memimpin perencanaan arsitektur dan pelaksanaan konstruksi, dari studi tapak hingga serah terima.',
+                'Leads architectural planning and construction, from site study to handover.'
               )}
             </p>
 
             <div className="space-y-3 font-mono text-xs text-neutral-400 mb-8">
               <div className="flex items-center gap-3 text-neutral-300">
                 <LuShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>{t('INSINYUR SIPIL TERDAFTAR & MASTER BUILDER', 'REGISTERED CIVIL ENGINEER & MASTER BUILDER')}</span>
+                <span>{t(founder.role, founder.roleEn ?? founder.role)}</span>
               </div>
               <div className="flex items-center gap-3 text-neutral-300">
                 <LuAward className="w-4 h-4 text-amber-400 shrink-0" />
@@ -205,7 +205,7 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
                     />
                   ) : (
                     <FounderSvgPlaceholder
-                      title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
+                      title={t(founder.role, founder.roleEn ?? founder.role)}
                       subtitle={founder.name}
                     />
                   )}
@@ -215,18 +215,18 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
               {/* Founder Details */}
               <div className="md:col-span-6 space-y-4">
                 <span className="px-3 py-1 rounded-none bg-amber-500/10 border border-amber-500/30 font-mono text-[11px] tracking-widest text-neutral-400 uppercase inline-block">
-                  {t('MASTER BUILDER & DIREKTUR UTAMA', founder.role)}
+                  {t(founder.role, founder.roleEn ?? founder.role)}
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-white uppercase tracking-tight">
                   {founder.name}
                 </h3>
                 <div className="font-mono text-xs text-amber-400/90 tracking-wider uppercase">
-                  {t('Disiplin Struktural & Kejujuran Material', founder.focus)}
+                  {t(founder.focus, founder.focusEn ?? founder.focus)}
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
                   {t(
-                    'Mengawasi langsung integrasi antara desain arsitektur dan eksekusi lapangan. Memastikan presisi toleransi milimeter dan efisiensi struktural di setiap tahap pembangunan.',
-                    founder.bio
+                    founder.bio,
+                    founder.bioEn ?? founder.bio
                   )}
                 </p>
               </div>
@@ -237,7 +237,7 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
               <div className="p-6 rounded-none bg-[#111111] border border-white/10 mb-8 relative">
                 <LuQuote className="w-8 h-8 text-amber-500/30 absolute top-4 right-4" />
                 <p className="font-serif italic text-sm sm:text-base text-neutral-200 leading-relaxed pr-8">
-                  &ldquo;{t('Bentuk mengikuti tujuan, dan kemewahan sejati lahir dari presisi eksekusi, bukan ornamen berlebihan.', founder.quote)}&rdquo;
+                  &ldquo;{t(founder.quote, founder.quoteEn || founder.quote)}&rdquo;
                 </p>
               </div>
             )}
@@ -245,9 +245,9 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
             {/* Verified Credentials */}
             <div className="space-y-2.5 pt-6 border-t border-white/[0.08]">
               <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest block mb-3 font-bold">
-                {t('AKREDITASI & PRINSIP UTAMA:', 'KEY ACCREDITATIONS & CORE PRINCIPLES:')}
+                {t('PENDIDIKAN:', 'EDUCATION:')}
               </span>
-              {founder.credentials?.map((cred) => (
+              {(lang === 'en' && founder.credentialsEn?.length ? founder.credentialsEn : founder.credentials)?.map((cred) => (
                 <div key={cred} className="flex items-start gap-2.5 text-xs text-neutral-300 font-sans">
                   <LuCheck className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                   <span>{cred}</span>
@@ -275,12 +275,12 @@ export function AboutCtaSection({ anchorId = 'cta' }: Copy) {
     <section id={anchorId} className="py-20 bg-[#080808] border-b border-white/[0.08]">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">
-          {t('Mulai Diskusi Proyek Anda', 'Begin Your Project Consultation')}
+          {t('Mulai Diskusi Proyek Anda', 'Discuss Your Project')}
         </h3>
         <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">
           {t(
             'Diskusikan rencana hunian privat atau bangunan komersial Anda langsung bersama tim arsitek dan insinyur Wonderful Works Construction.',
-            'Discuss your private residence or commercial commission directly with the Wonderful Works Construction architecture and civil engineering team.'
+            'Talk through your home or commercial project directly with the Wonderful Works Construction architects and engineers.'
           )}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -288,7 +288,7 @@ export function AboutCtaSection({ anchorId = 'cta' }: Copy) {
             href="/contact"
             className="group inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-widest rounded-none transition-all duration-300 ease-expo shadow-xl min-h-[44px]"
           >
-            <span>{t('Jadwalkan Konsultasi', 'Schedule Studio Session')}</span>
+            <span>{t('Jadwalkan Konsultasi', 'Book a Consultation')}</span>
             <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
           <a

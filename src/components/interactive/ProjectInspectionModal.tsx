@@ -45,11 +45,11 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
       label: t('Dimensi Lahan & Bangunan', 'Site & Building Dimensions'),
       value: project.specs
         ? `LT ${project.specs.landArea} · LB ${project.specs.buildingArea} (${project.specs.levels})`
-        : t('Presisi Custom Arsitektur Surabaya', 'Bespoke Architectural Precision Surabaya'),
+        : '-',
     },
     {
-      label: t('Toleransi Presisi Siku', 'Corner Alignment Tolerance'),
-      value: t('Sudut 90° Digital Laser (Toleransi < 1mm)', 'Digital Laser 90° Angle (< 1mm deviance)'),
+      label: t('Toleransi Siku', 'Corner Tolerance'),
+      value: t('Siku 90° dicek laser, deviasi < 1 mm', '90° corners laser-checked, < 1 mm deviation'),
     },
     {
       label: t('Sistem Fasad & Partisi', 'Facade & Partition System'),
@@ -59,11 +59,11 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
     },
     {
       label: t('Sistem MEP', 'MEP Infrastructure'),
-      value: t('Jalur Pipa & Listrik Tertanam Pra-Cor Dak (0% Resiko Bobok)', 'Pre-Cast Embedded Conduits & Piping (Zero Hacking Risk)'),
+      value: t('Pipa & listrik ditanam sebelum plat dicor, tanpa bobok ulang', 'Pipes & wiring embedded before the slab pour, no re-chasing'),
     },
     {
       label: t('Garansi & Pemeliharaan', 'Warranty & Retention'),
-      value: t('Masa Retensi Fisik 100 Hari + Sertifikat Garansi Resmi', '100-Day Retention Guarantee + Official Structural Warranty'),
+      value: t('Retensi 100 hari + sertifikat garansi struktur', '100-day retention + structural warranty certificate'),
     },
   ];
 
@@ -172,7 +172,7 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
             {/* Description Narrative */}
             <div className="mb-8">
               <h3 className="font-mono text-xs tracking-widest text-neutral-400 uppercase font-semibold mb-2">
-                {t('NARASI & METODE EKSEKUSI', 'NARRATIVE & EXECUTION METHOD')}
+                {t('DESKRIPSI PROYEK', 'PROJECT DESCRIPTION')}
               </h3>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
                 {projectDesc}
@@ -201,7 +201,7 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
             {/* Footer CTA */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
               <div className="text-xs text-neutral-400 font-sans">
-                {t('Konsultasikan kebutuhan teknis proyek komersial atau residensial Anda.', 'Consult the technical requirements for your bespoke residential or commercial project.')}
+                {t('Konsultasikan kebutuhan teknis proyek komersial atau residensial Anda.', 'Discuss the technical requirements of your home or commercial project.')}
               </div>
               <a
                 href={waLink(waMessageText)}

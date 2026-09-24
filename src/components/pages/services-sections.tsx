@@ -31,8 +31,8 @@ export function ServicesHeroSection({ anchorId = 'hero', titleId, titleEn, ledeI
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
             {t(
-              filled(ledeId, 'Layanan rancang bangun terintegrasi — presisi arsitektur, perhitungan sipil teruji, dan eksekusi lapangan tanpa kompromi.'),
-              filled(ledeEn, 'Integrated design and build services — architectural precision, certified civil calculations, and uncompromising site execution.')
+              filled(ledeId, 'Desain arsitektur, perhitungan struktur, dan pelaksanaan lapangan, dikerjakan oleh satu tim.'),
+              filled(ledeEn, 'Architectural design, structural calculation, and site execution, handled by one team.')
             )}
           </p>
         </div>
@@ -50,14 +50,14 @@ export function ServicesOverviewSection({ anchorId = 'overview' }: Copy) {
           <p className="font-sans text-lg sm:text-xl md:text-2xl text-neutral-200 leading-[2.1] sm:leading-[2.3] tracking-wide font-normal mb-8">
             <strong className="text-white font-bold">Wonderful Works Construction</strong>{' '}
             {t(
-              'memadukan perancangan arsitektur dengan disiplin pelaksanaan di lapangan — dari studi tapak, penyusunan anggaran terbuka, hingga serah terima dan masa pemeliharaan.',
-              'unites architectural conceptualization with meticulous field execution discipline — from site feasibility studies and transparent budget schedules to handover and comprehensive retention warranty.'
+              'mengerjakan desain dan konstruksi dalam satu alur: studi tapak, RAB terbuka, pelaksanaan, serah terima, sampai masa pemeliharaan.',
+              'handles design and construction as one process: site study, itemized budget, construction, handover, and the maintenance period after.'
             )}
           </p>
           <div className="font-mono text-xs text-neutral-400 tracking-[0.2em] uppercase">
             {t(
               'STANDAR SNI K-350 · KONTRAK KERJA TRANSPARAN · PENGAWASAN LANGSUNG INSINYUR',
-              'SNI K-350 SPECIFICATION · TRANSPARENT SCHEDULE CONTRACT · LEAD ENGINEER DIRECT SUPERVISION'
+              'SNI K-350 CONCRETE · TRANSPARENT CONTRACTS · DIRECT ENGINEER SUPERVISION'
             )}
           </div>
         </div>
@@ -81,8 +81,8 @@ export function ServicesPillarsSection({ anchorId = 'pillars' }: Copy) {
           </h2>
           <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed font-sans">
             {t(
-              'Dari vila privat mewah hingga kantor korporat dan fasilitas komersial, setiap proyek dikerjakan dengan presisi terukur.',
-              'From private luxury estates to flagship corporate headquarters and commercial developments, every commission is executed with measured precision.'
+              'Dari rumah tinggal dan villa sampai kantor, showroom, dan klinik.',
+              'From homes and villas to offices, showrooms, and clinics.'
             )}
           </p>
         </div>
@@ -177,12 +177,12 @@ export function ServicesMethodSection({ anchorId = 'method' }: Copy) {
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
         <div className="max-w-3xl mb-16 reveal">
           <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase mb-4">
-            {t('Alur Kerja 10 Tahap', '10-Stage Workflow Methodology')}
+            {t('Alur Kerja 10 Tahap', '10-Stage Workflow')}
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
             {t(
-              'Setiap langkah dari perjumpaan perdana hingga garansi purna serah terima dikelola secara transparan dengan supervisi langsung insinyur sipil.',
-              'Every phase from initial commission to final handover and warranty retention is managed with strict transparency and direct civil engineer oversight.'
+              'Dari konsultasi pertama sampai masa garansi, setiap tahap menghasilkan dokumen yang bisa Anda periksa.',
+              'From the first consultation to the end of the warranty, every stage produces a document you can check.'
             )}
           </p>
         </div>
@@ -237,18 +237,18 @@ export function ServicesBenchmarksSection({ anchorId = 'benchmarks' }: Copy) {
             <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Beton SNI K-350', 'SNI K-350 Concrete')}</h3>
             <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
               {t(
-                'Uji slump independen untuk setiap truk molen cor ready-mix. Rangka pembesian ganda tahan guncangan seismik pesisir Surabaya.',
-                'Independent slump and compression testing for every batch. Heavy-gauge double rebar cage engineered for seismic stability.'
+                'Setiap truk ReadyMix diuji slump sebelum dicor. Pembesian ganda dirancang tahan gempa.',
+                'Every ReadyMix truck is slump-tested before pouring. Double rebar cages are designed for seismic loads.'
               )}
             </p>
           </div>
           <div className="p-8 rounded-none bg-[#0d0d0d] border border-white/10">
             <span className="font-mono text-2xl font-bold text-amber-400 block mb-3">02</span>
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Laser 90° Siku Presisi', 'Laser 90° Precision')}</h3>
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Siku 90° dengan Laser', 'Laser-Set 90° Corners')}</h3>
             <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
               {t(
-                'Kalibrasi optik laser digital memastikan pertemuan dinding 90° tegak lurus sempurna dengan deviasi nat marmer < 1mm.',
-                'Digital optical laser calibration verifies true perpendicularity across structural junctions with marble joint tolerances under 1mm.'
+                'Pertemuan dinding dicek dengan laser digital supaya benar-benar siku. Deviasi nat marmer di bawah 1 mm.',
+                'Wall junctions are checked with a digital laser for true right angles. Marble joint deviation stays under 1 mm.'
               )}
             </p>
           </div>
@@ -257,8 +257,8 @@ export function ServicesBenchmarksSection({ anchorId = 'benchmarks' }: Copy) {
             <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 uppercase">{t('Garansi Retensi 100 Hari', '100-Day Retention Warranty')}</h3>
             <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
               {t(
-                'Komitmen purna jual resmi tertulis dalam SPK berkekuatan hukum, ditambah inspeksi berkala 2x setahun untuk merawat kenyamanan Anda.',
-                'Legally documented handover retention commitment backed by twice-annual preventative inspections for complete post-occupancy peace of mind.'
+                'Masa retensi tertulis di SPK, ditambah inspeksi dua kali setahun setelah bangunan Anda tempati.',
+                'The retention period is written into the SPK, with inspections twice a year after you move in.'
               )}
             </p>
           </div>
@@ -279,12 +279,12 @@ export function ServicesFaqSection({ anchorId = 'faqs' }: Copy) {
             {t('INFORMASI & PERTANYAAN POPULER', 'FREQUENTLY ASKED QUESTIONS')}
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase mb-4">
-            {t('Tanya Jawab Seputar Rancang Bangun', 'Answers to Common Commission Inquiries')}
+            {t('Tanya Jawab Seputar Rancang Bangun', 'Common Questions About Design & Build')}
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 font-light max-w-xl mx-auto font-sans">
             {t(
-              'Transparansi teknis, estimasi pembiayaan, hingga proteksi garansi purna jual untuk kenyamanan investasi Anda.',
-              'Technical clarity, investment estimation parameters, and post-occupancy protection for your commission.'
+              'Soal mutu beton, RAB, perizinan, garansi, dan wilayah layanan.',
+              'On concrete quality, budgets, permits, warranty, and service area.'
             )}
           </p>
         </div>
@@ -324,12 +324,12 @@ export function ServicesCtaSection({ anchorId = 'cta' }: Copy) {
     <section id={anchorId} className="py-20 bg-[#000000] border-b border-white/[0.08]">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h3 className="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">
-          {t('Siap Mewujudkan Visi Arsitektur Anda?', 'Ready to Build Your Architectural Commission?')}
+          {t('Mulai dari Konsultasi dan RAB', 'Start with a Consultation and a Budget')}
         </h3>
         <p className="text-sm sm:text-base text-neutral-400 font-light mb-8 max-w-xl mx-auto font-sans">
           {t(
-            'Hubungi tim estimator dan project manager kami untuk konsultasi teknis dan penyusunan RAB transparan zero hidden cost.',
-            'Connect directly with our estimating and project management team for technical feasibility and a transparent, zero-hidden-cost Bill of Quantities.'
+            'Ceritakan lahan dan kebutuhan Anda. Tim estimator dan project manager kami akan menyusun RAB terperinci tanpa biaya tersembunyi.',
+            'Tell us about your site and requirements. Our estimators and project managers will prepare an itemized budget with no hidden costs.'
           )}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">

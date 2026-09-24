@@ -32,8 +32,8 @@ export function ProjectsHeroSection({ anchorId = 'hero', titleId, titleEn, ledeI
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
             {t(
-              filled(ledeId, 'Koleksi hunian privat eksklusif dan bangunan korporat terkemuka di Surabaya dan Jawa Timur.'),
-              filled(ledeEn, 'Curated portfolio of high-end private residences and flagship corporate headquarters across Surabaya and East Java.')
+              filled(ledeId, 'Rumah tinggal, showroom, dan bangunan komersial.'),
+              filled(ledeEn, 'Homes, showrooms, and commercial buildings.')
             )}
           </p>
         </div>
@@ -137,7 +137,7 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
               </div>
 
               <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-neutral-400">
-                <span>{t('INSPEKSI SPESIFIKASI CETAK BIRU', 'INSPECT BLUEPRINT SPEC')}</span>
+                <span>{t('LIHAT DETAIL PROYEK', 'VIEW PROJECT DETAILS')}</span>
                 <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-black text-amber-400 transition-all">
                   <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Layanan residential dan commercial building Wonderful Works Construction, dengan alur kerja 10 tahap dari konsultasi awal hingga garansi purna serah terima.',
+    'Layanan rumah tinggal dan bangunan komersial Wonderful Works Construction, dengan alur kerja 10 tahap dari konsultasi awal sampai masa garansi.',
   alternates: { canonical: '/services' },
 };
 

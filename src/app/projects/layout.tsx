@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Portofolio proyek Wonderful Works Construction — hunian privat, showroom, dan gedung komersial di Surabaya dan Jawa Timur.',
+    'Portofolio proyek Wonderful Works Construction: rumah tinggal, showroom, dan gedung komersial.',
   alternates: { canonical: '/projects' },
 };
 

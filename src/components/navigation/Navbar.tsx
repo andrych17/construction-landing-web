@@ -18,10 +18,10 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
   const { contact: SITE_CONTACT, waLink } = useSiteContent();
 
   const navLinks = [
-    { href: '/', num: '01', label: 'HOME', desc: 'Studio & selected realizations' },
-    { href: '/about', num: '02', label: 'ABOUT US', desc: 'Ethos, philosophies & founder' },
-    { href: '/services', num: '03', label: 'SERVICES', desc: 'Signature services & 10-step methodology' },
-    { href: '/projects', num: '04', label: 'PROJECTS', desc: 'Architectural portfolio' },
+    { href: '/', num: '01', label: 'HOME', desc: 'Studio & selected projects' },
+    { href: '/about', num: '02', label: 'ABOUT US', desc: 'Philosophy & founder' },
+    { href: '/services', num: '03', label: 'SERVICES', desc: 'Services & 10-step workflow' },
+    { href: '/projects', num: '04', label: 'PROJECTS', desc: 'Project portfolio' },
     { href: '/contact', num: '05', label: 'CONTACT', desc: 'Direct consultation' },
   ];
 

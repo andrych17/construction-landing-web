@@ -48,8 +48,8 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
             <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
             <p className="font-sans text-base sm:text-xl md:text-2xl text-neutral-300 font-light leading-relaxed max-w-md mb-8">
               {t(
-                filled(ledeId, 'Untuk hunian privat, bangunan komersial, dan pekerjaan general contracting di Surabaya dan Jawa Timur.'),
-                filled(ledeEn, 'For bespoke residences, commercial developments, and general contracting across Surabaya and East Java.')
+                filled(ledeId, 'Untuk rumah tinggal, bangunan komersial, dan pekerjaan general contracting di Surabaya, Sidoarjo, dan Gresik.'),
+                filled(ledeEn, 'For homes, commercial buildings, and general contracting in Surabaya, Sidoarjo, and Gresik.')
               )}
             </p>
 
@@ -67,8 +67,8 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                 <LuShieldCheck className="w-4 h-4 text-amber-400" />
                 <span>
                   {t(
-                    'KONTRAK RESMI BERKEKUATAN HUKUM & JAMINAN SCHEDULE',
-                    'OFFICIAL LEGAL CONTRACT & TIME SCHEDULE GUARANTEE'
+                    'KONTRAK SPK TERTULIS & JADWAL KURVA-S',
+                    'WRITTEN SPK CONTRACT & S-CURVE SCHEDULE'
                   )}
                 </span>
               </div>
@@ -228,7 +228,7 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                     <input
                       type="text"
                       id="f-location"
-                      placeholder={t('Surabaya Barat / Timur / Sidoarjo', 'West Surabaya / East / Sidoarjo')}
+                      placeholder={t('Surabaya / Sidoarjo / Gresik', 'Surabaya / Sidoarjo / Gresik')}
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"

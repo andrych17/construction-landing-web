@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Studio ethos, filosofi desain, dan founder Wonderful Works Construction — arsitektur, interior, dan general contracting di Surabaya.',
+    'Filosofi desain dan profil founder Wonderful Works Construction, studio rancang bangun di Surabaya.',
   alternates: { canonical: '/about' },
 };
 
