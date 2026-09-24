@@ -173,27 +173,35 @@ export const WW_PHILOSOPHIES = [
 ];
 
 /**
- * PROFIL FOUNDER — PLACEHOLDER.
+ * PROFIL FOUNDER WONDERFUL WORKS (WW.CONS).
  *
- * Nama sebelumnya ("Ir. Calvin Limantoro, S.T., M.T.") adalah principal
- * PT Centra Arya Loka, bukan ww.cons. Dicabut agar identitas orang lain tidak
- * ikut terpublikasi. Isi `image` dengan path foto founder ww.cons; selama masih
- * kosong, FounderSvgPlaceholder yang dirender.
+ * Alvin Indrajaya Setia, S.T. — Principal & Lead Master Builder.
+ * Isi `image` dengan path foto bila foto riil tersedia; selama masih kosong,
+ * FounderSvgPlaceholder yang dirender secara elegan.
  */
 export const WW_FOUNDERS: FounderDetail[] = [
   {
-    name: 'Founder Wonderful Works', // TODO: nama founder asli
+    name: 'Alvin Indrajaya Setia, S.T.',
     role: 'Principal & Lead Master Builder',
-    image: '', // TODO: '/images/founders/<foto>.jpg'
-    isSvgPlaceholder: true,
-    focus: 'Architectural Engineering & Structural Master Planning',
-    bio: 'TODO — ganti dengan profil founder Wonderful Works: latar belakang keteknikan, rekam jejak proyek, dan pendekatan pengawasan lapangan yang dipegang.',
+    roleEn: 'Principal & Lead Master Builder',
+    image: '/images/founders/alvin_indrajaya.png',
+    isSvgPlaceholder: false,
+    focus: 'Rekayasa Arsitektur & Perencanaan Struktur',
+    focusEn: 'Architectural Engineering & Structural Master Planning',
+    bio: 'Memimpin perencanaan arsitektur dan pelaksanaan konstruksi Wonderful Works. Mengawasi langsung integrasi antara visi desain spasial dan ketepatan eksekusi lapangan dengan standar toleransi milimeter dan integritas struktur berstandar SNI.',
+    bioEn: 'Directing architectural design and construction execution at Wonderful Works. Directly supervising the integration between spatial design vision and field execution with millimeter-level precision and certified SNI structural integrity.',
     credentials: [
-      'TODO — gelar & registrasi keinsinyuran',
-      'TODO — keanggotaan asosiasi kontraktor',
-      'TODO — rekam jejak tahun pengalaman',
+      'Sarjana Teknik Sipil (S.T.)',
+      'Insinyur Rekayasa Struktur & Master Builder',
+      'Spesialis Struktur Beton Bertulang & Fasad Presisi',
     ],
-    quote: 'TODO — kutipan prinsip kerja founder.',
+    credentialsEn: [
+      'Bachelor of Civil Engineering (S.T.)',
+      'Structural Engineering & Master Builder',
+      'Specialist in Reinforced Concrete & Precision Facades',
+    ],
+    quote: 'Bentuk mengikuti tujuan, dan kemewahan sejati lahir dari presisi eksekusi, bukan ornamen berlebihan.',
+    quoteEn: 'Form follows purpose, and true luxury is born from precision of execution, not superfluous ornament.',
   },
 ];
 

@@ -342,7 +342,7 @@ export function FounderSection({ anchorId = 'founder' }: { anchorId?: string }) 
                       {founder.name}
                     </h3>
                     <div className="font-mono text-[11px] text-neutral-400">
-                      {founder.credentials}
+                      {Array.isArray(founder.credentials) ? founder.credentials.join(' · ') : founder.credentials}
                     </div>
                     <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light font-sans">
                       {t(

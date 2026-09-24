@@ -1,22 +1,22 @@
 # Graph Report - construction-landing-web  (2026-09-24)
 
 ## Corpus Check
-- 125 files · ~292,323 words
+- 125 files · ~359,790 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
 ## Summary
-- 668 nodes · 1479 edges · 41 communities (29 shown, 12 thin omitted)
+- 669 nodes · 1480 edges · 36 communities (28 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 27 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `152ae576`
+- Built from commit: `d181a05a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- requireAdmin
+- layout-api.ts
 - react
 - content.ts
 - home-layout.ts
@@ -34,26 +34,21 @@
 - RowActionMenu.tsx
 - SearchableSelect.tsx
 - StatusPill.tsx
-- DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO
+- app/layout.tsx
 - eslint.config.mjs
 - ListState.tsx
 - generate_logos.py
 - postcss.config.mjs
-- about/layout.tsx
 - login/layout.tsx
-- services/layout.tsx
 - pil
 - next
 - auth.ts
 - handleApiError
-- db.ts
 - WW Construction Website
-- projects/route.ts
+- requireAdmin
 - Hero Video — Panduan & Koleksi Prompt Google Flow (Veo 3.1)
 - upload/route.ts
 - WW Construction Portfolio Website
-- projects/layout.tsx
-- prisma
 
 ## God Nodes (most connected - your core abstractions)
 1. `next` - 53 edges
@@ -82,19 +77,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (41 total, 12 thin omitted)
+## Communities (36 total, 8 thin omitted)
 
-### Community 0 - "requireAdmin"
-Cohesion: 0.21
-Nodes (17): server-only, POST(), GET(), PUT(), POST(), GET(), PUT(), DELETE() (+9 more)
+### Community 0 - "layout-api.ts"
+Cohesion: 0.24
+Nodes (13): server-only, POST(), GET(), PUT(), POST(), GET(), PUT(), parsePageId() (+5 more)
 
 ### Community 1 - "react"
-Cohesion: 0.06
-Nodes (73): framer-motion, react, react-icons, src_app_globals, buildStructuredSchema(), metadata, plusJakartaSans, RootLayout() (+65 more)
+Cohesion: 0.07
+Nodes (61): framer-motion, react, react-icons, Props, ModalSize, Props, SIZE_CLASS, HOME_HERO_COPY (+53 more)
 
 ### Community 2 - "content.ts"
 Cohesion: 0.06
-Nodes (68): db, main(), seedAdmin(), seedContent(), seedProjects(), slugify(), bcryptjs, @prisma/client (+60 more)
+Nodes (67): db, main(), seedAdmin(), seedContent(), seedProjects(), slugify(), @prisma/client, ContentSectionPage() (+59 more)
 
 ### Community 3 - "home-layout.ts"
 Cohesion: 0.06
@@ -106,15 +101,15 @@ Nodes (42): asContact(), ContactEditor(), ContactValue, linesToText(), Place, te
 
 ### Community 5 - "AdminShell.tsx"
 Cohesion: 0.08
-Nodes (26): AdminLayout(), dynamic, metadata, dynamic, AdminShell(), AdminShellProps, NavGroup, NavItem (+18 more)
+Nodes (29): AdminLayout(), dynamic, metadata, dynamic, AdminShell(), AdminShellProps, NavGroup, NavItem (+21 more)
 
 ### Community 6 - "smoke-cms-api.mjs"
 Cohesion: 0.10
 Nodes (15): ref_node_assert, ref_node_fs, ref_node_path, ref_node_stream, ref_node_url, sharp, ALLOWLIST, data (+7 more)
 
 ### Community 7 - "package.json"
-Cohesion: 0.11
-Nodes (18): name, private, version, autoprefixer, babel-plugin-react-compiler, postcss, prisma, react-dom (+10 more)
+Cohesion: 0.09
+Nodes (21): name, prisma, seed, private, version, autoprefixer, babel-plugin-react-compiler, bcryptjs (+13 more)
 
 ### Community 8 - "compilerOptions"
 Cohesion: 0.11
@@ -156,37 +151,33 @@ Nodes (3): Props, SearchableSelect(), SearchableSelectOption
 Cohesion: 0.40
 Nodes (5): FALLBACK, getStatusMeta(), STATUS_MAP, StatusMeta, StatusPill()
 
-### Community 18 - "DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO"
-Cohesion: 0.10
-Nodes (20): 1. Executive Summary: The Anti-AI-Slop Teardown, 2. Visual Theme & Calibrated Atmosphere, 3. Typographic Architecture & Rules, 4. Reverse-Engineered & Elevated Interaction Engine, 5. Component Master Table & Behavioral States, 6. Performance & Implementation Guardrails, 7. Implementation Roadmap & Milestones, A. Diagnosa: Mengapa betadesain.com Terasa "Full AI & Jelek"? (+12 more)
+### Community 18 - "app/layout.tsx"
+Cohesion: 0.06
+Nodes (31): 1. Executive Summary: The Anti-AI-Slop Teardown, 2. Visual Theme & Calibrated Atmosphere, 3. Typographic Architecture & Rules, 4. Reverse-Engineered & Elevated Interaction Engine, 5. Component Master Table & Behavioral States, 6. Performance & Implementation Guardrails, 7. Implementation Roadmap & Milestones, A. Diagnosa: Mengapa betadesain.com Terasa "Full AI & Jelek"? (+23 more)
 
 ### Community 19 - "eslint.config.mjs"
 Cohesion: 0.50
 Nodes (3): eslintConfig, eslint, eslint-config-next
 
 ### Community 30 - "next"
-Cohesion: 0.12
-Nodes (3): nextConfig, next, metadata
+Cohesion: 0.08
+Nodes (6): nextConfig, next, metadata, metadata, metadata, metadata
 
 ### Community 31 - "auth.ts"
-Cohesion: 0.23
-Nodes (10): loginSchema, POST(), getSecretKey(), src_lib_auth_session_cookie_name, sessionCookieOptions(), signSessionToken(), UnauthorizedError, verifyPassword() (+2 more)
+Cohesion: 0.17
+Nodes (16): AdminDashboardPage(), dynamic, AdminUsersPage(), dynamic, loginSchema, POST(), getAdminSession(), getSecretKey() (+8 more)
 
 ### Community 32 - "handleApiError"
 Cohesion: 0.30
 Nodes (11): zod, DELETE(), PUT(), updateUserSchema, createUserSchema, GET(), POST(), handleApiError() (+3 more)
 
-### Community 33 - "db.ts"
-Cohesion: 0.21
-Nodes (9): AdminDashboardPage(), dynamic, dynamic, AdminUsersPage(), dynamic, UsersTable(), getAdminSession(), db (+1 more)
-
 ### Community 34 - "WW Construction Website"
 Cohesion: 0.18
 Nodes (10): Build untuk Production, Cara Menjalankan, Customization, Fitur, Lisensi, Mengganti Foto Proyek, Mengubah Konten, Struktur Proyek (+2 more)
 
-### Community 35 - "projects/route.ts"
-Cohesion: 0.29
-Nodes (7): GET(), POST(), uniqueSlug(), ProjectInput, projectInputSchema, specLine, slugify()
+### Community 35 - "requireAdmin"
+Cohesion: 0.16
+Nodes (13): dynamic, DELETE(), GET(), PUT(), GET(), POST(), uniqueSlug(), requireAdmin() (+5 more)
 
 ### Community 36 - "Hero Video — Panduan & Koleksi Prompt Google Flow (Veo 3.1)"
 Cohesion: 0.22
@@ -201,24 +192,24 @@ Cohesion: 0.29
 Nodes (6): Description, Development Server, Features Implemented, Project Status, Project Type, WW Construction Portfolio Website
 
 ## Knowledge Gaps
-- **222 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+217 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 276 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **223 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+218 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 277 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `next` connect `next` to `requireAdmin`, `db.ts`, `content.ts`, `home-layout.ts`, `projects/route.ts`, `AdminShell.tsx`, `upload/route.ts`, `package.json`, `handleApiError`, `react`, `projects/layout.tsx`, `JsonField.tsx`, `middleware.ts`, `StatTile.tsx`, `about/layout.tsx`, `services/layout.tsx`, `TopProgressBar.tsx`, `auth.ts`?**
+- **Why does `next` connect `next` to `layout-api.ts`, `handleApiError`, `content.ts`, `home-layout.ts`, `requireAdmin`, `AdminShell.tsx`, `upload/route.ts`, `package.json`, `JsonField.tsx`, `react`, `middleware.ts`, `StatTile.tsx`, `app/layout.tsx`, `TopProgressBar.tsx`, `auth.ts`?**
   _High betweenness centrality (0.264) - this node is a cross-community bridge._
-- **Why does `react` connect `react` to `content.ts`, `home-layout.ts`, `JsonField.tsx`, `AdminShell.tsx`, `package.json`, `middleware.ts`, `StatTile.tsx`, `RowActionMenu.tsx`, `SearchableSelect.tsx`, `ListState.tsx`, `TopProgressBar.tsx`?**
+- **Why does `react` connect `react` to `content.ts`, `home-layout.ts`, `JsonField.tsx`, `AdminShell.tsx`, `package.json`, `middleware.ts`, `StatTile.tsx`, `RowActionMenu.tsx`, `SearchableSelect.tsx`, `app/layout.tsx`, `ListState.tsx`, `TopProgressBar.tsx`?**
   _High betweenness centrality (0.172) - this node is a cross-community bridge._
-- **Why does `ArchitecturalPreloader()` connect `DESIGN SYSTEM & ARCHITECTURAL INTERACTION MANIFESTO` to `react`?**
-  _High betweenness centrality (0.052) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _222 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _223 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.05916305916305916 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07282913165266107 - nodes in this community are weakly interconnected._
 - **Should `content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.061668289516390785 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06260406260406261 - nodes in this community are weakly interconnected._
 - **Should `home-layout.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.05698778833107191 - nodes in this community are weakly interconnected._
+- **Should `JsonField.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.06836158192090395 - nodes in this community are weakly interconnected._

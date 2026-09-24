@@ -270,10 +270,10 @@
     "semantic_hash": "fb4f3787b6fecc24981b688f6040a202"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790180198.9801931,
-    "seen": 1790230549.317384,
-    "ast_hash": "10a5a4d21c71cc6ef74b40f522d69098",
-    "semantic_hash": "10a5a4d21c71cc6ef74b40f522d69098"
+    "mtime": 1790233830.448671,
+    "seen": 1790234037.477928,
+    "ast_hash": "a9f34be3bef5dc96db1948bf23fae9d1",
+    "semantic_hash": ""
   },
   "src/app/page.tsx": {
     "mtime": 1790130205.1389806,
@@ -528,9 +528,9 @@
     "semantic_hash": "47b257721ef5595962a4eca738d0072d"
   },
   "src/components/home/sections.tsx": {
-    "mtime": 1790230667.2744462,
-    "seen": 1790230699.4074364,
-    "ast_hash": "dad5edb86584c417178ec3bbd17990ca",
+    "mtime": 1790233172.2016351,
+    "seen": 1790233197.4145486,
+    "ast_hash": "bd5eee9887a1528d96f7d897f48f2d6b",
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
@@ -564,10 +564,10 @@
     "semantic_hash": "e068fe96d892d5bc4534fdc04d43afbe"
   },
   "src/components/pages/about-sections.tsx": {
-    "mtime": 1790130350.0735898,
-    "seen": 1790230549.3174167,
-    "ast_hash": "edd201d83533bed44ad8d128bc8b6048",
-    "semantic_hash": "edd201d83533bed44ad8d128bc8b6048"
+    "mtime": 1790234459.113185,
+    "seen": 1790235003.3123412,
+    "ast_hash": "1cd5d9cab893d8cdf56c7a6cf1a1a224",
+    "semantic_hash": ""
   },
   "src/components/pages/contact-sections.tsx": {
     "mtime": 1790130109.541431,
@@ -612,10 +612,10 @@
     "semantic_hash": "1e2a6ee15f1b4dbcf03ea6b9c3440871"
   },
   "src/components/ui/FounderSvgPlaceholder.tsx": {
-    "mtime": 1790046629.8780077,
-    "seen": 1790230549.3174222,
-    "ast_hash": "c7636f53c894da7483dce81667d63e08",
-    "semantic_hash": "c7636f53c894da7483dce81667d63e08"
+    "mtime": 1790233159.2197258,
+    "seen": 1790233197.4145722,
+    "ast_hash": "16c153e7bc86a8f85c7358223c88b7d2",
+    "semantic_hash": ""
   },
   "src/components/ui/HeroMedia.tsx": {
     "mtime": 1790068345.0202644,
@@ -642,10 +642,10 @@
     "semantic_hash": "98566e0127644445fb8dfe3a331a8a12"
   },
   "src/data/siteData.ts": {
-    "mtime": 1790099324.9296303,
-    "seen": 1790230549.3174257,
-    "ast_hash": "c86d13a8c4acbce5b8c2a05dab7e1436",
-    "semantic_hash": "c86d13a8c4acbce5b8c2a05dab7e1436"
+    "mtime": 1790234470.0553584,
+    "seen": 1790235003.3123536,
+    "ast_hash": "2d9006b908f3eea47c73835c0cee4cca",
+    "semantic_hash": ""
   },
   "src/lib/api-error.ts": {
     "mtime": 1790093660.8559766,
@@ -1137,6 +1137,12 @@
     "mtime": 1790049760.8903804,
     "seen": 1790230699.407631,
     "ast_hash": "9d3d165b50816030422c2f3457ef2409",
+    "semantic_hash": ""
+  },
+  "public/images/founders/alvin_indrajaya.png": {
+    "mtime": 1790234435.8240895,
+    "seen": 1790235003.3123937,
+    "ast_hash": "c88a844f8f5eccb2c0b29b7c883d5bad",
     "semantic_hash": ""
   }
 }

@@ -11,7 +11,7 @@ interface FounderSvgPlaceholderProps {
 export default function FounderSvgPlaceholder({
   className = 'w-full h-full',
   title = 'LEAD PRINCIPAL & MASTER BUILDER',
-  subtitle = 'IR. CALVIN LIMANTORO, S.T., M.T.',
+  subtitle = 'ALVIN INDRAJAYA SETIA, S.T.',
 }: FounderSvgPlaceholderProps) {
   return (
     <div className={`relative w-full h-full min-h-[380px] bg-gradient-to-b from-[#141414] via-[#0a0a0a] to-[#040404] flex items-center justify-center overflow-hidden select-none ${className}`}>

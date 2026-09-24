@@ -195,10 +195,20 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
               {/* Vector Silhouette Portrait Box */}
               <div className="md:col-span-6">
                 <div className="relative aspect-[3/4] w-full rounded-none overflow-hidden border border-white/15 bg-black shadow-inner">
-                  <FounderSvgPlaceholder
-                    title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
-                    subtitle={founder.name}
-                  />
+                  {founder.image ? (
+                    <Image
+                      src={founder.image}
+                      alt={`${founder.name} - ${founder.role}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-[0.9] group-hover:brightness-100"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  ) : (
+                    <FounderSvgPlaceholder
+                      title={t('MASTER BUILDER UTAMA', 'LEAD MASTER BUILDER')}
+                      subtitle={founder.name}
+                    />
+                  )}
                 </div>
               </div>
 
