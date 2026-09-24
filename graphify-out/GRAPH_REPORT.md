@@ -1,17 +1,17 @@
 # Graph Report - construction-landing-web  (2026-09-24)
 
 ## Corpus Check
-- 125 files · ~359,790 words
+- 126 files · ~359,320 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
 ## Summary
-- 669 nodes · 1480 edges · 36 communities (28 shown, 8 thin omitted)
+- 670 nodes · 1480 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 27 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d181a05a`
+- Built from commit: `44715db3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -77,7 +77,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 8 thin omitted)
+## Communities (37 total, 9 thin omitted)
 
 ### Community 0 - "layout-api.ts"
 Cohesion: 0.24
@@ -193,8 +193,8 @@ Nodes (6): Description, Development Server, Features Implemented, Project Status
 
 ## Knowledge Gaps
 - **223 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+218 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 277 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 278 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -202,7 +202,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `next` connect `next` to `layout-api.ts`, `handleApiError`, `content.ts`, `home-layout.ts`, `requireAdmin`, `AdminShell.tsx`, `upload/route.ts`, `package.json`, `JsonField.tsx`, `react`, `middleware.ts`, `StatTile.tsx`, `app/layout.tsx`, `TopProgressBar.tsx`, `auth.ts`?**
   _High betweenness centrality (0.264) - this node is a cross-community bridge._
 - **Why does `react` connect `react` to `content.ts`, `home-layout.ts`, `JsonField.tsx`, `AdminShell.tsx`, `package.json`, `middleware.ts`, `StatTile.tsx`, `RowActionMenu.tsx`, `SearchableSelect.tsx`, `app/layout.tsx`, `ListState.tsx`, `TopProgressBar.tsx`?**
-  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+  _High betweenness centrality (0.171) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
   _223 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**

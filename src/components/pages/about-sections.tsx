@@ -243,17 +243,19 @@ export function AboutFounderSection({ anchorId = 'founder' }: Copy) {
             )}
 
             {/* Verified Credentials */}
-            <div className="space-y-2.5 pt-6 border-t border-white/[0.08]">
-              <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest block mb-3 font-bold">
-                {t('PENDIDIKAN:', 'EDUCATION:')}
-              </span>
-              {(lang === 'en' && founder.credentialsEn?.length ? founder.credentialsEn : founder.credentials)?.map((cred) => (
-                <div key={cred} className="flex items-start gap-2.5 text-xs text-neutral-300 font-sans">
-                  <LuCheck className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <span>{cred}</span>
-                </div>
-              ))}
-            </div>
+            {((lang === 'en' && founder.credentialsEn?.length ? founder.credentialsEn : founder.credentials) ?? []).length > 0 && (
+              <div className="space-y-2.5 pt-6 border-t border-white/[0.08]">
+                <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest block mb-3 font-bold">
+                  {t('PENDIDIKAN:', 'EDUCATION:')}
+                </span>
+                {(lang === 'en' && founder.credentialsEn?.length ? founder.credentialsEn : founder.credentials)?.map((cred) => (
+                  <div key={cred} className="flex items-start gap-2.5 text-xs text-neutral-300 font-sans">
+                    <LuCheck className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>{cred}</span>
+                  </div>
+                ))}
+              </div>
+            )}
 
             <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between text-xs font-mono text-neutral-400 gap-3">
               <span>WONDERFUL WORKS</span>

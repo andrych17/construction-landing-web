@@ -62,10 +62,10 @@ async function seedContent() {
     await db.siteContent.upsert({
       where: { key },
       create: { key, value: value as object },
-      update: {},
+      update: { value: value as object },
     });
   }
-  console.log(`Site content siap: ${sections.length} section (skip yang sudah ada).`);
+  console.log(`Site content siap: ${sections.length} section diperbarui.`);
 }
 
 async function seedProjects() {

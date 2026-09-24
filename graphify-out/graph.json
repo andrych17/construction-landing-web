@@ -300,7 +300,7 @@
       "file_type": "code",
       "norm_label": "faqitem",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L608"
+      "source_location": "L600"
     },
     {
       "id": "src_data_sitedata_founderdetail",
@@ -1196,7 +1196,7 @@
       "file_type": "code",
       "norm_label": "aboutctasection()",
       "source_file": "src/components/pages/about-sections.tsx",
-      "source_location": "L271"
+      "source_location": "L273"
     },
     {
       "id": "src_components_pages_about_sections_aboutfoundersection",
@@ -1664,7 +1664,7 @@
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L220"
+      "source_location": "L216"
     },
     {
       "id": "src_components_interactive_architecturalpreloader_architecturalpreloader",
@@ -5070,7 +5070,7 @@
       "file_type": "code",
       "norm_label": "centra_services",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L209"
+      "source_location": "L201"
     },
     {
       "id": "src_data_sitedata_default_hero_about",
@@ -5136,7 +5136,7 @@
       "file_type": "code",
       "norm_label": "master_methodology",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L279"
+      "source_location": "L271"
     },
     {
       "id": "src_data_sitedata_rotating_disciplines",
@@ -5180,7 +5180,7 @@
       "file_type": "code",
       "norm_label": "ww_faqs",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L618"
+      "source_location": "L610"
     },
     {
       "id": "src_data_sitedata_ww_founders",
@@ -5213,7 +5213,7 @@
       "file_type": "code",
       "norm_label": "ww_projects",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L393"
+      "source_location": "L385"
     },
     {
       "id": "src_lib_content",
@@ -5357,6 +5357,17 @@
       "norm_label": "config",
       "source_file": "postcss.config.mjs",
       "source_location": "L2"
+    },
+    {
+      "id": "prisma_migrations_20260924151500_patch_bilingual_founders_migration",
+      "label": "20260924151500_patch_bilingual_founders/migration.sql",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "20260924151500_patch_bilingual_founders/migration.sql",
+      "file_type": "code",
+      "norm_label": "20260924151500_patch_bilingual_founders/migration.sql",
+      "source_file": "prisma/migrations/20260924151500_patch_bilingual_founders/migration.sql",
+      "source_location": null
     },
     {
       "id": "src_app_admin_admin_login_layout",
@@ -8708,7 +8719,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L225",
+      "source_location": "L221",
       "weight": 1.0
     },
     {
@@ -8720,7 +8731,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L226",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -9356,7 +9367,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/pages/about-sections.tsx",
-      "source_location": "L272",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -9368,7 +9379,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/pages/about-sections.tsx",
-      "source_location": "L273",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -21241,7 +21252,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/layout.tsx",
-      "source_location": "L220",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -22726,7 +22737,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/pages/about-sections.tsx",
-      "source_location": "L271",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -23254,7 +23265,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L209",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -23276,7 +23287,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L279",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -23287,7 +23298,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L393",
+      "source_location": "L385",
       "weight": 1.0
     },
     {
@@ -23331,7 +23342,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L608",
+      "source_location": "L600",
       "weight": 1.0
     },
     {
@@ -23353,7 +23364,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
-      "source_location": "L618",
+      "source_location": "L610",
       "weight": 1.0
     },
     {
@@ -25066,5 +25077,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d181a05a87856296828b68b2e66ee0fcdc5aa71c"
+  "built_at_commit": "44715db3d9a0e5966abd4ff9cf97e9c42a77d916"
 }
