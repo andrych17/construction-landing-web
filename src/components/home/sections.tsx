@@ -28,6 +28,23 @@ import { useSiteContent } from '@/context/SiteContentContext';
 import { HOME_HERO_COPY } from '@/components/home/hero-copy';
 import { filled } from '@/components/pages/copy';
 
+function formatHeroIntro(text: string) {
+  // Highlight quoted phrases like "Quality is our priority"
+  const parts = text.split(/("Quality is our priority"|“Quality is our priority”|"[^"]+"|[“"][^”"]+[”"])/gi);
+  if (parts.length <= 1) return text;
+  return parts.map((part, idx) => {
+    if (part.startsWith('"') || part.startsWith('“') || part.startsWith('”')) {
+      const clean = part.replace(/^[“"]|[”"]$/g, '');
+      return (
+        <span key={idx} className="text-amber-400 font-semibold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          &ldquo;{clean}&rdquo;
+        </span>
+      );
+    }
+    return part;
+  });
+}
+
 export function HeroSection({
   anchorId = 'hero',
   line1Id,
@@ -66,8 +83,8 @@ export function HeroSection({
           <span className="text-amber-400 font-extrabold">{t(filled(line3Id, HOME_HERO_COPY.line3Id), filled(line3En, HOME_HERO_COPY.line3En))}</span>
         </h1>
 
-        <p className="text-neutral-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto mb-10 font-sans reveal-load reveal-delay-1">
-          {t(filled(introId, HOME_HERO_COPY.introId), filled(introEn, HOME_HERO_COPY.introEn))}
+        <p className="text-neutral-100 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto mb-10 font-sans reveal-load reveal-delay-1 drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
+          {formatHeroIntro(t(filled(introId, HOME_HERO_COPY.introId), filled(introEn, HOME_HERO_COPY.introEn)))}
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-16 reveal-load reveal-delay-2 max-w-md sm:max-w-none mx-auto">
