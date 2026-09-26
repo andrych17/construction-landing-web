@@ -100,6 +100,7 @@ async function readHistory(page: PageId): Promise<LayoutRevision[]> {
 function summarize(history: LayoutRevision[]): HistorySummary[] {
   return history.map((revision) => ({
     at: revision.at,
+    by: revision.by,
     blocks: revision.data.content.map((block) => block.type),
   }));
 }
@@ -124,22 +125,29 @@ export async function getHomeLayout(): Promise<HomeLayoutData> {
   return getPageLayout('home');
 }
 
-export async function savePageLayout(page: PageId, next: HomeLayoutData): Promise<{ history: HistorySummary[] }> {
+export async function savePageLayout(
+  page: PageId,
+  next: HomeLayoutData,
+  by?: string,
+): Promise<{ history: HistorySummary[] }> {
   const current = await readStoredLayout(page);
   let history = await readHistory(page);
   if (current && !layoutsEqual(current, next)) {
-    history = [{ at: new Date().toISOString(), data: current }, ...history.filter((item) => !layoutsEqual(item.data, current))].slice(0, HISTORY_LIMIT);
+    history = [
+      { at: new Date().toISOString(), by, data: current },
+      ...history.filter((item) => !layoutsEqual(item.data, current)),
+    ].slice(0, HISTORY_LIMIT);
   }
   const writes = [
     db.siteContent.upsert({
       where: { key: layoutStorageKey(page) },
-      create: { key: layoutStorageKey(page), value: asJson(next) },
-      update: { value: asJson(next) },
+      create: { key: layoutStorageKey(page), value: asJson(next), updatedBy: by },
+      update: { value: asJson(next), updatedBy: by },
     }),
     db.siteContent.upsert({
       where: { key: historyStorageKey(page) },
-      create: { key: historyStorageKey(page), value: asJson(history) },
-      update: { value: asJson(history) },
+      create: { key: historyStorageKey(page), value: asJson(history), updatedBy: by },
+      update: { value: asJson(history), updatedBy: by },
     }),
   ];
   await db.$transaction(writes);
@@ -152,6 +160,7 @@ export async function savePageLayout(page: PageId, next: HomeLayoutData): Promis
 export async function restorePageRevision(
   page: PageId,
   index: number,
+  by?: string,
 ): Promise<{ value: HomeLayoutData; history: HistorySummary[] } | null> {
   const history = await readHistory(page);
   const picked = history[index];
@@ -159,17 +168,17 @@ export async function restorePageRevision(
   const current = (await readStoredLayout(page)) ?? defaultPageLayout(page);
   const nextHistory = layoutsEqual(current, picked.data)
     ? history
-    : [{ at: new Date().toISOString(), data: current }, ...history.filter((_, itemIndex) => itemIndex !== index)].slice(0, HISTORY_LIMIT);
+    : [{ at: new Date().toISOString(), by, data: current }, ...history.filter((_, itemIndex) => itemIndex !== index)].slice(0, HISTORY_LIMIT);
   await db.$transaction([
     db.siteContent.upsert({
       where: { key: layoutStorageKey(page) },
-      create: { key: layoutStorageKey(page), value: asJson(picked.data) },
-      update: { value: asJson(picked.data) },
+      create: { key: layoutStorageKey(page), value: asJson(picked.data), updatedBy: by },
+      update: { value: asJson(picked.data), updatedBy: by },
     }),
     db.siteContent.upsert({
       where: { key: historyStorageKey(page) },
-      create: { key: historyStorageKey(page), value: asJson(nextHistory) },
-      update: { value: asJson(nextHistory) },
+      create: { key: historyStorageKey(page), value: asJson(nextHistory), updatedBy: by },
+      update: { value: asJson(nextHistory), updatedBy: by },
     }),
   ]);
   if (page === 'home') {

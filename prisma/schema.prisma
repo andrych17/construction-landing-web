@@ -26,6 +26,7 @@ model SiteContent {
   key       String   @id
   value     Json
   updatedAt DateTime @updatedAt
+  updatedBy String?
 }
 
 model Project {
@@ -56,6 +57,7 @@ model Project {
   published    Boolean  @default(true)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  updatedBy    String?
 
   @@index([published, order])
 }

@@ -79,10 +79,11 @@ export type HomeLayoutData = {
 
 export type LayoutRevision = {
   at: string;
+  by?: string;
   data: HomeLayoutData;
 };
 
-export type HistorySummary = { at: string; blocks: string[] };
+export type HistorySummary = { at: string; by?: string; blocks: string[] };
 
 export function isPageId(value: string): value is PageId {
   return PAGES.some((page) => page.id === value);
@@ -214,9 +215,14 @@ export function sanitizeHistory(page: PageId, value: unknown): LayoutRevision[] 
   for (const item of value) {
     if (!item || typeof item !== 'object') continue;
     const at = (item as { at?: unknown }).at;
+    const by = (item as { by?: unknown }).by;
     const data = sanitizePageLayout(page, (item as { data?: unknown }).data);
     if (typeof at !== 'string' || !data || data.content.length === 0) continue;
-    revisions.push({ at: at.slice(0, 40), data });
+    revisions.push({
+      at: at.slice(0, 40),
+      by: typeof by === 'string' && by.trim() ? by.trim().slice(0, 80) : undefined,
+      data,
+    });
     if (revisions.length >= HISTORY_LIMIT) break;
   }
   return revisions;

@@ -19,11 +19,11 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    await requireAdmin();
+    const session = await requireAdmin();
     const { id } = await params;
     const data = projectInputSchema.parse(await request.json());
 
-    const project = await db.project.update({ where: { id }, data });
+    const project = await db.project.update({ where: { id }, data: { ...data, updatedBy: session.name } });
 
     revalidatePath('/', 'layout');
     return NextResponse.json(project);

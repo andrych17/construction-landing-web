@@ -6,13 +6,13 @@ import { restoreLayoutResponse } from '@/lib/layout-api';
 
 export async function POST(request: Request, { params }: { params: Promise<{ page: string }> }) {
   try {
-    await requireAdmin();
+    const session = await requireAdmin();
     const { page: raw } = await params;
     const page = parsePageId(raw);
     if (!page) return NextResponse.json({ error: 'Halaman tidak dikenal.' }, { status: 404 });
     const body = await request.json().catch(() => ({}));
     const index = typeof body.index === 'number' && body.index >= 0 ? body.index : 0;
-    return await restoreLayoutResponse(page, index);
+    return await restoreLayoutResponse(page, index, session.name);
   } catch (error) {
     return handleApiError(error);
   }

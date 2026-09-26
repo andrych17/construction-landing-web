@@ -29,12 +29,12 @@ async function uniqueSlug(title: string): Promise<string> {
 
 export async function POST(request: Request) {
   try {
-    await requireAdmin();
+    const session = await requireAdmin();
     const data = projectInputSchema.parse(await request.json());
     const slug = await uniqueSlug(data.title);
 
     const project = await db.project.create({
-      data: { ...data, slug },
+      data: { ...data, slug, updatedBy: session.name },
     });
 
     revalidatePath('/', 'layout');

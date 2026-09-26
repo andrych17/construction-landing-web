@@ -10,6 +10,7 @@ import {
   getMethodology,
   getFaqs,
 } from '@/lib/content';
+import { db } from '@/lib/db';
 import type { JsonValue } from '@/components/admin/JsonField';
 
 const SECTION_FETCHERS: Record<string, () => Promise<unknown>> = {
@@ -38,8 +39,28 @@ export default async function ContentSectionPage({ params }: { params: Promise<{
   const fetcher = SECTION_FETCHERS[key];
   if (!fetcher) notFound();
 
-  const value = await fetcher();
+  const [value, meta] = await Promise.all([
+    fetcher(),
+    db.siteContent.findUnique({
+      where: { key },
+      select: { updatedAt: true, updatedBy: true },
+    }),
+  ]);
   const label = CONTENT_SECTIONS.find((s) => s.key === key)?.label ?? key;
 
-  return <SectionEditor sectionKey={key} label={label} initialValue={value as JsonValue} />;
+  return (
+    <SectionEditor
+      sectionKey={key}
+      label={label}
+      initialValue={value as JsonValue}
+      lastUpdated={
+        meta?.updatedAt
+          ? {
+              at: meta.updatedAt.toISOString(),
+              by: meta.updatedBy ?? undefined,
+            }
+          : undefined
+      }
+    />
+  );
 }

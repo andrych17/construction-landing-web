@@ -13,8 +13,8 @@ export async function GET() {
 
 export async function PUT(request: Request) {
   try {
-    await requireAdmin();
-    return await writeLayoutResponse('home', await request.json());
+    const session = await requireAdmin();
+    return await writeLayoutResponse('home', await request.json(), session.name);
   } catch (error) {
     return handleApiError(error);
   }

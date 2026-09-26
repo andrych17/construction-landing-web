@@ -85,9 +85,16 @@ export function HomeComposer({
                         type="button"
                         disabled={busy}
                         onClick={() => restore(index)}
-                        className="block w-full rounded px-2 py-2 text-left text-xs hover:bg-neutral-100 disabled:opacity-50"
+                        className="block w-full rounded px-2.5 py-2 text-left text-xs hover:bg-neutral-100 disabled:opacity-50"
                       >
-                        <span className="font-medium text-neutral-900">{when(item.at)}</span>
+                        <div className="flex items-center justify-between gap-1.5">
+                          <span className="font-semibold text-neutral-900">{when(item.at)}</span>
+                          {item.by && (
+                            <span className="truncate max-w-[120px] rounded bg-neutral-100 px-1.5 py-0.5 text-[10px] font-medium text-neutral-600 border border-neutral-200">
+                              {item.by}
+                            </span>
+                          )}
+                        </div>
                         <span className="mt-0.5 block truncate text-neutral-500">{item.blocks.join(' · ')}</span>
                       </button>
                     ))}

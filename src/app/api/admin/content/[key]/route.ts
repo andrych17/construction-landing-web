@@ -41,8 +41,19 @@ export async function GET(_request: Request, { params }: { params: Promise<{ key
     if (!isContentSectionKey(key)) {
       return NextResponse.json({ error: `Section '${key}' tidak dikenal.` }, { status: 404 });
     }
-    const value = await SECTION_DEFAULTS[key]();
-    return NextResponse.json({ key, value });
+    const [value, row] = await Promise.all([
+      SECTION_DEFAULTS[key](),
+      db.siteContent.findUnique({
+        where: { key },
+        select: { updatedAt: true, updatedBy: true },
+      }),
+    ]);
+    return NextResponse.json({
+      key,
+      value,
+      updatedAt: row?.updatedAt,
+      updatedBy: row?.updatedBy,
+    });
   } catch (error) {
     return handleApiError(error);
   }
@@ -50,7 +61,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ key
 
 export async function PUT(request: Request, { params }: { params: Promise<{ key: string }> }) {
   try {
-    await requireAdmin();
+    const session = await requireAdmin();
     const { key } = await params;
     if (!isContentSectionKey(key)) {
       return NextResponse.json({ error: `Section '${key}' tidak dikenal.` }, { status: 404 });
@@ -62,12 +73,17 @@ export async function PUT(request: Request, { params }: { params: Promise<{ key:
 
     const row = await db.siteContent.upsert({
       where: { key },
-      create: { key, value: body },
-      update: { value: body },
+      create: { key, value: body, updatedBy: session.name },
+      update: { value: body, updatedBy: session.name },
     });
 
     revalidatePath('/', 'layout');
-    return NextResponse.json({ key: row.key, value: row.value });
+    return NextResponse.json({
+      key: row.key,
+      value: row.value,
+      updatedAt: row.updatedAt,
+      updatedBy: row.updatedBy,
+    });
   } catch (error) {
     return handleApiError(error);
   }

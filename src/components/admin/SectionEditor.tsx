@@ -9,18 +9,28 @@ import { JsonField, type JsonValue } from '@/components/admin/JsonField';
 import { CONTENT_SECTIONS } from '@/lib/content-sections';
 import { Button } from '@/components/admin/ui/Button';
 
+function formatDate(at?: string): string {
+  if (!at) return '';
+  const date = new Date(at);
+  if (Number.isNaN(date.getTime())) return at;
+  return new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+}
+
 export function SectionEditor({
   sectionKey,
   label,
   initialValue,
+  lastUpdated,
 }: {
   sectionKey: string;
   label: string;
   initialValue: JsonValue;
+  lastUpdated?: { at: string; by?: string };
 }) {
   const router = useRouter();
   const [value, setValue] = useState<JsonValue>(initialValue);
   const [savedValue, setSavedValue] = useState<JsonValue>(initialValue);
+  const [meta, setMeta] = useState<{ at: string; by?: string } | undefined>(lastUpdated);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState<'idle' | 'saved' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -65,8 +75,12 @@ export function SectionEditor({
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error ?? 'Gagal menyimpan.');
       }
+      const body = await res.json().catch(() => ({}));
       setSavedValue(value);
       setStatus('saved');
+      if (body.updatedAt) {
+        setMeta({ at: body.updatedAt, by: body.updatedBy });
+      }
       if (preview) {
         setPreviewKey(markPreviewSaved(preview.preview));
         setPreviewOpen(true);
@@ -87,8 +101,18 @@ export function SectionEditor({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-lg font-bold text-slate-900">{label}</h1>
-          {status === 'saved' && <p className="text-xs text-emerald-600 font-medium">Tersimpan.</p>}
-          {status === 'error' && <p className="text-xs text-red-600 font-medium">{errorMessage}</p>}
+          {meta?.at && (
+            <p className="text-xs text-slate-500 mt-0.5">
+              Terakhir diperbarui: <span className="font-medium text-slate-700">{formatDate(meta.at)}</span>
+              {meta.by && (
+                <>
+                  {' '}oleh <span className="font-semibold text-slate-800">{meta.by}</span>
+                </>
+              )}
+            </p>
+          )}
+          {status === 'saved' && <p className="text-xs text-emerald-600 font-medium mt-0.5">Tersimpan.</p>}
+          {status === 'error' && <p className="text-xs text-red-600 font-medium mt-0.5">{errorMessage}</p>}
         </div>
         {preview && (
           <PagePreview

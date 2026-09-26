@@ -18,11 +18,11 @@ export async function GET(_request: Request, { params }: { params: Promise<{ pag
 
 export async function PUT(request: Request, { params }: { params: Promise<{ page: string }> }) {
   try {
-    await requireAdmin();
+    const session = await requireAdmin();
     const { page: raw } = await params;
     const page = parsePageId(raw);
     if (!page) return NextResponse.json({ error: 'Halaman tidak dikenal.' }, { status: 404 });
-    return await writeLayoutResponse(page, await request.json());
+    return await writeLayoutResponse(page, await request.json(), session.name);
   } catch (error) {
     return handleApiError(error);
   }
