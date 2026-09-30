@@ -85,6 +85,7 @@ async function seedProjects() {
         categoryEn: p.categoryEn,
         location: p.location,
         img: p.img,
+        gallery: p.gallery,
         desc: p.desc,
         descEn: p.descEn,
         materials: p.materials,

@@ -1,7 +1,7 @@
-# Graph Report - wwconstruction.id  (2026-09-26)
+# Graph Report - wwconstruction.id  (2026-09-30)
 
 ## Corpus Check
-- 127 files · ~359,648 words
+- 127 files · ~515,844 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f170f832`
+- Built from commit: `f0162608`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

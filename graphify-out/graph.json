@@ -274,7 +274,7 @@
       "file_type": "code",
       "norm_label": "faqitem",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L600"
+      "source_location": "L934"
     },
     {
       "id": "src_data_sitedata_founderdetail",
@@ -1808,7 +1808,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "prisma/seed.ts",
-      "source_location": "L104"
+      "source_location": "L105"
     },
     {
       "id": "prisma_seed_seedadmin",
@@ -5137,7 +5137,7 @@
       "file_type": "code",
       "norm_label": "ww_faqs",
       "source_file": "src/data/siteData.ts",
-      "source_location": "L610"
+      "source_location": "L944"
     },
     {
       "id": "src_data_sitedata_ww_founders",
@@ -7830,7 +7830,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "prisma/seed.ts",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -7842,7 +7842,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "prisma/seed.ts",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -7854,7 +7854,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "prisma/seed.ts",
-      "source_location": "L107",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -20268,7 +20268,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "prisma/seed.ts",
-      "source_location": "L104",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -23430,17 +23430,6 @@
     },
     {
       "source": "src_data_sitedata",
-      "target": "src_data_sitedata_faqitem",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/siteData.ts",
-      "source_location": "L600",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_sitedata",
       "target": "src_data_sitedata_default_hero_about",
       "relation": "contains",
       "_origin": "ast",
@@ -23448,17 +23437,6 @@
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
       "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_sitedata",
-      "target": "src_data_sitedata_ww_faqs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/siteData.ts",
-      "source_location": "L610",
       "weight": 1.0
     },
     {
@@ -23503,6 +23481,28 @@
       "confidence_score": 1.0,
       "source_file": "src/data/siteData.ts",
       "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_sitedata",
+      "target": "src_data_sitedata_faqitem",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/siteData.ts",
+      "source_location": "L934",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_sitedata",
+      "target": "src_data_sitedata_ww_faqs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/siteData.ts",
+      "source_location": "L944",
       "weight": 1.0
     },
     {
@@ -25171,5 +25171,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f170f832a065dc4cd3a54e74741c5ddb7a2a2af8"
+  "built_at_commit": "f016260887d309f95b01737ec1f856002d50edd0"
 }

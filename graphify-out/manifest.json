@@ -48,9 +48,9 @@
     "semantic_hash": "80c54378add6de77fe5ffa22ae788afb"
   },
   "prisma/seed.ts": {
-    "mtime": 1790237644.8602571,
-    "seen": 1790237862.1465294,
-    "ast_hash": "b76f1d0798efc566345f9803591af7fd",
+    "mtime": 1790749122.3726602,
+    "seen": 1790749136.895922,
+    "ast_hash": "e828f4d4c211c15f5ea650212a23ff33",
     "semantic_hash": ""
   },
   "public/images/ww/metadata.json": {
@@ -642,9 +642,9 @@
     "semantic_hash": "98566e0127644445fb8dfe3a331a8a12"
   },
   "src/data/siteData.ts": {
-    "mtime": 1790236020.9668581,
-    "seen": 1790236803.3601854,
-    "ast_hash": "9e906d8d4f9b6b6f64a6584a3503522f",
+    "mtime": 1790749046.9356573,
+    "seen": 1790749136.8960676,
+    "ast_hash": "d3d20309de40c0c09a3cf9606211c464",
     "semantic_hash": ""
   },
   "src/lib/api-error.ts": {
@@ -912,9 +912,9 @@
     "semantic_hash": ""
   },
   "public/images/projects/jotun_showroom_hq.jpg": {
-    "mtime": 1789974939.7949047,
-    "seen": 1790230699.407516,
-    "ast_hash": "5bd9728c87e1075c1697e652c51bac10",
+    "mtime": 1790748962.9825504,
+    "seen": 1790749136.8961425,
+    "ast_hash": "592ae3cd6cac9c66922db9bfb39df38a",
     "semantic_hash": ""
   },
   "public/images/projects/luxury_residence_hq.jpg": {
@@ -1155,6 +1155,84 @@
     "mtime": 1790438427.3156655,
     "seen": 1790438528.700484,
     "ast_hash": "f4fcc48bd7e27a516b4661bcb3c681d9",
+    "semantic_hash": ""
+  },
+  "public/images/projects/gate_akses_kebomas.jpg": {
+    "mtime": 1790748958.7374792,
+    "seen": 1790749136.8961265,
+    "ast_hash": "75fb07b9c6f4276855f9e432584d83e0",
+    "semantic_hash": ""
+  },
+  "public/images/projects/graha_santoso_office.jpg": {
+    "mtime": 1790748958.9654832,
+    "seen": 1790749136.8961284,
+    "ast_hash": "6fa29759517ca76e4d00f53ef1204ed1",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_consultation.jpg": {
+    "mtime": 1790748962.3535397,
+    "seen": 1790749136.8961341,
+    "ast_hash": "7c41f8a3f7c2155c9baf97ad69c5240e",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_detail.jpg": {
+    "mtime": 1790748961.229521,
+    "seen": 1790749136.8961375,
+    "ast_hash": "d5bfabe99c761af85be630402238108b",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_display.jpg": {
+    "mtime": 1790748960.7245126,
+    "seen": 1790749136.8961387,
+    "ast_hash": "b795e269111860363dc9bd7c268ef0fd",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_entrance.jpg": {
+    "mtime": 1790748959.5024922,
+    "seen": 1790749136.8961399,
+    "ast_hash": "dc068979fb28cb0b5579debd9e2e3cc3",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_exterior.jpg": {
+    "mtime": 1790748963.5785604,
+    "seen": 1790749136.896141,
+    "ast_hash": "b21caa4911814030ede3fa9eac7031e2",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_lounge.jpg": {
+    "mtime": 1790748961.7655299,
+    "seen": 1790749136.896144,
+    "ast_hash": "6ecd3519972e2ed879ea399e01ddea2d",
+    "semantic_hash": ""
+  },
+  "public/images/projects/jotun_showroom_palette.jpg": {
+    "mtime": 1790748960.159503,
+    "seen": 1790749136.8961449,
+    "ast_hash": "548be57d8a9bfc0321712ada088f2eef",
+    "semantic_hash": ""
+  },
+  "public/images/projects/prasindo_abadi.jpg": {
+    "mtime": 1790748958.3234723,
+    "seen": 1790749136.8961508,
+    "ast_hash": "a525f2e7d3a34292e2ece22d5de3276b",
+    "semantic_hash": ""
+  },
+  "public/images/projects/rungkut_mapan.jpg": {
+    "mtime": 1790748958.5304759,
+    "seen": 1790749136.8961523,
+    "ast_hash": "5414c973f8f5d3f99757e4a1551cee74",
+    "semantic_hash": ""
+  },
+  "public/images/projects/tiger_billiard.jpg": {
+    "mtime": 1790748957.8944652,
+    "seen": 1790749136.8961568,
+    "ast_hash": "d7e44b06d9b5c0dbbeed35f6ef4a47a2",
+    "semantic_hash": ""
+  },
+  "public/images/projects/tiger_billiard_detail.jpg": {
+    "mtime": 1790748958.0754683,
+    "seen": 1790749136.8961577,
+    "ast_hash": "7c75eb0423dc209de1a683696260fde7",
     "semantic_hash": ""
   }
 }
