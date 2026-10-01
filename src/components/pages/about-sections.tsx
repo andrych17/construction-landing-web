@@ -50,8 +50,8 @@ export function AboutNarrativeSection({ anchorId = 'narrative' }: Copy) {
         <div className="space-y-8 reveal">
           <p className="font-sans text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
             {t(
-              'Wonderful Works Construction adalah studio rancang bangun untuk rumah tinggal dan bangunan komersial di Surabaya, Sidoarjo, dan Gresik.',
-              'Wonderful Works Construction is a design-build studio for homes and commercial buildings in Surabaya, Sidoarjo, and Gresik.'
+              'Wonderful Works Construction adalah studio rancang bangun untuk hunian tinggal dan bangunan komersial.',
+              'Wonderful Works Construction is a design-build studio for residential and commercial architecture.'
             )}
           </p>
           <div className="w-12 h-[1px] bg-white/20 mx-auto" />

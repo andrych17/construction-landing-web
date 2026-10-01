@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "src/components/home/sections.tsx": {
-    "mtime": 1790823443.429099,
-    "seen": 1790823641.4653761,
-    "ast_hash": "d39c50c36badc47921b62c0ccb4172d9",
+    "mtime": 1790839024.2061176,
+    "seen": 1790839060.944209,
+    "ast_hash": "e16129a5de356259b8fe069117f20747",
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
@@ -552,9 +552,9 @@
     "semantic_hash": ""
   },
   "src/components/navigation/Navbar.tsx": {
-    "mtime": 1790823258.6577826,
-    "seen": 1790823641.4653864,
-    "ast_hash": "13b34e5af1530a90353b17db54a68767",
+    "mtime": 1790838979.8413107,
+    "seen": 1790839060.9442155,
+    "ast_hash": "d4da1caf276e63f45872ba4e1c5c8288",
     "semantic_hash": ""
   },
   "src/components/pages/PageCanvas.tsx": {
@@ -564,15 +564,15 @@
     "semantic_hash": ""
   },
   "src/components/pages/about-sections.tsx": {
-    "mtime": 1790237639.38315,
-    "seen": 1790237862.146675,
-    "ast_hash": "f859b1a495b2ad65b41b3e4f62073485",
+    "mtime": 1790838934.1817415,
+    "seen": 1790839060.9442172,
+    "ast_hash": "aca39adcce5339681e7c6baf9e1fe7a4",
     "semantic_hash": ""
   },
   "src/components/pages/contact-sections.tsx": {
-    "mtime": 1790823092.7180557,
-    "seen": 1790823641.4653912,
-    "ast_hash": "a0ce4e4dae2022e12f83b2d37d315a95",
+    "mtime": 1790838962.5908263,
+    "seen": 1790839060.9442182,
+    "ast_hash": "8f3434cb028518a504f6d6f4ddc240c2",
     "semantic_hash": ""
   },
   "src/components/pages/copy.ts": {
@@ -594,15 +594,15 @@
     "semantic_hash": "8bc98b1332e7cb175b006235c0f39c9a"
   },
   "src/components/pages/projects-sections.tsx": {
-    "mtime": 1790823538.3049376,
-    "seen": 1790823641.465398,
-    "ast_hash": "66b543a26ccad128be1e3d90317124cf",
+    "mtime": 1790838921.0831923,
+    "seen": 1790839060.9442217,
+    "ast_hash": "f3a159ba44c6563cdd5ca366f6926cd9",
     "semantic_hash": ""
   },
   "src/components/pages/services-sections.tsx": {
-    "mtime": 1790823443.4287786,
-    "seen": 1790823641.4653995,
-    "ast_hash": "3a610d2a2f9690882caa301b7e4813e2",
+    "mtime": 1790838843.1702833,
+    "seen": 1790839060.9442225,
+    "ast_hash": "519271a83b8b14a93a1c3f043e36c23e",
     "semantic_hash": ""
   },
   "src/components/ui/FloatingWhatsApp.tsx": {
@@ -1293,6 +1293,24 @@
     "mtime": 1790824862.950894,
     "seen": 1790825089.1013346,
     "ast_hash": "948fb5091b77ce3585639b554e684435",
+    "semantic_hash": ""
+  },
+  "public/images/services/com_logistics_warehouse.jpg": {
+    "mtime": 1790838612.698708,
+    "seen": 1790839060.9442952,
+    "ast_hash": "ae7dc7bd5dd08e146206af3ac7265821",
+    "semantic_hash": ""
+  },
+  "public/images/services/com_modern_office.jpg": {
+    "mtime": 1790838612.6961727,
+    "seen": 1790839060.9442964,
+    "ast_hash": "369e90295a9bd2d3116881a71db3c5dc",
+    "semantic_hash": ""
+  },
+  "public/images/services/res_modern_tropis.jpg": {
+    "mtime": 1790838612.6931727,
+    "seen": 1790839060.9442976,
+    "ast_hash": "9e30ae174e4654b1ceb164f26f1eeb6a",
     "semantic_hash": ""
   }
 }

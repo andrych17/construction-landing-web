@@ -71,33 +71,12 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
               {t(filled(titleId, 'Kontak'), filled(titleEn, 'Contact'))}
             </h1>
             <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
-            <p className="font-sans text-base sm:text-xl md:text-2xl text-neutral-300 font-light leading-relaxed max-w-md mb-8">
+            <p className="font-sans text-base sm:text-xl md:text-2xl text-neutral-300 font-light leading-relaxed max-w-md">
               {t(
-                filled(ledeId, 'Untuk rumah tinggal, bangunan komersial, dan pekerjaan general contracting di Surabaya, Sidoarjo, dan Gresik.'),
-                filled(ledeEn, 'For homes, commercial buildings, and general contracting in Surabaya, Sidoarjo, and Gresik.')
+                filled(ledeId, 'Konsultasikan kebutuhan rancang bangun hunian dan komersial Anda bersama tim arsitek dan insinyur kami.'),
+                filled(ledeEn, 'Discuss your residential and commercial design & build requirements with our architectural and engineering team.')
               )}
             </p>
-
-            <div className="space-y-3 font-mono text-xs text-neutral-400">
-              <div className="flex items-center gap-2 text-neutral-300">
-                <LuClock className="w-4 h-4 text-amber-400" />
-                <span>
-                  {t(
-                    'JAM OPERASIONAL: SENIN – SABTU (08:30 – 17:30 WIB)',
-                    'STUDIO HOURS: MON – SAT (08:30 – 17:30 WIB)'
-                  )}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 text-neutral-300">
-                <LuShieldCheck className="w-4 h-4 text-amber-400" />
-                <span>
-                  {t(
-                    'KONTRAK SPK TERTULIS & JADWAL KURVA-S',
-                    'WRITTEN SPK CONTRACT & S-CURVE SCHEDULE'
-                  )}
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Right Information & Form Column */}
@@ -244,7 +223,7 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                     <input
                       type="text"
                       id="f-city"
-                      placeholder={t('Surabaya / Sidoarjo / Gresik', 'Surabaya / Sidoarjo / Gresik')}
+                      placeholder={t('Contoh: Surabaya', 'e.g. Surabaya')}
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"

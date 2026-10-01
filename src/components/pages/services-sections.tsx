@@ -68,18 +68,18 @@ export function ServicesOverviewSection({ anchorId = 'overview' }: Copy) {
   );
 }
 
-const SERVICE_GALLERIES: Record<string, { img: string; tag: string }[]> = {
+const SERVICE_GALLERIES: Record<string, { img: string; tagId: string; tagEn: string }[]> = {
   RESIDENTIAL: [
-    { img: '/images/projects/luxury_residence_hq.jpg', tag: 'Modern Luxury' },
-    { img: '/images/projects/rungkut_mapan.jpg', tag: 'Modern Tropis' },
-    { img: '/images/projects/modern_villa_hq.jpg', tag: 'Modern Kontemporer' },
-    { img: '/images/projects/tropical_facade_hq.jpg', tag: 'Minimalis Modern' },
+    { img: '/images/projects/luxury_residence_hq.jpg', tagId: 'Modern Luxury', tagEn: 'Modern Luxury' },
+    { img: '/images/services/res_modern_tropis.jpg', tagId: 'Modern Tropis', tagEn: 'Modern Tropical' },
+    { img: '/images/projects/facade_architecture_hq.jpg', tagId: 'Modern Kontemporer', tagEn: 'Modern Contemporary' },
+    { img: '/images/projects/tropical_facade_hq.jpg', tagId: 'Minimalis Modern', tagEn: 'Modern Minimalist' },
   ],
   COMMERCIAL: [
-    { img: '/images/projects/jotun_showroom_hq.jpg', tag: 'Showroom & Retail' },
-    { img: '/images/projects/prasindo_abadi.jpg', tag: 'Perkantoran' },
-    { img: '/images/projects/tiger_billiard.jpg', tag: 'Entertainment & F&B' },
-    { img: '/images/projects/gate_akses_kebomas.jpg', tag: 'Pergudangan & Gate' },
+    { img: '/images/projects/jotun_showroom_hq.jpg', tagId: 'Showroom & Retail', tagEn: 'Showroom & Retail' },
+    { img: '/images/services/com_modern_office.jpg', tagId: 'Perkantoran & Workspace', tagEn: 'Offices & Workspaces' },
+    { img: '/images/projects/interior_craftsmanship_hq.jpg', tagId: 'Kuliner & Hospitality', tagEn: 'Culinary & Hospitality' },
+    { img: '/images/services/com_logistics_warehouse.jpg', tagId: 'Pergudangan & Logistik', tagEn: 'Warehousing & Logistics' },
   ],
 };
 
@@ -99,7 +99,11 @@ function ServicePillarCard({ srv }: { srv: (typeof CENTRA_SERVICES)[number] }) {
     return () => clearInterval(timer);
   }, [slides.length, isHeld, prefersReducedMotion]);
 
-  const currentSlide = slides[activeSlide] || { img: srv.image, tag: srv.categoryEn || srv.category };
+  const currentSlide = slides[activeSlide] || {
+    img: srv.image,
+    tagId: srv.category,
+    tagEn: srv.categoryEn || srv.category,
+  };
 
   return (
     <div
@@ -114,7 +118,7 @@ function ServicePillarCard({ srv }: { srv: (typeof CENTRA_SERVICES)[number] }) {
             <Image
               key={slide.img}
               src={slide.img}
-              alt={i === activeSlide ? slide.tag : ''}
+              alt={i === activeSlide ? t(slide.tagId, slide.tagEn) : ''}
               fill
               className={`object-cover group-hover:scale-105 transition-[opacity,scale] duration-1000 ease-expo brightness-100 contrast-[1.02] ${
                 i === activeSlide ? 'opacity-100' : 'opacity-0'
@@ -125,7 +129,7 @@ function ServicePillarCard({ srv }: { srv: (typeof CENTRA_SERVICES)[number] }) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
           <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-amber-400 uppercase shadow-lg flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            <span>{currentSlide.tag}</span>
+            <span>{t(currentSlide.tagId, currentSlide.tagEn)}</span>
           </div>
 
           <div className="absolute bottom-3 right-4 flex items-center gap-1.5 z-10">

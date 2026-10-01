@@ -43,7 +43,7 @@ export function ProjectsHeroSection({ anchorId = 'hero', titleId, titleEn, ledeI
 }
 
 export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const { projects } = useSiteContent();
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
@@ -138,7 +138,7 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-md">
-                    {proj.category}
+                    {(lang === 'en' && proj.categoryEn) ? proj.categoryEn : proj.category}
                   </div>
                 </div>
 
@@ -150,7 +150,7 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
                 </div>
 
                 <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light line-clamp-2 mb-6 font-sans">
-                  {proj.desc}
+                  {(lang === 'en' && proj.descEn) ? proj.descEn : proj.desc}
                 </p>
               </div>
 

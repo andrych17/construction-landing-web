@@ -284,7 +284,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
                       DIRECT INQUIRIES
                     </span>
                     <a
-                      href={waLink('Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.')}
+                      href={waLink(t('Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.', 'Hello Wonderful Works Construction, I would like to inquire about an architectural project.'))}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-2 text-white hover:text-amber-400 font-mono text-xs transition-colors"
