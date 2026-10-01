@@ -21,16 +21,15 @@ export const PAGE_BLOCKS = {
   home: [
     { type: 'Hero', label: 'Hero', anchor: 'hero' },
     { type: 'About', label: 'Tentang Kami', anchor: 'about' },
-    { type: 'Philosophy', label: 'Filosofi Desain', anchor: 'philosophy' },
+    { type: 'Workflow', label: 'Alur Kerja', anchor: 'workflow' },
     { type: 'Founder', label: 'Founder', anchor: 'founder' },
     { type: 'Services', label: 'Layanan', anchor: 'services' },
-    { type: 'Projects', label: 'Proyek Pilihan', anchor: 'projects' },
+    { type: 'Projects', label: 'Proyek', anchor: 'projects' },
     { type: 'Contact', label: 'Kontak', anchor: 'contact' },
   ],
   about: [
     { type: 'AboutHero', label: 'Hero', anchor: 'hero' },
     { type: 'AboutNarrative', label: 'Narasi', anchor: 'narrative' },
-    { type: 'AboutPhilosophy', label: 'Filosofi', anchor: 'philosophy' },
     { type: 'AboutFounder', label: 'Founder', anchor: 'founder' },
     { type: 'AboutCta', label: 'Ajakan', anchor: 'cta' },
   ],
@@ -40,7 +39,6 @@ export const PAGE_BLOCKS = {
     { type: 'ServicesPillars', label: 'Tipologi', anchor: 'pillars' },
     { type: 'ServicesMethod', label: 'Alur Kerja', anchor: 'method' },
     { type: 'ServicesBenchmarks', label: 'Standar', anchor: 'benchmarks' },
-    { type: 'ServicesFaq', label: 'FAQ', anchor: 'faqs' },
     { type: 'ServicesCta', label: 'Ajakan', anchor: 'cta' },
   ],
   projects: [

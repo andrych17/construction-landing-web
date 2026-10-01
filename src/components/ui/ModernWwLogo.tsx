@@ -62,7 +62,7 @@ export default function ModernWwLogo({
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
         </div>
         <span className={`${s.subtext} font-mono tracking-[0.22em] text-neutral-400 uppercase group-hover:text-neutral-300 transition-colors`}>
-          CONSTRUCTION · ARCHITECTURE & CONTRACTOR
+          CONSTRUCTION · GENERAL CONTRACTOR · DESIGN & BUILD
         </span>
       </div>
     </div>

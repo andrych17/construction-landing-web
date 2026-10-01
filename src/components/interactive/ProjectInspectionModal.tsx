@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LuX, LuMapPin, LuPhone, LuShieldCheck, LuCheck } from 'react-icons/lu';
+import { LuX, LuMapPin, LuPhone } from 'react-icons/lu';
 import type { ProjectDetail } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
@@ -35,41 +35,6 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
   }, [project, onClose]);
 
   if (!project) return null;
-
-  const defaultSpecs = [
-    {
-      label: t('Mutu Beton Struktur', 'Structural Concrete Grade'),
-      value: project.specs?.concreteGrade || 'K-300 / K-350 SNI ReadyMix dengan Uji Slump',
-    },
-    {
-      label: t('Dimensi Lahan & Bangunan', 'Site & Building Dimensions'),
-      value: project.specs
-        ? `LT ${project.specs.landArea} · LB ${project.specs.buildingArea} (${project.specs.levels})`
-        : '-',
-    },
-    {
-      label: t('Toleransi Siku', 'Corner Tolerance'),
-      value: t('Siku 90° dicek laser, deviasi < 1 mm', '90° corners laser-checked, < 1 mm deviation'),
-    },
-    {
-      label: t('Sistem Fasad & Partisi', 'Facade & Partition System'),
-      value: (lang === 'en' && project.materialsEn)
-        ? project.materialsEn
-        : (project.materials || (project.features ? project.features.join(' · ') : 'Double-Glazed Low-E Glass & Architectural Partitions')),
-    },
-    {
-      label: t('Sistem MEP', 'MEP Infrastructure'),
-      value: t('Pipa & listrik ditanam sebelum plat dicor, tanpa bobok ulang', 'Pipes & wiring embedded before the slab pour, no re-chasing'),
-    },
-    {
-      label: t('Garansi & Pemeliharaan', 'Warranty & Retention'),
-      value: t('Retensi 100 hari + sertifikat garansi struktur', '100-day retention + structural warranty certificate'),
-    },
-  ];
-
-  const specs = (lang === 'en' && project.specsTableEn)
-    ? project.specsTableEn
-    : (project.specsTable || defaultSpecs);
 
   const categoryLabel = (lang === 'en' && project.categoryEn) ? project.categoryEn : project.category;
   const projectDesc = (lang === 'en' && project.descEn) ? project.descEn : project.desc;
@@ -177,25 +142,6 @@ export default function ProjectInspectionModal({ project, onClose }: ProjectInsp
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
                 {projectDesc}
               </p>
-            </div>
-
-            {/* Technical Specifications Table */}
-            <div className="mb-8 rounded-none border border-white/10 overflow-hidden bg-black/30">
-              <div className="bg-white/5 px-4 py-3 font-mono text-xs tracking-wider text-neutral-300 border-b border-white/10 flex items-center gap-2">
-                <LuShieldCheck className="w-4 h-4 text-amber-400" />
-                <span>{t('SPESIFIKASI TEKNIS & STANDAR MUTU', 'TECHNICAL SPECIFICATIONS & QUALITY STANDARDS')}</span>
-              </div>
-              <div className="divide-y divide-white/5 font-mono text-xs">
-                {specs.map((item, idx) => (
-                  <div key={idx} className="p-3.5 sm:px-4 grid grid-cols-1 sm:grid-cols-3 gap-1">
-                    <span className="text-neutral-400">{item.label}</span>
-                    <span className="sm:col-span-2 text-white font-medium flex items-center gap-1.5">
-                      <LuCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                      <span>{item.value}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Footer CTA */}

@@ -49,25 +49,34 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const categories = [
     { key: 'ALL', labelId: 'SEMUA', labelEn: 'ALL' },
-    { key: 'RESIDENTIAL', labelId: 'HUNIAN', labelEn: 'RESIDENTIAL' },
+    { key: 'RESIDENTIAL', labelId: 'RESIDENSIAL', labelEn: 'RESIDENTIAL' },
     { key: 'COMMERCIAL', labelId: 'KOMERSIAL', labelEn: 'COMMERCIAL' },
-    { key: 'VILLA', labelId: 'VILA', labelEn: 'VILLA' },
   ];
   const filteredProjects = projects.filter((p) => {
     if (selectedCategory === 'ALL') return true;
+    const cat = p.category.toLowerCase();
     if (selectedCategory === 'RESIDENTIAL') {
       return (
-        p.category.toLowerCase().includes('residence') ||
-        p.category.toLowerCase().includes('house') ||
-        p.category.toLowerCase().includes('sanctuary') ||
-        p.category.toLowerCase().includes('estate')
+        cat.includes('residence') ||
+        cat.includes('house') ||
+        cat.includes('residential') ||
+        cat.includes('sanctuary') ||
+        cat.includes('estate') ||
+        cat.includes('villa')
       );
     }
     if (selectedCategory === 'COMMERCIAL') {
-      return p.category.toLowerCase().includes('office') || p.category.toLowerCase().includes('corporate');
-    }
-    if (selectedCategory === 'VILLA') {
-      return p.category.toLowerCase().includes('villa') || p.category.toLowerCase().includes('hillside');
+      return (
+        cat.includes('commercial') ||
+        cat.includes('office') ||
+        cat.includes('corporate') ||
+        cat.includes('showroom') ||
+        cat.includes('billiard') ||
+        cat.includes('gate') ||
+        cat.includes('infrastructure') ||
+        cat.includes('warehouse') ||
+        cat.includes('pergudangan')
+      );
     }
     return true;
   });

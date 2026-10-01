@@ -61,3 +61,15 @@ model Project {
 
   @@index([published, order])
 }
+
+model Inquiry {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  projectType String
+  city        String
+  notes       String?
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}

@@ -27,6 +27,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { HOME_HERO_COPY } from '@/components/home/hero-copy';
 import { filled } from '@/components/pages/copy';
+import { CENTRA_SERVICES } from '@/data/siteData';
 
 function formatHeroIntro(text: string) {
   // Highlight quoted phrases like "Quality is our priority"
@@ -110,53 +111,53 @@ export function HeroSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left pt-8 border-t border-white/10 reveal-load reveal-delay-3">
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-3xl font-extrabold text-white">K-350</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Struktur SNI', 'SNI Structure')}</span>
               <LuShieldCheck className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Mutu Beton Struktur', 'Structural Concrete')}
+            <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
+              {t('Safety Factor SNI', 'Safety Factor Standard')}
             </div>
-            <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('ReadyMix SNI, diuji slump tiap truk', 'SNI ReadyMix, slump-tested per truck')}
+            <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
+              {t('Prioritas struktur kokoh sesuai Safety Factor SNI & ReadyMix K-350', 'Structural priority complying with SNI safety factor standards')}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-3xl font-extrabold text-white">0%</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('No Hidden Cost', 'No Hidden Cost')}</span>
               <LuScale className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Biaya Tersembunyi', 'Hidden Costs')}
+            <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
+              {t('RAB Terbuka & Detail', 'Itemized BOQ')}
             </div>
-            <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('RAB dirinci per item sejak awal', 'Budget itemized from day one')}
+            <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
+              {t('Budget sudah ditentukan di awal dengan rincian RAB per item', 'Budget itemized from day one with transparent BOQ')}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-2xl font-extrabold text-white">{t('Tepat Waktu', 'On Time')}</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Tepat Waktu', 'On Time')}</span>
               <LuClock className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="font-display text-sm font-bold text-white uppercase mb-1">
+            <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
               {t('Jadwal Terukur', 'Tracked Schedule')}
             </div>
-            <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('Progres dipantau mingguan dengan Kurva-S', 'Weekly progress tracked on an S-curve')}
+            <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
+              {t('Manajemen jadwal dipantau berkala dengan Kurva-S', 'Milestones tracked on an S-curve schedule')}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-2xl font-extrabold text-white">Surabaya</span>
-              <LuMapPin className="w-5 h-5 text-amber-400" />
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Quality Control', 'Quality Control')}</span>
+              <LuCircleCheck className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="font-display text-sm font-bold text-white uppercase mb-1">
-              {t('Kantor & Workshop', 'Studio & Yard')}
+            <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
+              {t('Struktur & Finishing', 'Structure & Finishing')}
             </div>
-            <div className="text-xs text-neutral-400 font-sans font-light">
-              {t('Jl. Semolowaru No. 29, Surabaya, Jawa Timur', 'Jl. Semolowaru No. 29, Surabaya, East Java')}
+            <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
+              {t('Pengawasan presisi langsung dari struktur sipil hingga tahap finishing', 'Direct supervision from structural core to final finishing')}
             </div>
           </div>
         </div>
@@ -175,17 +176,17 @@ export function AboutSection({ anchorId = 'about' }: { anchorId?: string }) {
           {t('Tentang Kami', 'About Us')}
         </h2>
 
-        <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-neutral-100 leading-[1.5] font-normal mb-8">
+        <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-sans font-normal mb-6">
           {t(
-            'Wonderful Works Construction adalah studio rancang bangun di Surabaya. Kami mendesain dan membangun rumah tinggal serta bangunan komersial, dari gambar pertama sampai serah terima kunci.',
-            'Wonderful Works Construction is a design-build studio in Surabaya. We design and build homes and commercial buildings, from the first sketch to the handover of keys.'
+            'Kami adalah perusahaan jasa konstruksi dan rancang bangun yang berfokus pada kualitas. Wonderful Works percaya bahwa dedikasi terhadap mutu struktur dan presisi detail akan membuat bangunan Anda menjadi bangunan yang mewah, megah, dan kokoh.',
+            'Wonderful Works is a design-build and construction company dedicated to uncompromising quality. We believe that rigorous structural integrity and meticulous craftsmanship create buildings that are luxurious, grand, and enduring.'
           )}
         </p>
 
-        <p className="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-light mb-12 font-sans">
+        <p className="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-sans font-light mb-12">
           {t(
-            'Desain dan pelaksanaan dipegang tim yang sama, jadi yang digambar itulah yang dibangun. Anggaran dirinci per item sejak awal, material dicek sebelum dipasang, dan progres dilaporkan setiap hari.',
-            'The same team handles design and construction, so what gets drawn is what gets built. Budgets are itemized from the start, materials are checked before installation, and progress is reported daily.'
+            'Perusahaan kami memiliki visi dan misi yang kami pegang teguh untuk memberikan pelayanan terbaik bagi Anda. Kami bekerja sepenuh hati dan melayani setiap kebutuhan pembangunan dengan solusi yang tepat, transparan, dan terpercaya demi kepuasan klien.',
+            'Guided by our steadfast vision and mission, we deliver wholehearted service and precise solutions for every construction need. Client satisfaction is our foremost priority, realized through transparent management and trusted execution.'
           )}
         </p>
 
@@ -366,8 +367,235 @@ export function FounderSection({ anchorId = 'founder' }: { anchorId?: string }) 
   );
 }
 
-export function ServicesSection({ anchorId = 'services' }: { anchorId?: string }) {
+export function WorkflowSection({ anchorId = 'workflow' }: { anchorId?: string }) {
   const { lang, t } = useLanguage();
+  const { methodology } = useSiteContent();
+
+  return (
+    <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] bg-[#020202] scroll-mt-20 w-full">
+      <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 reveal">
+          <div className="max-w-2xl">
+            <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
+              {t('ALUR KERJA TERSTRUKTUR', 'STRUCTURED METHODOLOGY')}
+            </span>
+            <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase leading-[0.95]">
+              {t('Alur Kerja Kami', 'Our Workflow')}
+            </h2>
+          </div>
+          <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans max-w-md">
+            {t(
+              'Dari survei lokasi hingga serah terima dan masa pemeliharaan, seluruh alur kerja dikerjakan secara transparan.',
+              'From initial site survey to key handover and warranty maintenance, every stage is transparently managed.'
+            )}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          {methodology.slice(0, 4).map((step) => (
+            <div
+              key={step.step}
+              className="p-6 rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 ease-expo flex flex-col justify-between group shadow-lg reveal"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-3xl font-bold text-amber-400 group-hover:scale-105 transition-transform">
+                    {step.step}
+                  </span>
+                  <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
+                    {t('TAHAP', 'PHASE')}
+                  </span>
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors uppercase">
+                  {lang === 'en' && step.titleEn ? step.titleEn : step.title}
+                </h3>
+                <div className="font-mono text-[11px] text-amber-400/80 mb-3 tracking-wider uppercase">
+                  {lang === 'en' && step.subtitleEn ? step.subtitleEn : step.subtitle}
+                </div>
+                <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans mb-4">
+                  {lang === 'en' && step.enDesc ? step.enDesc : step.idDesc}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/10 font-mono text-[11px] text-neutral-400">
+                <span className="text-neutral-300 block mb-0.5 font-semibold">{t('DOKUMEN:', 'DELIVERABLE:')}</span>
+                <span className="text-neutral-300">
+                  {lang === 'en' && step.deliverableEn ? step.deliverableEn : step.deliverable}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {methodology.slice(4).map((step) => (
+            <div
+              key={step.step}
+              className="p-6 rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 ease-expo flex flex-col justify-between group shadow-lg reveal"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-3xl font-bold text-amber-400 group-hover:scale-105 transition-transform">
+                    {step.step}
+                  </span>
+                  <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
+                    {t('TAHAP', 'PHASE')}
+                  </span>
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors uppercase">
+                  {lang === 'en' && step.titleEn ? step.titleEn : step.title}
+                </h3>
+                <div className="font-mono text-[11px] text-amber-400/80 mb-3 tracking-wider uppercase">
+                  {lang === 'en' && step.subtitleEn ? step.subtitleEn : step.subtitle}
+                </div>
+                <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans mb-4">
+                  {lang === 'en' && step.enDesc ? step.enDesc : step.idDesc}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/10 font-mono text-[11px] text-neutral-400">
+                <span className="text-neutral-300 block mb-0.5 font-semibold">{t('DOKUMEN:', 'DELIVERABLE:')}</span>
+                <span className="text-neutral-300">
+                  {lang === 'en' && step.deliverableEn ? step.deliverableEn : step.deliverable}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors"
+          >
+            <span>{t('Lihat Detail Layanan & 7 Alur Kerja', 'Explore Services & 7-Stage Methodology')}</span>
+            <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const SERVICE_GALLERIES: Record<string, { img: string; tag: string }[]> = {
+  RESIDENTIAL: [
+    { img: '/images/projects/luxury_residence_hq.jpg', tag: 'Modern Luxury' },
+    { img: '/images/projects/rungkut_mapan.jpg', tag: 'Modern Tropis' },
+    { img: '/images/projects/modern_villa_hq.jpg', tag: 'Modern Kontemporer' },
+    { img: '/images/projects/tropical_facade_hq.jpg', tag: 'Minimalis Modern' },
+  ],
+  COMMERCIAL: [
+    { img: '/images/projects/jotun_showroom_hq.jpg', tag: 'Showroom' },
+    { img: '/images/projects/prasindo_abadi.jpg', tag: 'Perkantoran' },
+    { img: '/images/projects/tiger_billiard.jpg', tag: 'Entertainment & F&B' },
+    { img: '/images/projects/gate_akses_kebomas.jpg', tag: 'Pergudangan & Gate' },
+  ],
+};
+
+function ServiceCardWithCarousel({ srv }: { srv: (typeof CENTRA_SERVICES)[number] }) {
+  const { lang, t } = useLanguage();
+  const isResidential = srv.category.includes('RESIDENTIAL') || srv.category.includes('RUMAH');
+  const slides = isResidential ? SERVICE_GALLERIES.RESIDENTIAL : SERVICE_GALLERIES.COMMERCIAL;
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const currentSlide = slides[activeSlide] || { img: srv.image, tag: srv.categoryEn || srv.category };
+
+  return (
+    <div className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
+      <div>
+        <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black media-reveal">
+          <Image
+            src={currentSlide.img}
+            alt={currentSlide.tag}
+            fill
+            className="object-cover group-hover:scale-105 transition-all duration-700 ease-expo brightness-100 contrast-[1.02]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
+          <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-amber-400 uppercase shadow-lg flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            <span>{currentSlide.tag}</span>
+          </div>
+
+          <div className="absolute bottom-3 right-4 flex items-center gap-1.5 z-10">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveSlide(i)}
+                aria-label={`Slide ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                  activeSlide === i ? 'bg-amber-400 w-5' : 'bg-white/40 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="p-8 sm:p-10">
+          <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
+            {isResidential
+              ? t('Bangunan Residensial', 'Residential Building')
+              : t('Bangunan Komersial', 'Commercial Building')}
+          </h3>
+          <p className="font-serif text-base text-amber-400/90 italic mb-4">
+            &ldquo;{lang === 'en' && srv.subtitleEn ? srv.subtitleEn : srv.subtitle}&rdquo;
+          </p>
+          <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-8">
+            {lang === 'en' && srv.descEn ? srv.descEn : srv.desc}
+          </p>
+
+          <div className="mb-6">
+            <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mb-3 font-bold">
+              {t('CAKUPAN KERJA & GAYA:', 'WHAT WE DO & STYLES:')}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {(lang === 'en' && srv.typesEn ? srv.typesEn : srv.types).map((type) => (
+                <span
+                  key={type}
+                  className="px-3.5 py-1.5 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
+                >
+                  {type}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="pt-6 border-t border-white/10 space-y-2.5 font-mono text-xs text-neutral-300">
+            {(lang === 'en' && srv.featuresEn ? srv.featuresEn : srv.features).map((feat) => (
+              <div key={feat} className="flex items-center gap-2">
+                <LuCircleCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>{feat}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="px-8 sm:px-10 pb-8 pt-2">
+        <a
+          href="#contact"
+          className="group w-full py-3.5 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
+        >
+          <span>
+            {isResidential
+              ? t('Konsultasi Residensial', 'Inquire Residential')
+              : t('Konsultasi Komersial', 'Inquire Commercial')}
+          </span>
+          <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export function ServicesSection({ anchorId = 'services' }: { anchorId?: string }) {
+  const { t } = useLanguage();
   const { services } = useSiteContent();
 
   return (
@@ -387,76 +615,7 @@ export function ServicesSection({ anchorId = 'services' }: { anchorId?: string }
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 mb-20">
           {services.map((srv) => (
-            <div key={srv.category} className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
-              <div>
-                <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black media-reveal">
-                  <Image
-                    src={srv.image}
-                    alt={lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
-                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-lg">
-                    {lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
-                  </div>
-                </div>
-
-                <div className="p-8 sm:p-10">
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
-                    {srv.category === 'RESIDENTIAL BUILDING'
-                      ? t('Bangunan Residensial', 'Residential Building')
-                      : t('Bangunan Komersial', 'Commercial Building')}
-                  </h3>
-                  <p className="font-serif text-base text-amber-400/90 italic mb-4">
-                    &ldquo;{lang === 'en' && srv.subtitleEn ? srv.subtitleEn : srv.subtitle}&rdquo;
-                  </p>
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-8">
-                    {lang === 'en' && srv.descEn ? srv.descEn : srv.desc}
-                  </p>
-
-                  <div className="mb-6">
-                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mb-3 font-bold">
-                      {t('CAKUPAN KERJA:', 'WHAT WE DO:')}
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {(lang === 'en' && srv.typesEn ? srv.typesEn : srv.types).map((type) => (
-                        <span
-                          key={type}
-                          className="px-3.5 py-1.5 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
-                        >
-                          {type}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-6 border-t border-white/10 space-y-2.5 font-mono text-xs text-neutral-300">
-                    {(lang === 'en' && srv.featuresEn ? srv.featuresEn : srv.features).map((feat) => (
-                      <div key={feat} className="flex items-center gap-2">
-                        <LuCircleCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-8 sm:px-10 pb-8 pt-2">
-                <a
-                  href="#contact"
-                  className="group w-full py-3.5 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
-                >
-                  <span>
-                    {srv.category === 'RESIDENTIAL BUILDING'
-                      ? t('Konsultasi Residensial', 'Inquire Residential')
-                      : t('Konsultasi Komersial', 'Inquire Commercial')}
-                  </span>
-                  <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              </div>
-            </div>
+            <ServiceCardWithCarousel key={srv.category} srv={srv} />
           ))}
         </div>
 
@@ -465,7 +624,7 @@ export function ServicesSection({ anchorId = 'services' }: { anchorId?: string }
             href="/services"
             className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
           >
-            <span>{t('Layanan & Alur Kerja 10 Tahap', 'Services & 10-Stage Methodology')}</span>
+            <span>{t('Layanan & Alur Kerja 7 Tahap', 'Services & 7-Stage Methodology')}</span>
             <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -519,7 +678,7 @@ export function ProjectsSection({ anchorId = 'projects' }: { anchorId?: string }
         <div className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6 reveal">
           <div>
             <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase">
-              {t('Proyek Pilihan', 'Selected Projects')}
+              {t('Proyek', 'Projects')}
             </h2>
           </div>
 
@@ -705,20 +864,18 @@ export function ContactSection({ anchorId = 'contact' }: { anchorId?: string }) 
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10 text-xs font-mono">
-              {[contact.studio, contact.workshop].map((place) => (
-                <div key={place.name}>
-                  <div className="text-white mb-1 flex items-center gap-2">
-                    <LuMapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>{place.name}</span>
-                  </div>
-                  <address className="text-neutral-400 leading-relaxed not-italic">
-                    {place.lines.map((line) => (
-                      <span key={line} className="block">{line}</span>
-                    ))}
-                  </address>
+            <div className="pt-6 border-t border-white/10 text-xs font-mono">
+              <div>
+                <div className="text-white font-bold mb-1 flex items-center gap-2 uppercase">
+                  <LuMapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>{contact.studio.name || 'OFFICE'}</span>
                 </div>
-              ))}
+                <address className="text-neutral-400 leading-relaxed not-italic">
+                  {contact.studio.lines.map((line) => (
+                    <span key={line} className="block">{line}</span>
+                  ))}
+                </address>
+              </div>
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">

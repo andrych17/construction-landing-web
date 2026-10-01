@@ -22,7 +22,7 @@ export default function Footer() {
           </Link>
           <span className="hidden sm:inline text-neutral-400" aria-hidden="true">|</span>
           <span className="text-neutral-400">
-            Wonderful Works Construction · Architecture & General Contractor
+            Wonderful Works Construction · General Contractor · Design & Build
           </span>
         </div>
 

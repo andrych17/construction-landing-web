@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuArrowUpRight, LuCircleCheck } from 'react-icons/lu';
@@ -8,6 +8,7 @@ import HeroMedia from '@/components/ui/HeroMedia';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { filled } from '@/components/pages/copy';
+import { CENTRA_SERVICES } from '@/data/siteData';
 
 type Copy = { anchorId?: string; titleId?: string; titleEn?: string; ledeId?: string; ledeEn?: string };
 
@@ -66,8 +67,129 @@ export function ServicesOverviewSection({ anchorId = 'overview' }: Copy) {
   );
 }
 
-export function ServicesPillarsSection({ anchorId = 'pillars' }: Copy) {
+const SERVICE_GALLERIES: Record<string, { img: string; tag: string }[]> = {
+  RESIDENTIAL: [
+    { img: '/images/projects/luxury_residence_hq.jpg', tag: 'Modern Luxury' },
+    { img: '/images/projects/rungkut_mapan.jpg', tag: 'Modern Tropis' },
+    { img: '/images/projects/modern_villa_hq.jpg', tag: 'Modern Kontemporer' },
+    { img: '/images/projects/tropical_facade_hq.jpg', tag: 'Minimalis Modern' },
+  ],
+  COMMERCIAL: [
+    { img: '/images/projects/jotun_showroom_hq.jpg', tag: 'Showroom & Retail' },
+    { img: '/images/projects/prasindo_abadi.jpg', tag: 'Perkantoran' },
+    { img: '/images/projects/tiger_billiard.jpg', tag: 'Entertainment & F&B' },
+    { img: '/images/projects/gate_akses_kebomas.jpg', tag: 'Pergudangan & Gate' },
+  ],
+};
+
+function ServicePillarCard({ srv }: { srv: (typeof CENTRA_SERVICES)[number] }) {
   const { lang, t } = useLanguage();
+  const isResidential = srv.category.includes('RESIDENTIAL') || srv.category.includes('RUMAH');
+  const slides = isResidential ? SERVICE_GALLERIES.RESIDENTIAL : SERVICE_GALLERIES.COMMERCIAL;
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const currentSlide = slides[activeSlide] || { img: srv.image, tag: srv.categoryEn || srv.category };
+
+  return (
+    <div className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
+      <div>
+        <div className="relative h-[300px] sm:h-[360px] w-full overflow-hidden bg-black media-reveal">
+          <Image
+            src={currentSlide.img}
+            alt={currentSlide.tag}
+            fill
+            className="object-cover group-hover:scale-105 transition-all duration-700 ease-expo brightness-100 contrast-[1.02]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
+          <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-amber-400 uppercase shadow-lg flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            <span>{currentSlide.tag}</span>
+          </div>
+
+          <div className="absolute bottom-3 right-4 flex items-center gap-1.5 z-10">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveSlide(i)}
+                aria-label={`Slide ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                  activeSlide === i ? 'bg-amber-400 w-5' : 'bg-white/40 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="p-8 sm:p-10">
+          <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
+            {isResidential
+              ? t('Bangunan Residensial', 'Residential Building')
+              : t('Bangunan Komersial', 'Commercial Building')}
+          </h3>
+          <p className="font-serif text-base text-amber-400/90 italic mb-4">
+            &ldquo;{lang === 'en' && srv.subtitleEn ? srv.subtitleEn : srv.subtitle}&rdquo;
+          </p>
+          <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-8 font-sans">
+            {lang === 'en' && srv.descEn ? srv.descEn : srv.desc}
+          </p>
+
+          <div className="mb-8">
+            <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mb-3 font-bold">
+              {isResidential
+                ? t('TEMA & GAYA ARSITEKTUR:', 'ARCHITECTURAL STYLES:')
+                : t('KATEGORI FASILITAS:', 'FACILITY CATEGORIES:')}
+            </span>
+            <div className="flex flex-wrap gap-2.5">
+              {(lang === 'en' && srv.typesEn ? srv.typesEn : srv.types).map((type) => (
+                <span
+                  key={type}
+                  className="px-3 py-1.5 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
+                >
+                  {type}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="pt-6 border-t border-white/10 space-y-3 font-mono text-xs text-neutral-300">
+            {(lang === 'en' && srv.featuresEn ? srv.featuresEn : srv.features).map((feat) => (
+              <div key={feat} className="flex items-center gap-2.5">
+                <LuCircleCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>{feat}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="px-8 sm:px-10 pb-8 pt-2">
+        <Link
+          href="/contact"
+          className="group w-full py-4 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
+        >
+          <span>
+            {isResidential
+              ? t('Konsultasi Proyek Residensial', 'Consult Residential Project')
+              : t('Konsultasi Proyek Komersial', 'Consult Commercial Project')}
+          </span>
+          <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function ServicesPillarsSection({ anchorId = 'pillars' }: Copy) {
+  const { t } = useLanguage();
   const { services } = useSiteContent();
   return (
     <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] bg-[#050505] w-full">
@@ -81,87 +203,15 @@ export function ServicesPillarsSection({ anchorId = 'pillars' }: Copy) {
           </h2>
           <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed font-sans">
             {t(
-              'Dari rumah tinggal dan villa sampai kantor, showroom, dan klinik.',
-              'From homes and villas to offices, showrooms, and clinics.'
+              'Dari rumah tinggal berbagai gaya arsitektur sampai kantor, showroom, dan fasilitas pergudangan.',
+              'From private residences across diverse architectural styles to offices, showrooms, and warehousing facilities.'
             )}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           {services.map((srv) => (
-            <div
-              key={srv.category}
-              className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal"
-            >
-              <div>
-                <div className="relative h-[300px] sm:h-[360px] w-full overflow-hidden bg-black">
-                  <Image
-                    src={srv.image}
-                    alt={lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-expo brightness-100 contrast-[1.02]"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
-                  <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-neutral-400 uppercase shadow-lg">
-                    {lang === 'en' && srv.categoryEn ? srv.categoryEn : srv.category}
-                  </div>
-                </div>
-
-                <div className="p-8 sm:p-10">
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
-                    {srv.category === 'RESIDENTIAL BUILDING'
-                      ? t('Bangunan Residensial', 'Residential Building')
-                      : t('Bangunan Komersial', 'Commercial Building')}
-                  </h3>
-                  <p className="font-serif text-base text-amber-400/90 italic mb-4">
-                    &ldquo;{lang === 'en' && srv.subtitleEn ? srv.subtitleEn : srv.subtitle}&rdquo;
-                  </p>
-                  <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light mb-8 font-sans">
-                    {lang === 'en' && srv.descEn ? srv.descEn : srv.desc}
-                  </p>
-
-                  <div className="mb-8">
-                    <span className="font-mono text-[11px] text-neutral-400 tracking-wider uppercase block mb-3 font-bold">
-                      {t('CAKUPAN KERJA:', 'WHAT WE DO:')}
-                    </span>
-                    <div className="flex flex-wrap gap-2.5">
-                      {(lang === 'en' && srv.typesEn ? srv.typesEn : srv.types).map((type) => (
-                        <span
-                          key={type}
-                          className="px-4 py-2 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-neutral-200"
-                        >
-                          {type}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-6 border-t border-white/10 space-y-3 font-mono text-xs text-neutral-300">
-                    {(lang === 'en' && srv.featuresEn ? srv.featuresEn : srv.features).map((feat) => (
-                      <div key={feat} className="flex items-center gap-2.5">
-                        <LuCircleCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-8 sm:px-10 pb-8 pt-2">
-                <Link
-                  href="/contact"
-                  className="group w-full py-4 rounded-none border border-white/20 hover:border-amber-400 hover:bg-amber-400 hover:text-black text-white font-mono text-xs tracking-widest uppercase transition-all duration-300 ease-expo flex items-center justify-center gap-2 font-bold"
-                >
-                  <span>
-                    {srv.category === 'RESIDENTIAL BUILDING'
-                      ? t('Konsultasi Proyek Residensial', 'Consult Residential Project')
-                      : t('Konsultasi Proyek Komersial', 'Consult Commercial Project')}
-                  </span>
-                  <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
-            </div>
+            <ServicePillarCard key={srv.category} srv={srv} />
           ))}
         </div>
       </div>
@@ -176,19 +226,22 @@ export function ServicesMethodSection({ anchorId = 'method' }: Copy) {
     <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] bg-[#020202] w-full">
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
         <div className="max-w-3xl mb-16 reveal">
+          <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
+            {t('ALUR KERJA TERSTRUKTUR', 'STRUCTURED METHODOLOGY')}
+          </span>
           <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase mb-4">
-            {t('Alur Kerja 10 Tahap', '10-Stage Workflow')}
+            {t('Alur Kerja 7 Tahap', '7-Stage Workflow')}
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed font-sans">
             {t(
-              'Dari konsultasi pertama sampai masa garansi, setiap tahap menghasilkan dokumen yang bisa Anda periksa.',
-              'From the first consultation to the end of the warranty, every stage produces a document you can check.'
+              'Dari survei lokasi hingga serah terima dan masa pemeliharaan, seluruh alur kerja dikerjakan secara transparan.',
+              'From initial site survey to key handover and warranty maintenance, every stage is transparently managed.'
             )}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {methodology.map((step) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          {methodology.slice(0, 4).map((step) => (
             <div
               key={step.step}
               className="p-6 rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 ease-expo flex flex-col justify-between group shadow-lg reveal"
@@ -213,7 +266,42 @@ export function ServicesMethodSection({ anchorId = 'method' }: Copy) {
                 </p>
               </div>
               <div className="pt-3 border-t border-white/10 font-mono text-[11px] text-neutral-400">
-                <span className="text-neutral-300 block mb-0.5">{t('OUTPUT DOKUMEN:', 'DELIVERABLE:')}</span>
+                <span className="text-neutral-300 block mb-0.5 font-semibold">{t('OUTPUT DOKUMEN:', 'DELIVERABLE:')}</span>
+                <span className="text-neutral-300">
+                  {lang === 'en' && step.deliverableEn ? step.deliverableEn : step.deliverable}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {methodology.slice(4).map((step) => (
+            <div
+              key={step.step}
+              className="p-6 rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/60 transition-all duration-300 ease-expo flex flex-col justify-between group shadow-lg reveal"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-3xl font-bold text-amber-400 group-hover:scale-105 transition-transform">
+                    {step.step}
+                  </span>
+                  <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-sm">
+                    {t('TAHAP', 'PHASE')}
+                  </span>
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors uppercase">
+                  {lang === 'en' && step.titleEn ? step.titleEn : step.title}
+                </h3>
+                <div className="font-mono text-[11px] text-amber-400/80 mb-3 tracking-wider uppercase">
+                  {lang === 'en' && step.subtitleEn ? step.subtitleEn : step.subtitle}
+                </div>
+                <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans mb-4">
+                  {lang === 'en' && step.enDesc ? step.enDesc : step.idDesc}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-white/10 font-mono text-[11px] text-neutral-400">
+                <span className="text-neutral-300 block mb-0.5 font-semibold">{t('OUTPUT DOKUMEN:', 'DELIVERABLE:')}</span>
                 <span className="text-neutral-300">
                   {lang === 'en' && step.deliverableEn ? step.deliverableEn : step.deliverable}
                 </span>

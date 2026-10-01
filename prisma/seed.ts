@@ -16,6 +16,7 @@ import {
   DEFAULT_HERO_PROJECTS,
   DEFAULT_HERO_CONTACT,
 } from '../src/data/siteData';
+import { defaultPageLayout, layoutStorageKey, type PageId } from '../src/lib/home-layout';
 
 const db = new PrismaClient();
 
@@ -102,9 +103,24 @@ async function seedProjects() {
   console.log(`Proyek siap: ${WW_PROJECTS.length} proyek dibuat.`);
 }
 
+async function seedLayouts() {
+  const pages: PageId[] = ['home', 'about', 'services', 'projects', 'contact'];
+  for (const page of pages) {
+    const key = layoutStorageKey(page);
+    const layout = defaultPageLayout(page);
+    await db.siteContent.upsert({
+      where: { key },
+      create: { key, value: layout as object },
+      update: { value: layout as object },
+    });
+  }
+  console.log(`Page layouts reset to updated defaults.`);
+}
+
 async function main() {
   await seedAdmin();
   await seedContent();
+  await seedLayouts();
   await seedProjects();
 }
 

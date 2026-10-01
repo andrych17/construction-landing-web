@@ -10,9 +10,9 @@ import {
   ContactSection,
   FounderSection,
   HeroSection,
-  PhilosophySection,
   ProjectsSection,
   ServicesSection,
+  WorkflowSection,
 } from '@/components/home/sections';
 
 const block = (label: string, type: HomeBlockType, render: (anchorId: string) => ReactElement) => ({
@@ -50,7 +50,7 @@ export const homePuckConfig = {
   categories: {
     beranda: {
       title: 'Section beranda',
-      components: ['Hero', 'About', 'Philosophy', 'Founder', 'Services', 'Projects', 'Contact'],
+      components: ['Hero', 'About', 'Workflow', 'Founder', 'Services', 'Projects', 'Contact'],
       defaultExpanded: true,
     },
   },
@@ -95,7 +95,7 @@ export const homePuckConfig = {
       ),
     },
     About: block('Tentang Kami', 'About', (anchorId) => <AboutSection anchorId={anchorId} />),
-    Philosophy: block('Filosofi Desain', 'Philosophy', (anchorId) => <PhilosophySection anchorId={anchorId} />),
+    Workflow: block('Alur Kerja', 'Workflow', (anchorId) => <WorkflowSection anchorId={anchorId} />),
     Founder: block('Founder', 'Founder', (anchorId) => <FounderSection anchorId={anchorId} />),
     Services: block('Layanan', 'Services', (anchorId) => <ServicesSection anchorId={anchorId} />),
     Projects: block('Proyek Pilihan', 'Projects', (anchorId) => <ProjectsSection anchorId={anchorId} />),

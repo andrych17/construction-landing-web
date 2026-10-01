@@ -20,7 +20,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
   const navLinks = [
     { href: '/', num: '01', label: 'HOME', desc: 'Studio & selected projects' },
     { href: '/about', num: '02', label: 'ABOUT US', desc: 'Philosophy & founder' },
-    { href: '/services', num: '03', label: 'SERVICES', desc: 'Services & 10-step workflow' },
+    { href: '/services', num: '03', label: 'SERVICES', desc: 'Services & 7-step workflow' },
     { href: '/projects', num: '04', label: 'PROJECTS', desc: 'Project portfolio' },
     { href: '/contact', num: '05', label: 'CONTACT', desc: 'Direct consultation' },
   ];
@@ -76,7 +76,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
                 </div>
                 <span className="hidden sm:block font-mono text-[10px] tracking-[0.22em] text-neutral-200 uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                  CONSTRUCTION · ARCHITECTURE & CONTRACTOR
+                  CONSTRUCTION · GENERAL CONTRACTOR · DESIGN & BUILD
                 </span>
               </div>
             </Link>

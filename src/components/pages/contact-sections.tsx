@@ -17,17 +17,40 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    type: 'Luxury Residence',
-    location: 'Surabaya Barat',
-    message: '',
+    type: 'Residential',
+    city: '',
+    notes: '',
   });
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleWhatsAppSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.phone) return;
+    setIsSubmitting(true);
+
+    try {
+      await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          projectType: formData.type,
+          city: formData.city,
+          notes: formData.notes,
+        }),
+      });
+    } catch (err) {
+      console.error('Failed to log inquiry:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
+
     if (!contact.whatsapp) return;
     const text =
       lang === 'en'
-        ? `Hello Wonderful Works Construction, I am ${formData.name} (${formData.phone}). I would like to inquire about design and construction for a ${formData.type} in ${formData.location}.${formData.message ? ` Notes: ${formData.message}` : ''}`
-        : `Halo Wonderful Works Construction, saya ${formData.name} (${formData.phone}). Saya ingin konsultasi perancangan/konstruksi ${formData.type} di daerah ${formData.location}.${formData.message ? ` Catatan: ${formData.message}` : ''}`;
+        ? `Hello Wonderful Works Construction, I am ${formData.name} (${formData.phone}). I would like to consult on a ${formData.type} project in ${formData.city || 'Surabaya'}.${formData.notes ? ` Notes: ${formData.notes}` : ''}`
+        : `Halo Wonderful Works Construction, saya ${formData.name} (${formData.phone}). Saya ingin konsultasi proyek ${formData.type} di kota ${formData.city || 'Surabaya'}.${formData.notes ? ` Catatan: ${formData.notes}` : ''}`;
     window.location.href = waLink(text);
   };
   return (
@@ -201,36 +224,27 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
                     >
-                      <option value="Luxury Residence">
-                        {t('Hunian Mewah / Luxury Residence', 'Luxury Residence')}
+                      <option value="Residential">
+                        {t('Residential', 'Residential')}
                       </option>
-                      <option value="Minimalist House">
-                        {t('Rumah Minimalis Modern', 'Modern Minimalist House')}
-                      </option>
-                      <option value="Commercial Office">
-                        {t('Kantor Komersial / Ruko', 'Commercial Office / Shophouse')}
-                      </option>
-                      <option value="Showroom & Retail">
-                        {t('Showroom & Ritel Komersial', 'Showroom & Retail Space')}
-                      </option>
-                      <option value="General Contracting">
-                        {t('Struktur & General Contracting', 'Structure & General Contracting')}
+                      <option value="Commercial">
+                        {t('Commercial', 'Commercial')}
                       </option>
                     </select>
                   </div>
                   <div>
                     <label
-                      htmlFor="f-location"
+                      htmlFor="f-city"
                       className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                     >
-                      {t('Lokasi Lahan', 'Site Location')}
+                      {t('Kota', 'City')}
                     </label>
                     <input
                       type="text"
-                      id="f-location"
+                      id="f-city"
                       placeholder={t('Surabaya / Sidoarjo / Gresik', 'Surabaya / Sidoarjo / Gresik')}
-                      value={formData.location}
-                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
                     />
                   </div>
@@ -238,52 +252,44 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
 
                 <div>
                   <label
-                    htmlFor="f-message"
+                    htmlFor="f-notes"
                     className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                   >
-                    {t('Rencana & Kebutuhan Ruang', 'Scope & Spatial Requirements')}
+                    {t('Catatan (Opsional)', 'Notes (Optional)')}
                   </label>
                   <textarea
-                    id="f-message"
+                    id="f-notes"
                     rows={3}
                     placeholder={t(
-                      'Ukuran lahan (m²), luas bangunan yang diinginkan, target waktu...',
-                      'Land size (sqm), intended built area, target timeline...'
+                      'Catatan tambahan mengenai rencana atau kebutuhan proyek...',
+                      'Additional notes regarding your project plans or requirements...'
                     )}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    value={formData.notes}
+                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-none bg-amber-400 text-black hover:bg-white font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-[0.98]"
+                  disabled={isSubmitting}
+                  className="w-full py-4 rounded-none bg-amber-400 text-black hover:bg-white font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-[0.98] disabled:opacity-50"
                 >
                   <FaWhatsapp className="w-4 h-4" />
-                  <span>{t('Kirim & Mulai Konsultasi WhatsApp', 'Send & Consult via WhatsApp')}</span>
+                  <span>{isSubmitting ? t('Menyimpan...', 'Saving...') : t('Kirim & Mulai Konsultasi WhatsApp', 'Send & Consult via WhatsApp')}</span>
                 </button>
               </form>
             </div>
 
-            {/* Physical Addresses */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10 text-xs font-mono">
+            {/* Physical Address */}
+            <div className="pt-6 border-t border-white/10 text-xs font-mono">
               <div>
                 <div className="text-white font-bold mb-1 flex items-center gap-2">
                   <LuMapPin className="w-3.5 h-3.5 text-amber-400" />
-                  <span>{t('STUDIO SURABAYA', 'SURABAYA STUDIO')}</span>
+                  <span>{t('OFFICE', 'OFFICE')}</span>
                 </div>
-                <div className="text-neutral-400 leading-relaxed">
+                <div className="text-neutral-400 leading-relaxed max-w-md">
                   {contact.studio.lines.join(', ')}
-                </div>
-              </div>
-              <div>
-                <div className="text-neutral-300 font-bold mb-1 flex items-center gap-2">
-                  <LuMapPin className="w-3.5 h-3.5 text-neutral-400" />
-                  <span>{t('BENGKEL & WORKSHOP', 'WORKSHOP & YARD')}</span>
-                </div>
-                <div className="text-neutral-400 leading-relaxed">
-                  {contact.workshop.lines.join(', ')}
                 </div>
               </div>
             </div>
