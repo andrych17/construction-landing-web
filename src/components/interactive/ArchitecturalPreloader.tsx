@@ -62,6 +62,7 @@ const serverSkipped = () => false;
 export default function ArchitecturalPreloader() {
   const pathname = usePathname();
   const isAdminRoute = pathname === '/login' || pathname.startsWith('/admin');
+  const isNotHome = pathname !== '/';
   const [isDone, setIsDone] = useState(false);
   const [unmounted, setUnmounted] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -74,11 +75,11 @@ export default function ArchitecturalPreloader() {
   // pernah melihatnya). Baca DOM langsung, bukan `skipped`, karena render
   // hidrasi pertama selalu memakai snapshot server (false).
   useEffect(() => {
-    if (!readSkipped()) videoRef.current?.play().catch(() => setVideoError(true));
-  }, []);
+    if (!readSkipped() && !isNotHome) videoRef.current?.play().catch(() => setVideoError(true));
+  }, [isNotHome]);
 
   useEffect(() => {
-    if (skipped) {
+    if (skipped || isNotHome) {
       releaseCurtain();
       return;
     }
@@ -110,9 +111,9 @@ export default function ArchitecturalPreloader() {
       SKIP_EVENTS.forEach((ev) => window.removeEventListener(ev, lift));
       clearTimeout(timer);
     };
-  }, [skipped]);
+  }, [skipped, isNotHome]);
 
-  if (skipped || unmounted || isAdminRoute) return null;
+  if (skipped || unmounted || isAdminRoute || isNotHome) return null;
 
   return (
     <div

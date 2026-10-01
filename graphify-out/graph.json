@@ -10183,7 +10183,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -26634,7 +26634,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -26646,7 +26646,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -26658,7 +26658,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/interactive/ArchitecturalPreloader.tsx",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -26939,5 +26939,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "84b34f2ac77aa75c8477698cf44457549cc51dba"
+  "built_at_commit": "524303e5f040514a826d405fa5eac242fb0c4901"
 }

@@ -270,9 +270,9 @@
     "semantic_hash": "fb4f3787b6fecc24981b688f6040a202"
   },
   "src/app/layout.tsx": {
-    "mtime": 1790839980.8355381,
-    "seen": 1790840052.4080596,
-    "ast_hash": "d497e1570e183b28bb9d2f0ec2439ca6",
+    "mtime": 1790840615.9954884,
+    "seen": 1790840665.345823,
+    "ast_hash": "17fd57b3b73536b054916d2d8621ef44",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -534,9 +534,9 @@
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790840001.4178333,
-    "seen": 1790840052.408134,
-    "ast_hash": "022118c23998cc69f478caf339a66770",
+    "mtime": 1790840622.9596226,
+    "seen": 1790840665.3459117,
+    "ast_hash": "fdb6de3974090cd5b009a5b285a7d9a3",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {

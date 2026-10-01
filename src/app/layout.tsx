@@ -229,7 +229,7 @@ export default async function RootLayout({
             __html: `(function(){
               try {
                 var isPreloaded = sessionStorage.getItem('ww_preloaded') === '1';
-                var isExcluded = window.location.pathname.startsWith('/admin') || window.location.pathname === '/login';
+                var isExcluded = window.location.pathname.startsWith('/admin') || window.location.pathname === '/login' || window.location.pathname !== '/';
                 var isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 if (isPreloaded || isExcluded || isReducedMotion) {
                   document.documentElement.classList.add('ww-preloaded');
