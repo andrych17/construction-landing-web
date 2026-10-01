@@ -3,8 +3,39 @@
 import React, { useState, useEffect, useRef, useSyncExternalStore } from 'react';
 import { usePathname } from 'next/navigation';
 import { WwLogoMark } from '@/components/ui/ModernWwLogo';
-import { ShutterColumns } from '@/components/interactive/ConstructionShutter';
 import { motion } from 'framer-motion';
+
+const COLUMNS = 6;
+const COLUMN_EASE = [0.76, 0, 0.24, 1] as const;
+const LIFT = { duration: 0.45, stagger: 0.03 };
+
+function ShutterColumns({
+  initial,
+  to,
+  onDone,
+}: {
+  initial: string;
+  to: string;
+  onDone?: () => void;
+}) {
+  return (
+    <div aria-hidden="true" className="absolute inset-0 flex">
+      {Array.from({ length: COLUMNS }, (_, i) => (
+        <motion.div
+          key={i}
+          initial={{ y: initial }}
+          animate={{ y: to }}
+          transition={{ duration: LIFT.duration, ease: COLUMN_EASE, delay: i * LIFT.stagger }}
+          onAnimationComplete={i === COLUMNS - 1 ? onDone : undefined}
+          className="relative h-full flex-1 bg-[#060606] border-r border-white/[0.05] last:border-r-0"
+        >
+          <span className="absolute inset-x-0 top-0 h-px bg-amber-400/70" />
+          <span className="absolute inset-x-0 bottom-0 h-px bg-amber-400/70" />
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 // Logo di video sudah utuh sejak ±0.4s; sisanya hanya kilau cahaya. Bumper yang
 // menahan konten lebih dari ±2s merugikan kunjungan pertama, jadi cukup 1.6s.
