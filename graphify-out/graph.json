@@ -1195,7 +1195,7 @@
       "file_type": "code",
       "norm_label": "footer()",
       "source_file": "src/components/navigation/Footer.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "src_components_navigation_navbar_navbar",
@@ -10224,6 +10224,18 @@
     },
     {
       "source": "src_components_navigation_footer_footer",
+      "target": "src_context_languagecontext_uselanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/navigation/Footer.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_navigation_footer_footer",
       "target": "src_context_sitecontentcontext_usesitecontent",
       "relation": "calls",
       "_origin": "ast",
@@ -10231,7 +10243,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/navigation/Footer.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -14653,7 +14665,7 @@
     },
     {
       "source": "src_components_navigation_footer",
-      "target": "src_context_sitecontentcontext_usesitecontent",
+      "target": "src_context_languagecontext_uselanguage",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14661,6 +14673,18 @@
       "context": "import",
       "source_file": "src/components/navigation/Footer.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_navigation_footer",
+      "target": "src_context_sitecontentcontext_usesitecontent",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/navigation/Footer.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -19265,7 +19289,7 @@
     },
     {
       "source": "src_components_navigation_footer",
-      "target": "src_context_sitecontentcontext",
+      "target": "src_context_languagecontext",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19273,6 +19297,18 @@
       "context": "import",
       "source_file": "src/components/navigation/Footer.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_navigation_footer",
+      "target": "src_context_sitecontentcontext",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/navigation/Footer.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24475,7 +24511,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/navigation/Footer.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -26939,5 +26975,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "524303e5f040514a826d405fa5eac242fb0c4901"
+  "built_at_commit": "e66cb101956af8e2ca395fee60bd9f8dc1657282"
 }

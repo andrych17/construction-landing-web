@@ -546,15 +546,15 @@
     "semantic_hash": ""
   },
   "src/components/navigation/Footer.tsx": {
-    "mtime": 1790823777.6389782,
-    "seen": 1790823964.305415,
-    "ast_hash": "03d1a518b588c994101a3647449a1ba3",
+    "mtime": 1790841814.0656064,
+    "seen": 1790841856.55617,
+    "ast_hash": "89dff4e7679238a89d3490dae21a344d",
     "semantic_hash": ""
   },
   "src/components/navigation/Navbar.tsx": {
-    "mtime": 1790838979.8413107,
-    "seen": 1790839060.9442155,
-    "ast_hash": "d4da1caf276e63f45872ba4e1c5c8288",
+    "mtime": 1790841804.846664,
+    "seen": 1790841856.5561738,
+    "ast_hash": "03377dc65a785723ebf6a1dc17dee1e4",
     "semantic_hash": ""
   },
   "src/components/pages/PageCanvas.tsx": {

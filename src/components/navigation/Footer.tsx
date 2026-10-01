@@ -3,9 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
+import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const { contact: SITE_CONTACT } = useSiteContent();
 
   return (
@@ -25,15 +27,15 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Navigasi footer" className="flex flex-wrap lg:flex-nowrap lg:shrink-0 items-center justify-center gap-6 text-neutral-400 font-mono text-[11px] uppercase tracking-wider">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
-          <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+          <Link href="/" className="hover:text-white transition-colors">{t('Beranda', 'Home')}</Link>
+          <Link href="/about" className="hover:text-white transition-colors">{t('Tentang Kami', 'About Us')}</Link>
+          <Link href="/services" className="hover:text-white transition-colors">{t('Layanan', 'Services')}</Link>
+          <Link href="/projects" className="hover:text-white transition-colors">{t('Proyek', 'Projects')}</Link>
+          <Link href="/contact" className="hover:text-white transition-colors">{t('Kontak', 'Contact')}</Link>
         </nav>
 
         <div className="text-center lg:text-right text-neutral-400">
-          <span>Copyright wwconstruction.id ©{new Date().getFullYear()} All Rights Reserved</span>
+          <span>Copyright wwconstruction.id ©{new Date().getFullYear()} {t('Hak Cipta Dilindungi', 'All Rights Reserved')}</span>
           <span className="block sm:inline sm:before:content-['·'] sm:before:mx-2 text-neutral-400">
             {SITE_CONTACT.studio.name}
           </span>

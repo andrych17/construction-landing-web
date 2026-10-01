@@ -1,17 +1,17 @@
 # Graph Report - wwconstruction.id  (2026-10-01)
 
 ## Corpus Check
-- 135 files · ~613,694 words
+- 135 files · ~613,737 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .example 2, .toml 1)
 
 ## Summary
-- 736 nodes · 1576 edges · 43 communities (32 shown, 11 thin omitted)
+- 736 nodes · 1579 edges · 43 communities (32 shown, 11 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `524303e5`
+- Built from commit: `e66cb101`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,7 +59,7 @@
 ## God Nodes (most connected - your core abstractions)
 1. `next` - 54 edges
 2. `react` - 49 edges
-3. `useLanguage()` - 37 edges
+3. `useLanguage()` - 39 edges
 4. `useSiteContent()` - 32 edges
 5. `handleApiError()` - 29 edges
 6. `react-icons` - 27 edges
@@ -230,7 +230,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
   _255 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.07027168234064786 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07105538140020899 - nodes in this community are weakly interconnected._
 - **Should `home-layout.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.055855855855855854 - nodes in this community are weakly interconnected._
 - **Should `JsonField.tsx` be split into smaller, more focused modules?**

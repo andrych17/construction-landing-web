@@ -18,11 +18,11 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
   const { contact: SITE_CONTACT, waLink } = useSiteContent();
 
   const navLinks = [
-    { href: '/', num: '01', label: 'HOME', desc: 'Studio & selected projects' },
-    { href: '/about', num: '02', label: 'ABOUT US', desc: 'Philosophy & founder' },
-    { href: '/services', num: '03', label: 'SERVICES', desc: 'Services & 7-step workflow' },
-    { href: '/projects', num: '04', label: 'PROJECTS', desc: 'Project portfolio' },
-    { href: '/contact', num: '05', label: 'CONTACT', desc: 'Direct consultation' },
+    { href: '/', num: '01', label: t('BERANDA', 'HOME'), desc: t('Studio & proyek pilihan', 'Studio & selected projects') },
+    { href: '/about', num: '02', label: t('TENTANG KAMI', 'ABOUT US'), desc: t('Filosofi & founder', 'Philosophy & founder') },
+    { href: '/services', num: '03', label: t('LAYANAN', 'SERVICES'), desc: t('Layanan & 7 alur kerja', 'Services & 7-step workflow') },
+    { href: '/projects', num: '04', label: t('PROYEK', 'PROJECTS'), desc: t('Portofolio proyek', 'Project portfolio') },
+    { href: '/contact', num: '05', label: t('KONTAK', 'CONTACT'), desc: t('Konsultasi langsung', 'Direct consultation') },
   ];
 
   useEffect(() => {
