@@ -618,9 +618,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/HeroMedia.tsx": {
-    "mtime": 1790825302.3858035,
-    "seen": 1790825541.6432393,
-    "ast_hash": "1e257b955ed3c6cfe4975cc31de7d49c",
+    "mtime": 1790840448.4513247,
+    "seen": 1790840483.0472822,
+    "ast_hash": "a2a4a28eeede119e42c952a7d3b43f40",
     "semantic_hash": ""
   },
   "src/components/ui/ModernWwLogo.tsx": {
@@ -726,15 +726,15 @@
     "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
   },
   "public/videos/concrete-structure.mp4": {
-    "mtime": 1790825294.3718321,
-    "seen": 1790825541.643484,
-    "ast_hash": "33776eeda21e2116bff18acae2870eb2",
+    "mtime": 1790840427.9741082,
+    "seen": 1790840483.0474565,
+    "ast_hash": "58edb1af6263feed324cb2aea96e52fa",
     "semantic_hash": ""
   },
   "public/videos/hero.mp4": {
-    "mtime": 1790825294.3662584,
-    "seen": 1790825541.6434867,
-    "ast_hash": "5769ebf9ae29b86e1647030bb79841cc",
+    "mtime": 1790840425.5529037,
+    "seen": 1790840483.0474586,
+    "ast_hash": "e2d634fde6049b50ae4869661d7a87ab",
     "semantic_hash": ""
   },
   "public/videos/logo.mp4": {
@@ -744,15 +744,15 @@
     "semantic_hash": "cf26b468c4b3043fec28fe3fc2da7bba"
   },
   "public/videos/material-detail.mp4": {
-    "mtime": 1790825294.3740714,
-    "seen": 1790825541.6434941,
-    "ast_hash": "feed8fdb3b33a8a1197410d9f54bf1f2",
+    "mtime": 1790840432.203673,
+    "seen": 1790840483.0474641,
+    "ast_hash": "321d009dbe3ab21e713b0b69b14b98d1",
     "semantic_hash": ""
   },
   "public/videos/villa-dusk.mp4": {
-    "mtime": 1790825294.3692045,
-    "seen": 1790825541.6434968,
-    "ast_hash": "b5bc51239f9625f883efe4bd3d93fce8",
+    "mtime": 1790840430.419056,
+    "seen": 1790840483.047466,
+    "ast_hash": "d5b7ed95a5a3657015c4471d15a37a1c",
     "semantic_hash": ""
   },
   ".github/copilot-instructions.md": {

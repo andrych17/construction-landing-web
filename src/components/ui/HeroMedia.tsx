@@ -25,36 +25,38 @@ interface HeroMediaProps {
  * hanya poster yang tampil: video latar yang berputar terus adalah gerak
  * otomatis tanpa kontrol jeda.
  */
-export default function HeroMedia({ src, poster, alt = '', priority = false }: HeroMediaProps) {
+export default function HeroMedia({ src, poster, alt = '', priority = true }: HeroMediaProps) {
   const prefersReducedMotion = useReducedMotion();
   const showVideo = Boolean(src) && !prefersReducedMotion;
+  const [isVideoReady, setIsVideoReady] = React.useState(false);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
-      {showVideo ? (
+    <div className="absolute inset-0 z-0 overflow-hidden bg-[#030303]">
+      {/* High-priority Next.js poster: paints instantly in 0ms for perfect LCP */}
+      <Image
+        src={poster}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="100vw"
+        className="object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle"
+      />
+
+      {/* Video layer: streams in background and smoothly fades in once ready */}
+      {showVideo && (
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster={poster}
-          className="w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle"
+          preload="metadata"
+          onCanPlay={() => setIsVideoReady(true)}
+          className={`w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle transition-opacity duration-1000 ease-out ${
+            isVideoReady ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         >
-          {/* Video latar hanya untuk layar ≥768px. Di HP tidak ada source yang cocok,
-              jadi browser tidak mengunduh video sama sekali dan menampilkan poster —
-              hemat 0.5–1.7MB kuota per halaman. Browser lama yang mengabaikan
-              atribut `media` tetap memutar videonya seperti sebelumnya. */}
           <source src={src} type="video/mp4" media="(min-width: 768px)" />
         </video>
-      ) : (
-        <Image
-          src={poster}
-          alt={alt}
-          fill
-          priority={priority}
-          sizes="100vw"
-          className="object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle"
-        />
       )}
 
       {/* Strip atas: keterbacaan navbar */}
