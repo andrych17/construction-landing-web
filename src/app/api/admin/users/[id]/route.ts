@@ -17,7 +17,7 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await requireSuperAdmin();
+    await requireSuperAdmin();
     const { id } = await params;
 
     const targetUser = await db.adminUser.findUnique({ where: { id } });

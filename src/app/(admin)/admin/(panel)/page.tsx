@@ -9,7 +9,6 @@ import {
   LuUsers,
   LuPlus,
   LuCircleCheck,
-  LuClock,
   LuArrowRight,
   LuShieldCheck,
   LuSparkles,

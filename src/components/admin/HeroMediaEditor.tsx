@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useEffectEvent, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useToast } from '@/components/admin/ui/Toast';
 import { Button } from '@/components/admin/ui/Button';
@@ -24,6 +24,8 @@ import {
   LuVolumeX,
 } from 'react-icons/lu';
 
+const VALID_TABS: string[] = HERO_PAGES.map((p) => p.key);
+
 const DEFAULT_MAP: Record<HeroPageKey, HeroMediaValue> = {
   heroHome: DEFAULT_HERO_HOME,
   heroAbout: DEFAULT_HERO_ABOUT,
@@ -43,8 +45,7 @@ export function HeroMediaManager({
   const searchParams = useSearchParams();
   const toast = useToast();
 
-  const validTabs = HERO_PAGES.map((p) => p.key);
-  const initialActive = validTabs.includes(initialTab as HeroPageKey)
+  const initialActive = VALID_TABS.includes(initialTab ?? '')
     ? (initialTab as HeroPageKey)
     : 'heroHome';
 
@@ -66,7 +67,7 @@ export function HeroMediaManager({
   // Sync tab from URL if changed
   useEffect(() => {
     const tabParam = searchParams.get('tab');
-    if (tabParam && validTabs.includes(tabParam as HeroPageKey)) {
+    if (tabParam && VALID_TABS.includes(tabParam)) {
       setActiveTab(tabParam as HeroPageKey);
     }
   }, [searchParams]);
@@ -163,19 +164,21 @@ export function HeroMediaManager({
     }
   };
 
-  // Keyboard shortcut Ctrl/Cmd + S to save
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        if (!saving && hasDirtyCurrent) {
-          handleSave();
-        }
+  // Keyboard shortcut Ctrl/Cmd + S to save. useEffectEvent reads the latest
+  // state, so the listener is registered once instead of on every render.
+  const onKeyDown = useEffectEvent((e: KeyboardEvent) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      if (!saving && hasDirtyCurrent) {
+        handleSave();
       }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [saving, hasDirtyCurrent, currentHero, activeTab]);
+    }
+  });
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   const handleResetToDefault = () => {
     if (confirm(`Kembalikan media Hero ${activePageMeta.label} ke default awal?`)) {
@@ -594,25 +597,5 @@ export function HeroMediaManager({
         </div>
       </div>
     </div>
-  );
-}
-
-// Backward compatibility for single section invocation
-export function HeroMediaEditor({
-  sectionKey,
-  label,
-  initialValue,
-  previewPath,
-}: {
-  sectionKey: string;
-  label: string;
-  initialValue: HeroMediaValue;
-  previewPath: string;
-}) {
-  return (
-    <HeroMediaManager
-      initialData={{ [sectionKey]: initialValue }}
-      initialTab={sectionKey}
-    />
   );
 }
