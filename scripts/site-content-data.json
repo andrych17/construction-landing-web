@@ -1,0 +1,506 @@
+{
+  "contact": {
+    "isPlaceholder": false,
+    "whatsapp": "628113313347",
+    "whatsappLabel": "+62 811 3313 347",
+    "email": "Wonderful.work.cons@gmail.com",
+    "emailLabel": "Wonderful.work.cons@gmail.com",
+    "instagram": "https://www.instagram.com/ww.cons/",
+    "instagramHandle": "@ww.cons",
+    "studio": {
+      "name": "OFFICE",
+      "lines": [
+        "Jl. Semolowaru No. 29",
+        "Semolowaru, Sukolilo, Surabaya",
+        "Jawa Timur 60119, Indonesia"
+      ]
+    },
+    "workshop": {
+      "name": "",
+      "lines": []
+    }
+  },
+  "rotatingDisciplines": {
+    "id": [
+      "Arsitektur",
+      "Interior",
+      "Master Planning",
+      "Kontraktor Utama"
+    ],
+    "en": [
+      "Architecture",
+      "Interior",
+      "Planning",
+      "General Contracting"
+    ]
+  },
+  "philosophies": [
+    {
+      "num": "01",
+      "title": "OPEN LIVING",
+      "tagline": "Ruang dalam dan luar yang menyatu",
+      "taglineEn": "Indoors and outdoors as one space",
+      "desc": "Denah terbuka dan bukaan lebar menyambungkan ruang dalam dengan taman dan teras, sehingga cahaya dan udara masuk dari banyak sisi.",
+      "descEn": "Open plans and wide openings connect the interior to the garden and terrace, letting light and air in from several sides.",
+      "execution": "Void setinggi dua lantai dan kisi aluminium di fasad menahan tampias hujan Surabaya, sambil tetap menjaga ventilasi silang dan cahaya alami tanpa panas berlebih.",
+      "executionEn": "Double-height voids and aluminium facade louvers keep out Surabaya's driving rain while preserving cross-ventilation and daylight without excess heat.",
+      "img": "/images/projects/tropical_facade_hq.jpg",
+      "material": "Kaca Low-E Double-Glazed, Kisi Aluminium, Pergola Kayu Jati",
+      "materialEn": "Double-Glazed Low-E Glass, Aluminium Louvers, Teak Pergola"
+    },
+    {
+      "num": "02",
+      "title": "MATERIAL CONTRAST",
+      "tagline": "Kasar dan halus dalam satu ruang",
+      "taglineEn": "Raw and refined in one room",
+      "desc": "Beton ekspos dan baja hitam dipasangkan dengan marmer dan kayu jati. Teksturnya berbeda, tetapi proporsinya dihitung supaya ruang tetap tenang.",
+      "descEn": "Exposed concrete and black steel are paired with marble and teak. The textures differ, but the proportions are worked out so the room stays calm.",
+      "execution": "Beton ekspos K-350 dan baja struktural bertemu marmer alam bookmatched dan lantai kayu jati solid. Nat dipasang dengan panduan laser, deviasinya di bawah 1 mm.",
+      "executionEn": "K-350 exposed concrete and structural steel meet bookmatched natural marble and solid teak floors. Joints are laser-set to under 1 mm deviation.",
+      "img": "/images/projects/interior_craftsmanship_hq.jpg",
+      "material": "Marmer Statuario, Beton Ekspos K-350, Kayu Jati Solid",
+      "materialEn": "Statuario Marble, K-350 Exposed Concrete, Solid Teak"
+    },
+    {
+      "num": "03",
+      "title": "SPATIAL FLOW",
+      "tagline": "Sirkulasi dirancang lebih dulu",
+      "taglineEn": "Circulation planned first",
+      "desc": "Urutan ruang dari pintu masuk sampai kamar tidur disusun mengikuti cara penghuni bergerak sehari-hari.",
+      "descEn": "The sequence of rooms, from the entrance to the bedrooms, follows how the household moves through the day.",
+      "execution": "Jalur pipa dan listrik (MEP) ditanam sebelum plat lantai dicor, jadi dinding dan lantai tidak perlu dibobok lagi setelah finishing.",
+      "executionEn": "Plumbing and electrical (MEP) runs are embedded before the floor slab is poured, so walls and floors never need to be broken open after finishing.",
+      "img": "/images/projects/modern_villa_hq.jpg",
+      "material": "Jalur MEP Tertanam, Siku 90° Laser, Drywall Akustik",
+      "materialEn": "Embedded MEP Conduits, Laser-Set 90° Corners, Acoustic Drywall"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Alvin Indrajaya Setia, S.T.",
+      "role": "Pendiri & Direktur",
+      "roleEn": "Founder & Director",
+      "image": "/images/founders/alvin_indrajaya.png",
+      "isSvgPlaceholder": false,
+      "focus": "Perencanaan & Pelaksanaan Konstruksi",
+      "focusEn": "Design & Construction Management",
+      "bio": "Alvin memimpin Wonderful Works dan memegang langsung perencanaan serta pelaksanaan proyek, dari studi tapak sampai serah terima.",
+      "bioEn": "Alvin leads Wonderful Works and oversees the planning and construction of its projects, from site study to handover.",
+      "credentials": [
+        "Sarjana Teknik (S.T.)"
+      ],
+      "credentialsEn": [
+        "Bachelor of Engineering (S.T.)"
+      ],
+      "quote": "",
+      "quoteEn": ""
+    }
+  ],
+  "services": [
+    {
+      "category": "RUMAH TINGGAL",
+      "categoryEn": "RESIDENTIAL BUILDING",
+      "subtitle": "Rumah impian Anda, dirancang dan dibangun dengan presisi dan perhatian penuh.",
+      "subtitleEn": "Your dream home, built with care and precision.",
+      "desc": "Dari minimalis modern, tropis, hingga mediterania dan klasik. Setiap hunian direncanakan dengan kenyamanan ruang, ventilasi silang optimal, dan standar struktur tahan lama.",
+      "descEn": "From modern minimalist and tropical to mediterranean and classic styles. Every residence is engineered for comfortable living, cross-ventilation, and enduring structural integrity.",
+      "types": [
+        "Minimalis Modern",
+        "Japandi",
+        "Modern Kontemporer",
+        "Modern Tropis",
+        "Industrial",
+        "Modern Luxury",
+        "Klasik / Neoklasik",
+        "Mediterania",
+        "Tradisional / Etnik",
+        "Rustic"
+      ],
+      "typesEn": [
+        "Modern Minimalist",
+        "Japandi",
+        "Modern Contemporary",
+        "Modern Tropical",
+        "Industrial",
+        "Modern Luxury",
+        "Classic / Neoclassic",
+        "Mediterranean",
+        "Traditional / Ethnic",
+        "Rustic"
+      ],
+      "features": [
+        "Prioritas struktur kokoh sesuai Safety Factor SNI",
+        "Perencanaan tata ruang, ventilasi silang & pencahayaan alami",
+        "Finishing rapi & presisi dengan toleransi siku 90° digital laser",
+        "Garansi struktur resmi & pendampingan pemeliharaan berkala"
+      ],
+      "featuresEn": [
+        "Structural integrity complying with SNI Safety Factor standards",
+        "Spatial planning optimized for daylight & cross-ventilation",
+        "Precision finishes verified with laser-guided 90° corner tolerance",
+        "Official structural warranty and scheduled maintenance support"
+      ],
+      "image": "/images/projects/luxury_residence_hq.jpg"
+    },
+    {
+      "category": "BANGUNAN KOMERSIAL",
+      "categoryEn": "COMMERCIAL BUILDING",
+      "subtitle": "Ruang fungsional dan representatif untuk pertumbuhan bisnis Anda.",
+      "subtitleEn": "Functional, attractive spaces for thriving businesses.",
+      "desc": "Perkantoran, showroom, ruko, restoran/kafe, hingga fasilitas pergudangan. Dirancang dengan efisiensi sirkulasi, durabilitas material tinggi, dan ketepatan jadwal pembukaan.",
+      "descEn": "Offices, showrooms, retail shophouses, cafes/restaurants, to warehousing facilities. Engineered for efficient flow, high-durability materials, and on-time business opening dates.",
+      "types": [
+        "Retail & Perdagangan (Ruko, Toko, Minimarket)",
+        "Kuliner (Restoran, Kafe, Bakery)",
+        "Perkantoran & Workspace (Gedung Kantor, Coworking)",
+        "Penginapan (Hotel, Guest House, Vila Sewa)",
+        "Showroom (Otomotif, Furnitur, Material)",
+        "Jasa (Salon, Barbershop, Studio Foto)",
+        "Olahraga & Rekreasi (Gym, Lapangan Padel)",
+        "Pergudangan & Logistik (Gudang, Portal Pergudangan)"
+      ],
+      "typesEn": [
+        "Retail & Commerce (Shophouses, Stores)",
+        "Culinary (Restaurants, Cafes, Bakeries)",
+        "Offices & Workspaces (Office Buildings, Coworking)",
+        "Hospitality (Hotels, Guest Houses, Rental Villas)",
+        "Showrooms (Automotive, Furniture, Materials)",
+        "Services (Salons, Barbershops, Photo Studios)",
+        "Sports & Recreation (Gyms, Padel Courts)",
+        "Warehousing & Logistics (Warehouses, Industrial Portals)"
+      ],
+      "features": [
+        "Struktur baja WF & beton bertulang heavy-duty SNI",
+        "Manajemen jadwal Kurva-S untuk target peresmian usaha tepat waktu",
+        "Integrasi sistem MEP, zonasi akustik, dan pencahayaan komersial",
+        "Gambar kerja as-built lengkap & pendampingan teknis perizinan"
+      ],
+      "featuresEn": [
+        "Heavy-duty WF steel and reinforced concrete to SNI standards",
+        "S-curve milestone management ensuring punctual commercial openings",
+        "Integrated MEP utilities, acoustic isolation, and commercial lighting",
+        "Comprehensive as-built drawings and regulatory documentation support"
+      ],
+      "image": "/images/projects/jotun_showroom_hq.jpg"
+    }
+  ],
+  "methodology": [
+    {
+      "step": "01",
+      "title": "Site Survey",
+      "titleEn": "Site Survey",
+      "subtitle": "Pengukuran lahan & cek lokasi fisik",
+      "subtitleEn": "Site measurement & physical check",
+      "idDesc": "Tim surveyor dan insinyur mengukur lahan secara presisi, menganalisis kontur tanah, akses jalan, dan kondisi lingkungan tapak bangunan.",
+      "enDesc": "Our engineering team precisely measures the site boundaries, soil conditions, access infrastructure, and immediate surroundings.",
+      "deliverable": "Laporan survei lahan & data kondisi tapak",
+      "deliverableEn": "Topographic survey report & plot conditions"
+    },
+    {
+      "step": "02",
+      "title": "Konsultasi & Konsep",
+      "titleEn": "Consultation & Concept",
+      "subtitle": "Desain, fungsi bangunan, material & timeline",
+      "subtitleEn": "Design, function, materials & timeline",
+      "idDesc": "Diskusi komprehensif mengenai konsep arsitektur, kegunaan bangunan, jumlah lantai, pemilihan material, tema estetika, serta target penyelesaian.",
+      "enDesc": "In-depth consultation covering architectural concept, building utility, number of levels, material specifications, style theme, and target completion date.",
+      "deliverable": "Brief desain & usulan konsep arsitektural",
+      "deliverableEn": "Design brief & concept proposal"
+    },
+    {
+      "step": "03",
+      "title": "Budgeting & RAB",
+      "titleEn": "Itemized Budgeting",
+      "subtitle": "Perhitungan RAB terbuka tanpa biaya tersembunyi",
+      "subtitleEn": "Transparent itemized BOQ with no hidden costs",
+      "idDesc": "Estimator menyusun Rencana Anggaran Biaya (RAB) per item pekerjaan secara rinci dan transparan, sehingga alokasi biaya jelas sejak awal.",
+      "enDesc": "Our cost estimators formulate an itemized bill of quantities (RAB/BOQ) with transparent line-item pricing, ensuring absolute budget clarity.",
+      "deliverable": "RAB terperinci & jadwal termin pembayaran",
+      "deliverableEn": "Detailed BOQ & staged payment schedule"
+    },
+    {
+      "step": "04",
+      "title": "Tanda Tangan SPK",
+      "titleEn": "SPK Agreement",
+      "subtitle": "Surat Perintah Kerja resmi & gambar kerja",
+      "subtitleEn": "Signed work agreement & approved drawings",
+      "idDesc": "Kesepakatan dituangkan dalam Surat Perintah Kerja (SPK) resmi berkekuatan hukum, lengkap dengan lampiran gambar kerja dan spesifikasi material.",
+      "enDesc": "Formalized into a legally binding work agreement (SPK) complete with architectural working drawings and verified material specifications.",
+      "deliverable": "Kontrak SPK legal & lampiran gambar kerja",
+      "deliverableEn": "Signed SPK agreement & working drawings"
+    },
+    {
+      "step": "05",
+      "title": "Weekly Progress Report",
+      "titleEn": "Weekly Progress Report",
+      "subtitle": "Pengawasan lapangan & laporan mingguan",
+      "subtitleEn": "On-site supervision & weekly updates",
+      "idDesc": "Pelaksanaan diawasi langsung oleh tim lapangan profesional. Progres fisik diupdate secara berkala via grup proyek dan laporan mingguan Kurva-S.",
+      "enDesc": "Direct on-site execution led by field engineers. Physical milestones are documented and reported weekly through progress updates and S-curve tracking.",
+      "deliverable": "Laporan progres mingguan & dokumentasi foto",
+      "deliverableEn": "Weekly progress reports & photo documentation"
+    },
+    {
+      "step": "06",
+      "title": "Serah Terima (BAST)",
+      "titleEn": "Handover (BAST)",
+      "subtitle": "Inspeksi bersama & penyerahan kunci",
+      "subtitleEn": "Joint final inspection & key handover",
+      "idDesc": "Klien dan tim kontraktor melakukan pemeriksaan akhir bersama secara menyeluruh. Setelah seluruh checklist tuntas, dokumen BAST ditandatangani dan kunci diserahkan.",
+      "enDesc": "Joint final walkthrough with the client to verify every detail against the agreed scope. Upon final sign-off, the BAST document is ratified and keys are handed over.",
+      "deliverable": "Berita Acara Serah Terima (BAST) & as-built drawings",
+      "deliverableEn": "Handover certificate (BAST) & as-built drawings"
+    },
+    {
+      "step": "07",
+      "title": "Warranty & Maintenance",
+      "titleEn": "Warranty & Maintenance",
+      "subtitle": "Garansi struktur & masa pemeliharaan",
+      "subtitleEn": "Structural warranty & maintenance support",
+      "idDesc": "Jaminan garansi struktur dan masa retensi pemeliharaan untuk memastikan kualitas bangunan tetap optimal serta memberikan rasa aman bagi klien.",
+      "enDesc": "Formal structural warranty coverage and a dedicated maintenance retention period ensuring peace of mind and long-term durability.",
+      "deliverable": "Sertifikat garansi struktur & layanan pemeliharaan",
+      "deliverableEn": "Structural warranty certificate & maintenance service"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "questionId": "Apa spesialisasi Wonderful Works Construction di Surabaya?",
+      "questionEn": "What does Wonderful Works Construction specialize in?",
+      "answerId": "Wonderful Works Construction adalah kontraktor rancang bangun di Surabaya. Kami mengerjakan desain arsitektur, interior, dan konstruksi untuk rumah tinggal dan bangunan komersial dengan standar teknik sipil SNI. Finishing dicek dengan laser, dengan toleransi siku di bawah 1 mm.",
+      "answerEn": "Wonderful Works Construction is a design-build contractor in Surabaya. We handle architecture, interiors, and construction for homes and commercial buildings to SNI civil engineering standards. Finishing is laser-checked, with corner tolerances under 1 mm.",
+      "category": "General"
+    },
+    {
+      "id": "faq-2",
+      "questionId": "Mutu beton dan kontrol kualitas apa yang dipakai Wonderful Works Construction?",
+      "questionEn": "What concrete grade and quality control does Wonderful Works Construction use?",
+      "answerId": "Struktur utama (bore pile, sloof, kolom, dan plat lantai) memakai beton ReadyMix K-350 sesuai SNI. Setiap truk mixer diuji slump di lokasi sebelum dicor. Tulangan anti-seismik diikat kawat bendrat ganda, dan hasil cor diperiksa supaya tidak ada keropos (honeycomb).",
+      "answerEn": "Main structural elements (bore piles, grade beams, columns, and floor slabs) use SNI-compliant ReadyMix K-350 concrete. Every mixer truck is slump-tested on site before pouring. Seismic-grade rebar is double-tied, and each pour is checked for honeycombing.",
+      "category": "Engineering"
+    },
+    {
+      "id": "faq-3",
+      "questionId": "Bagaimana sistem RAB dan kontrak kerja di Wonderful Works Construction?",
+      "questionEn": "How do budgeting (RAB) and contracts work at Wonderful Works Construction?",
+      "answerId": "RAB disusun per item berdasarkan Analisa Harga Satuan (AHS), lengkap dengan spesifikasi material, jadi tidak ada biaya tersembunyi. Pekerjaan diikat Surat Perjanjian Kerja (SPK), dan pembayaran dilakukan bertahap sesuai progres fisik di lapangan.",
+      "answerEn": "The bill of quantities (RAB) is itemized using unit price analysis (AHS) with full material specifications, so there are no hidden costs. Work is bound by a signed agreement (SPK), and payments are staged against physical progress on site.",
+      "category": "Financial & Contract"
+    },
+    {
+      "id": "faq-4",
+      "questionId": "Apakah Wonderful Works Construction membantu pengurusan PBG dan SLF?",
+      "questionEn": "Does Wonderful Works Construction help with PBG permits and SLF certificates?",
+      "answerId": "Ya. Kami menyiapkan gambar kerja, perhitungan struktur oleh insinyur bersertifikat, dan dokumen pendukung untuk pengajuan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi) di Surabaya, Sidoarjo, dan Gresik.",
+      "answerEn": "Yes. We prepare working drawings, structural calculations by certified engineers, and supporting documents for PBG (building approval) and SLF (certificate of occupancy) submissions in Surabaya, Sidoarjo, and Gresik.",
+      "category": "Licensing"
+    },
+    {
+      "id": "faq-5",
+      "questionId": "Berapa lama garansi dan masa retensi setelah serah terima?",
+      "questionEn": "What warranty and retention period do you provide after handover?",
+      "answerId": "Setiap proyek mendapat masa retensi pemeliharaan 100 hari untuk perbaikan pasca-huni, serta garansi struktur hingga 5 tahun dengan sertifikat garansi tertulis.",
+      "answerEn": "Every project gets a 100-day maintenance retention period for post-occupancy fixes, plus a structural warranty of up to 5 years with a written certificate.",
+      "category": "Warranty"
+    },
+    {
+      "id": "faq-6",
+      "questionId": "Wilayah mana saja yang dilayani Wonderful Works Construction?",
+      "questionEn": "Which areas does Wonderful Works Construction serve?",
+      "answerId": "Studio dan workshop kami ada di Jl. Semolowaru No. 29, Surabaya. Kami menerima proyek di Surabaya, Sidoarjo, dan Gresik.",
+      "answerEn": "Our studio and workshop are at Jl. Semolowaru No. 29, Surabaya. We take on projects in Surabaya, Sidoarjo, and Gresik.",
+      "category": "Coverage"
+    }
+  ],
+  "heroHome": {
+    "video": "/videos/hero.mp4",
+    "poster": "/images/projects/hero_poster.jpg",
+    "alt": "",
+    "altEn": ""
+  },
+  "heroAbout": {
+    "video": "/videos/material-detail.mp4",
+    "poster": "/images/projects/material-detail_poster.jpg",
+    "alt": "Detail pertemuan beton dan kayu jati",
+    "altEn": "Junction detail of raw concrete and solid teak"
+  },
+  "heroServices": {
+    "video": "/videos/concrete-structure.mp4",
+    "poster": "/images/projects/concrete-structure_poster.jpg",
+    "alt": "Struktur beton dalam pengerjaan",
+    "altEn": "Concrete structure in progress"
+  },
+  "heroProjects": {
+    "video": "/videos/villa-dusk.mp4",
+    "poster": "/images/projects/villa-dusk_poster.jpg",
+    "alt": "Vila modern saat senja",
+    "altEn": "Modern villa at dusk"
+  },
+  "heroContact": {
+    "video": "/videos/villa-dusk.mp4",
+    "poster": "/images/projects/villa-dusk_poster.jpg",
+    "alt": "Vila modern saat senja",
+    "altEn": "Modern villa at dusk"
+  },
+  "layout:home": {
+    "root": {
+      "props": {}
+    },
+    "content": [
+      {
+        "type": "Hero",
+        "props": {
+          "id": "Hero"
+        }
+      },
+      {
+        "type": "About",
+        "props": {
+          "id": "About"
+        }
+      },
+      {
+        "type": "Workflow",
+        "props": {
+          "id": "Workflow"
+        }
+      },
+      {
+        "type": "Founder",
+        "props": {
+          "id": "Founder"
+        }
+      },
+      {
+        "type": "Services",
+        "props": {
+          "id": "Services"
+        }
+      },
+      {
+        "type": "Projects",
+        "props": {
+          "id": "Projects"
+        }
+      },
+      {
+        "type": "Contact",
+        "props": {
+          "id": "Contact"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "layout:about": {
+    "root": {
+      "props": {}
+    },
+    "content": [
+      {
+        "type": "AboutHero",
+        "props": {
+          "id": "AboutHero"
+        }
+      },
+      {
+        "type": "AboutNarrative",
+        "props": {
+          "id": "AboutNarrative"
+        }
+      },
+      {
+        "type": "AboutFounder",
+        "props": {
+          "id": "AboutFounder"
+        }
+      },
+      {
+        "type": "AboutCta",
+        "props": {
+          "id": "AboutCta"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "layout:services": {
+    "root": {
+      "props": {}
+    },
+    "content": [
+      {
+        "type": "ServicesHero",
+        "props": {
+          "id": "ServicesHero"
+        }
+      },
+      {
+        "type": "ServicesOverview",
+        "props": {
+          "id": "ServicesOverview"
+        }
+      },
+      {
+        "type": "ServicesPillars",
+        "props": {
+          "id": "ServicesPillars"
+        }
+      },
+      {
+        "type": "ServicesMethod",
+        "props": {
+          "id": "ServicesMethod"
+        }
+      },
+      {
+        "type": "ServicesBenchmarks",
+        "props": {
+          "id": "ServicesBenchmarks"
+        }
+      },
+      {
+        "type": "ServicesCta",
+        "props": {
+          "id": "ServicesCta"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "layout:projects": {
+    "root": {
+      "props": {}
+    },
+    "content": [
+      {
+        "type": "ProjectsHero",
+        "props": {
+          "id": "ProjectsHero"
+        }
+      },
+      {
+        "type": "ProjectsCatalog",
+        "props": {
+          "id": "ProjectsCatalog"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "layout:contact": {
+    "root": {
+      "props": {}
+    },
+    "content": [
+      {
+        "type": "ContactStudio",
+        "props": {
+          "id": "ContactStudio"
+        }
+      }
+    ],
+    "zones": {}
+  }
+}
