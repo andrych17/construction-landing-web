@@ -16,9 +16,13 @@
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* `clip`, bukan `hidden`: `hidden` menjadikan body scroll container, sehingga
+   animasi scroll-driven (view()) dan position: sticky mengacu ke body yang tak
+   pernah scroll — keduanya mati. `hidden` di atasnya hanya fallback browser lama. */
 html,
 body {
   overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   scroll-behavior: smooth;
   background-color: #030303;
@@ -73,11 +77,46 @@ body {
   }
 }
 
+/* Media hero turun perlahan dari zoom saat tirai kolom terangkat.
+   Menganimasikan properti `scale` (bukan transform) karena kelas Tailwind
+   scale-105 pada elemen yang sama juga memakai `scale`; nilai akhirnya sama. */
+@keyframes hero-settle {
+  from {
+    scale: 1.14;
+  }
+  to {
+    scale: 1.05;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-settle {
+    animation: hero-settle 2.6s var(--ease-expo) both;
+  }
+}
+
+/* Garis "laser level" amber yang menempel di tepi bawah area tersingkap.
+   Kotak setinggi elemen digeser -100% sehingga border-bawahnya tepat di batas
+   clip-path media-wipe, lalu turun bersama wipe-nya. */
+@keyframes level-line {
+  from {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    transform: none;
+    opacity: 0;
+  }
+}
+
 /* Hanya clip-path: kalau ikut menganimasikan transform, ia bentrok dengan
    efek zoom hover pada gambar di dalamnya. */
 @keyframes media-wipe {
   from {
-    clip-path: inset(0 0 40% 0);
+    clip-path: inset(0 0 100% 0);
   }
   to {
     clip-path: inset(0 0 0 0);
@@ -93,14 +132,32 @@ body {
     }
   }
 
-  /* Gambar tersingkap dari bawah ke atas mengikuti scroll — hanya clip-path,
+  /* Gambar tersingkap dari atas ke bawah mengikuti scroll — hanya clip-path,
      jadi tetap di compositor dan tidak memicu layout. Gambar sudah terlihat
-     penuh di browser tanpa scroll-driven animation. */
+     penuh di browser tanpa scroll-driven animation.
+     Range memakai `cover`, bukan `entry`: dengan `entry`, tepi wipe selalu
+     berada di bawah viewport sehingga efeknya tak pernah terlihat. Di 10%–35%
+     cover, elemen sudah naik ke paruh bawah layar dan tepinya terlihat menyapu. */
   @supports (animation-timeline: view()) {
     .media-reveal {
+      view-timeline-name: --media-wipe;
       animation: media-wipe linear both;
       animation-timeline: view();
-      animation-range: entry 10% entry 65%;
+      animation-range: cover 10% cover 35%;
+    }
+
+    /* Pakai timeline milik induk: view() di pseudo-element akan mengacu ke
+       .media-reveal sendiri (overflow-hidden = scroll container) dan membeku. */
+    .media-reveal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-bottom: 2px solid rgb(251 191 36 / 0.9);
+      box-shadow: 0 6px 14px -6px rgb(251 191 36 / 0.7);
+      animation: level-line linear both;
+      animation-timeline: --media-wipe;
+      animation-range: cover 10% cover 35%;
     }
   }
 
@@ -111,6 +168,14 @@ body {
   .reveal-delay-1 { animation-delay: 0.1s; }
   .reveal-delay-2 { animation-delay: 0.2s; }
   .reveal-delay-3 { animation-delay: 0.3s; }
+}
+
+/* Selama tirai (preloader / transisi kolom) menutup layar, animasi masuk hero
+   ditahan di frame pertamanya supaya baru terlihat saat kolom terangkat.
+   Atribut dipasang oleh skrip inline di layout dan ConstructionShutter. */
+html[data-curtain] .reveal-load,
+html[data-curtain] .hero-settle {
+  animation-play-state: paused;
 }
 
 /* WCAG 2.3.3 — hormati preferensi sistem, matikan seluruh motion non-esensial */

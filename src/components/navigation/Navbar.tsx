@@ -60,7 +60,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
         }`}
       >
         <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-6">
             {/* Left: Authentic Wonderful Works Construction Brand Lockup */}
             <Link
               href="/"
@@ -84,7 +84,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
             {/* Center/Right Desktop Navigation Links */}
             <nav
               aria-label="Navigasi Utama"
-              className="hidden lg:flex items-center gap-8 xl:gap-10 font-mono text-xs tracking-[0.25em] uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+              className="hidden lg:flex items-center gap-5 xl:gap-7 2xl:gap-10 font-mono text-xs tracking-[0.2em] 2xl:tracking-[0.25em] uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
             >
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -92,7 +92,7 @@ export default function Navbar({ placement = 'fixed' }: { placement?: 'fixed' | 
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`py-2 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition-colors ${
+                    className={`py-2 relative group whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition-colors ${
                       isActive ? 'text-white font-bold' : 'text-neutral-200 hover:text-white'
                     }`}
                   >

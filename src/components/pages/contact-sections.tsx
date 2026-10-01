@@ -61,6 +61,8 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
         alt={t(hero.contact.alt, hero.contact.altEn)}
         priority
       />
+      {/* Info dan formulir duduk di atas langit yang terang; scrim ini menjaga kontras teksnya. */}
+      <div className="absolute inset-0 z-0 bg-black/40 lg:bg-transparent lg:bg-gradient-to-l lg:from-black/80 lg:via-black/45 lg:to-black/10" />
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left Monumental Column: 'Contact' Heading */}

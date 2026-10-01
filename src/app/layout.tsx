@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ArchitecturalPreloader from "@/components/interactive/ArchitecturalPreloader";
+import ConstructionShutter from "@/components/interactive/ConstructionShutter";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { SiteContentProvider } from "@/context/SiteContentContext";
@@ -233,6 +234,8 @@ export default async function RootLayout({
                 var isReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 if (isPreloaded || isExcluded || isReducedMotion) {
                   document.documentElement.classList.add('ww-preloaded');
+                } else {
+                  document.documentElement.setAttribute('data-curtain', '');
                 }
               } catch(e) {}
             })();`,
@@ -249,6 +252,7 @@ export default async function RootLayout({
         <SiteContentProvider data={siteData}>
           <LanguageProvider>
             <ArchitecturalPreloader />
+            <ConstructionShutter />
             {children}
             <FloatingWhatsApp />
           </LanguageProvider>

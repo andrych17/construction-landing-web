@@ -8,7 +8,7 @@ import type { HomeLayoutData, PageId } from '@/lib/home-layout';
 
 export function PageCanvas({ page, data }: { page: PageId; data: HomeLayoutData }) {
   return (
-    <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-hidden">
+    <div className="bg-[#030303] text-neutral-100 font-sans min-h-screen selection:bg-amber-400 selection:text-black relative w-full overflow-x-clip">
       <Navbar />
       <Render config={configFor(page)} data={data} />
       <Footer />

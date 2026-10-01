@@ -1,96 +1,114 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useSyncExternalStore } from 'react';
 import { usePathname } from 'next/navigation';
 import { WwLogoMark } from '@/components/ui/ModernWwLogo';
+import { ShutterColumns } from '@/components/interactive/ConstructionShutter';
 import { motion } from 'framer-motion';
 
-interface ArchitecturalPreloaderProps {
-  onComplete?: () => void;
-}
-
-const COUNT_MS = 2400; // durasi hitungan video sapuan cahaya bumper
-const HOLD_MS = 200; // jeda singkat sebelum tirai terangkat
-const CURTAIN_MS = 850; // durasi animasi tirai halus
-const TOTAL_MS = COUNT_MS + HOLD_MS + CURTAIN_MS;
+// Logo di video sudah utuh sejak ±0.4s; sisanya hanya kilau cahaya. Bumper yang
+// menahan konten lebih dari ±2s merugikan kunjungan pertama, jadi cukup 1.6s.
+// Klip logo-intro.mp4 adalah potongan 2.4s tanpa audio dari logo.mp4 (2.7MB → 0.5MB).
+const COUNT_MS = 1600;
+const HOLD_MS = 200; // jeda singkat sebelum kolom terangkat
+const CURTAIN_MS = 600; // 6 kolom terangkat: 0.45s + stagger 5 × 0.03s
+const SKIP_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'] as const;
 
 const STORAGE_KEY = 'ww_preloaded';
 
-export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPreloaderProps) {
+// Melepas jeda animasi masuk hero (lihat html[data-curtain] di globals.css).
+const releaseCurtain = () => delete document.documentElement.dataset.curtain;
+
+// Skrip inline di layout sudah memasang class ini untuk sesi yang pernah melihat
+// preloader, rute admin, dan prefers-reduced-motion. Snapshot server = false
+// supaya hidrasi cocok dengan HTML server, lalu React langsung render ulang.
+const noopSubscribe = () => () => {};
+const readSkipped = () =>
+  document.documentElement.classList.contains('ww-preloaded') ||
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const serverSkipped = () => false;
+
+export default function ArchitecturalPreloader() {
   const pathname = usePathname();
   const isAdminRoute = pathname === '/login' || pathname.startsWith('/admin');
   const [isDone, setIsDone] = useState(false);
   const [unmounted, setUnmounted] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const skipped = useSyncExternalStore(noopSubscribe, readSkipped, serverSkipped);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Video sengaja tanpa autoPlay dan preload="none": elemen ini ikut ter-render
+  // di HTML server untuk semua kunjungan, dan autoPlay membuat browser
+  // mengunduhnya bahkan saat preloader disembunyikan CSS (sesi yang sudah
+  // pernah melihatnya). Baca DOM langsung, bukan `skipped`, karena render
+  // hidrasi pertama selalu memakai snapshot server (false).
+  useEffect(() => {
+    if (!readSkipped()) videoRef.current?.play().catch(() => setVideoError(true));
+  }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const isAlreadyPreloaded =
-        document.documentElement.classList.contains('ww-preloaded') ||
-        !!sessionStorage.getItem(STORAGE_KEY);
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if (isAlreadyPreloaded || reduced) {
-        setUnmounted(true);
-        if (onComplete) onComplete();
-        return;
-      }
+    if (skipped) {
+      releaseCurtain();
+      return;
     }
 
-    const finishTimer = setTimeout(() => {
-      setIsDone(true);
-    }, COUNT_MS + HOLD_MS);
+    let timer: ReturnType<typeof setTimeout>;
 
     const markComplete = () => {
       setUnmounted(true);
       try {
         sessionStorage.setItem(STORAGE_KEY, '1');
         document.documentElement.classList.add('ww-preloaded');
-      } catch (e) {}
-      if (onComplete) onComplete();
+      } catch {}
     };
 
-    const unmountTimer = setTimeout(markComplete, TOTAL_MS);
-
-    const safety = setTimeout(() => {
+    // Dipanggil sekali: oleh timer, atau lebih awal saat pengunjung klik / tap /
+    // scroll / tekan tombol — bumper tidak boleh menahan orang yang ingin masuk.
+    const lift = () => {
+      SKIP_EVENTS.forEach((ev) => window.removeEventListener(ev, lift));
+      clearTimeout(timer);
+      releaseCurtain();
       setIsDone(true);
-      setTimeout(markComplete, CURTAIN_MS);
-    }, TOTAL_MS + 600);
+      timer = setTimeout(markComplete, CURTAIN_MS);
+    };
+
+    SKIP_EVENTS.forEach((ev) => window.addEventListener(ev, lift, { passive: true }));
+    timer = setTimeout(lift, COUNT_MS + HOLD_MS);
 
     return () => {
-      clearTimeout(finishTimer);
-      clearTimeout(unmountTimer);
-      clearTimeout(safety);
+      SKIP_EVENTS.forEach((ev) => window.removeEventListener(ev, lift));
+      clearTimeout(timer);
     };
-  }, [onComplete]);
+  }, [skipped]);
 
-  if (unmounted || isAdminRoute) return null;
+  if (skipped || unmounted || isAdminRoute) return null;
 
   return (
-    <motion.div
+    <div
       id="ww-architectural-preloader"
-      className={`fixed inset-0 z-[9999] bg-[#030303] overflow-hidden ${
+      className={`fixed inset-0 z-[9999] overflow-hidden ${
         isDone ? 'pointer-events-none' : 'pointer-events-auto'
       }`}
-      initial={{ y: '0%' }}
-      animate={{ y: isDone ? '-100%' : '0%' }}
-      transition={{
-        duration: 0.85,
-        ease: [0.76, 0, 0.24, 1],
-      }}
       role="status"
       aria-live="polite"
       aria-label="Memuat Wonderful Works Construction"
     >
+      {/* Kolom struktural yang sama dengan transisi antar-halaman: terangkat bertahap. */}
+      <ShutterColumns initial="0%" to={isDone ? '-100%' : '0%'} />
+
       {/* Fullscreen Video Bumper Solid Tanpa Garis atau Celah */}
-      <div className="absolute inset-0 bg-[#030303] flex items-center justify-center overflow-hidden">
+      <motion.div
+        className="absolute inset-0 bg-[#030303] flex items-center justify-center overflow-hidden"
+        animate={{ opacity: isDone ? 0 : 1 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      >
         {!videoError ? (
           <video
-            src="/videos/logo.mp4"
-            autoPlay
+            src="/videos/logo-intro.mp4"
+            ref={videoRef}
             muted
             playsInline
-            preload="auto"
+            preload="none"
             className="w-full h-full object-cover object-center bg-[#030303]"
             onError={() => setVideoError(true)}
           />
@@ -99,7 +117,7 @@ export default function ArchitecturalPreloader({ onComplete }: ArchitecturalPrel
             <WwLogoMark className="w-24 h-24 text-white/90 logo-wipe" />
           </div>
         )}
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

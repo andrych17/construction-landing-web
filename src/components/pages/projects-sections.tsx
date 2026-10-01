@@ -82,7 +82,7 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
   });
   return (
     <>
-    <section id={anchorId} className="py-8 border-b border-white/[0.08] bg-[#050505] sticky top-[72px] z-30 backdrop-blur-md">
+    <section id={anchorId} className="py-8 border-b border-white/[0.08] bg-[#050505] md:sticky md:top-[72px] z-30 backdrop-blur-md">
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
@@ -115,8 +115,17 @@ export function ProjectsCatalogSection({ anchorId = 'catalog' }: Copy) {
           {filteredProjects.map((proj) => (
             <div
               key={proj.title}
+              role="button"
+              tabIndex={0}
+              aria-label={proj.title}
               onClick={() => setSelectedProject(proj)}
-              className="group rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 ease-expo cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)] reveal"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProject(proj);
+                }
+              }}
+              className="group rounded-none bg-[#0a0a0a] border border-white/10 hover:border-amber-400/80 p-5 transition-all duration-500 ease-expo cursor-pointer flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 reveal"
             >
               <div>
                 <div className="relative aspect-[4/3] w-full rounded-none overflow-hidden bg-black mb-5 border border-white/10">

@@ -38,9 +38,13 @@ export default function HeroMedia({ src, poster, alt = '', priority = false }: H
           muted
           playsInline
           poster={poster}
-          className="w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05] scale-105"
+          className="w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle"
         >
-          <source src={src} type="video/mp4" />
+          {/* Video latar hanya untuk layar ≥768px. Di HP tidak ada source yang cocok,
+              jadi browser tidak mengunduh video sama sekali dan menampilkan poster —
+              hemat 0.5–1.7MB kuota per halaman. Browser lama yang mengabaikan
+              atribut `media` tetap memutar videonya seperti sebelumnya. */}
+          <source src={src} type="video/mp4" media="(min-width: 768px)" />
         </video>
       ) : (
         <Image
@@ -49,7 +53,7 @@ export default function HeroMedia({ src, poster, alt = '', priority = false }: H
           fill
           priority={priority}
           sizes="100vw"
-          className="object-cover object-center brightness-[0.95] contrast-[1.05] scale-105"
+          className="object-cover object-center brightness-[0.95] contrast-[1.05] scale-105 hero-settle"
         />
       )}
 

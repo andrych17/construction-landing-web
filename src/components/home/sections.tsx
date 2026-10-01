@@ -495,27 +495,40 @@ function ServiceCardWithCarousel({ srv }: { srv: (typeof CENTRA_SERVICES)[number
   const isResidential = srv.category.includes('RESIDENTIAL') || srv.category.includes('RUMAH');
   const slides = isResidential ? SERVICE_GALLERIES.RESIDENTIAL : SERVICE_GALLERIES.COMMERCIAL;
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isHeld, setIsHeld] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
+    if (isHeld || prefersReducedMotion) return;
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, isHeld, prefersReducedMotion]);
 
   const currentSlide = slides[activeSlide] || { img: srv.image, tag: srv.categoryEn || srv.category };
 
   return (
-    <div className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-hidden transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal">
+    <div
+      onMouseEnter={() => setIsHeld(true)}
+      onMouseLeave={() => setIsHeld(false)}
+      className="group rounded-none bg-[#0b0b0b] border border-white/10 hover:border-amber-400/80 overflow-clip transition-all duration-500 ease-expo flex flex-col justify-between shadow-[0_25px_60px_rgba(0,0,0,0.7)] reveal"
+    >
       <div>
         <div className="relative h-[280px] sm:h-[340px] w-full overflow-hidden bg-black media-reveal">
-          <Image
-            src={currentSlide.img}
-            alt={currentSlide.tag}
-            fill
-            className="object-cover group-hover:scale-105 transition-all duration-700 ease-expo brightness-100 contrast-[1.02]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+          {/* All slides stay mounted so a change cross-dissolves instead of hard-cutting. */}
+          {slides.map((slide, i) => (
+            <Image
+              key={slide.img}
+              src={slide.img}
+              alt={i === activeSlide ? slide.tag : ''}
+              fill
+              className={`object-cover group-hover:scale-105 transition-[opacity,scale] duration-1000 ease-expo brightness-100 contrast-[1.02] ${
+                i === activeSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/20 to-transparent" />
           <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-none bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[11px] tracking-widest text-amber-400 uppercase shadow-lg flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -673,7 +686,7 @@ export function ProjectsSection({ anchorId = 'projects' }: { anchorId?: string }
   }, []);
 
   return (
-    <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-hidden bg-[#000000]">
+    <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] scroll-mt-20 w-full overflow-clip bg-[#000000]">
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
         <div className="flex justify-between items-end mb-12 pb-6 border-b border-white/[0.08] gap-6 reveal">
           <div>
