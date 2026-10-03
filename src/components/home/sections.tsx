@@ -656,16 +656,38 @@ export function ProjectsSection({ anchorId = 'projects' }: { anchorId?: string }
   const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const [isInView, setIsInView] = useState(false);
   const autoScrollActive = !pathname.startsWith('/admin') && !isHovered && !isPaused && !prefersReducedMotion;
 
   useEffect(() => {
     const container = carouselRef.current;
-    if (!container || !autoScrollActive) return;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const container = carouselRef.current;
+    if (!container || !autoScrollActive || !isInView) return;
 
     let animId: number;
-    const speed = 0.85;
+    let lastTime = performance.now();
 
-    const step = () => {
+    const step = (time: number) => {
+      const delta = Math.min((time - lastTime) / 16.67, 2);
+      lastTime = time;
+      const speed = 0.85 * delta;
+
       const halfWidth = container.scrollWidth / 2;
       if (halfWidth > 0 && container.scrollLeft >= halfWidth) {
         container.scrollLeft -= halfWidth;
@@ -677,7 +699,7 @@ export function ProjectsSection({ anchorId = 'projects' }: { anchorId?: string }
 
     animId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animId);
-  }, [autoScrollActive]);
+  }, [autoScrollActive, isInView]);
 
   const scrollCarousel = useCallback((direction: 'left' | 'right') => {
     if (carouselRef.current) {

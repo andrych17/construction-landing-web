@@ -29,9 +29,33 @@ export default function HeroMedia({ src, poster, alt = '', priority = true }: He
   const prefersReducedMotion = useReducedMotion();
   const showVideo = Boolean(src) && !prefersReducedMotion;
   const [isVideoReady, setIsVideoReady] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !showVideo) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!videoRef.current) return;
+          if (entry.isIntersecting) {
+            videoRef.current.play().catch(() => {});
+          } else {
+            videoRef.current.pause();
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [showVideo]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-[#030303]">
+    <div ref={containerRef} className="absolute inset-0 z-0 overflow-hidden bg-[#030303]">
       {/* High-priority Next.js poster: paints instantly in 0ms for perfect LCP */}
       <Image
         src={poster}
@@ -45,6 +69,7 @@ export default function HeroMedia({ src, poster, alt = '', priority = true }: He
       {/* Video layer: streams in background and smoothly fades in once ready */}
       {showVideo && (
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted

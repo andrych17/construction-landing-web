@@ -40,9 +40,9 @@ function ShutterColumns({
 // Logo di video sudah utuh sejak ±0.4s; sisanya hanya kilau cahaya. Bumper yang
 // menahan konten lebih dari ±2s merugikan kunjungan pertama, jadi cukup 1.6s.
 // Klip logo-intro.mp4 adalah potongan 2.4s tanpa audio dari logo.mp4 (2.7MB → 0.5MB).
-const COUNT_MS = 1600;
-const HOLD_MS = 200; // jeda singkat sebelum kolom terangkat
-const CURTAIN_MS = 600; // 6 kolom terangkat: 0.45s + stagger 5 × 0.03s
+const COUNT_MS = 900;
+const HOLD_MS = 100; // jeda singkat sebelum kolom terangkat
+const CURTAIN_MS = 450; // 6 kolom terangkat
 const SKIP_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'] as const;
 
 const STORAGE_KEY = 'ww_preloaded';
@@ -88,6 +88,13 @@ export default function ArchitecturalPreloader() {
 
     const markComplete = () => {
       setUnmounted(true);
+      if (videoRef.current) {
+        try {
+          videoRef.current.pause();
+          videoRef.current.src = '';
+          videoRef.current.load();
+        } catch {}
+      }
       try {
         sessionStorage.setItem(STORAGE_KEY, '1');
         document.documentElement.classList.add('ww-preloaded');
