@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import ArchitecturalPreloader from "@/components/interactive/ArchitecturalPreloader";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
@@ -7,9 +7,9 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { SiteContentProvider } from "@/context/SiteContentContext";
 import { getAllSiteContent } from "@/lib/content";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const plusJakartaSans = localFont({
+  src: "../fonts/plus-jakarta-sans-latin.woff2",
   variable: "--font-sans",
-  subsets: ["latin"],
   display: "swap",
 });
 
