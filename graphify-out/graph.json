@@ -5120,17 +5120,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_app_layout_dynamic",
-      "label": "dynamic",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "app/layout.tsx",
-      "file_type": "code",
-      "norm_label": "dynamic",
-      "source_file": "src/app/layout.tsx",
-      "source_location": "L16"
-    },
-    {
       "id": "src_app_layout_metadata",
       "label": "metadata",
       "_origin": "ast",
@@ -5151,6 +5140,17 @@
       "norm_label": "plusjakartasans",
       "source_file": "src/app/layout.tsx",
       "source_location": "L10"
+    },
+    {
+      "id": "src_app_layout_revalidate",
+      "label": "revalidate",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "app/layout.tsx",
+      "file_type": "code",
+      "norm_label": "revalidate",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L16"
     },
     {
       "id": "src_app_layout_viewport",
@@ -24205,7 +24205,7 @@
     },
     {
       "source": "src_app_layout",
-      "target": "src_app_layout_dynamic",
+      "target": "src_app_layout_revalidate",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -28518,5 +28518,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b1ec1daf2b6a9478c6ab677205aa6df112822329"
+  "built_at_commit": "07a9b4b914696ea4aab66a4e96f4acca1fa0da13"
 }

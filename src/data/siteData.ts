@@ -416,7 +416,7 @@ export const WW_FOUNDERS: FounderDetail[] = [
     name: 'Alvin Indrajaya Setia, S.T.',
     role: 'Pendiri & Direktur',
     roleEn: 'Founder & Director',
-    image: '/images/founders/alvin_indrajaya.png',
+    image: '/images/founders/alvin_indrajaya.jpg',
     isSvgPlaceholder: false,
     focus: 'Perencanaan & Pelaksanaan Konstruksi',
     focusEn: 'Design & Construction Management',

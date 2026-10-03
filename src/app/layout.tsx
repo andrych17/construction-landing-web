@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 300;
 
 export const viewport: Viewport = {
   themeColor: "#030303",

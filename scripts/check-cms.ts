@@ -50,7 +50,7 @@ assert.equal(isContentSectionKey('unknownSection'), false);
 const fallback = defaultHomeLayout();
 assert.deepEqual(
   fallback.content.map((block) => block.type),
-  ['Hero', 'About', 'Philosophy', 'Founder', 'Services', 'Projects', 'Contact'],
+  ['Hero', 'About', 'Workflow', 'Founder', 'Services', 'Projects', 'Contact'],
 );
 assert.equal(sanitizeHomeLayout(null), null);
 assert.equal(sanitizeHomeLayout({ content: 'nope' }), null);
