@@ -9,12 +9,15 @@ import FounderSvgPlaceholder from '@/components/ui/FounderSvgPlaceholder';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { filled } from '@/components/pages/copy';
+import { DEFAULT_ABOUT_CONTENT, DEFAULT_PAGE_HEROES } from '@/data/siteData';
 
 type Copy = { anchorId?: string; titleId?: string; titleEn?: string; ledeId?: string; ledeEn?: string };
 
 export function AboutHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, ledeEn }: Copy) {
   const { t } = useLanguage();
-  const { hero } = useSiteContent();
+  const { hero, pageHeroes } = useSiteContent();
+  const heroCopy = pageHeroes?.about || DEFAULT_PAGE_HEROES.about;
+
   return (
     <section id={anchorId} className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
       <HeroMedia
@@ -27,14 +30,11 @@ export function AboutHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, 
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
         <div className="reveal-load">
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
-            {t(filled(titleId, 'Tentang Kami'), filled(titleEn, 'About Us'))}
+            {t(filled(titleId, heroCopy.titleId), filled(titleEn, heroCopy.titleEn))}
           </h1>
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
-            {t(
-              filled(ledeId, 'Studio rancang bangun di Surabaya yang mendesain, menghitung struktur, dan membangun dalam satu tim.'),
-              filled(ledeEn, 'A Surabaya design-build studio that designs, engineers, and builds with one team.')
-            )}
+            {t(filled(ledeId, heroCopy.ledeId), filled(ledeEn, heroCopy.ledeEn))}
           </p>
         </div>
       </div>
@@ -44,21 +44,24 @@ export function AboutHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, 
 
 export function AboutNarrativeSection({ anchorId = 'narrative' }: Copy) {
   const { t } = useLanguage();
+  const { about } = useSiteContent();
+  const aboutCopy = about || DEFAULT_ABOUT_CONTENT;
+
   return (
     <section id={anchorId} className="py-24 md:py-32 border-b border-white/[0.08] relative">
       <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 text-center">
         <div className="space-y-8 reveal">
           <p className="font-sans text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-relaxed">
             {t(
-              'Wonderful Works Construction adalah studio rancang bangun untuk hunian tinggal dan bangunan komersial.',
-              'Wonderful Works Construction is a design-build studio for residential and commercial architecture.'
+              aboutCopy.narrativeLeadId,
+              aboutCopy.narrativeLeadEn
             )}
           </p>
           <div className="w-12 h-[1px] bg-white/20 mx-auto" />
           <p className="text-sm sm:text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-3xl mx-auto font-sans">
             {t(
-              'Desain arsitektur, interior, dan konstruksi dikerjakan oleh satu tim. Perhitungan struktur dibuat insinyur sipil, material dicek sebelum dipasang, dan setiap tahap dilaporkan ke pemilik.',
-              'Architecture, interiors, and construction are handled by one team. Structural calculations are done by civil engineers, materials are checked before installation, and every stage is reported to the owner.'
+              aboutCopy.narrativeBodyId,
+              aboutCopy.narrativeBodyEn
             )}
           </p>
         </div>
@@ -69,7 +72,9 @@ export function AboutNarrativeSection({ anchorId = 'narrative' }: Copy) {
 
 export function AboutPhilosophySection({ anchorId = 'philosophy' }: Copy) {
   const { lang, t } = useLanguage();
-  const { philosophies } = useSiteContent();
+  const { about, philosophies } = useSiteContent();
+  const aboutCopy = about || DEFAULT_ABOUT_CONTENT;
+
   return (
     <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] bg-[#050505] relative">
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto">
@@ -77,13 +82,13 @@ export function AboutPhilosophySection({ anchorId = 'philosophy' }: Copy) {
           {/* Left Static Column */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 reveal">
             <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight uppercase leading-[1.02] mb-6">
-              {t('Filosofi Desain Kami', 'Our Design Philosophy')}
+              {t(aboutCopy.philosophyTitleId, aboutCopy.philosophyTitleEn)}
             </h2>
             <div className="w-16 h-[1.5px] bg-white/25 mb-6" />
             <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed mb-8 max-w-md">
               {t(
-                'Tiga prinsip yang kami pakai saat menggambar, memilih material, dan menghitung struktur.',
-                'Three principles we apply when drawing, choosing materials, and calculating structure.'
+                aboutCopy.philosophySubtitleId,
+                aboutCopy.philosophySubtitleEn
               )}
             </p>
           </div>

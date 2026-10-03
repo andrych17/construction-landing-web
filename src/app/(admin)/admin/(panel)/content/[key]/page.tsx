@@ -9,6 +9,9 @@ import {
   getServices,
   getMethodology,
   getFaqs,
+  getHeroText,
+  getAboutContent,
+  getPageHeroes,
 } from '@/lib/content';
 import { db } from '@/lib/db';
 import type { JsonValue } from '@/components/admin/JsonField';
@@ -21,6 +24,9 @@ const SECTION_FETCHERS: Record<string, () => Promise<unknown>> = {
   services: getServices,
   methodology: getMethodology,
   faqs: getFaqs,
+  heroText: getHeroText,
+  about: getAboutContent,
+  pageHeroes: getPageHeroes,
 };
 
 const HERO_KEYS = new Set(['heroHome', 'heroAbout', 'heroServices', 'heroProjects', 'heroContact']);

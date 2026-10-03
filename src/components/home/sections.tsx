@@ -27,7 +27,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { HOME_HERO_COPY } from '@/components/home/hero-copy';
 import { filled } from '@/components/pages/copy';
-import { CENTRA_SERVICES } from '@/data/siteData';
+import { CENTRA_SERVICES, DEFAULT_HERO_TEXT, DEFAULT_ABOUT_CONTENT, DEFAULT_PAGE_HEROES } from '@/data/siteData';
 
 function formatHeroIntro(text: string) {
   // Highlight quoted phrases like "Quality is our priority"
@@ -68,7 +68,9 @@ export function HeroSection({
   introEn?: string;
 }) {
   const { t } = useLanguage();
-  const { hero, waLink } = useSiteContent();
+  const { hero, heroText, waLink } = useSiteContent();
+  const heroData = heroText || DEFAULT_HERO_TEXT;
+  const cards = heroData.valueCards && heroData.valueCards.length >= 4 ? heroData.valueCards : DEFAULT_HERO_TEXT.valueCards;
 
   return (
     <section
@@ -79,13 +81,13 @@ export function HeroSection({
 
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
         <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.02] mb-6 drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load break-words">
-          {t(filled(line1Id, HOME_HERO_COPY.line1Id), filled(line1En, HOME_HERO_COPY.line1En))}<br />
-          <span className="text-white">{t(filled(line2Id, HOME_HERO_COPY.line2Id), filled(line2En, HOME_HERO_COPY.line2En))}</span><br />
-          <span className="text-amber-400 font-extrabold">{t(filled(line3Id, HOME_HERO_COPY.line3Id), filled(line3En, HOME_HERO_COPY.line3En))}</span>
+          {t(filled(line1Id, heroData.line1Id), filled(line1En, heroData.line1En))}<br />
+          <span className="text-white">{t(filled(line2Id, heroData.line2Id), filled(line2En, heroData.line2En))}</span><br />
+          <span className="text-amber-400 font-extrabold">{t(filled(line3Id, heroData.line3Id), filled(line3En, heroData.line3En))}</span>
         </h1>
 
         <p className="text-neutral-100 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto mb-10 font-sans reveal-load reveal-delay-1 drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
-          {formatHeroIntro(t(filled(introId, HOME_HERO_COPY.introId), filled(introEn, HOME_HERO_COPY.introEn)))}
+          {formatHeroIntro(t(filled(introId, heroData.introId), filled(introEn, heroData.introEn)))}
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-16 reveal-load reveal-delay-2 max-w-md sm:max-w-none mx-auto">
@@ -96,7 +98,7 @@ export function HeroSection({
             className="group px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo min-h-[48px] flex items-center justify-center gap-2 shadow-xl cursor-pointer"
           >
             <LuPhone className="w-4 h-4 text-black" />
-            <span>{t('KONSULTASI RANCANG BANGUN', 'CONSULT DESIGN & BUILD')}</span>
+            <span>{t(heroData.ctaConsultId, heroData.ctaConsultEn)}</span>
             <LuArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
 
@@ -104,60 +106,60 @@ export function HeroSection({
             href="/projects"
             className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 font-mono text-xs font-bold uppercase tracking-widest transition-colors min-h-[48px] flex items-center justify-center"
           >
-            {t('LIHAT PORTOFOLIO PROYEK', 'VIEW PROJECT PORTFOLIO')}
+            {t(heroData.ctaPortfolioId, heroData.ctaPortfolioEn)}
           </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left pt-8 border-t border-white/10 reveal-load reveal-delay-3">
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Struktur SNI', 'SNI Structure')}</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t(cards[0].titleId, cards[0].titleEn)}</span>
               <LuShieldCheck className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
-              {t('Safety Factor SNI', 'Safety Factor Standard')}
+              {t(cards[0].badgeId, cards[0].badgeEn)}
             </div>
             <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
-              {t('Prioritas struktur kokoh sesuai Safety Factor SNI & ReadyMix K-350', 'Structural priority complying with SNI safety factor standards')}
+              {t(cards[0].descId, cards[0].descEn)}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('No Hidden Cost', 'No Hidden Cost')}</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t(cards[1].titleId, cards[1].titleEn)}</span>
               <LuScale className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
-              {t('RAB Terbuka & Detail', 'Itemized BOQ')}
+              {t(cards[1].badgeId, cards[1].badgeEn)}
             </div>
             <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
-              {t('Budget sudah ditentukan di awal dengan rincian RAB per item', 'Budget itemized from day one with transparent BOQ')}
+              {t(cards[1].descId, cards[1].descEn)}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Tepat Waktu', 'On Time')}</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t(cards[2].titleId, cards[2].titleEn)}</span>
               <LuClock className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
-              {t('Jadwal Terukur', 'Tracked Schedule')}
+              {t(cards[2].badgeId, cards[2].badgeEn)}
             </div>
             <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
-              {t('Manajemen jadwal dipantau berkala dengan Kurva-S', 'Milestones tracked on an S-curve schedule')}
+              {t(cards[2].descId, cards[2].descEn)}
             </div>
           </div>
 
           <div className="p-6 bg-black/75 backdrop-blur-md border border-white/10 hover:border-amber-400/50 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t('Quality Control', 'Quality Control')}</span>
+              <span className="font-mono text-xl sm:text-2xl font-bold text-white uppercase">{t(cards[3].titleId, cards[3].titleEn)}</span>
               <LuCircleCheck className="w-5 h-5 text-amber-400" />
             </div>
             <div className="font-display text-sm font-bold text-amber-400 uppercase mb-1">
-              {t('Struktur & Finishing', 'Structure & Finishing')}
+              {t(cards[3].badgeId, cards[3].badgeEn)}
             </div>
             <div className="text-xs text-neutral-300 font-sans font-light leading-relaxed">
-              {t('Pengawasan presisi langsung dari struktur sipil hingga tahap finishing', 'Direct supervision from structural core to final finishing')}
+              {t(cards[3].descId, cards[3].descEn)}
             </div>
           </div>
         </div>
@@ -168,33 +170,28 @@ export function HeroSection({
 
 export function AboutSection({ anchorId = 'about' }: { anchorId?: string }) {
   const { t } = useLanguage();
+  const { about } = useSiteContent();
+  const aboutData = about || DEFAULT_ABOUT_CONTENT;
 
   return (
     <section id={anchorId} className="py-28 md:py-36 border-b border-white/[0.08] relative w-full scroll-mt-20">
       <div className="max-w-reading mx-auto px-6 sm:px-12 md:px-16 reveal">
+        <span className="font-mono text-xs tracking-[0.25em] text-amber-400 uppercase block mb-3 font-bold">
+          {t(aboutData.homeTaglineId, aboutData.homeTaglineEn)}
+        </span>
         <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-10">
-          {t('Tentang Kami', 'About Us')}
+          {t(aboutData.homeTitleId, aboutData.homeTitleEn)}
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-sans font-normal mb-6">
-          {t(
-            'Kami adalah perusahaan jasa konstruksi dan rancang bangun yang berfokus pada kualitas. Wonderful Works percaya bahwa dedikasi terhadap mutu struktur dan presisi detail akan membuat bangunan Anda menjadi bangunan yang mewah, megah, dan kokoh.',
-            'Wonderful Works is a design-build and construction company dedicated to uncompromising quality. We believe that rigorous structural integrity and meticulous craftsmanship create buildings that are luxurious, grand, and enduring.'
-          )}
-        </p>
-
-        <p className="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-sans font-light mb-12">
-          {t(
-            'Perusahaan kami memiliki visi dan misi yang kami pegang teguh untuk memberikan pelayanan terbaik bagi Anda. Kami bekerja sepenuh hati dan melayani setiap kebutuhan pembangunan dengan solusi yang tepat, transparan, dan terpercaya demi kepuasan klien.',
-            'Guided by our steadfast vision and mission, we deliver wholehearted service and precise solutions for every construction need. Client satisfaction is our foremost priority, realized through transparent management and trusted execution.'
-          )}
+        <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-sans font-normal mb-10">
+          {t(aboutData.homeParagraphId, aboutData.homeParagraphEn)}
         </p>
 
         <Link
           href="/about"
           className="group inline-flex items-center gap-2 border-b border-white/25 hover:border-amber-400 pb-1 text-neutral-200 hover:text-amber-400 font-mono text-xs uppercase tracking-widest transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
         >
-          <span>{t('Tentang Studio', 'About Studio')}</span>
+          <span>{t(aboutData.homeCtaId, aboutData.homeCtaEn)}</span>
           <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
       </div>
@@ -808,7 +805,8 @@ export function ProjectsSection({ anchorId = 'projects' }: { anchorId?: string }
 
 export function ContactSection({ anchorId = 'contact' }: { anchorId?: string }) {
   const { t } = useLanguage();
-  const { contact, waLink } = useSiteContent();
+  const { contact, waLink, pageHeroes } = useSiteContent();
+  const heroCopy = pageHeroes?.contact || DEFAULT_PAGE_HEROES.contact;
 
   return (
     <section id={anchorId} className="py-28 md:py-36 bg-[#000000] border-t border-white/[0.08] scroll-mt-20 w-full">
@@ -816,13 +814,13 @@ export function ContactSection({ anchorId = 'contact' }: { anchorId?: string }) 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="lg:col-span-6 reveal">
             <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.92] mb-6">
-              {t('Kontak', 'Contact')}
+              {t(heroCopy.titleId, heroCopy.titleEn)}
             </h2>
             <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
             <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-md">
               {t(
-                'Konsultasikan kebutuhan rancang bangun hunian dan komersial Anda bersama tim kami.',
-                'Discuss your residential and commercial design & build needs with our team.'
+                heroCopy.ledeId,
+                heroCopy.ledeEn
               )}
             </p>
           </div>

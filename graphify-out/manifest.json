@@ -102,9 +102,9 @@
     "semantic_hash": "96c418b3e6b53e19dbf33f1e30f6d3c8"
   },
   "src/app/(admin)/admin/(panel)/content/[key]/page.tsx": {
-    "mtime": 1790438612.5869818,
-    "seen": 1790438679.3523512,
-    "ast_hash": "75bd496bbb6845cbeab35d5a4061a235",
+    "mtime": 1790993189.005563,
+    "seen": 1790993545.4746914,
+    "ast_hash": "bc97d867fdcdf9e2410c86de87ad94eb",
     "semantic_hash": ""
   },
   "src/app/(admin)/admin/(panel)/content/page.tsx": {
@@ -186,9 +186,9 @@
     "semantic_hash": "a9a28cc109ebfb750e61314f9fd2734f"
   },
   "src/app/api/admin/content/[key]/route.ts": {
-    "mtime": 1790438545.6880126,
-    "seen": 1790438679.352367,
-    "ast_hash": "1ac469c751933aa4f9074c5df4857196",
+    "mtime": 1790993176.6393752,
+    "seen": 1790993545.4747133,
+    "ast_hash": "b8f1fd8e12a92fc4b264eb1292ad3549",
     "semantic_hash": ""
   },
   "src/app/api/admin/layout/[page]/restore/route.ts": {
@@ -324,16 +324,16 @@
     "semantic_hash": "c87e15117ee2e3ede858d65db5ab2c1b"
   },
   "src/components/admin/AdminShell.tsx": {
-    "mtime": 1790132803.7381742,
-    "seen": 1790230549.3173892,
-    "ast_hash": "29ebba02f07a24a4180980488ff12239",
-    "semantic_hash": "29ebba02f07a24a4180980488ff12239"
+    "mtime": 1790993285.1600285,
+    "seen": 1790993545.4747531,
+    "ast_hash": "2e4dee184b3d5bc2e06283ad9cee098d",
+    "semantic_hash": ""
   },
   "src/components/admin/ContactEditor.tsx": {
-    "mtime": 1790136731.54723,
-    "seen": 1790230549.31739,
-    "ast_hash": "4e264b9a24c8be77a5ed1c263c86798f",
-    "semantic_hash": "4e264b9a24c8be77a5ed1c263c86798f"
+    "mtime": 1790993251.5875158,
+    "seen": 1790993545.4747543,
+    "ast_hash": "d5448091efa99d0c2893fe30acf457a0",
+    "semantic_hash": ""
   },
   "src/components/admin/DisciplinesEditor.tsx": {
     "mtime": 1790137065.6827257,
@@ -378,9 +378,9 @@
     "semantic_hash": "9eaccd24a2e8daaf26965277135c2036"
   },
   "src/components/admin/SectionEditor.tsx": {
-    "mtime": 1790438636.5918713,
-    "seen": 1790438679.3523998,
-    "ast_hash": "ecc7dfe7069415179197a72a3ca07645",
+    "mtime": 1790993274.1158597,
+    "seen": 1790993545.4747689,
+    "ast_hash": "9e17fee2bb41230d86a17f730bd6d534",
     "semantic_hash": ""
   },
   "src/components/admin/UsersTable.tsx": {
@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "src/components/home/sections.tsx": {
-    "mtime": 1790839024.2061176,
-    "seen": 1790839060.944209,
-    "ast_hash": "e16129a5de356259b8fe069117f20747",
+    "mtime": 1790993463.0437593,
+    "seen": 1790993545.4748473,
+    "ast_hash": "61572fcd371452a5c7992ed36a7411e9",
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
@@ -564,15 +564,15 @@
     "semantic_hash": ""
   },
   "src/components/pages/about-sections.tsx": {
-    "mtime": 1790838934.1817415,
-    "seen": 1790839060.9442172,
-    "ast_hash": "aca39adcce5339681e7c6baf9e1fe7a4",
+    "mtime": 1790993384.6705534,
+    "seen": 1790993545.4748547,
+    "ast_hash": "f16acc704635655978f306184dd2884c",
     "semantic_hash": ""
   },
   "src/components/pages/contact-sections.tsx": {
-    "mtime": 1790838962.5908263,
-    "seen": 1790839060.9442182,
-    "ast_hash": "8f3434cb028518a504f6d6f4ddc240c2",
+    "mtime": 1790993447.2225156,
+    "seen": 1790993545.4748557,
+    "ast_hash": "957cbf4abf6e7f1339db7f9087cd26a5",
     "semantic_hash": ""
   },
   "src/components/pages/copy.ts": {
@@ -594,15 +594,15 @@
     "semantic_hash": "8bc98b1332e7cb175b006235c0f39c9a"
   },
   "src/components/pages/projects-sections.tsx": {
-    "mtime": 1790838921.0831923,
-    "seen": 1790839060.9442217,
-    "ast_hash": "f3a159ba44c6563cdd5ca366f6926cd9",
+    "mtime": 1790993419.4240878,
+    "seen": 1790993545.4748595,
+    "ast_hash": "aaef963bfb4dfb8844e9bf9adf1deeaf",
     "semantic_hash": ""
   },
   "src/components/pages/services-sections.tsx": {
-    "mtime": 1790838843.1702833,
-    "seen": 1790839060.9442225,
-    "ast_hash": "519271a83b8b14a93a1c3f043e36c23e",
+    "mtime": 1790993413.7840009,
+    "seen": 1790993545.4748604,
+    "ast_hash": "b94bfa229546d2611eb1ec0990d2ee13",
     "semantic_hash": ""
   },
   "src/components/ui/FloatingWhatsApp.tsx": {
@@ -642,9 +642,9 @@
     "semantic_hash": "98566e0127644445fb8dfe3a331a8a12"
   },
   "src/data/siteData.ts": {
-    "mtime": 1790821316.7353535,
-    "seen": 1790821899.276168,
-    "ast_hash": "61b6f1cc12ccbbbe37425d8fc4e1ecfb",
+    "mtime": 1790993124.6515875,
+    "seen": 1790993545.4748673,
+    "ast_hash": "2e9a487e230c0b208c18c2a8049c284e",
     "semantic_hash": ""
   },
   "src/lib/api-error.ts": {
@@ -660,15 +660,15 @@
     "semantic_hash": "40d4b2a8c242b8281e6bb5ad9475d44f"
   },
   "src/lib/content-sections.ts": {
-    "mtime": 1790138719.3162086,
-    "seen": 1790230549.3174276,
-    "ast_hash": "08b9a8175ed6202c3d2fe9af2cafea96",
-    "semantic_hash": "08b9a8175ed6202c3d2fe9af2cafea96"
+    "mtime": 1790993165.8302112,
+    "seen": 1790993545.4748707,
+    "ast_hash": "23966609052903810ff62e4be39236fe",
+    "semantic_hash": ""
   },
   "src/lib/content.ts": {
-    "mtime": 1790438486.3337603,
-    "seen": 1790438528.7006707,
-    "ast_hash": "1adbbed324a0c5a5b6056614aa88f8c7",
+    "mtime": 1790993155.8840604,
+    "seen": 1790993545.4748719,
+    "ast_hash": "61c0df383aadac4c68bf063265039aa1",
     "semantic_hash": ""
   },
   "src/lib/db.ts": {
@@ -1305,6 +1305,24 @@
     "mtime": 1790838612.6931727,
     "seen": 1790839060.9442976,
     "ast_hash": "9e30ae174e4654b1ceb164f26f1eeb6a",
+    "semantic_hash": ""
+  },
+  "src/components/admin/AboutEditor.tsx": {
+    "mtime": 1790993486.4411201,
+    "seen": 1790993545.4747505,
+    "ast_hash": "0378acd72a99d86debd19622d94288cd",
+    "semantic_hash": ""
+  },
+  "src/components/admin/HeroTextEditor.tsx": {
+    "mtime": 1790993492.598215,
+    "seen": 1790993545.4747589,
+    "ast_hash": "2c2e25096ac65f6785baf6f1c0d49ee7",
+    "semantic_hash": ""
+  },
+  "src/components/admin/PageHeroesEditor.tsx": {
+    "mtime": 1790993503.6393857,
+    "seen": 1790993545.4747632,
+    "ast_hash": "f8295f6c9bf1ac3f0c470b55db6ad5ff",
     "semantic_hash": ""
   }
 }

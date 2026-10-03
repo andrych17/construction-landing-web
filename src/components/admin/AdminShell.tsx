@@ -82,6 +82,11 @@ export function AdminShell({ session, children }: AdminShellProps) {
           icon: LuFileText,
           hasSubmenu: true,
         },
+        {
+          href: '/admin/compose/home',
+          label: 'Visual Page Builder',
+          icon: LuSparkles,
+        },
       ],
     },
     ...(isSuperadmin

@@ -19,6 +19,76 @@
  *
  * TODO: ganti seluruh nilai di bawah dengan data ww.cons asli.
  */
+export interface ContactFormOption {
+  id: string;
+  labelId: string;
+  labelEn: string;
+}
+
+export interface ContactFormContent {
+  titleId: string;
+  titleEn: string;
+  subtitleId: string;
+  subtitleEn: string;
+  nameLabelId: string;
+  nameLabelEn: string;
+  namePlaceholderId: string;
+  namePlaceholderEn: string;
+  phoneLabelId: string;
+  phoneLabelEn: string;
+  phonePlaceholderId: string;
+  phonePlaceholderEn: string;
+  projectTypeLabelId: string;
+  projectTypeLabelEn: string;
+  projectTypeOptions: ContactFormOption[];
+  cityLabelId: string;
+  cityLabelEn: string;
+  cityPlaceholderId: string;
+  cityPlaceholderEn: string;
+  notesLabelId: string;
+  notesLabelEn: string;
+  notesPlaceholderId: string;
+  notesPlaceholderEn: string;
+  submitTextId: string;
+  submitTextEn: string;
+  submittingTextId: string;
+  submittingTextEn: string;
+}
+
+export const DEFAULT_CONTACT_FORM: ContactFormContent = {
+  titleId: 'Formulir Konsultasi Proyek',
+  titleEn: 'Request Project Consultation',
+  subtitleId: 'TERHUBUNG LANGSUNG KE WHATSAPP PROJECT MANAGER KAMI',
+  subtitleEn: 'CONNECT DIRECTLY TO OUR PROJECT MANAGER VIA WHATSAPP',
+  nameLabelId: 'Nama Klien',
+  nameLabelEn: 'Client Name',
+  namePlaceholderId: 'Nama Anda',
+  namePlaceholderEn: 'Your Name',
+  phoneLabelId: 'No. WhatsApp',
+  phoneLabelEn: 'WhatsApp Number',
+  phonePlaceholderId: '08xxxxxxxxxx',
+  phonePlaceholderEn: '08xxxxxxxxxx',
+  projectTypeLabelId: 'Tipe Proyek',
+  projectTypeLabelEn: 'Project Type',
+  projectTypeOptions: [
+    { id: 'Residential', labelId: 'Residential', labelEn: 'Residential' },
+    { id: 'Commercial', labelId: 'Commercial', labelEn: 'Commercial' },
+    { id: 'Residential & Commercial', labelId: 'Residential & Commercial', labelEn: 'Residential & Commercial' },
+  ],
+  cityLabelId: 'Kota',
+  cityLabelEn: 'City',
+  cityPlaceholderId: 'Contoh: Surabaya',
+  cityPlaceholderEn: 'e.g. Surabaya',
+  notesLabelId: 'Catatan (Opsional)',
+  notesLabelEn: 'Notes (Optional)',
+  notesPlaceholderId: 'Catatan tambahan mengenai rencana atau kebutuhan proyek...',
+  notesPlaceholderEn: 'Additional notes regarding your project plans or requirements...',
+  submitTextId: 'Kirim & Mulai Konsultasi WhatsApp',
+  submitTextEn: 'Send & Consult via WhatsApp',
+  submittingTextId: 'Menyimpan...',
+  submittingTextEn: 'Saving...',
+};
+
 export const SITE_CONTACT = {
   /** Konten situs aktif diindeks untuk SEO/AEO/GEO */
   isPlaceholder: false,
@@ -37,7 +107,8 @@ export const SITE_CONTACT = {
     name: '',
     lines: [],
   },
-} as const;
+  form: DEFAULT_CONTACT_FORM,
+};
 
 /** wa.me deeplink, atau '#' bila nomor belum diisi */
 export function waLink(message: string): string {
@@ -85,6 +156,167 @@ export const DEFAULT_HERO_CONTACT: HeroMediaValue = {
   poster: '/images/projects/villa-dusk_poster.jpg',
   alt: 'Vila modern saat senja',
   altEn: 'Modern villa at dusk',
+};
+
+export interface HeroValueCard {
+  titleId: string;
+  titleEn: string;
+  badgeId: string;
+  badgeEn: string;
+  descId: string;
+  descEn: string;
+}
+
+export interface HeroTextContent {
+  line1Id: string;
+  line1En: string;
+  line2Id: string;
+  line2En: string;
+  line3Id: string;
+  line3En: string;
+  introId: string;
+  introEn: string;
+  ctaConsultId: string;
+  ctaConsultEn: string;
+  ctaPortfolioId: string;
+  ctaPortfolioEn: string;
+  valueCards: HeroValueCard[];
+}
+
+export const DEFAULT_HERO_TEXT: HeroTextContent = {
+  line1Id: 'RANCANG BANGUN',
+  line1En: 'DESIGN & BUILD',
+  line2Id: 'RESIDENSIAL & KOMERSIAL,',
+  line2En: 'RESIDENTIAL & COMMERCIAL,',
+  line3Id: 'BERKUALITAS & TRANSPARAN.',
+  line3En: 'HONEST & ENDURING.',
+  introId:
+    'Kontraktor umum dan studio rancang bangun di Surabaya dengan prinsip "Quality is our priority". Anggaran dirinci transparan per item, perhitungan struktur kokoh sesuai standar SNI, dan progres diawasi langsung di setiap tahap.',
+  introEn:
+    'A general contractor and design-build studio in Surabaya committed to "Quality is our priority". Transparent itemized budgeting, structural integrity complying with SNI standards, and direct on-site supervision.',
+  ctaConsultId: 'KONSULTASI RANCANG BANGUN',
+  ctaConsultEn: 'CONSULT DESIGN & BUILD',
+  ctaPortfolioId: 'LIHAT PORTOFOLIO PROYEK',
+  ctaPortfolioEn: 'VIEW PROJECT PORTFOLIO',
+  valueCards: [
+    {
+      titleId: 'Struktur SNI',
+      titleEn: 'SNI Structure',
+      badgeId: 'Safety Factor SNI',
+      badgeEn: 'Safety Factor Standard',
+      descId: 'Prioritas struktur kokoh sesuai Safety Factor SNI & ReadyMix K-350',
+      descEn: 'Structural priority complying with SNI safety factor standards',
+    },
+    {
+      titleId: 'No Hidden Cost',
+      titleEn: 'No Hidden Cost',
+      badgeId: 'RAB Terbuka & Detail',
+      badgeEn: 'Itemized BOQ',
+      descId: 'Budget sudah ditentukan di awal dengan rincian RAB per item',
+      descEn: 'Budget itemized from day one with transparent BOQ',
+    },
+    {
+      titleId: 'Tepat Waktu',
+      titleEn: 'On Time',
+      badgeId: 'Jadwal Terukur',
+      badgeEn: 'Tracked Schedule',
+      descId: 'Progres dipantau berkala dengan kurva-S & jadwal ketat',
+      descEn: 'Milestones tracked on an S-curve schedule',
+    },
+    {
+      titleId: 'Quality Control',
+      titleEn: 'Quality Control',
+      badgeId: 'Struktur & Finishing',
+      badgeEn: 'Structure & Finishing',
+      descId: 'Pengawasan langsung dari struktur awal hingga detail finishing',
+      descEn: 'Direct supervision from structural core to final detailing',
+    },
+  ],
+};
+
+export interface AboutContent {
+  homeTaglineId: string;
+  homeTaglineEn: string;
+  homeTitleId: string;
+  homeTitleEn: string;
+  homeParagraphId: string;
+  homeParagraphEn: string;
+  homeCtaId: string;
+  homeCtaEn: string;
+  narrativeLeadId: string;
+  narrativeLeadEn: string;
+  narrativeBodyId: string;
+  narrativeBodyEn: string;
+  philosophyTitleId: string;
+  philosophyTitleEn: string;
+  philosophySubtitleId: string;
+  philosophySubtitleEn: string;
+}
+
+export const DEFAULT_ABOUT_CONTENT: AboutContent = {
+  homeTaglineId: 'TENTANG STUDIO',
+  homeTaglineEn: 'ABOUT STUDIO',
+  homeTitleId: 'Arsitektur Presisi & Ketahanan Struktur',
+  homeTitleEn: 'Precision Architecture & Structural Integrity',
+  homeParagraphId:
+    'Wonderful Works Construction adalah studio design & build di Surabaya yang mengutamakan kualitas, ketahanan struktur, dan estetika. Kami melayani pembangunan hunian tinggal dan bangunan komersial mulai dari tahap konsultasi konsep, perancangan arsitektur, hingga serah terima kunci dengan integritas dan solusi terbaik bagi klien.',
+  homeParagraphEn:
+    'Wonderful Works Construction is a design-build studio in Surabaya prioritizing quality, structural integrity, and aesthetic precision. We build residences and commercial spaces from initial concept and architectural design through turnkey handover with transparent engineering solutions.',
+  homeCtaId: 'Tentang Studio',
+  homeCtaEn: 'About Studio',
+  narrativeLeadId:
+    'Wonderful Works Construction adalah studio rancang bangun untuk hunian tinggal dan bangunan komersial.',
+  narrativeLeadEn:
+    'Wonderful Works Construction is a design-build studio for residential and commercial architecture.',
+  narrativeBodyId:
+    'Desain arsitektur, interior, dan konstruksi dikerjakan oleh satu tim. Perhitungan struktur dibuat insinyur sipil, material dicek sebelum dipasang, dan setiap tahap dilaporkan ke pemilik.',
+  narrativeBodyEn:
+    'Architecture, interiors, and construction are handled by one team. Structural calculations are done by civil engineers, materials are checked before installation, and every stage is reported to the owner.',
+  philosophyTitleId: 'Filosofi Desain Kami',
+  philosophyTitleEn: 'Our Design Philosophy',
+  philosophySubtitleId: 'Tiga prinsip yang kami pakai saat menggambar, memilih material, dan menghitung struktur.',
+  philosophySubtitleEn: 'Three principles we apply when drawing, choosing materials, and calculating structure.',
+};
+
+export interface PageHeroItem {
+  titleId: string;
+  titleEn: string;
+  ledeId: string;
+  ledeEn: string;
+}
+
+export interface PageHeroesContent {
+  about: PageHeroItem;
+  services: PageHeroItem;
+  projects: PageHeroItem;
+  contact: PageHeroItem;
+}
+
+export const DEFAULT_PAGE_HEROES: PageHeroesContent = {
+  about: {
+    titleId: 'TENTANG KAMI',
+    titleEn: 'ABOUT US',
+    ledeId: 'Wonderful Works Construction adalah studio perancangan dan pelaksanaan konstruksi yang berbasis di Surabaya.',
+    ledeEn: 'Wonderful Works Construction is an architecture and general contracting studio based in Surabaya.',
+  },
+  services: {
+    titleId: 'LAYANAN',
+    titleEn: 'SERVICES',
+    ledeId: 'Dua pilar spesialisasi: hunian tinggal dan bangunan komersial, didukung alur kerja transparan.',
+    ledeEn: 'Two core pillars: residential living and commercial spaces, backed by transparent execution.',
+  },
+  projects: {
+    titleId: 'PORTOFOLIO',
+    titleEn: 'PROJECTS',
+    ledeId: 'Dokumentasi proyek hunian tinggal dan komersial yang telah kami rancang dan bangun.',
+    ledeEn: 'Selected residential and commercial projects designed and built by Wonderful Works.',
+  },
+  contact: {
+    titleId: 'KONTAK',
+    titleEn: 'CONTACT',
+    ledeId: 'Konsultasikan kebutuhan rancang bangun hunian dan komersial Anda bersama tim arsitek dan insinyur kami.',
+    ledeEn: 'Discuss your residential and commercial design & build requirements with our architectural and engineering team.',
+  },
 };
 
 export interface ProjectDetail {

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { LuArrowUpRight } from 'react-icons/lu';
 import HeroMedia from '@/components/ui/HeroMedia';
 import ProjectInspectionModal from '@/components/interactive/ProjectInspectionModal';
-import type { ProjectDetail } from '@/data/siteData';
+import { DEFAULT_PAGE_HEROES, type ProjectDetail } from '@/data/siteData';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { filled } from '@/components/pages/copy';
@@ -14,7 +14,9 @@ type Copy = { anchorId?: string; titleId?: string; titleEn?: string; ledeId?: st
 
 export function ProjectsHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, ledeEn }: Copy) {
   const { t } = useLanguage();
-  const { hero } = useSiteContent();
+  const { hero, pageHeroes } = useSiteContent();
+  const heroCopy = pageHeroes?.projects || DEFAULT_PAGE_HEROES.projects;
+
   return (
     <section id={anchorId} className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
       <HeroMedia
@@ -27,13 +29,13 @@ export function ProjectsHeroSection({ anchorId = 'hero', titleId, titleEn, ledeI
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
         <div className="reveal-load">
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
-            {t(filled(titleId, 'Portofolio Proyek'), filled(titleEn, 'Projects'))}
+            {t(filled(titleId, heroCopy.titleId), filled(titleEn, heroCopy.titleEn))}
           </h1>
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
             {t(
-              filled(ledeId, 'Rumah tinggal, showroom, dan bangunan komersial.'),
-              filled(ledeEn, 'Homes, showrooms, and commercial buildings.')
+              filled(ledeId, heroCopy.ledeId),
+              filled(ledeEn, heroCopy.ledeEn)
             )}
           </p>
         </div>

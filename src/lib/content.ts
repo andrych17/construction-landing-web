@@ -31,10 +31,16 @@ import {
   DEFAULT_HERO_SERVICES,
   DEFAULT_HERO_PROJECTS,
   DEFAULT_HERO_CONTACT,
+  DEFAULT_HERO_TEXT,
+  DEFAULT_ABOUT_CONTENT,
+  DEFAULT_PAGE_HEROES,
   type ProjectDetail,
   type FounderDetail,
   type FaqItem,
   type HeroMediaValue,
+  type HeroTextContent,
+  type AboutContent,
+  type PageHeroesContent,
 } from '@/data/siteData';
 
 export type Contact = typeof SITE_CONTACT;
@@ -42,7 +48,7 @@ export type RotatingDisciplines = { id: string[]; en: string[] };
 export type Philosophy = (typeof WW_PHILOSOPHIES)[number];
 export type Service = (typeof CENTRA_SERVICES)[number];
 export type MethodologyStep = (typeof MASTER_METHODOLOGY)[number];
-export type { ProjectDetail, FounderDetail, FaqItem, HeroMediaValue };
+export type { ProjectDetail, FounderDetail, FaqItem, HeroMediaValue, HeroTextContent, AboutContent, PageHeroesContent };
 
 async function getSection<T>(key: string, fallback: T): Promise<T> {
   try {
@@ -73,6 +79,10 @@ export const getHeroAbout = () => getSection<HeroMediaValue>('heroAbout', DEFAUL
 export const getHeroServices = () => getSection<HeroMediaValue>('heroServices', DEFAULT_HERO_SERVICES);
 export const getHeroProjects = () => getSection<HeroMediaValue>('heroProjects', DEFAULT_HERO_PROJECTS);
 export const getHeroContact = () => getSection<HeroMediaValue>('heroContact', DEFAULT_HERO_CONTACT);
+
+export const getHeroText = () => getSection<HeroTextContent>('heroText', DEFAULT_HERO_TEXT);
+export const getAboutContent = () => getSection<AboutContent>('about', DEFAULT_ABOUT_CONTENT);
+export const getPageHeroes = () => getSection<PageHeroesContent>('pageHeroes', DEFAULT_PAGE_HEROES);
 
 function asJson(data: unknown): Prisma.InputJsonValue {
   return data as Prisma.InputJsonValue;
@@ -250,6 +260,9 @@ export type SiteData = {
   methodology: MethodologyStep[];
   faqs: FaqItem[];
   projects: ProjectDetail[];
+  heroText: HeroTextContent;
+  about: AboutContent;
+  pageHeroes: PageHeroesContent;
   hero: {
     home: HeroMediaValue;
     about: HeroMediaValue;
@@ -275,6 +288,9 @@ export async function getAllSiteContent(): Promise<SiteData> {
     heroServices,
     heroProjects,
     heroContact,
+    heroText,
+    about,
+    pageHeroes,
   ] = await Promise.all([
     getContact(),
     getRotatingDisciplines(),
@@ -289,6 +305,9 @@ export async function getAllSiteContent(): Promise<SiteData> {
     getHeroServices(),
     getHeroProjects(),
     getHeroContact(),
+    getHeroText(),
+    getAboutContent(),
+    getPageHeroes(),
   ]);
   return {
     contact,
@@ -299,6 +318,9 @@ export async function getAllSiteContent(): Promise<SiteData> {
     methodology,
     faqs,
     projects,
+    heroText,
+    about,
+    pageHeroes,
     hero: { home: heroHome, about: heroAbout, services: heroServices, projects: heroProjects, contact: heroContact },
   };
 }

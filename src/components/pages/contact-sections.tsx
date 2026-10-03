@@ -1,23 +1,27 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LuMapPin, LuClock, LuShieldCheck } from 'react-icons/lu';
+import { LuMapPin } from 'react-icons/lu';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import HeroMedia from '@/components/ui/HeroMedia';
 import ModernWwLogo from '@/components/ui/ModernWwLogo';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { filled } from '@/components/pages/copy';
+import { DEFAULT_CONTACT_FORM, DEFAULT_PAGE_HEROES } from '@/data/siteData';
 
 type Copy = { anchorId?: string; titleId?: string; titleEn?: string; ledeId?: string; ledeEn?: string };
 
 export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, ledeId, ledeEn }: Copy) {
   const { lang, t } = useLanguage();
-  const { contact, hero, waLink } = useSiteContent();
+  const { contact, hero, waLink, pageHeroes } = useSiteContent();
+  const heroCopy = pageHeroes?.contact || DEFAULT_PAGE_HEROES.contact;
+  const formCopy = contact.form || DEFAULT_CONTACT_FORM;
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    type: 'Residential',
+    type: formCopy.projectTypeOptions?.[0]?.id || 'Residential & Commercial',
     city: '',
     notes: '',
   });
@@ -53,6 +57,7 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
         : `Halo Wonderful Works Construction, saya ${formData.name} (${formData.phone}). Saya ingin konsultasi proyek ${formData.type} di kota ${formData.city || 'Surabaya'}.${formData.notes ? ` Catatan: ${formData.notes}` : ''}`;
     window.location.href = waLink(text);
   };
+
   return (
     <section id={anchorId} className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-36 min-h-[90vh] flex items-center border-b border-white/[0.08]">
       <HeroMedia
@@ -68,13 +73,13 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
           {/* Left Monumental Column: 'Contact' Heading */}
           <div className="lg:col-span-6 lg:sticky lg:top-36 reveal-load">
             <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
-              {t(filled(titleId, 'Kontak'), filled(titleEn, 'Contact'))}
+              {t(filled(titleId, heroCopy.titleId), filled(titleEn, heroCopy.titleEn))}
             </h1>
             <div className="w-24 h-[1.5px] bg-white/25 mb-8" />
             <p className="font-sans text-base sm:text-xl md:text-2xl text-neutral-300 font-light leading-relaxed max-w-md">
               {t(
-                filled(ledeId, 'Konsultasikan kebutuhan rancang bangun hunian dan komersial Anda bersama tim arsitek dan insinyur kami.'),
-                filled(ledeEn, 'Discuss your residential and commercial design & build requirements with our architectural and engineering team.')
+                filled(ledeId, heroCopy.ledeId),
+                filled(ledeEn, heroCopy.ledeEn)
               )}
             </p>
           </div>
@@ -86,57 +91,73 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
               <ModernWwLogo variant="full" size="lg" />
             </div>
 
-            {/* Inquiries Details */}
-            <div>
-              <h2 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-[0.25em] mb-4">
-                {t('KONSULTASI & TANYA JAWAB', 'FOR INQUIRIES')}
-              </h2>
-              <div className="space-y-4 font-sans text-base sm:text-lg">
-                <div>
-                  {contact.email ? (
+            {/* Inquiries & Office Grid (Office moved up beside Inquiries) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {/* Inquiries Details */}
+              <div>
+                <h2 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-[0.25em] mb-4">
+                  {t('KONSULTASI & TANYA JAWAB', 'FOR INQUIRIES')}
+                </h2>
+                <div className="space-y-4 font-sans text-sm sm:text-base">
+                  <div>
+                    {contact.email ? (
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="text-white hover:text-amber-400 transition-colors font-sans tracking-wide block break-all"
+                      >
+                        {contact.email}
+                      </a>
+                    ) : (
+                      <span className="text-neutral-400 font-sans tracking-wide block">
+                        {contact.emailLabel}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    {contact.whatsapp ? (
+                      <a
+                        href={waLink(
+                          t(
+                            'Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.',
+                            'Hello Wonderful Works Construction, I would like to consult on a design & build project.'
+                          )
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-amber-400 transition-colors font-mono tracking-wider block"
+                      >
+                        {contact.whatsappLabel}
+                      </a>
+                    ) : (
+                      <span className="text-neutral-400 font-mono tracking-wider block">
+                        {contact.whatsappLabel}
+                      </span>
+                    )}
+                  </div>
+                  <div>
                     <a
-                      href={`mailto:${contact.email}`}
-                      className="text-white hover:text-amber-400 transition-colors font-sans tracking-wide block"
-                    >
-                      {contact.email}
-                    </a>
-                  ) : (
-                    <span className="text-neutral-400 font-sans tracking-wide block">
-                      {contact.emailLabel}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  {contact.whatsapp ? (
-                    <a
-                      href={waLink(
-                        t(
-                          'Halo Wonderful Works Construction, saya ingin konsultasi rancang bangun.',
-                          'Hello Wonderful Works Construction, I would like to consult on a design & build project.'
-                        )
-                      )}
+                      href={contact.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-amber-400 transition-colors font-mono tracking-wider block"
+                      className="text-amber-400 hover:text-white transition-colors font-mono text-sm tracking-wider inline-flex items-center gap-2"
                     >
-                      {contact.whatsappLabel}
+                      <FaInstagram className="w-4 h-4" />
+                      <span>{contact.instagramHandle}</span>
                     </a>
-                  ) : (
-                    <span className="text-neutral-400 font-mono tracking-wider block">
-                      {contact.whatsappLabel}
-                    </span>
-                  )}
+                  </div>
                 </div>
-                <div>
-                  <a
-                    href={contact.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-amber-400 hover:text-white transition-colors font-mono text-sm tracking-wider inline-flex items-center gap-2"
-                  >
-                    <FaInstagram className="w-4 h-4" />
-                    <span>{contact.instagramHandle}</span>
-                  </a>
+              </div>
+
+              {/* Physical Office Address */}
+              <div>
+                <h2 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-[0.25em] mb-4 flex items-center gap-2">
+                  <LuMapPin className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{t('KANTOR', 'OFFICE')}</span>
+                </h2>
+                <div className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed space-y-1">
+                  {contact.studio.lines.map((line, idx) => (
+                    <p key={idx} className="text-neutral-300">{line}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -144,13 +165,10 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
             {/* Interactive Quick Dispatch Form */}
             <div className="p-8 rounded-none bg-[#0a0a0a] border border-white/10">
               <h3 className="font-display text-2xl font-bold text-white mb-2 uppercase tracking-tight">
-                {t('Formulir Konsultasi Proyek', 'Request Project Consultation')}
+                {t(formCopy.titleId, formCopy.titleEn)}
               </h3>
-              <p className="text-xs text-neutral-400 mb-6 font-mono uppercase">
-                {t(
-                  'TERHUBUNG LANGSUNG KE WHATSAPP PROJECT MANAGER KAMI',
-                  'CONNECT DIRECTLY TO OUR PROJECT MANAGER VIA WHATSAPP'
-                )}
+              <p className="text-xs text-neutral-400 mb-6 font-mono uppercase tracking-wide">
+                {t(formCopy.subtitleId, formCopy.subtitleEn)}
               </p>
 
               <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
@@ -160,13 +178,13 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       htmlFor="f-name"
                       className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                     >
-                      {t('Nama Klien', 'Client Name')}
+                      {t(formCopy.nameLabelId, formCopy.nameLabelEn)}
                     </label>
                     <input
                       type="text"
                       required
                       id="f-name"
-                      placeholder={t('Nama Anda', 'Your Name')}
+                      placeholder={t(formCopy.namePlaceholderId, formCopy.namePlaceholderEn)}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
@@ -177,13 +195,13 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       htmlFor="f-phone"
                       className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                     >
-                      {t('No. WhatsApp', 'WhatsApp Number')}
+                      {t(formCopy.phoneLabelId, formCopy.phoneLabelEn)}
                     </label>
                     <input
                       type="tel"
                       required
                       id="f-phone"
-                      placeholder="08xxxxxxxxxx"
+                      placeholder={t(formCopy.phonePlaceholderId, formCopy.phonePlaceholderEn)}
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
@@ -197,7 +215,7 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       htmlFor="f-type"
                       className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                     >
-                      {t('Tipe Proyek', 'Project Type')}
+                      {t(formCopy.projectTypeLabelId, formCopy.projectTypeLabelEn)}
                     </label>
                     <select
                       id="f-type"
@@ -205,12 +223,11 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
                     >
-                      <option value="Residential">
-                        {t('Residential', 'Residential')}
-                      </option>
-                      <option value="Commercial">
-                        {t('Commercial', 'Commercial')}
-                      </option>
+                      {formCopy.projectTypeOptions.map((opt) => (
+                        <option key={opt.id} value={opt.id}>
+                          {t(opt.labelId, opt.labelEn)}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div>
@@ -218,12 +235,12 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                       htmlFor="f-city"
                       className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                     >
-                      {t('Kota', 'City')}
+                      {t(formCopy.cityLabelId, formCopy.cityLabelEn)}
                     </label>
                     <input
                       type="text"
                       id="f-city"
-                      placeholder={t('Contoh: Surabaya', 'e.g. Surabaya')}
+                      placeholder={t(formCopy.cityPlaceholderId, formCopy.cityPlaceholderEn)}
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors"
@@ -236,15 +253,12 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                     htmlFor="f-notes"
                     className="block text-xs font-mono text-neutral-400 uppercase mb-1.5"
                   >
-                    {t('Catatan (Opsional)', 'Notes (Optional)')}
+                    {t(formCopy.notesLabelId, formCopy.notesLabelEn)}
                   </label>
                   <textarea
                     id="f-notes"
                     rows={3}
-                    placeholder={t(
-                      'Catatan tambahan mengenai rencana atau kebutuhan proyek...',
-                      'Additional notes regarding your project plans or requirements...'
-                    )}
+                    placeholder={t(formCopy.notesPlaceholderId, formCopy.notesPlaceholderEn)}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     className="w-full px-4 py-3 rounded-none bg-black border border-white/15 text-white font-sans text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"
@@ -257,22 +271,13 @@ export function ContactStudioSection({ anchorId = 'contact', titleId, titleEn, l
                   className="w-full py-4 rounded-none bg-amber-400 text-black hover:bg-white font-mono text-xs font-bold uppercase tracking-widest transition-all duration-300 ease-expo flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-[0.98] disabled:opacity-50"
                 >
                   <FaWhatsapp className="w-4 h-4" />
-                  <span>{isSubmitting ? t('Menyimpan...', 'Saving...') : t('Kirim & Mulai Konsultasi WhatsApp', 'Send & Consult via WhatsApp')}</span>
+                  <span>
+                    {isSubmitting
+                      ? t(formCopy.submittingTextId, formCopy.submittingTextEn)
+                      : t(formCopy.submitTextId, formCopy.submitTextEn)}
+                  </span>
                 </button>
               </form>
-            </div>
-
-            {/* Physical Address */}
-            <div className="pt-6 border-t border-white/10 text-xs font-mono">
-              <div>
-                <div className="text-white font-bold mb-1 flex items-center gap-2">
-                  <LuMapPin className="w-3.5 h-3.5 text-amber-400" />
-                  <span>{t('OFFICE', 'OFFICE')}</span>
-                </div>
-                <div className="text-neutral-400 leading-relaxed max-w-md">
-                  {contact.studio.lines.join(', ')}
-                </div>
-              </div>
             </div>
           </div>
         </div>

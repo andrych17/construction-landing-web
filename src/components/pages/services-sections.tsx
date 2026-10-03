@@ -9,13 +9,15 @@ import HeroMedia from '@/components/ui/HeroMedia';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSiteContent } from '@/context/SiteContentContext';
 import { filled } from '@/components/pages/copy';
-import { CENTRA_SERVICES } from '@/data/siteData';
+import { CENTRA_SERVICES, DEFAULT_PAGE_HEROES } from '@/data/siteData';
 
 type Copy = { anchorId?: string; titleId?: string; titleEn?: string; ledeId?: string; ledeEn?: string };
 
 export function ServicesHeroSection({ anchorId = 'hero', titleId, titleEn, ledeId, ledeEn }: Copy) {
   const { t } = useLanguage();
-  const { hero } = useSiteContent();
+  const { hero, pageHeroes } = useSiteContent();
+  const heroCopy = pageHeroes?.services || DEFAULT_PAGE_HEROES.services;
+
   return (
     <section id={anchorId} className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-white/[0.08] overflow-hidden">
       <HeroMedia
@@ -28,13 +30,13 @@ export function ServicesHeroSection({ anchorId = 'hero', titleId, titleEn, ledeI
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
         <div className="reveal-load">
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold text-white tracking-tight uppercase leading-[0.95] mb-6">
-            {t(filled(titleId, 'Layanan'), filled(titleEn, 'Services'))}
+            {t(filled(titleId, heroCopy.titleId), filled(titleEn, heroCopy.titleEn))}
           </h1>
           <div className="w-20 h-[1.5px] bg-white/25 mx-auto mb-6" />
           <p className="font-mono text-sm sm:text-lg text-amber-400/90 font-medium tracking-[0.2em] uppercase max-w-2xl mx-auto">
             {t(
-              filled(ledeId, 'Desain arsitektur, perhitungan struktur, dan pelaksanaan lapangan, dikerjakan oleh satu tim.'),
-              filled(ledeEn, 'Architectural design, structural calculation, and site execution, handled by one team.')
+              filled(ledeId, heroCopy.ledeId),
+              filled(ledeEn, heroCopy.ledeEn)
             )}
           </p>
         </div>

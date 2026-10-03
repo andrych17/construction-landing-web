@@ -1,11 +1,14 @@
 /** Daftar section SiteContent untuk teks CMS yang boleh diedit admin di submenu CMS Konten Teks */
 export const CONTENT_SECTIONS = [
-  { key: 'contact', label: 'Kontak & Alamat', preview: '/contact#contact' },
-  { key: 'rotatingDisciplines', label: 'Disiplin Studio (Hero)', preview: '/#hero', previewNote: 'Daftar ini belum tampil di hero publik.' },
+  { key: 'heroText', label: 'Hero & Nilai Unggulan (Beranda)', preview: '/#hero' },
+  { key: 'about', label: 'Tentang Kami (Profil Studio)', preview: '/about#narrative' },
+  { key: 'services', label: 'Layanan & 2 Pilar', preview: '/services#pillars' },
+  { key: 'methodology', label: 'Alur Kerja (7 Tahap)', preview: '/services#method' },
+  { key: 'contact', label: 'Kontak & Form Konsultasi', preview: '/contact#contact' },
+  { key: 'pageHeroes', label: 'Header Halaman Dalam', preview: '/services#hero' },
+  { key: 'founders', label: 'Founder & Direktur', preview: '/about#founder' },
   { key: 'philosophies', label: 'Filosofi Desain', preview: '/about#philosophy' },
-  { key: 'founders', label: 'Founder', preview: '/about#founder' },
-  { key: 'services', label: 'Layanan', preview: '/services#pillars' },
-  { key: 'methodology', label: 'Alur Kerja 10 Tahap', preview: '/services#method' },
+  { key: 'rotatingDisciplines', label: 'Disiplin Studio (Hero)', preview: '/#hero', previewNote: 'Daftar ini belum tampil di hero publik.' },
   { key: 'faqs', label: 'FAQ', preview: '/services#faqs' },
 ] as const;
 

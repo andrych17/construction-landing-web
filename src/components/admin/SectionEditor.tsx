@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ContactEditor } from '@/components/admin/ContactEditor';
 import { DisciplinesEditor } from '@/components/admin/DisciplinesEditor';
+import { HeroTextEditor } from '@/components/admin/HeroTextEditor';
+import { AboutEditor } from '@/components/admin/AboutEditor';
+import { PageHeroesEditor } from '@/components/admin/PageHeroesEditor';
 import { markPreviewSaved, PagePreview } from '@/components/admin/PagePreview';
 import { JsonField, type JsonValue } from '@/components/admin/JsonField';
 import { CONTENT_SECTIONS } from '@/lib/content-sections';
@@ -126,7 +129,13 @@ export function SectionEditor({
       </div>
 
       <div>
-          {sectionKey === 'contact' && value && typeof value === 'object' && !Array.isArray(value) ? (
+          {sectionKey === 'heroText' && value && typeof value === 'object' && !Array.isArray(value) ? (
+            <HeroTextEditor value={value} onChange={setValue} />
+          ) : sectionKey === 'about' && value && typeof value === 'object' && !Array.isArray(value) ? (
+            <AboutEditor value={value} onChange={setValue} />
+          ) : sectionKey === 'pageHeroes' && value && typeof value === 'object' && !Array.isArray(value) ? (
+            <PageHeroesEditor value={value} onChange={setValue} />
+          ) : sectionKey === 'contact' && value && typeof value === 'object' && !Array.isArray(value) ? (
             <ContactEditor value={value} onChange={setValue} />
           ) : sectionKey === 'rotatingDisciplines' && value && typeof value === 'object' && !Array.isArray(value) ? (
             <DisciplinesEditor value={value} onChange={setValue} />

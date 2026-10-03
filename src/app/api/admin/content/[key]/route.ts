@@ -17,6 +17,9 @@ import {
   getHeroServices,
   getHeroProjects,
   getHeroContact,
+  getHeroText,
+  getAboutContent,
+  getPageHeroes,
 } from '@/lib/content';
 
 const SECTION_DEFAULTS: Record<string, () => Promise<unknown>> = {
@@ -27,6 +30,9 @@ const SECTION_DEFAULTS: Record<string, () => Promise<unknown>> = {
   services: getServices,
   methodology: getMethodology,
   faqs: getFaqs,
+  heroText: getHeroText,
+  about: getAboutContent,
+  pageHeroes: getPageHeroes,
   heroHome: getHeroHome,
   heroAbout: getHeroAbout,
   heroServices: getHeroServices,
