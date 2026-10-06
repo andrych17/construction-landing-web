@@ -6,7 +6,7 @@ export const HOME_HERO_COPY = {
   line3Id: 'THAT LAST.',
   line3En: 'THAT LAST.',
   introId:
-    'Kontraktor rancang bangun di Surabaya dengan prinsip "Building Spaces That Last". Anggaran dirinci per item, pekerjaan struktur diawasi langsung, dan progres dilaporkan setiap hari.',
+    'Studio rancang bangun & kontraktor di Surabaya. Mewujudkan hunian dan ruang komersial presisi dengan transparansi biaya total dan pengawasan struktur berstandar tinggi.',
   introEn:
-    'A design-build contractor in Surabaya committed to "Building Spaces That Last". Budgets are itemized, structural work is supervised directly, and progress is reported daily.',
+    'Design & build studio based in Surabaya. Crafting enduring residential and commercial spaces with total financial transparency and high-standard structural oversight.',
 } as const;

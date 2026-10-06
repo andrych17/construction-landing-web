@@ -191,9 +191,9 @@ export const DEFAULT_HERO_TEXT: HeroTextContent = {
   line3Id: 'THAT LAST.',
   line3En: 'THAT LAST.',
   introId:
-    'Kontraktor umum dan studio rancang bangun di Surabaya dengan prinsip "Building Spaces That Last". Anggaran dirinci transparan per item, perhitungan struktur kokoh sesuai standar SNI, dan progres diawasi langsung di setiap tahap.',
+    'Studio rancang bangun & kontraktor di Surabaya. Mewujudkan hunian dan ruang komersial presisi dengan transparansi biaya total dan pengawasan struktur berstandar tinggi.',
   introEn:
-    'A general contractor and design-build studio in Surabaya committed to "Building Spaces That Last". Transparent itemized budgeting, structural integrity complying with SNI standards, and direct on-site supervision.',
+    'Design & build studio based in Surabaya. Crafting enduring residential and commercial spaces with total financial transparency and high-standard structural oversight.',
   ctaConsultId: 'KONSULTASI RANCANG BANGUN',
   ctaConsultEn: 'CONSULT DESIGN & BUILD',
   ctaPortfolioId: 'LIHAT PORTOFOLIO PROYEK',
