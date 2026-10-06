@@ -72,6 +72,19 @@ export function HeroSection({
   const heroData = heroText || DEFAULT_HERO_TEXT;
   const cards = heroData.valueCards && heroData.valueCards.length >= 4 ? heroData.valueCards : DEFAULT_HERO_TEXT.valueCards;
 
+  const l1 = t(
+    line1Id !== undefined && line1Id !== '' ? line1Id : (heroData.line1Id || ''),
+    line1En !== undefined && line1En !== '' ? line1En : (heroData.line1En || '')
+  );
+  const l2 = t(
+    line2Id !== undefined && line2Id !== '' ? line2Id : (heroData.line2Id || ''),
+    line2En !== undefined && line2En !== '' ? line2En : (heroData.line2En || '')
+  );
+  const l3 = t(
+    line3Id !== undefined && line3Id !== '' ? line3Id : (heroData.line3Id || ''),
+    line3En !== undefined && line3En !== '' ? line3En : (heroData.line3En || '')
+  );
+
   return (
     <section
       id={anchorId}
@@ -81,9 +94,11 @@ export function HeroSection({
 
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 max-w-frame mx-auto text-center">
         <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-white tracking-tight uppercase leading-[1.02] mb-6 drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] reveal-load break-words">
-          {t(filled(line1Id, heroData.line1Id), filled(line1En, heroData.line1En))}<br />
-          <span className="text-white">{t(filled(line2Id, heroData.line2Id), filled(line2En, heroData.line2En))}</span><br />
-          <span className="text-amber-400 font-extrabold">{t(filled(line3Id, heroData.line3Id), filled(line3En, heroData.line3En))}</span>
+          {l1 ? <span>{l1}</span> : null}
+          {l1 && (l2 || l3) ? <br /> : null}
+          {l2 ? <span className="text-white">{l2}</span> : null}
+          {l2 && l3 ? <br /> : null}
+          {l3 ? <span className="text-amber-400 font-extrabold">{l3}</span> : null}
         </h1>
 
         <p className="text-neutral-100 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto mb-10 font-sans reveal-load reveal-delay-1 drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">

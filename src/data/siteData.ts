@@ -184,12 +184,12 @@ export interface HeroTextContent {
 }
 
 export const DEFAULT_HERO_TEXT: HeroTextContent = {
-  line1Id: 'RANCANG BANGUN',
-  line1En: 'DESIGN & BUILD',
-  line2Id: 'RESIDENSIAL & KOMERSIAL,',
-  line2En: 'RESIDENTIAL & COMMERCIAL,',
-  line3Id: 'BUILDING SPACES THAT LAST.',
-  line3En: 'BUILDING SPACES THAT LAST.',
+  line1Id: 'BUILDING SPACES',
+  line1En: 'BUILDING SPACES',
+  line2Id: '',
+  line2En: '',
+  line3Id: 'THAT LAST.',
+  line3En: 'THAT LAST.',
   introId:
     'Kontraktor umum dan studio rancang bangun di Surabaya dengan prinsip "Building Spaces That Last". Anggaran dirinci transparan per item, perhitungan struktur kokoh sesuai standar SNI, dan progres diawasi langsung di setiap tahap.',
   introEn:
