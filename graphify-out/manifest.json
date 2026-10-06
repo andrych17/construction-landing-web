@@ -60,10 +60,10 @@
     "semantic_hash": "a5ad34b35a3c01f88722f759eb47d707"
   },
   "scripts/check-cms.ts": {
-    "mtime": 1790132824.6332402,
-    "seen": 1790230549.3173585,
-    "ast_hash": "78b69492ef64794d38b4c94c2425cc30",
-    "semantic_hash": "78b69492ef64794d38b4c94c2425cc30"
+    "mtime": 1791041579.435595,
+    "seen": 1791043307.0755124,
+    "ast_hash": "4ed50bb647e5b795583545e257c23757",
+    "semantic_hash": ""
   },
   "scripts/check-contact-integrity.mjs": {
     "mtime": 1790046465.7462778,
@@ -270,9 +270,9 @@
     "semantic_hash": "fb4f3787b6fecc24981b688f6040a202"
   },
   "src/app/layout.tsx": {
-    "mtime": 1791041495.2011814,
-    "seen": 1791041525.7834609,
-    "ast_hash": "6d1681c2964733e44727aae1c9e99742",
+    "mtime": 1791249456.4124649,
+    "seen": 1791249468.7946467,
+    "ast_hash": "d6ebf835dedb3e6d7bac151116cf073f",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -516,9 +516,9 @@
     "semantic_hash": "9c0bfceeb0c47d563ee7fe40dded986f"
   },
   "src/components/home/hero-copy.ts": {
-    "mtime": 1790236020.9652858,
-    "seen": 1790236803.360152,
-    "ast_hash": "5de381c67fc166a30a00d7494769de45",
+    "mtime": 1791249450.5873852,
+    "seen": 1791249468.79473,
+    "ast_hash": "6cfd24bfa8d728b5cd49c64038a1b20e",
     "semantic_hash": ""
   },
   "src/components/home/puck-config.tsx": {
@@ -528,15 +528,15 @@
     "semantic_hash": ""
   },
   "src/components/home/sections.tsx": {
-    "mtime": 1790993463.0437593,
-    "seen": 1790993545.4748473,
-    "ast_hash": "61572fcd371452a5c7992ed36a7411e9",
+    "mtime": 1791249353.709678,
+    "seen": 1791249383.3089905,
+    "ast_hash": "7ad5bfbb8e981813d6d06f002c0ffec6",
     "semantic_hash": ""
   },
   "src/components/interactive/ArchitecturalPreloader.tsx": {
-    "mtime": 1790840622.9596226,
-    "seen": 1790840665.3459117,
-    "ast_hash": "fdb6de3974090cd5b009a5b285a7d9a3",
+    "mtime": 1791042415.7842586,
+    "seen": 1791043307.075592,
+    "ast_hash": "d4e25dbc8c90350d553148359ff38628",
     "semantic_hash": ""
   },
   "src/components/interactive/ProjectInspectionModal.tsx": {
@@ -618,9 +618,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/HeroMedia.tsx": {
-    "mtime": 1790840448.4513247,
-    "seen": 1790840483.0472822,
-    "ast_hash": "a2a4a28eeede119e42c952a7d3b43f40",
+    "mtime": 1791042382.9169042,
+    "seen": 1791043307.075604,
+    "ast_hash": "850004eb587b22fc3372b571d1790d14",
     "semantic_hash": ""
   },
   "src/components/ui/ModernWwLogo.tsx": {
@@ -642,9 +642,9 @@
     "semantic_hash": "98566e0127644445fb8dfe3a331a8a12"
   },
   "src/data/siteData.ts": {
-    "mtime": 1791041516.9805567,
-    "seen": 1791041525.7835307,
-    "ast_hash": "9c101b7961b063ffb0c9e6ab74b410f5",
+    "mtime": 1791249446.4363272,
+    "seen": 1791249468.7947683,
+    "ast_hash": "d8d4bb7264df63555623775aa8628662",
     "semantic_hash": ""
   },
   "src/lib/api-error.ts": {
@@ -774,9 +774,9 @@
     "semantic_hash": ""
   },
   "docker-compose.yml": {
-    "mtime": 1790091462.6681714,
-    "seen": 1790230699.4074936,
-    "ast_hash": "29d796c8f794ed1fbd38c0588e8ef133",
+    "mtime": 1791041833.8653488,
+    "seen": 1791043307.075622,
+    "ast_hash": "ed09ca3472710d414716550c513b61d6",
     "semantic_hash": ""
   },
   "docs/hero-video/01-villa-golden-hour.txt": {

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Wonderful Works Construction",
   },
   description:
-    "Kontraktor rancang bangun di Surabaya, Sidoarjo, dan Gresik untuk rumah tinggal dan bangunan komersial. Desain arsitektur, interior, dan konstruksi dengan RAB terbuka dan laporan progres harian.",
+    "Building Spaces That Last. Kontraktor rancang bangun di Surabaya, Sidoarjo, dan Gresik untuk rumah tinggal dan bangunan komersial. Desain arsitektur, interior, dan konstruksi dengan RAB terbuka dan laporan progres harian.",
   keywords: [
     "Wonderful Works Construction",
     "Wonderful Works",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wonderful Works Construction | Architecture & General Contractor Surabaya",
     description:
-      "Bringing Your Vision to Life with Expert Craftsmanship. Architecture, interiors, and general contracting in Surabaya, Sidoarjo, and Gresik.",
+      "Building Spaces That Last. Architecture, interiors, and general contracting in Surabaya, Sidoarjo, and Gresik.",
     url: "https://wwconstruction.id",
     siteName: "Wonderful Works Construction",
     locale: "id_ID",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Wonderful Works Construction - Architecture & General Contractor Surabaya",
+        alt: "Wonderful Works Construction - Building Spaces That Last",
       },
     ],
   },
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wonderful Works Construction (@ww.cons)",
     description:
-      "Bringing Your Vision to Life with Expert Craftsmanship. Architecture, interiors, and general contracting in Surabaya by Wonderful Works Construction.",
+      "Building Spaces That Last. Architecture, interiors, and general contracting in Surabaya by Wonderful Works Construction.",
     images: ["https://wwconstruction.id/images/og-image.jpg"],
   },
   robots: {
@@ -183,7 +183,7 @@ function buildStructuredSchema(siteData: Awaited<ReturnType<typeof getAllSiteCon
           })),
         },
         "sameAs": [contact.instagram],
-        "slogan": "Bringing Your Vision to Life with Expert Craftsmanship",
+        "slogan": "Building Spaces That Last",
         "priceRange": "$$$$",
       },
       {

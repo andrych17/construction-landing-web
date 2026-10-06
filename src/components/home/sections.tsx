@@ -30,8 +30,8 @@ import { filled } from '@/components/pages/copy';
 import { CENTRA_SERVICES, DEFAULT_HERO_TEXT, DEFAULT_ABOUT_CONTENT, DEFAULT_PAGE_HEROES } from '@/data/siteData';
 
 function formatHeroIntro(text: string) {
-  // Highlight quoted phrases like "Quality is our priority"
-  const parts = text.split(/("Quality is our priority"|“Quality is our priority”|"[^"]+"|[“"][^”"]+[”"])/gi);
+  // Highlight quoted phrases like "Building Spaces That Last" or "Quality is our priority"
+  const parts = text.split(/("Building Spaces That Last"|“Building Spaces That Last”|"Quality is our priority"|“Quality is our priority”|"[^"]+"|[“"][^”"]+[”"])/gi);
   if (parts.length <= 1) return text;
   return parts.map((part, idx) => {
     if (part.startsWith('"') || part.startsWith('“') || part.startsWith('”')) {
