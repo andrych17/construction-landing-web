@@ -7,7 +7,8 @@ services:
     container_name: wwcons_web
     restart: always
     ports:
-      - "3050:3050"
+      # Loopback only; public traffic comes in through the reverse proxy.
+      - "127.0.0.1:3050:3050"
     env_file:
       - .env
     environment:
