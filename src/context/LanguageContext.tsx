@@ -29,7 +29,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       setLangState(saved);
       document.documentElement.lang = saved;
     } else {
-      document.documentElement.lang = 'id';
+      // No explicit choice yet: visitors outside Indonesia default to English. The country comes
+      // from the ww_geo cookie set by src/middleware.ts (Cloudflare CF-IPCountry).
+      const geo = document.cookie.match(/(?:^|;\s*)ww_geo=([A-Z][A-Z0-9])/)?.[1];
+      const auto: Language = geo && geo !== 'ID' ? 'en' : 'id';
+      if (auto === 'en') setLangState('en');
+      document.documentElement.lang = auto;
     }
   }, []);
 

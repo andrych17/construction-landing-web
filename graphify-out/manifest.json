@@ -630,10 +630,10 @@
     "semantic_hash": ""
   },
   "src/context/LanguageContext.tsx": {
-    "mtime": 1790126111.541903,
-    "seen": 1790230549.3174243,
-    "ast_hash": "5936b8755a641d82ecf985fbd07e5496",
-    "semantic_hash": "5936b8755a641d82ecf985fbd07e5496"
+    "mtime": 1793608232.9360454,
+    "seen": 1793608401.3953187,
+    "ast_hash": "519100d7b6b908f06ffc356ec6a74868",
+    "semantic_hash": ""
   },
   "src/context/SiteContentContext.tsx": {
     "mtime": 1790090018.4206111,
@@ -714,10 +714,10 @@
     "semantic_hash": "0791548335f6f0662e5a02905489953c"
   },
   "src/middleware.ts": {
-    "mtime": 1790133305.5341716,
-    "seen": 1790230549.3174338,
-    "ast_hash": "974178f6ef40fc5975114b2143bd1dc3",
-    "semantic_hash": "974178f6ef40fc5975114b2143bd1dc3"
+    "mtime": 1793608215.712511,
+    "seen": 1793608401.395345,
+    "ast_hash": "ebe3ec5ee7b32698e42d62d2abbf150d",
+    "semantic_hash": ""
   },
   "tsconfig.json": {
     "mtime": 1789971573.6770275,
